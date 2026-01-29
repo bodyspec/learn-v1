@@ -8,33 +8,67 @@
   }
 
   body {
-    @apply antialiased text-gray-900;
+    @apply antialiased text-bs-dark leading-7;
+  }
+
+  /* Paragraphs - match main site line-height */
+  p {
+    @apply leading-7;
+  }
+
+  /* Headings - tighter line-height */
+  h1, h2, h3, h4, h5, h6 {
+    @apply leading-tight;
+  }
+
+  /* Links - green accent like main site */
+  a {
+    @apply text-salad-100 hover:underline;
   }
 }
 
 @layer components {
+  /* Buttons - matching bodyspec.com exactly */
   .btn {
-    @apply inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 transition-colors;
+    @apply inline-flex items-center justify-center px-4 py-2 border text-base font-medium rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2 transition-colors whitespace-nowrap;
   }
 
+  /* Primary: Dark background, white text (matches .primary in web-v3) */
   .btn-primary {
-    @apply btn bg-primary-600 text-white hover:bg-primary-700 focus:ring-primary-500;
+    @apply btn bg-bs-dark text-white border-bs-dark hover:bg-white hover:text-bs-dark focus:ring-bs-dark;
   }
 
-  .btn-secondary {
-    @apply btn bg-white text-gray-700 border-gray-300 hover:bg-gray-50 focus:ring-primary-500;
+  /* Light: Salad/mint background, dark text (matches .light in web-v3) */
+  .btn-light {
+    @apply btn bg-salad-90 text-bs-dark border-salad-90 hover:bg-salad-60 focus:ring-salad-90;
   }
 
-  .btn-ghost {
-    @apply btn bg-transparent text-gray-600 hover:text-gray-900 hover:bg-gray-100 shadow-none;
+  /* Outline: White bg, dark border/text (matches .outline in web-v3) */
+  .btn-outline {
+    @apply btn bg-white text-bs-dark border-bs-dark hover:bg-bs-dark hover:text-white;
   }
 
+  /* Outline Green: White bg, green border (matches .olGreen in web-v3) */
+  .btn-outline-green {
+    @apply btn bg-white text-bs-dark border-salad-90 hover:bg-salad-70;
+  }
+
+  /* Cards */
   .card {
-    @apply bg-white rounded-md border border-gray-200;
+    @apply bg-white rounded-lg border border-bs-dark15;
   }
 
   .card-hover {
-    @apply card transition-colors hover:border-gray-300;
+    @apply card transition-all hover:border-bs-dark55 hover:shadow-sm;
+  }
+
+  /* Section backgrounds */
+  .section-light {
+    @apply bg-bs-dark3;
+  }
+
+  .section-salad {
+    @apply bg-salad-60;
   }
 }
 
@@ -44,7 +78,7 @@
 }
 
 .callout-note {
-  @apply bg-blue-50 border-blue-500 text-blue-900;
+  @apply bg-salad-60 border-salad-100 text-bs-dark;
 }
 
 .callout-warning {
@@ -52,9 +86,9 @@
 }
 
 .callout-tip {
-  @apply bg-green-50 border-green-500 text-green-900;
+  @apply bg-salad-60 border-greentext text-bs-dark;
 }
 
 .callout-clinical {
-  @apply bg-purple-50 border-purple-500 text-purple-900;
+  @apply bg-salad-60 border-bs-dark text-bs-dark;
 }
