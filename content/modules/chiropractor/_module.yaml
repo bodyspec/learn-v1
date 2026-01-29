@@ -1,0 +1,22 @@
+id: chiropractor
+title: "Body Composition in Practice"
+description: "Integrating DEXA data into chiropractic assessment and patient care"
+track: chiropractor
+is_deep_dive: false
+parent_module: null
+estimated_minutes: 20
+required_for_certificate: true
+sort_order: 2
+
+sections:
+  - slug: 01-msk-relevance
+    file: 01-msk-relevance.md
+    title: "MSK Relevance"
+
+  - slug: 02-assessment-integration
+    file: 02-assessment-integration.md
+    title: "Assessment Integration"
+
+  - slug: 03-communication
+    file: 03-communication.md
+    title: "Patient Communication"

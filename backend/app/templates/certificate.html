@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        @page {
+            size: 11in 8.5in landscape;
+            margin: 0;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            margin: 0;
+            padding: 0;
+            background: #fff;
+        }
+
+        .certificate {
+            width: 11in;
+            height: 8.5in;
+            padding: 0.75in;
+            box-sizing: border-box;
+            border: 0.25in solid #1a365d;
+            position: relative;
+        }
+
+        .inner-border {
+            border: 2px solid #c5a572;
+            height: 100%;
+            padding: 0.5in;
+            box-sizing: border-box;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .header {
+            margin-bottom: 0.25in;
+        }
+
+        .logo {
+            height: 50px;
+            margin-bottom: 0.25in;
+        }
+
+        .logo-text {
+            font-size: 24pt;
+            font-weight: bold;
+            color: #1a365d;
+            letter-spacing: 3px;
+            margin-bottom: 0.25in;
+        }
+
+        .title {
+            font-size: 36pt;
+            color: #1a365d;
+            margin: 0;
+            font-weight: normal;
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            font-size: 14pt;
+            color: #4a5568;
+            margin: 0.1in 0;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .main {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .recipient {
+            font-size: 28pt;
+            color: #1a365d;
+            margin: 0.3in 0;
+            font-style: italic;
+        }
+
+        .track {
+            font-size: 16pt;
+            color: #2d3748;
+            margin: 0.1in 0;
+        }
+
+        .description {
+            font-size: 11pt;
+            color: #4a5568;
+            max-width: 6in;
+            margin: 0.2in auto;
+            line-height: 1.5;
+        }
+
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-top: auto;
+            padding-top: 0.5in;
+        }
+
+        .footer .left,
+        .footer .right {
+            text-align: left;
+        }
+
+        .footer .right {
+            text-align: right;
+        }
+
+        .date {
+            font-size: 11pt;
+            color: #4a5568;
+            margin: 0.05in 0;
+        }
+
+        .cert-id {
+            font-size: 9pt;
+            color: #a0aec0;
+            margin: 0.05in 0;
+        }
+
+        .verify-url {
+            font-size: 8pt;
+            color: #a0aec0;
+            margin: 0.05in 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="certificate">
+        <div class="inner-border">
+            <div class="header">
+                {% if logo_path %}
+                <img src="{{ logo_path }}" class="logo" alt="BodySpec" />
+                {% else %}
+                <div class="logo-text">BODYSPEC</div>
+                {% endif %}
+                <h1 class="title">Certificate of Completion</h1>
+                <p class="subtitle">BodySpec DEXA Education Program</p>
+            </div>
+
+            <div class="main">
+                <p class="description">This certifies that</p>
+                <p class="recipient">{{ recipient_name }}</p>
+                <p class="description">has successfully completed the</p>
+                <p class="track">{{ track_title }} Track</p>
+                <p class="description">
+                    demonstrating knowledge and competency in DEXA body composition
+                    scanning principles and {{ track_description }}.
+                </p>
+            </div>
+
+            <div class="footer">
+                <div class="left">
+                    <p class="date">Issued: {{ issued_date }}</p>
+                    {% if expires_at %}
+                    <p class="date">Expires: {{ expires_date }}</p>
+                    {% endif %}
+                </div>
+                <div class="right">
+                    <p class="cert-id">Certificate ID: {{ certificate_uid }}</p>
+                    <p class="verify-url">Verify at: learn.bodyspec.com/verify/{{ certificate_uid }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

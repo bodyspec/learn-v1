@@ -1,0 +1,165 @@
+module_id: core
+passing_score: 80
+max_attempts: null
+randomize_questions: false
+randomize_options: true
+
+questions:
+  - id: core-q1
+    type: multiple_choice
+    text: "What type of model does DEXA use to measure body composition?"
+    options:
+      - text: "Two-compartment model"
+        correct: false
+      - text: "Three-compartment model"
+        correct: true
+      - text: "Four-compartment model"
+        correct: false
+      - text: "Single-compartment model"
+        correct: false
+    explanation: |
+      DEXA uses a three-compartment model, distinguishing between:
+      1. Bone mineral content
+      2. Lean soft tissue
+      3. Fat tissue
+
+      This provides more accurate measurements than two-compartment models
+      used by BIA devices.
+
+  - id: core-q2
+    type: scenario
+    text: |
+      A patient's BIA scale at home shows 22% body fat, but their DEXA
+      scan shows 28%. They ask why the results are so different.
+
+      What is the BEST explanation?
+    options:
+      - text: "The DEXA machine likely needs recalibration"
+        correct: false
+      - text: "BIA is highly sensitive to hydration status and uses a less accurate two-compartment model"
+        correct: true
+      - text: "The patient likely gained fat between the two measurements"
+        correct: false
+      - text: "Both methods are equally accurate; this variation is normal"
+        correct: false
+    explanation: |
+      BIA (bioelectrical impedance analysis) measurements are significantly
+      affected by hydration status, meal timing, and exercise. Additionally,
+      BIA uses a simpler two-compartment model that cannot distinguish
+      bone from lean tissue.
+
+      DEXA provides more consistent, validated measurements with tighter
+      precision bounds. A 5-8% difference between BIA and DEXA is common.
+
+  - id: core-q3
+    type: multiple_choice
+    text: "Which of the following is NOT directly measured by a DEXA scan?"
+    options:
+      - text: "Bone mineral density"
+        correct: false
+      - text: "Visceral adipose tissue"
+        correct: false
+      - text: "Muscle fiber composition"
+        correct: true
+      - text: "Regional fat distribution"
+        correct: false
+    explanation: |
+      DEXA measures tissue density and can differentiate between bone,
+      lean mass, and fat mass. It can estimate visceral fat from android
+      region measurements. However, it cannot determine muscle fiber
+      type composition (slow-twitch vs fast-twitch) - that requires
+      a muscle biopsy.
+
+  - id: core-q4
+    type: multiple_choice
+    text: "What is the typical precision (coefficient of variation) for DEXA body fat percentage measurements?"
+    options:
+      - text: "5-10%"
+        correct: false
+      - text: "1-2%"
+        correct: true
+      - text: "0.1-0.5%"
+        correct: false
+      - text: "10-15%"
+        correct: false
+    explanation: |
+      DEXA body fat percentage measurements have a precision of approximately
+      1-2% CV. This means repeat scans of the same person would typically
+      show results within this range. This is significantly more precise
+      than consumer methods like BIA scales.
+
+  - id: core-q5
+    type: multiple_choice
+    text: "Why is visceral adipose tissue (VAT) clinically important?"
+    options:
+      - text: "It is the most visible form of body fat"
+        correct: false
+      - text: "It is metabolically active and associated with increased disease risk"
+        correct: true
+      - text: "It is the easiest fat to lose through exercise"
+        correct: false
+      - text: "It provides essential protection for organs"
+        correct: false
+    explanation: |
+      Visceral fat is metabolically active and produces inflammatory compounds.
+      High VAT is independently associated with cardiovascular disease, type 2
+      diabetes, metabolic syndrome, and certain cancers. This makes it one of
+      the most important indicators of metabolic health risk.
+
+  - id: core-q6
+    type: scenario
+    text: |
+      A client weighs the same as they did 3 months ago but their DEXA shows
+      they lost 5 lbs of fat and gained 5 lbs of lean mass.
+
+      What is this phenomenon called?
+    options:
+      - text: "Measurement error"
+        correct: false
+      - text: "Body recomposition"
+        correct: true
+      - text: "Water retention"
+        correct: false
+      - text: "Metabolic adaptation"
+        correct: false
+    explanation: |
+      Body recomposition is the simultaneous loss of fat and gain of muscle.
+      Because fat was replaced with muscle of equal weight, the scale shows
+      no change while the body composition improved significantly. This is
+      why tracking body composition is more informative than tracking weight alone.
+
+  - id: core-q7
+    type: multiple_choice
+    text: "What does an Android-to-Gynoid (A/G) ratio greater than 1.0 indicate?"
+    options:
+      - text: "More fat is stored in the hip and thigh region"
+        correct: false
+      - text: "More fat is stored in the abdominal region, indicating higher metabolic risk"
+        correct: true
+      - text: "Equal distribution of fat between android and gynoid regions"
+        correct: false
+      - text: "Normal healthy fat distribution for most adults"
+        correct: false
+    explanation: |
+      An A/G ratio above 1.0 indicates that more fat is proportionally stored
+      in the android (abdominal) region compared to the gynoid (hip/thigh) region.
+      This "apple-shaped" distribution is associated with higher metabolic risk
+      compared to "pear-shaped" distribution.
+
+  - id: core-q8
+    type: multiple_choice
+    text: "Which factor has the LEAST impact on DEXA measurement accuracy?"
+    options:
+      - text: "Hydration status"
+        correct: false
+      - text: "Recent exercise"
+        correct: false
+      - text: "Clothing color"
+        correct: true
+      - text: "Time of day"
+        correct: false
+    explanation: |
+      Clothing color has no impact on DEXA measurements. However, hydration
+      status, recent exercise, and time of day can all affect results through
+      fluid distribution changes. For best consistency, scans should be done
+      under similar conditions each time.

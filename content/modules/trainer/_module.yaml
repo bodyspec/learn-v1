@@ -1,0 +1,22 @@
+id: trainer
+title: "Programming with DEXA Data"
+description: "Using body composition analysis for fitness programming and client management"
+track: trainer
+is_deep_dive: false
+parent_module: null
+estimated_minutes: 20
+required_for_certificate: true
+sort_order: 2
+
+sections:
+  - slug: 01-program-design
+    file: 01-program-design.md
+    title: "Program Design"
+
+  - slug: 02-client-management
+    file: 02-client-management.md
+    title: "Client Management"
+
+  - slug: 03-tracking-cadence
+    file: 03-tracking-cadence.md
+    title: "Tracking & Cadence"

@@ -1,0 +1,146 @@
+module_id: chiropractor
+passing_score: 80
+max_attempts: null
+randomize_questions: false
+randomize_options: true
+
+questions:
+  - id: chiro-q1
+    type: multiple_choice
+    text: "How much additional force per pound of body weight is applied through the knee during walking?"
+    options:
+      - text: "Approximately 1 pound"
+        correct: false
+      - text: "Approximately 2 pounds"
+        correct: false
+      - text: "Approximately 4 pounds"
+        correct: true
+      - text: "Approximately 6 pounds"
+        correct: false
+    explanation: |
+      Every pound of body weight adds approximately 4 pounds of force through
+      the knee during walking. This mechanical multiplier helps explain why
+      even modest weight loss can significantly reduce joint stress in patients
+      with lower extremity complaints.
+
+  - id: chiro-q2
+    type: multiple_choice
+    text: "What level of limb lean mass asymmetry is generally considered significant and worth investigating?"
+    options:
+      - text: ">3%"
+        correct: false
+      - text: ">5%"
+        correct: false
+      - text: ">10%"
+        correct: true
+      - text: ">20%"
+        correct: false
+    explanation: |
+      While 1-5% asymmetry is normal variation, differences of 10-15% are
+      noteworthy and may indicate compensation patterns, previous injury,
+      or functional issues. Asymmetries >15% are significant and warrant
+      investigation of cause and consideration for targeted rehabilitation.
+
+  - id: chiro-q3
+    type: scenario
+    text: |
+      A patient presents with chronic low back pain. Their DEXA shows low
+      trunk lean mass, elevated VAT (android fat), and the right leg has
+      8% more lean mass than the left.
+
+      Which interpretation is MOST consistent with these findings?
+    options:
+      - text: "The patient is an athlete with normal training adaptations"
+        correct: false
+      - text: "Core weakness and anterior weight shift contribute to LBP; leg asymmetry suggests guarding"
+        correct: true
+      - text: "The DEXA findings are unrelated to the patient's low back pain"
+        correct: false
+      - text: "The patient needs immediate imaging for disc pathology"
+        correct: false
+    explanation: |
+      Low trunk lean mass correlates with core instability, which is a
+      common contributor to chronic LBP. Elevated android fat shifts the
+      center of gravity forward, increasing lumbar spine loading. The leg
+      asymmetry (stronger right leg) may indicate the patient is guarding
+      or favoring one side. These findings help inform a comprehensive
+      treatment plan including core strengthening.
+
+  - id: chiro-q4
+    type: multiple_choice
+    text: "What does low trunk lean mass on a DEXA scan most likely indicate?"
+    options:
+      - text: "Elevated metabolic risk"
+        correct: false
+      - text: "Core weakness that may contribute to spinal instability"
+        correct: true
+      - text: "Poor cardiovascular health"
+        correct: false
+      - text: "Bone density concerns"
+        correct: false
+    explanation: |
+      Trunk lean mass correlates with core muscle mass and stability.
+      Low trunk lean mass suggests core weakness that may contribute to
+      spinal instability, reduced load tolerance, and chronic low back pain.
+      This finding supports prescribing core stabilization exercises.
+
+  - id: chiro-q5
+    type: multiple_choice
+    text: "How can DEXA data inform exercise prescription for your patients?"
+    options:
+      - text: "It can identify which specific exercises caused injury"
+        correct: false
+      - text: "It reveals muscle imbalances and regions needing strengthening"
+        correct: true
+      - text: "It shows exactly which exercises burn the most fat"
+        correct: false
+      - text: "It predicts how quickly a patient will respond to treatment"
+        correct: false
+    explanation: |
+      DEXA reveals regional lean mass deficits and asymmetries that inform
+      exercise prescription. Low trunk lean mass suggests core work is needed;
+      limb asymmetries suggest unilateral exercises; low overall lean mass
+      suggests resistance training priority. This objective data helps
+      target exercise recommendations.
+
+  - id: chiro-q6
+    type: scenario
+    text: |
+      A patient recovering from a left ACL repair shows 15% less lean mass
+      in their left leg compared to their right on DEXA. They completed
+      physical therapy 6 months ago.
+
+      What is the best interpretation and recommendation?
+    options:
+      - text: "This is normal post-surgical variation; no action needed"
+        correct: false
+      - text: "The asymmetry indicates incomplete rehabilitation; recommend additional strengthening"
+        correct: true
+      - text: "The patient should avoid all exercise to prevent re-injury"
+        correct: false
+      - text: "Surgery should be recommended on the other leg to balance them out"
+        correct: false
+    explanation: |
+      A 15% asymmetry 6 months post-ACL repair indicates incomplete
+      rehabilitation of the affected limb. This degree of asymmetry may
+      increase re-injury risk and affect biomechanics. The patient would
+      benefit from additional targeted strengthening of the affected leg,
+      potentially with physical therapy referral for supervised rehabilitation.
+
+  - id: chiro-q7
+    type: multiple_choice
+    text: "When scheduling follow-up DEXA scans to track treatment progress, what is typically the minimum recommended interval?"
+    options:
+      - text: "2-4 weeks"
+        correct: false
+      - text: "6-8 weeks"
+        correct: false
+      - text: "3-4 months"
+        correct: true
+      - text: "12 months"
+        correct: false
+    explanation: |
+      A minimum of 3-4 months is typically needed to see meaningful changes
+      in body composition that exceed measurement precision. Scanning more
+      frequently may show changes within the measurement error, which can
+      be misleading. This interval also aligns with treatment plan milestones.

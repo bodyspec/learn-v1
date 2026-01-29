@@ -1,0 +1,170 @@
+module_id: trainer
+passing_score: 80
+max_attempts: null
+randomize_questions: false
+randomize_options: true
+
+questions:
+  - id: trainer-q1
+    type: multiple_choice
+    text: "For a beginner client, what is a realistic monthly lean mass gain expectation?"
+    options:
+      - text: "3-5 lbs"
+        correct: false
+      - text: "1-2 lbs"
+        correct: true
+      - text: "0.25-0.5 lbs"
+        correct: false
+      - text: "5-8 lbs"
+        correct: false
+    explanation: |
+      Beginner trainees can typically gain 1-2 lbs of lean mass per month
+      with proper training and nutrition. This rate slows with training
+      experience: intermediate trainees expect 0.5-1 lb/month, and advanced
+      trainees may only gain 0.25-0.5 lb/month. These realistic expectations
+      help prevent discouragement.
+
+  - id: trainer-q2
+    type: scenario
+    text: |
+      A client with 35% body fat wants to simultaneously lose fat and gain
+      muscle. They are new to resistance training.
+
+      What advice is MOST appropriate?
+    options:
+      - text: "This is impossible; they must choose one goal"
+        correct: false
+      - text: "Body recomposition is achievable for beginners with higher body fat"
+        correct: true
+      - text: "They should only focus on cardio until they reach 20% body fat"
+        correct: false
+      - text: "They need to gain weight first, then cut"
+        correct: false
+    explanation: |
+      Body recomposition—simultaneously losing fat and gaining muscle—is most
+      achievable for beginners to resistance training and those with higher
+      starting body fat. These conditions create favorable hormonal and
+      physiological conditions for concurrent muscle gain and fat loss.
+      The client should focus on progressive resistance training and high
+      protein intake.
+
+  - id: trainer-q3
+    type: multiple_choice
+    text: "What is the recommended minimum protein intake for a client trying to preserve lean mass during fat loss?"
+    options:
+      - text: "0.8 g/kg bodyweight"
+        correct: false
+      - text: "1.2 g/kg bodyweight"
+        correct: false
+      - text: "2.0-2.4 g/kg lean mass"
+        correct: true
+      - text: "3.5 g/kg bodyweight"
+        correct: false
+    explanation: |
+      For preserving lean mass during caloric restriction, protein intake
+      should be 2.0-2.4 g/kg of lean mass (or approximately 1.6-2.2 g/kg
+      of total bodyweight). This higher protein intake helps signal muscle
+      retention even in a caloric deficit. Lower protein during dieting
+      increases muscle loss risk.
+
+  - id: trainer-q4
+    type: scenario
+    text: |
+      A client's weight has stayed the same for 8 weeks. Their DEXA shows
+      they lost 3 lbs of fat and gained 3 lbs of lean mass.
+
+      How should you frame this for the client?
+    options:
+      - text: "The program isn't working since weight hasn't changed"
+        correct: false
+      - text: "This is excellent body recomposition; they're getting leaner and stronger"
+        correct: true
+      - text: "They need to create a larger caloric deficit"
+        correct: false
+      - text: "The DEXA must be wrong since the scale didn't change"
+        correct: false
+    explanation: |
+      This is successful body recomposition. The client has replaced fat
+      tissue with muscle tissue. They are getting leaner (lower body fat %)
+      and likely stronger, even though the scale shows no change. This
+      demonstrates why body composition tracking is more valuable than
+      weight alone.
+
+  - id: trainer-q5
+    type: multiple_choice
+    text: "For tracking body recomposition, what is the minimum recommended time between DEXA scans?"
+    options:
+      - text: "4 weeks"
+        correct: false
+      - text: "8 weeks"
+        correct: false
+      - text: "12 weeks"
+        correct: true
+      - text: "6 months"
+        correct: false
+    explanation: |
+      Recomposition is a slow process. A minimum of 12 weeks between scans
+      is recommended to see changes that definitively exceed measurement
+      precision. Scanning too frequently can be discouraging when changes
+      fall within the error margin and appear as "no progress."
+
+  - id: trainer-q6
+    type: multiple_choice
+    text: "What is the 'skinny fat' body composition profile characterized by?"
+    options:
+      - text: "High lean mass and high body fat"
+        correct: false
+      - text: "Normal weight with high body fat percentage and low lean mass"
+        correct: true
+      - text: "Very low body fat with low lean mass"
+        correct: false
+      - text: "High VAT but low subcutaneous fat"
+        correct: false
+    explanation: |
+      "Skinny fat" describes individuals who appear thin but have higher than
+      healthy body fat percentage and lower than optimal lean mass. Their
+      normal weight masks poor body composition. These clients benefit most
+      from resistance training to build muscle, rather than focusing on
+      weight loss.
+
+  - id: trainer-q7
+    type: scenario
+    text: |
+      After 12 weeks, your client has lost 10 lbs. The DEXA shows 4 lbs was
+      fat and 6 lbs was lean mass.
+
+      What adjustment is MOST needed?
+    options:
+      - text: "Increase cardio to lose more weight faster"
+        correct: false
+      - text: "Increase protein intake and add resistance training to preserve muscle"
+        correct: true
+      - text: "Continue the current program; this is expected"
+        correct: false
+      - text: "Stop all exercise to prevent further muscle loss"
+        correct: false
+    explanation: |
+      With 60% of weight loss coming from lean mass, this client is losing
+      too much muscle. Interventions should include increasing protein
+      (2.0g+ per kg), adding or intensifying resistance training, and
+      potentially reducing the caloric deficit. The goal is shifting the
+      ratio so more fat and less muscle is lost.
+
+  - id: trainer-q8
+    type: multiple_choice
+    text: "Between DEXA scans, what metrics can help track progress direction?"
+    options:
+      - text: "Only the scale; nothing else is useful"
+        correct: false
+      - text: "Scale weight trends, body measurements, strength performance, and progress photos"
+        correct: true
+      - text: "Heart rate and blood pressure only"
+        correct: false
+      - text: "Weekly DEXA scans are the only reliable method"
+        correct: false
+    explanation: |
+      Between DEXA scans, multiple metrics provide directional feedback:
+      weekly scale weight averages, body measurements (waist, arms, legs),
+      strength progressions, and progress photos. These surrogate measures
+      indicate whether composition is trending correctly before the next
+      DEXA confirms actual changes.

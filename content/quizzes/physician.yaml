@@ -1,0 +1,168 @@
+module_id: physician
+passing_score: 80
+max_attempts: null
+randomize_questions: false
+randomize_options: true
+
+questions:
+  - id: physician-q1
+    type: multiple_choice
+    text: "At what VAT area threshold is a patient generally considered to be at elevated metabolic risk?"
+    options:
+      - text: "50 cm²"
+        correct: false
+      - text: "100 cm²"
+        correct: true
+      - text: "200 cm²"
+        correct: false
+      - text: "300 cm²"
+        correct: false
+    explanation: |
+      A VAT area of 100 cm² is generally considered the threshold above which
+      metabolic risk begins to increase. Below 100 cm² is considered low risk,
+      100-160 cm² is moderate to elevated risk, and above 160 cm² is high risk.
+
+  - id: physician-q2
+    type: scenario
+    text: |
+      A 45-year-old male patient has a BMI of 24 (normal range) but his DEXA
+      shows a VAT area of 145 cm² and body fat of 28%.
+
+      What is this phenotype commonly called?
+    options:
+      - text: "Metabolically healthy obese"
+        correct: false
+      - text: "TOFI (Thin Outside, Fat Inside)"
+        correct: true
+      - text: "Sarcopenic obesity"
+        correct: false
+      - text: "Normal weight healthy"
+        correct: false
+    explanation: |
+      TOFI (Thin Outside, Fat Inside) describes individuals with normal BMI
+      but elevated visceral fat and body fat percentage. These patients have
+      higher metabolic risk than their weight suggests and may be missed by
+      standard screening that relies only on BMI.
+
+  - id: physician-q3
+    type: multiple_choice
+    text: "According to EWGSOP2 criteria, what is the ALM/height² cut-point for sarcopenia in men?"
+    options:
+      - text: "<5.5 kg/m²"
+        correct: false
+      - text: "<7.0 kg/m²"
+        correct: true
+      - text: "<9.0 kg/m²"
+        correct: false
+      - text: "<10.5 kg/m²"
+        correct: false
+    explanation: |
+      The EWGSOP2 (European Working Group on Sarcopenia in Older People)
+      defines sarcopenia cut-points as:
+      - Men: ALM/height² <7.0 kg/m²
+      - Women: ALM/height² <5.5 kg/m²
+
+      These thresholds help identify patients at risk for sarcopenia-related
+      functional decline.
+
+  - id: physician-q4
+    type: scenario
+    text: |
+      A patient on a weight loss program has lost 20 lbs over 4 months.
+      DEXA shows that 12 lbs was fat and 8 lbs was lean mass.
+
+      What percentage of weight loss was lean mass, and is this concerning?
+    options:
+      - text: "40% lean loss - concerning, as ideal is <25% lean loss"
+        correct: true
+      - text: "40% lean loss - acceptable for weight loss programs"
+        correct: false
+      - text: "60% lean loss - severely concerning"
+        correct: false
+      - text: "20% lean loss - within acceptable range"
+        correct: false
+    explanation: |
+      8 lbs of 20 lbs = 40% lean mass loss. Ideally, less than 25% of weight
+      lost should be lean mass. This patient is losing too much muscle relative
+      to fat. Interventions should include increased protein intake, resistance
+      training, and potentially a less aggressive caloric deficit.
+
+  - id: physician-q5
+    type: multiple_choice
+    text: "Which finding on serial DEXA scans should prompt evaluation for occult disease?"
+    options:
+      - text: "2% increase in body fat over 6 months"
+        correct: false
+      - text: "1 kg gain in lean mass over 3 months"
+        correct: false
+      - text: ">5% lean mass loss in 3-6 months without intentional restriction"
+        correct: true
+      - text: "5% reduction in VAT over 4 months"
+        correct: false
+    explanation: |
+      Unexplained rapid muscle loss (>5% in 3-6 months) without intentional
+      caloric restriction should prompt evaluation for underlying conditions
+      including occult malignancy, inflammatory conditions, malabsorption,
+      or other systemic disease.
+
+  - id: physician-q6
+    type: multiple_choice
+    text: "For a patient on GLP-1 agonist therapy for weight loss, why is DEXA monitoring valuable?"
+    options:
+      - text: "GLP-1 agonists can cause bone density loss"
+        correct: false
+      - text: "To differentiate fat loss from concerning muscle loss"
+        correct: true
+      - text: "To monitor for medication-induced lipodystrophy"
+        correct: false
+      - text: "GLP-1 agonists increase VAT specifically"
+        correct: false
+    explanation: |
+      GLP-1 agonists cause significant weight loss, but it's important to
+      determine the composition of that loss. DEXA can differentiate between
+      desired fat loss and potentially concerning muscle loss, allowing for
+      intervention (increased protein, resistance training) if too much lean
+      mass is being lost.
+
+  - id: physician-q7
+    type: scenario
+    text: |
+      A 68-year-old woman with history of falls has a DEXA showing low lean
+      mass (FFMI <13) and elevated body fat (38%). She has difficulty rising
+      from a chair without using her arms.
+
+      What is this condition called?
+    options:
+      - text: "Obesity"
+        correct: false
+      - text: "Sarcopenia"
+        correct: false
+      - text: "Sarcopenic obesity"
+        correct: true
+      - text: "Cachexia"
+        correct: false
+    explanation: |
+      Sarcopenic obesity combines low muscle mass (sarcopenia) with excess body
+      fat. This condition carries higher functional risks than either condition
+      alone. Patients with sarcopenic obesity have increased fall risk, poorer
+      surgical outcomes, and higher mortality in chronic disease. Treatment
+      requires addressing both the excess fat and the muscle deficit.
+
+  - id: physician-q8
+    type: multiple_choice
+    text: "Can whole-body DEXA scans be used to diagnose osteoporosis?"
+    options:
+      - text: "Yes, whole-body BMD is diagnostic for osteoporosis"
+        correct: false
+      - text: "No, osteoporosis diagnosis requires site-specific (hip/spine) DEXA protocols"
+        correct: true
+      - text: "Yes, if the whole-body BMD is below a T-score of -2.5"
+        correct: false
+      - text: "Only in patients over age 65"
+        correct: false
+    explanation: |
+      Whole-body DEXA provides general BMD information but is NOT diagnostic
+      for osteoporosis. Osteoporosis diagnosis requires site-specific DEXA
+      protocols focusing on the hip and lumbar spine using different scanning
+      and analysis parameters. Patients with concerning whole-body BMD should
+      be referred for proper site-specific osteoporosis screening.

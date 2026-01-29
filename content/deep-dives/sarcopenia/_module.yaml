@@ -1,0 +1,14 @@
+id: sarcopenia-deep-dive
+title: "Sarcopenia & Aging"
+description: "Deep dive into age-related muscle loss, assessment, and intervention"
+track: core
+is_deep_dive: true
+parent_module: core
+estimated_minutes: 15
+required_for_certificate: false
+sort_order: 10
+
+sections:
+  - slug: 01-sarcopenia-aging
+    file: 01-sarcopenia-aging.md
+    title: "Understanding Sarcopenia"

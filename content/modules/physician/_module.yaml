@@ -1,0 +1,26 @@
+id: physician
+title: "Clinical Applications"
+description: "Clinical interpretation and patient counseling for medical professionals"
+track: physician
+is_deep_dive: false
+parent_module: null
+estimated_minutes: 25
+required_for_certificate: true
+sort_order: 2
+
+sections:
+  - slug: 01-clinical-indications
+    file: 01-clinical-indications.md
+    title: "Clinical Indications"
+
+  - slug: 02-interpreting-results
+    file: 02-interpreting-results.md
+    title: "Interpreting Results Clinically"
+
+  - slug: 03-patient-conversations
+    file: 03-patient-conversations.md
+    title: "Patient Conversations"
+
+  - slug: 04-red-flags
+    file: 04-red-flags.md
+    title: "Red Flags & Referrals"

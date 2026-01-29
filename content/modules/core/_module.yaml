@@ -1,0 +1,30 @@
+id: core
+title: "DEXA Fundamentals"
+description: "Learn how DEXA technology works and what it measures"
+track: core
+is_deep_dive: false
+parent_module: null
+estimated_minutes: 20
+required_for_certificate: true
+sort_order: 1
+
+sections:
+  - slug: 01-how-dexa-works
+    file: 01-how-dexa-works.md
+    title: "How DEXA Works"
+
+  - slug: 02-accuracy
+    file: 02-accuracy.md
+    title: "Accuracy & Validity"
+
+  - slug: 03-key-metrics
+    file: 03-key-metrics.md
+    title: "Key Metrics Explained"
+
+  - slug: 04-reading-reports
+    file: 04-reading-reports.md
+    title: "Reading a BodySpec Report"
+
+  - slug: 05-misconceptions
+    file: 05-misconceptions.md
+    title: "Misconceptions & FAQs"
