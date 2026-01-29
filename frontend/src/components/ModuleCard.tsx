@@ -34,7 +34,7 @@ export default function ModuleCard({ module, isComplete, sectionsComplete = 0 }:
             </span>
             <span>{totalSections} sections</span>
             {module.is_deep_dive && (
-              <span className="px-2 py-0.5 bg-purple-100 text-purple-700 rounded text-xs font-medium">
+              <span className="px-2 py-0.5 bg-gray-100 text-gray-600 rounded text-xs font-medium">
                 Deep Dive
               </span>
             )}

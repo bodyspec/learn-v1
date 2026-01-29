@@ -48,7 +48,7 @@ learn-v1/
 
 ## Git Conventions
 
-- Commit prefix: `learn:` (e.g., `learn: Add quiz submission endpoint`)
+- Commit prefix: `bl:` (e.g., `bl: Add quiz submission endpoint`)
 - Rebase-only workflow, never merge
 - Delete branches after merge
 - Never push without explicit user request

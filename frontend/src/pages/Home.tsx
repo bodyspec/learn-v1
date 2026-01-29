@@ -1,38 +1,35 @@
 import { Link } from 'react-router-dom'
-import { Stethoscope, Activity, Dumbbell, BookOpen, Award, Clock } from 'lucide-react'
+import { HeartPulse, Bone, Users, BookOpen, Award, Clock, BarChart3, Target, FileText, MessageCircle } from 'lucide-react'
 
 const tracks = [
   {
     id: 'physician',
     title: 'Physicians',
     description: 'Clinical applications of DEXA body composition analysis for medical professionals',
-    icon: Stethoscope,
-    color: 'bg-blue-50 border-blue-200 hover:border-blue-400',
-    iconColor: 'text-blue-600',
+    icon: HeartPulse,
+    iconColor: 'text-bodyspec-blue',
   },
   {
     id: 'chiropractor',
     title: 'Chiropractors',
     description: 'Integrating body composition data into chiropractic assessment and patient care',
-    icon: Activity,
-    color: 'bg-green-50 border-green-200 hover:border-green-400',
-    iconColor: 'text-green-600',
+    icon: Bone,
+    iconColor: 'text-bodyspec-blue',
   },
   {
     id: 'trainer',
     title: 'Trainers',
     description: 'Using DEXA data for fitness programming and client body composition management',
-    icon: Dumbbell,
-    color: 'bg-purple-50 border-purple-200 hover:border-purple-400',
-    iconColor: 'text-purple-600',
+    icon: Users,
+    iconColor: 'text-bodyspec-blue',
   },
 ]
 
 export default function Home() {
   return (
-    <div className="space-y-16">
+    <div className="space-y-12">
       {/* Hero Section */}
-      <div className="text-center py-12">
+      <div className="text-center pt-8 pb-4">
         <h1 className="text-4xl font-bold text-gray-900 sm:text-5xl">
           DEXA Education for<br />Healthcare Professionals
         </h1>
@@ -67,7 +64,7 @@ export default function Home() {
             <Link
               key={track.id}
               to={`/track/${track.id}`}
-              className={`card p-6 border-2 transition-all ${track.color}`}
+              className="card p-6 border border-gray-200 hover:border-gray-300 transition-colors"
             >
               <track.icon className={`w-12 h-12 ${track.iconColor} mb-4`} />
               <h3 className="text-xl font-semibold text-gray-900">{track.title}</h3>
@@ -81,14 +78,14 @@ export default function Home() {
       </div>
 
       {/* What You'll Learn */}
-      <div className="bg-white rounded-2xl p-8 border border-gray-200">
+      <div className="bg-white rounded-lg p-8 border border-gray-200">
         <h2 className="text-2xl font-bold text-gray-900 text-center mb-8">
           What You'll Learn
         </h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           <div className="text-center">
-            <div className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <span className="text-2xl">📊</span>
+            <div className="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+              <BarChart3 className="w-5 h-5 text-gray-600" />
             </div>
             <h3 className="font-semibold text-gray-900">DEXA Technology</h3>
             <p className="text-sm text-gray-600 mt-1">
@@ -96,8 +93,8 @@ export default function Home() {
             </p>
           </div>
           <div className="text-center">
-            <div className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <span className="text-2xl">🎯</span>
+            <div className="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+              <Target className="w-5 h-5 text-gray-600" />
             </div>
             <h3 className="font-semibold text-gray-900">Key Metrics</h3>
             <p className="text-sm text-gray-600 mt-1">
@@ -105,8 +102,8 @@ export default function Home() {
             </p>
           </div>
           <div className="text-center">
-            <div className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <span className="text-2xl">📋</span>
+            <div className="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+              <FileText className="w-5 h-5 text-gray-600" />
             </div>
             <h3 className="font-semibold text-gray-900">Report Reading</h3>
             <p className="text-sm text-gray-600 mt-1">
@@ -114,8 +111,8 @@ export default function Home() {
             </p>
           </div>
           <div className="text-center">
-            <div className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <span className="text-2xl">💬</span>
+            <div className="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+              <MessageCircle className="w-5 h-5 text-gray-600" />
             </div>
             <h3 className="font-semibold text-gray-900">Patient Communication</h3>
             <p className="text-sm text-gray-600 mt-1">
