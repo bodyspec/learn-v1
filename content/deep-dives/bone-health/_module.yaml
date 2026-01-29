@@ -1,0 +1,11 @@
+id: bone-health
+title: "Bone Health & DEXA"
+description: "Understanding bone density measurements, osteoporosis screening, and when body composition DEXA differs from clinical BMD"
+track: core
+parent_module: core
+estimated_minutes: 10
+required: false
+sections:
+  - slug: 01-bone-density-basics
+    file: 01-bone-density-basics.md
+    title: "Bone Density Basics"

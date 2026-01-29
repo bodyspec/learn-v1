@@ -11,6 +11,10 @@ The percentage of total body weight that is fat tissue.
 
 **Healthy ranges:**
 
+<!-- IMAGE: assets/diagrams/body-fat-ranges-male.svg -->
+<!-- IMAGE: assets/diagrams/body-fat-ranges-female.svg -->
+<!-- TODO: Visual charts showing body fat categories for men and women -->
+
 | Category | Men | Women |
 |----------|-----|-------|
 | Essential fat | 2-5% | 10-13% |
@@ -18,6 +22,8 @@ The percentage of total body weight that is fat tissue.
 | Fitness | 14-17% | 21-24% |
 | Average | 18-24% | 25-31% |
 | Obese | 25%+ | 32%+ |
+
+<!-- CITATION NEEDED: Source for body fat percentage reference ranges -->
 
 :::note
 Women naturally carry more essential fat due to reproductive functions. This is biological, not a sign of poor health.
@@ -43,6 +49,9 @@ FFMI can help identify sarcopenia risk and assess whether someone is "overfat" d
 
 ## Regional Metrics
 
+<!-- IMAGE: assets/diagrams/android-gynoid-regions.svg -->
+<!-- TODO: Body outline showing android and gynoid measurement regions -->
+
 ### Android Fat (Belly Region)
 Fat stored in the abdominal region, measured between the ribs and top of the pelvis.
 
@@ -65,6 +74,9 @@ The ratio of android to gynoid fat percentages.
 - Men typically have higher A/G ratios than women
 
 ## Visceral Adipose Tissue (VAT)
+
+<!-- IMAGE: assets/diagrams/vat-sat-location.svg -->
+<!-- TODO: Diagram showing visceral vs subcutaneous fat locations -->
 
 ### What is VAT?
 Fat stored deep in the abdominal cavity, surrounding the organs. Also called "visceral fat" or "organ fat."
@@ -90,11 +102,16 @@ VAT can be elevated even in individuals with normal BMI or body fat percentage�
 
 ### VAT Thresholds
 
+<!-- IMAGE: assets/diagrams/vat-risk-zones.svg -->
+<!-- TODO: Visual showing VAT threshold zones with risk levels -->
+
 | Risk Level | VAT Area |
 |------------|----------|
 | Low | <100 cm² |
 | Moderate | 100-160 cm² |
 | High | >160 cm² |
+
+<!-- CITATION NEEDED: Source for VAT area risk thresholds -->
 
 ## Bone Metrics
 

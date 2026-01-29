@@ -1,0 +1,14 @@
+id: glp1-monitoring
+title: "GLP-1 Medications & Body Composition"
+description: "Monitoring body composition changes during GLP-1 agonist therapy (semaglutide, tirzepatide)"
+track: physician
+parent_module: physician
+estimated_minutes: 12
+required: false
+sections:
+  - slug: 01-tracking-weight-loss
+    file: 01-tracking-weight-loss.md
+    title: "Monitoring Weight Loss Quality"
+  - slug: 02-preserving-muscle
+    file: 02-preserving-muscle.md
+    title: "Strategies for Muscle Preservation"

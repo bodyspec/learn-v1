@@ -4,6 +4,9 @@ DEXA (Dual-Energy X-ray Absorptiometry) is the gold standard for measuring body 
 
 ## The Technology
 
+<!-- IMAGE: assets/diagrams/dexa-dual-energy.svg -->
+<!-- TODO: Diagram showing dual-energy X-ray beams passing through tissue -->
+
 DEXA scanners emit two low-energy X-ray beams at different energy levels. As these beams pass through the body, different tissues absorb them at different rates:
 
 - **Bone** absorbs the most energy (appears brightest)
@@ -17,6 +20,9 @@ The radiation exposure from a DEXA scan is extremely low—about 1/10th of a che
 :::
 
 ## Three-Compartment Model
+
+<!-- IMAGE: assets/diagrams/three-compartment-model.svg -->
+<!-- TODO: Diagram illustrating fat, lean, and bone compartments -->
 
 DEXA uses a three-compartment model, which distinguishes between:
 
@@ -36,6 +42,9 @@ During a BodySpec scan:
 4. Software processes the data to create a detailed body composition report
 
 ## Regional Analysis
+
+<!-- IMAGE: assets/diagrams/regional-divisions.svg -->
+<!-- TODO: Body outline showing arm, leg, trunk divisions -->
 
 One of DEXA's key advantages is its ability to provide **regional analysis**. The scan divides the body into segments:
 
