@@ -6,7 +6,7 @@ DEXA body composition results can reveal findings that warrant further investiga
 
 ### Severely Elevated VAT
 
-**Finding:** VAT area >200 cm²
+**Finding:** VAT area >200 cm²[^1]
 
 **Concerns:**
 - High metabolic disease risk
@@ -60,7 +60,7 @@ VAT >200 cm² warrants aggressive intervention, particularly in younger patients
 
 ### Rapid Muscle Loss
 
-**Finding:** >5% lean mass loss in 3-6 months without intentional caloric restriction
+**Finding:** >5% lean mass loss in 3-6 months without intentional caloric restriction[^2]
 
 **Concerns:**
 - Occult malignancy
@@ -83,7 +83,7 @@ Unexplained rapid muscle loss in an adult should prompt evaluation for underlyin
 
 ### Significant Limb Asymmetry
 
-**Finding:** >15% difference in lean mass between matched limbs
+**Finding:** >15% difference in lean mass between matched limbs[^3]
 
 **Concerns:**
 - Previous injury not fully rehabilitated
@@ -115,7 +115,7 @@ Unexplained rapid muscle loss in an adult should prompt evaluation for underlyin
 
 ### Cachexia Pattern
 
-**Finding:** Low fat mass + low lean mass + unintentional weight loss
+**Finding:** Low fat mass + low lean mass + unintentional weight loss[^4]
 
 **Concerns:**
 - Cancer cachexia
@@ -207,3 +207,10 @@ Include in referral:
 ## Summary
 
 Red flags on DEXA body composition warrant appropriate follow-up but should not cause alarm without clinical correlation. The goal is early identification of treatable conditions and appropriate specialist involvement when needed.
+
+## References
+
+[^1]: Neeland IJ, Ross R, Despres JP, et al. "Visceral and ectopic fat, atherosclerosis, and cardiometabolic disease: a position statement." *Lancet Diabetes Endocrinol*. 2019;7(9):715-725. doi:10.1016/S2213-8587(19)30084-1
+[^2]: Cruz-Jentoft AJ, Bahat G, Bauer J, et al. "Sarcopenia: revised European consensus on definition and diagnosis." *Age Ageing*. 2019;48(1):16-31. doi:10.1093/ageing/afy169
+[^3]: ISCD. "The Official Positions of the International Society for Clinical Densitometry: Body Composition Analysis Reporting." *J Clin Densitom*. 2013;16(4):508-519. doi:10.1016/j.jocd.2013.08.018
+[^4]: Fearon K, Strasser F, Anker SD, et al. "Definition and classification of cancer cachexia: an international consensus." *Lancet Oncol*. 2011;12(5):489-495. doi:10.1016/S1470-2045(10)70218-7

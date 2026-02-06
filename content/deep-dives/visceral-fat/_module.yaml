@@ -2,9 +2,11 @@ id: visceral-fat
 title: "Understanding Visceral Fat"
 description: "Deep dive into visceral adipose tissue: measurement, health implications, and intervention strategies"
 track: core
+is_deep_dive: true
 parent_module: core
 estimated_minutes: 15
-required: false
+required_for_certificate: false
+sort_order: 12
 sections:
   - slug: 01-understanding-vat
     file: 01-understanding-vat.md

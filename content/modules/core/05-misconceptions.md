@@ -18,7 +18,7 @@ This is why two people at the same weight can look very different. The person wi
 - Do both simultaneously under certain conditions (body recomposition)
 
 :::note
-Body recomposition—losing fat while gaining muscle—is most achievable for beginners to resistance training, those returning after a break, or those with higher body fat levels.
+Body recomposition—losing fat while gaining muscle—is most achievable for beginners to resistance training, those returning after a break, or those with higher body fat levels (Barakat et al., 2020)[^2].
 :::
 
 ### "BMI tells you if you're healthy"
@@ -96,7 +96,7 @@ No. Although DEXA radiation is very low, BodySpec does not scan pregnant women a
 
 ### Is DEXA safe?
 
-Yes. DEXA uses very low radiation—less than a coast-to-coast flight or a day of natural background exposure. The diagnostic value far exceeds any theoretical risk for most people.
+Yes. A DEXA body composition scan delivers approximately 1-10 microsieverts (μSv) of radiation[^1]—less than a chest X-ray (~20-100 μSv), a coast-to-coast flight (~30-40 μSv), or a day of natural background exposure (~8 μSv). The diagnostic value far exceeds any theoretical risk for most people.
 
 People who should consult their doctor before scanning:
 - Those who have had significant recent radiation exposure
@@ -106,3 +106,8 @@ People who should consult their doctor before scanning:
 ## Summary
 
 Understanding body composition requires moving beyond simplistic measures like weight and BMI. DEXA provides the detailed, accurate data needed for meaningful health assessment and tracking—but only when properly interpreted with an understanding of its capabilities and limitations.
+
+## References
+
+[^1]: International Atomic Energy Agency. "Radiation protection of patients during DXA." IAEA RPOP. Available at: https://www.iaea.org/resources/rpop/health-professionals/other-specialities-and-imaging-modalities/dxa-bone-mineral-densitometry/patients
+[^2]: Barakat C, Pearson J, Escalante G, Campbell B, De Souza EO. "Body Recomposition: Can Trained Individuals Build Muscle and Lose Fat at the Same Time?" *Strength Cond J*. 2020;42(5):7-21.

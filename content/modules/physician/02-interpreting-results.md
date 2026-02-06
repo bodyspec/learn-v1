@@ -59,7 +59,7 @@ Don't dismiss metabolic risk based on "normal weight" appearance. VAT can be ele
 
 ### Diagnostic Criteria
 
-Using EWGSOP2 criteria:
+Using EWGSOP2 criteria (Cruz-Jentoft et al., 2019)[^1]:
 - **Appendicular lean mass (ALM) cut-points:**
   - Men: <7.0 kg/m² (ALM/height²)
   - Women: <5.5 kg/m² (ALM/height²)
@@ -108,7 +108,7 @@ When patients lose weight, ask: "What type of tissue did they lose?" This determ
 | Decade | Typical Changes |
 |--------|-----------------|
 | 30s | Lean mass peaks; fat may begin increasing |
-| 40s | 3-8% lean mass decline per decade begins |
+| 40s | 3-8% lean mass decline per decade begins[^2] |
 | 50s | Accelerated lean loss; VAT accumulation |
 | 60s+ | Sarcopenia risk increases significantly |
 
@@ -153,3 +153,9 @@ DEXA findings correlate with:
 | Rapid muscle loss | ↑ CRP, ↓ IGF-1 |
 
 Use DEXA to add context to lab results and track response to interventions.
+
+## References
+
+[^1]: Cruz-Jentoft AJ, Bahat G, Bauer J, et al. "Sarcopenia: revised European consensus on definition and diagnosis." *Age Ageing*. 2019;48(1):16-31. doi:10.1093/ageing/afy169
+[^2]: Volpi E, Nazemi R, Fujita S. "Muscle tissue changes with aging." *Curr Opin Clin Nutr Metab Care*. 2004;7(4):405-410. doi:10.1097/01.mco.0000134362.76653.b2
+[^3]: Neeland IJ, Ross R, Despres JP, et al. "Visceral and ectopic fat, atherosclerosis, and cardiometabolic disease: a position statement." *Lancet Diabetes Endocrinol*. 2019;7(9):715-725. doi:10.1016/S2213-8587(19)30084-1

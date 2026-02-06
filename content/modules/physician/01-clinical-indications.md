@@ -18,7 +18,7 @@ Body composition assessment via DEXA provides clinically actionable data for a w
 - Tracks response to interventions
 
 :::clinical
-VAT is an independent predictor of metabolic disease risk. Two patients with identical BMI can have vastly different VAT levels and correspondingly different risk profiles.
+VAT is an independent predictor of metabolic disease risk (Neeland et al., 2019)[^1]. Two patients with identical BMI can have vastly different VAT levels and correspondingly different risk profiles.
 :::
 
 ### Sarcopenia Screening
@@ -85,7 +85,7 @@ DEXA can track body composition changes related to:
 - GLP-1 agonists (composition of weight loss)
 
 :::note
-For patients on GLP-1 medications like semaglutide, DEXA can differentiate desired fat loss from concerning muscle loss—an important distinction for long-term outcomes.
+For patients on GLP-1 medications like semaglutide, DEXA can differentiate desired fat loss from concerning muscle loss—an important distinction for long-term outcomes (Wilding et al., 2021)[^2].
 :::
 
 ### Athletic/Performance Medicine
@@ -130,3 +130,8 @@ When recommending DEXA body composition:
 2. **Set expectations:** First scan establishes baseline; value increases with tracking
 3. **Consider frequency:** 3-6 months for active interventions; annually for maintenance
 4. **Integrate with care:** Connect results to specific health goals and interventions
+
+## References
+
+[^1]: Neeland IJ, Ross R, Despres JP, et al. "Visceral and ectopic fat, atherosclerosis, and cardiometabolic disease: a position statement." *Lancet Diabetes Endocrinol*. 2019;7(9):715-725. doi:10.1016/S2213-8587(19)30084-1
+[^2]: Wilding JPH, Batterham RL, Calanna S, et al. "Impact of semaglutide on body composition in adults with overweight or obesity: exploratory analysis of the STEP 1 study." *J Endocr Soc*. 2021;5(Suppl 1):A16. doi:10.1210/jendso/bvab048.031

@@ -32,7 +32,7 @@ Optimal scan frequency depends on goals, timeline, and stage of training. Strate
 - Avoid frequent scanning—can be discouraging
 
 :::note
-More frequent scanning rarely provides better data. Changes within 6-8 weeks are often within measurement precision and can mislead rather than inform.
+More frequent scanning rarely provides better data. Changes within 6-8 weeks are often within measurement precision and can mislead rather than inform (Shepherd et al., 2017)[^1].
 :::
 
 ## Timing Considerations
@@ -138,3 +138,8 @@ When daily metrics and DEXA diverge, trust the DEXA. It's more accurate and less
 ## Summary
 
 Strategic scan timing maximizes DEXA value. Space scans far enough apart to see meaningful changes, use consistent conditions for comparable results, and complement periodic DEXA with more frequent surrogate measures. Trends over multiple scans provide the most actionable insights.
+
+## References
+
+[^1]: Shepherd JA, Ng BK, Sommer MJ, Heymsfield SB. "Body composition by DXA." *Bone*. 2017;104:101-105. doi:10.1016/j.bone.2017.06.010
+[^2]: Toombs RJ, Ducher G, Shepherd JA, De Souza MJ. "The impact of recent technological advances on the trueness and precision of DXA to assess body composition." *Obesity*. 2012;20(1):30-39. doi:10.1038/oby.2011.211

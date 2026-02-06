@@ -8,7 +8,7 @@ Body composition directly impacts musculoskeletal health and function. Understan
 
 Increased fat mass affects the musculoskeletal system through:
 
-- **Mechanical load:** Every pound of body weight adds approximately 4 pounds of force through the knee during walking
+- **Mechanical load:** Every pound of body weight adds approximately 4 pounds of force through the knee during walking (Messier et al., 2005)[^1]
 - **Postural stress:** Central adiposity shifts the center of gravity forward
 - **Joint compression:** Increased axial loading on spinal structures
 
@@ -96,3 +96,7 @@ Serial DEXA provides objective measures of:
 - Symmetry improvements with rehabilitation
 
 This data complements functional assessments and patient-reported outcomes.
+
+## References
+
+[^1]: Messier SP, Gutekunst DJ, Davis C, DeVita P. "Weight loss reduces knee-joint loads in overweight and obese older adults with knee osteoarthritis." *Arthritis Rheum*. 2005;52(7):2026-2032. doi:10.1002/art.21139

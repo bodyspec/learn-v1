@@ -33,7 +33,7 @@ When a new client brings DEXA results, assess:
 - Progressive resistance training 3-4x/week
 - Focus on compound movements
 - Adequate recovery between sessions
-- Protein target: 1.6-2.2g/kg bodyweight
+- Protein target: 1.4-2.0g/kg bodyweight[^1]
 
 :::tip
 Clients with very low lean mass may initially gain weight while improving—their body fat percentage drops even as the scale goes up due to muscle gain.
@@ -53,7 +53,7 @@ Clients with very low lean mass may initially gain weight while improving—thei
 
 **Priority:** Simultaneously lose fat and gain muscle
 
-**Recomposition works best when:**
+**Recomposition works best when[^2]:**
 - Client is new to resistance training
 - Returning after layoff
 - Higher starting body fat (>25% men, >30% women)
@@ -93,6 +93,8 @@ While you can't spot-reduce fat, you can:
 | Intermediate | 0.5-1 lb lean mass |
 | Advanced | 0.25-0.5 lb lean mass |
 
+*These are general guidelines based on training experience; individual results vary.*
+
 ### Fat Loss Expectations
 
 Sustainable fat loss: 0.5-1% of body weight per week
@@ -114,10 +116,15 @@ DEXA helps set nutrition targets:
 
 | Client Goal | Calories | Protein Target |
 |-------------|----------|----------------|
-| Fat loss | Deficit | 2.0-2.4 g/kg lean mass |
-| Muscle gain | Surplus | 1.6-2.2 g/kg bodyweight |
+| Fat loss | Deficit | 2.3-3.1 g/kg lean mass[^1] |
+| Muscle gain | Surplus | 1.4-2.0 g/kg bodyweight[^1] |
 | Recomposition | Slight deficit to maintenance | 2.0+ g/kg |
 
 :::note
 Protein recommendations based on lean mass are more precise than bodyweight-based recommendations, especially for clients with higher body fat.
 :::
+
+## References
+
+[^1]: Jager R, Kerksick CM, Campbell BI, et al. "International Society of Sports Nutrition Position Stand: protein and exercise." *J Int Soc Sports Nutr*. 2017;14:20. doi:10.1186/s12970-017-0177-8
+[^2]: Barakat C, Pearson J, Escalante G, Campbell B, De Souza EO. "Body Recomposition: Can Trained Individuals Build Muscle and Lose Fat at the Same Time?" *Strength Cond J*. 2020;42(5):7-21.

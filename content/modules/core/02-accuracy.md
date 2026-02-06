@@ -12,7 +12,7 @@ DEXA excels in both areas when proper protocols are followed.
 
 ## DEXA Precision
 
-Under controlled conditions, DEXA shows excellent precision:
+Under controlled conditions, DEXA shows excellent precision[^1][^2]:
 
 | Measurement | Precision (CV%) |
 |-------------|-----------------|
@@ -48,7 +48,7 @@ Several factors can influence DEXA measurements:
 
 ## Comparing Methods
 
-DEXA significantly outperforms consumer-grade methods:
+DEXA significantly outperforms consumer-grade methods[^3][^4]:
 
 | Method | Typical Error |
 |--------|--------------|
@@ -63,13 +63,13 @@ BIA (bioelectrical impedance) measurements from home scales can vary by 5% or mo
 
 ## Validation Studies
 
-DEXA has been validated against:
+DEXA has been validated against[^1][^5]:
 
 - **4-compartment models** (the most accurate research method)
 - **MRI** for regional fat distribution
 - **CT scanning** for visceral fat assessment
 
-These studies consistently show DEXA provides clinically accurate measurements that correlate highly with gold-standard research methods.
+These studies consistently show DEXA provides clinically accurate measurements that correlate highly with gold-standard research methods. For example, DXA-derived visceral fat measurements correlate with CT at r² > 0.95[^5].
 
 ## Best Practices for Accurate Scans
 
@@ -84,3 +84,11 @@ To maximize measurement consistency:
 :::tip
 For tracking changes over time, consistency in scan conditions is more important than achieving "perfect" conditions. The key is comparing apples to apples.
 :::
+
+## References
+
+[^1]: Shepherd JA, Ng BK, Sommer MJ, Heymsfield SB. "Body composition by DXA." *Bone*. 2017;104:101-105. doi:10.1016/j.bone.2017.06.010
+[^2]: Toombs RJ, Ducher G, Shepherd JA, De Souza MJ. "The impact of recent technological advances on the trueness and precision of DXA to assess body composition." *Obesity*. 2012;20(1):30-39. doi:10.1038/oby.2011.211
+[^3]: Malavolti M, Mussi C, Poli M, et al. "Cross-calibration of eight-polar bioelectrical impedance analysis versus dual-energy X-ray absorptiometry for the assessment of total and appendicular body composition in healthy subjects aged 21-82 years." *Ann Hum Biol*. 2003;30(4):380-391.
+[^4]: Achamrah N, Colange G, Delay J, et al. "Comparison of body composition assessment by DXA and BIA according to the body mass index: A retrospective study on 3655 measures." *PLoS One*. 2018;13(7):e0200465. doi:10.1371/journal.pone.0200465
+[^5]: Kaul S, Rothney MP, Peters DM, et al. "Dual-energy X-ray absorptiometry for quantification of visceral fat." *Obesity*. 2012;20(6):1313-1318. doi:10.1038/oby.2011.393

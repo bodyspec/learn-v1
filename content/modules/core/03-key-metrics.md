@@ -23,7 +23,7 @@ The percentage of total body weight that is fat tissue.
 | Average | 18-24% | 25-31% |
 | Obese | 25%+ | 32%+ |
 
-<!-- CITATION NEEDED: Source for body fat percentage reference ranges -->
+*Source: Adapted from ACSM's Guidelines for Exercise Testing and Prescription and ACE body fat classification ranges.*[^1]
 
 :::note
 Women naturally carry more essential fat due to reproductive functions. This is biological, not a sign of poor health.
@@ -82,7 +82,7 @@ The ratio of android to gynoid fat percentages.
 Fat stored deep in the abdominal cavity, surrounding the organs. Also called "visceral fat" or "organ fat."
 
 ### Why VAT Matters
-Visceral fat is metabolically active and produces inflammatory compounds. High VAT is independently associated with:
+Visceral fat is metabolically active and produces inflammatory compounds. High VAT is independently associated with[^2]:
 - Cardiovascular disease
 - Type 2 diabetes
 - Metabolic syndrome
@@ -111,7 +111,7 @@ VAT can be elevated even in individuals with normal BMI or body fat percentage�
 | Moderate | 100-160 cm² |
 | High | >160 cm² |
 
-<!-- CITATION NEEDED: Source for VAT area risk thresholds -->
+*The 100 cm² threshold is widely used in clinical research as a cut-point for elevated metabolic risk.*[^3][^4]
 
 ## Bone Metrics
 
@@ -136,3 +136,10 @@ No single metric tells the complete story. The most meaningful interpretation co
 5. **Regional data** for symmetry and specific concerns
 
 Changes over time are often more valuable than any single snapshot measurement.
+
+## References
+
+[^1]: American College of Sports Medicine. *ACSM's Guidelines for Exercise Testing and Prescription*. 11th ed. Wolters Kluwer; 2022.
+[^2]: Neeland IJ, Ross R, Despres JP, et al. "Visceral and ectopic fat, atherosclerosis, and cardiometabolic disease: a position statement." *Lancet Diabetes Endocrinol*. 2019;7(9):715-725. doi:10.1016/S2213-8587(19)30084-1
+[^3]: Kaul S, Rothney MP, Peters DM, et al. "Dual-energy X-ray absorptiometry for quantification of visceral fat." *Obesity*. 2012;20(6):1313-1318. doi:10.1038/oby.2011.393
+[^4]: Bennett KA, et al. "Evaluation of visceral adipose tissue thresholds for elevated metabolic syndrome risk across diverse populations: A systematic review." *Obes Rev*. 2024;25(8):e13767. doi:10.1111/obr.13767
