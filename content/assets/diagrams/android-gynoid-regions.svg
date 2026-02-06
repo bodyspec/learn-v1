@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" font-family="system-ui, -apple-system, sans-serif">
+  <rect width="600" height="800" fill="#F8F8F8"/>
+
+  <!-- Title -->
+  <text x="300" y="40" text-anchor="middle" font-size="22" font-weight="700" fill="#1C3133">Android &amp; Gynoid Measurement Regions</text>
+
+  <!-- Body outline (simplified front-facing) -->
+  <!-- Head -->
+  <circle cx="300" cy="110" r="35" fill="none" stroke="#1C3133" stroke-width="2.5"/>
+  <!-- Neck -->
+  <rect x="287" y="145" width="26" height="20" fill="none" stroke="#1C3133" stroke-width="2"/>
+  <!-- Shoulders and torso -->
+  <path d="M 220 165 L 200 180 L 195 280 L 200 350 L 220 400 L 250 430 L 250 540 L 220 650 L 225 720
+           M 380 165 L 400 180 L 405 280 L 400 350 L 380 400 L 350 430 L 350 540 L 380 650 L 375 720"
+        fill="none" stroke="#1C3133" stroke-width="2.5"/>
+  <!-- Connect shoulders -->
+  <path d="M 220 165 Q 300 155 380 165" fill="none" stroke="#1C3133" stroke-width="2.5"/>
+  <!-- Arms -->
+  <path d="M 200 180 L 155 310 L 145 400 M 400 180 L 445 310 L 455 400" fill="none" stroke="#1C3133" stroke-width="2.5"/>
+  <!-- Connect hips -->
+  <path d="M 250 430 Q 300 445 350 430" fill="none" stroke="#1C3133" stroke-width="2.5"/>
+  <!-- Inner leg lines -->
+  <line x1="270" y1="430" x2="265" y2="720" stroke="#1C3133" stroke-width="2"/>
+  <line x1="330" y1="430" x2="335" y2="720" stroke="#1C3133" stroke-width="2"/>
+
+  <!-- Android Region (belly area: ribs to pelvis) -->
+  <rect x="200" y="230" width="200" height="110" rx="10" fill="#E87D7D" fill-opacity="0.35" stroke="#E87D7D" stroke-width="2.5"/>
+
+  <!-- Gynoid Region (hips to mid-thigh) -->
+  <rect x="195" y="380" width="210" height="130" rx="10" fill="#46C9F7" fill-opacity="0.3" stroke="#46C9F7" stroke-width="2.5"/>
+
+  <!-- Android label -->
+  <line x1="400" y1="280" x2="470" y2="250" stroke="#E87D7D" stroke-width="1.5"/>
+  <text x="475" y="240" font-size="16" font-weight="600" fill="#E87D7D">Android Region</text>
+  <text x="475" y="258" font-size="12" fill="#7C8D90">Abdominal / belly fat</text>
+  <text x="475" y="274" font-size="11" fill="#7C8D90">Between ribs and top of pelvis</text>
+
+  <!-- Gynoid label -->
+  <line x1="405" y1="445" x2="470" y2="430" stroke="#46C9F7" stroke-width="1.5"/>
+  <text x="475" y="425" font-size="16" font-weight="600" fill="#46C9F7">Gynoid Region</text>
+  <text x="475" y="443" font-size="12" fill="#7C8D90">Hip / thigh fat</text>
+  <text x="475" y="459" font-size="11" fill="#7C8D90">Below pelvis to mid-thigh</text>
+
+  <!-- Boundary markers -->
+  <line x1="185" y1="230" x2="415" y2="230" stroke="#E87D7D" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="420" y="234" font-size="10" fill="#E87D7D">Ribs</text>
+  <line x1="185" y1="340" x2="415" y2="340" stroke="#E87D7D" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="420" y="344" font-size="10" fill="#E87D7D">Iliac crest</text>
+
+  <!-- A/G Ratio box -->
+  <rect x="100" y="730" width="400" height="55" rx="8" fill="#E5F6EB" stroke="#69D994" stroke-width="1.5"/>
+  <text x="300" y="752" text-anchor="middle" font-size="14" font-weight="600" fill="#1C3133">A/G Ratio = Android Fat % / Gynoid Fat %</text>
+  <text x="210" y="773" text-anchor="middle" font-size="12" fill="#69D994">&lt;1.0 = Lower risk</text>
+  <text x="390" y="773" text-anchor="middle" font-size="12" fill="#E87D7D">&gt;1.0 = Higher risk</text>
+
+  <!-- Placeholder note -->
+  <text x="300" y="798" text-anchor="middle" font-size="10" fill="#9DDEAD">Placeholder -- see IMAGE_SPECS.md for final design</text>
+</svg>

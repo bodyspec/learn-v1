@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" font-family="system-ui, -apple-system, sans-serif">
+  <rect width="800" height="600" fill="#F8F8F8"/>
+
+  <!-- Title -->
+  <text x="400" y="40" text-anchor="middle" font-size="22" font-weight="700" fill="#1C3133">How Dual-Energy X-Ray Absorptiometry Works</text>
+
+  <!-- X-Ray Source -->
+  <rect x="40" y="180" width="100" height="140" rx="12" fill="#1C3133"/>
+  <text x="90" y="240" text-anchor="middle" font-size="13" font-weight="600" fill="#FFFFFF">X-Ray</text>
+  <text x="90" y="258" text-anchor="middle" font-size="13" font-weight="600" fill="#FFFFFF">Source</text>
+  <circle cx="90" cy="290" r="15" fill="none" stroke="#69D994" stroke-width="2"/>
+  <line x1="80" y1="290" x2="100" y2="290" stroke="#69D994" stroke-width="2"/>
+  <line x1="90" y1="280" x2="90" y2="300" stroke="#69D994" stroke-width="2"/>
+
+  <!-- High energy beam -->
+  <line x1="140" y1="230" x2="310" y2="230" stroke="#1C3133" stroke-width="3"/>
+  <text x="225" y="220" text-anchor="middle" font-size="11" font-weight="600" fill="#1C3133">High Energy</text>
+
+  <!-- Low energy beam -->
+  <line x1="140" y1="270" x2="310" y2="270" stroke="#69D994" stroke-width="3" stroke-dasharray="8,4"/>
+  <text x="225" y="296" text-anchor="middle" font-size="11" font-weight="600" fill="#69D994">Low Energy</text>
+
+  <!-- Body cross-section -->
+  <ellipse cx="420" cy="250" rx="100" ry="120" fill="#E87D7D" fill-opacity="0.3" stroke="#1C3133" stroke-width="2"/>
+  <text x="420" y="150" text-anchor="middle" font-size="12" fill="#7C8D90">Subcutaneous Fat</text>
+
+  <ellipse cx="420" cy="250" rx="70" ry="90" fill="#69D994" fill-opacity="0.4" stroke="#1C3133" stroke-width="1.5"/>
+  <text x="340" y="190" text-anchor="end" font-size="12" fill="#1C3133">Lean Tissue</text>
+  <line x1="343" y1="188" x2="360" y2="210" stroke="#7C8D90" stroke-width="1"/>
+
+  <ellipse cx="420" cy="250" rx="25" ry="30" fill="#1C3133" stroke="#1C3133" stroke-width="2"/>
+  <text x="420" y="254" text-anchor="middle" font-size="11" font-weight="600" fill="#FFFFFF">Bone</text>
+
+  <!-- Attenuated beams (exiting body) -->
+  <line x1="520" y1="230" x2="620" y2="230" stroke="#1C3133" stroke-width="1.5" opacity="0.5"/>
+  <line x1="520" y1="270" x2="620" y2="270" stroke="#69D994" stroke-width="1.5" stroke-dasharray="8,4" opacity="0.5"/>
+  <text x="570" y="220" text-anchor="middle" font-size="10" fill="#7C8D90">Attenuated beams</text>
+
+  <!-- Detector -->
+  <rect x="630" y="180" width="100" height="140" rx="12" fill="#1C3133" fill-opacity="0.8"/>
+  <text x="680" y="245" text-anchor="middle" font-size="14" font-weight="600" fill="#FFFFFF">Detector</text>
+  <text x="680" y="265" text-anchor="middle" font-size="11" fill="#9DDEAD">Measures</text>
+  <text x="680" y="280" text-anchor="middle" font-size="11" fill="#9DDEAD">absorption</text>
+
+  <!-- Absorption scale (bottom) -->
+  <text x="400" y="420" text-anchor="middle" font-size="16" font-weight="600" fill="#1C3133">X-Ray Absorption by Tissue Type</text>
+
+  <!-- Bone bar -->
+  <rect x="200" y="440" width="250" height="30" rx="4" fill="#1C3133"/>
+  <text x="190" y="460" text-anchor="end" font-size="13" font-weight="500" fill="#1C3133">Bone</text>
+  <text x="460" y="460" font-size="12" fill="#7C8D90">Highest absorption</text>
+
+  <!-- Lean bar -->
+  <rect x="200" y="480" width="160" height="30" rx="4" fill="#69D994"/>
+  <text x="190" y="500" text-anchor="end" font-size="13" font-weight="500" fill="#1C3133">Lean</text>
+  <text x="370" y="500" font-size="12" fill="#7C8D90">Moderate absorption</text>
+
+  <!-- Fat bar -->
+  <rect x="200" y="520" width="80" height="30" rx="4" fill="#E87D7D"/>
+  <text x="190" y="540" text-anchor="end" font-size="13" font-weight="500" fill="#1C3133">Fat</text>
+  <text x="290" y="540" font-size="12" fill="#7C8D90">Lowest absorption</text>
+
+  <!-- Placeholder note -->
+  <text x="400" y="585" text-anchor="middle" font-size="11" fill="#9DDEAD">Placeholder -- see IMAGE_SPECS.md for final design specifications</text>
+</svg>
