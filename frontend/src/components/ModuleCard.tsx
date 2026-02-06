@@ -13,7 +13,7 @@ export default function ModuleCard({ module, isComplete, sectionsComplete = 0 }:
   const progress = totalSections > 0 ? (sectionsComplete / totalSections) * 100 : 0
 
   return (
-    <Link to={`/module/${module.id}`} className="card-hover block p-6">
+    <Link to={`/module/${module.id}`} className="card-hover block p-6 no-underline hover:no-underline group">
       <div className="flex items-start justify-between">
         <div className="flex-1">
           <div className="flex items-center gap-2">
@@ -22,10 +22,10 @@ export default function ModuleCard({ module, isComplete, sectionsComplete = 0 }:
             ) : (
               <Circle className="h-5 w-5 text-gray-300 flex-shrink-0" />
             )}
-            <h3 className="text-lg font-semibold text-gray-900">{module.title}</h3>
+            <h3 className="text-lg font-semibold text-gray-900 group-hover:underline">{module.title}</h3>
           </div>
           {module.description && (
-            <p className="mt-2 text-sm text-gray-600">{module.description}</p>
+            <p className="mt-2 text-sm text-gray-600 group-hover:underline">{module.description}</p>
           )}
           <div className="mt-4 flex items-center gap-4 text-sm text-gray-500">
             <span className="flex items-center gap-1">
@@ -45,7 +45,7 @@ export default function ModuleCard({ module, isComplete, sectionsComplete = 0 }:
         <div className="mt-4">
           <div className="h-1.5 bg-gray-200 rounded-full overflow-hidden">
             <div
-              className="h-full bg-primary-500 rounded-full transition-all"
+              className="h-full bg-salad-100 rounded-full transition-all"
               style={{ width: `${progress}%` }}
             />
           </div>

@@ -19,7 +19,7 @@ export default function ProgressIndicator({
     <div className="w-full">
       <div className={`bg-gray-200 rounded-full overflow-hidden ${sizeClasses[size]}`}>
         <div
-          className="h-full bg-primary-500 rounded-full transition-all duration-300"
+          className="h-full bg-salad-100 rounded-full transition-all duration-300"
           style={{ width: `${Math.min(100, Math.max(0, progress))}%` }}
         />
       </div>

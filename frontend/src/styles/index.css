@@ -92,3 +92,20 @@
 .callout-clinical {
   @apply bg-salad-60 border-bs-dark text-bs-dark;
 }
+
+/* Footnote styles for markdown content */
+.footnotes {
+  @apply mt-8 pt-4 border-t border-bs-dark15 text-sm text-bs-dark55;
+}
+
+.footnotes ol {
+  @apply pl-4 space-y-1;
+}
+
+.footnotes li {
+  @apply text-sm leading-relaxed;
+}
+
+.footnotes p {
+  @apply text-sm leading-relaxed my-0;
+}
