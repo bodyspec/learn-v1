@@ -11,6 +11,14 @@ GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
 NC='\033[0m'
 
+# Parse flags
+RUN_TESTS=true
+for arg in "$@"; do
+    case "$arg" in
+        --no-tests) RUN_TESTS=false ;;
+    esac
+done
+
 echo -e "${GREEN}Running linters...${NC}"
 
 # Backend linting
@@ -51,3 +59,21 @@ echo -e "\n${YELLOW}Running TypeScript type check...${NC}"
 npx tsc --noEmit
 
 echo -e "\n${GREEN}All linters passed!${NC}"
+
+# Run tests unless --no-tests flag is passed
+if [ "$RUN_TESTS" = true ]; then
+    echo -e "\n${YELLOW}=== Running Tests ===${NC}"
+
+    echo -e "\n${YELLOW}Running backend tests...${NC}"
+    cd "${BACKEND_DIR}"
+    source .venv/bin/activate
+    python -m pytest tests/ -v
+
+    echo -e "\n${YELLOW}Running frontend tests...${NC}"
+    cd "${FRONTEND_DIR}"
+    npx vitest run --project unit
+
+    echo -e "\n${GREEN}All linters and tests passed!${NC}"
+else
+    echo -e "${YELLOW}Skipping tests (--no-tests flag)${NC}"
+fi

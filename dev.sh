@@ -65,6 +65,23 @@ cleanup() {
 
 trap cleanup SIGINT SIGTERM
 
+# Subcommands
+case "${1:-}" in
+    storybook)
+        echo -e "${GREEN}Starting Storybook...${NC}"
+        cd "${FRONTEND_DIR}"
+        npm run storybook
+        exit 0
+        ;;
+    "")
+        ;; # default: start dev servers
+    *)
+        echo -e "${RED}Unknown command: $1${NC}"
+        echo "Usage: ./dev.sh [storybook]"
+        exit 1
+        ;;
+esac
+
 # Start backend
 echo -e "${GREEN}Starting backend on port ${BACKEND_PORT}...${NC}"
 (
