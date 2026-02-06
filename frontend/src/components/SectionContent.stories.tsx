@@ -102,12 +102,32 @@ export const WithImages: Story = {
 
 A typical DEXA report includes several key visualizations and data points.
 
-![DEXA scan example](https://via.placeholder.com/600x300?text=DEXA+Scan+Image)
+![DEXA scan example](/placeholder-scan.svg)
 
 The image above shows a whole-body DEXA scan with regional analysis.
 
 ## Reading the Report
 
 Each region of interest is color-coded for easy identification.`,
+  },
+}
+
+export const WithFootnotes: Story = {
+  args: {
+    content: `# Understanding T-Scores
+
+A T-score compares your bone density to that of a healthy 30-year-old adult[^1]. The World Health Organization defines osteoporosis based on T-score thresholds[^2].
+
+## Classification
+
+- **Normal**: T-score of -1.0 or above
+- **Osteopenia**: T-score between -1.0 and -2.5
+- **Osteoporosis**: T-score of -2.5 or below
+
+Serial measurements should be compared using the least significant change (LSC) to determine if a real change has occurred[^3].
+
+[^1]: T-scores use the young adult reference population from the NHANES III database.
+[^2]: WHO Technical Report Series, No. 921 (2003).
+[^3]: The LSC is typically 2-3% for total body composition and 3-5% for regional measurements.`,
   },
 }

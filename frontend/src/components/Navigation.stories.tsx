@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { MemoryRouter } from 'react-router-dom'
-import { Menu, X, User, LogOut, LayoutDashboard, Award, BookOpen } from 'lucide-react'
-import React, { useState } from 'react'
+import { Menu, X, User, LogOut, LayoutDashboard, Award } from 'lucide-react'
+import { useState } from 'react'
 
 /**
  * Navigation component story.
@@ -11,9 +10,9 @@ import React, { useState } from 'react'
  * without requiring the auth provider.
  */
 
-function NavigationPreview({ isAuthenticated = false, userName = 'Dr. Sarah Smith' }) {
+function NavigationPreview({ isAuthenticated = false, userName = 'Dr. Sarah Smith', defaultUserMenuOpen = false }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [userMenuOpen, setUserMenuOpen] = useState(false)
+  const [userMenuOpen, setUserMenuOpen] = useState(defaultUserMenuOpen)
 
   return (
     <nav className="bg-white border-b border-bs-dark15">
@@ -113,6 +112,7 @@ const meta: Meta<typeof NavigationPreview> = {
   argTypes: {
     isAuthenticated: { control: 'boolean' },
     userName: { control: 'text' },
+    defaultUserMenuOpen: { control: 'boolean' },
   },
 }
 
@@ -136,5 +136,6 @@ export const LoggedInMenuOpen: Story = {
   args: {
     isAuthenticated: true,
     userName: 'Dr. Sarah Smith',
+    defaultUserMenuOpen: true,
   },
 }
