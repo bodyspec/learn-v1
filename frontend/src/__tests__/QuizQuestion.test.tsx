@@ -71,7 +71,7 @@ describe('QuizQuestion', () => {
       />
     )
     const buttons = container.querySelectorAll('button')
-    expect(buttons[0].className).toContain('border-primary-500')
+    expect(buttons[0].className).toContain('border-gray-400')
   })
 
   it('disables options in result mode', () => {

@@ -1,4 +1,4 @@
-import { CheckCircle } from 'lucide-react'
+import { Check, Circle, X } from 'lucide-react'
 import type { Question } from '@/types'
 
 interface QuizQuestionProps {
@@ -33,12 +33,12 @@ export default function QuizQuestion({
           const isCorrect = showResult && index === correctOption
           const isWrong = showResult && isSelected && index !== correctOption
 
-          let borderColor = 'border-gray-200 hover:border-primary-300'
+          let borderColor = 'border-gray-200 hover:border-salad-80'
           let bgColor = 'bg-white'
 
           if (isSelected && !showResult) {
-            borderColor = 'border-primary-500'
-            bgColor = 'bg-primary-50'
+            borderColor = 'border-gray-400'
+            bgColor = 'bg-gray-50'
           } else if (isCorrect) {
             borderColor = 'border-green-500'
             bgColor = 'bg-green-50'
@@ -57,12 +57,18 @@ export default function QuizQuestion({
               <div className="flex items-start gap-3">
                 <div
                   className={`w-6 h-6 rounded-full border-2 flex items-center justify-center flex-shrink-0 mt-0.5 ${
-                    isSelected
-                      ? 'border-primary-500 bg-primary-500'
-                      : 'border-gray-300'
+                    isCorrect
+                      ? 'border-green-500 bg-green-500'
+                      : isWrong
+                        ? 'border-red-500 bg-red-500'
+                        : isSelected
+                          ? 'border-gray-400 bg-gray-400'
+                          : 'border-gray-300'
                   }`}
                 >
-                  {isSelected && <CheckCircle className="w-4 h-4 text-white" />}
+                  {isCorrect && <Check className="w-4 h-4 text-white" />}
+                  {isWrong && <X className="w-4 h-4 text-white" />}
+                  {isSelected && !showResult && <Circle className="w-3 h-3 text-white fill-white" />}
                 </div>
                 <span className="text-gray-700">{option.text}</span>
               </div>
