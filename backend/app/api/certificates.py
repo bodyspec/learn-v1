@@ -17,6 +17,7 @@ from app.services.certificate_service import (
     create_certificate,
     get_certificate_by_uid,
     get_user_certificates,
+    has_active_certificate,
     verify_certificate,
 )
 from app.services.pdf_generator import generate_certificate_pdf
@@ -67,6 +68,13 @@ async def request_certificate(
                     'quizzes': missing_quizzes,
                 },
             },
+        )
+
+    # Check for existing active certificate
+    if await has_active_certificate(db, current_user.id, request.track):
+        raise HTTPException(
+            status_code=status.HTTP_409_CONFLICT,
+            detail='An active certificate already exists for this track.',
         )
 
     # Get recipient name

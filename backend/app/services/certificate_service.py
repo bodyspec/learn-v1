@@ -1,4 +1,4 @@
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from uuid import UUID
 
 from sqlalchemy import and_, select
@@ -6,6 +6,9 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.models.certificate import Certificate
 from app.schemas.certificate import CertificateVerifyResponse
+
+# Certificates expire after 2 years
+CERTIFICATE_VALIDITY_YEARS = 2
 
 TRACK_INFO = {
     'physician': {
@@ -21,6 +24,26 @@ TRACK_INFO = {
         'description': 'using body composition analysis for fitness programming',
     },
 }
+
+
+async def has_active_certificate(
+    db: AsyncSession,
+    user_id: UUID,
+    track: str,
+) -> bool:
+    """Check if user already has an active (non-revoked, non-expired) certificate for a track."""
+    now = datetime.now(timezone.utc)
+    result = await db.execute(
+        select(Certificate).where(
+            and_(
+                Certificate.user_id == user_id,
+                Certificate.track == track,
+                Certificate.revoked_at == None,  # noqa: E711
+                (Certificate.expires_at == None) | (Certificate.expires_at > now),  # noqa: E711
+            )
+        ).limit(1)
+    )
+    return result.scalar_one_or_none() is not None
 
 
 async def create_certificate(
@@ -43,12 +66,16 @@ async def create_certificate(
             break
         certificate_uid = Certificate.generate_uid()
 
+    now = datetime.now(timezone.utc)
+    expires_at = now + timedelta(days=365 * CERTIFICATE_VALIDITY_YEARS)
+
     certificate = Certificate(
         user_id=user_id,
         track=track,
         certificate_uid=certificate_uid,
         recipient_name=recipient_name,
         recipient_email=recipient_email,
+        expires_at=expires_at,
     )
     db.add(certificate)
     await db.commit()
@@ -119,3 +146,20 @@ def verify_certificate(certificate: Certificate | None) -> CertificateVerifyResp
         issued_at=certificate.issued_at,
         expires_at=certificate.expires_at,
     )
+
+
+async def revoke_certificate(
+    db: AsyncSession,
+    certificate_uid: str,
+    reason: str,
+) -> Certificate | None:
+    """Revoke a certificate by its UID."""
+    certificate = await get_certificate_by_uid(db, certificate_uid)
+    if certificate is None:
+        return None
+
+    certificate.revoked_at = datetime.now(timezone.utc)
+    certificate.revocation_reason = reason
+    await db.commit()
+    await db.refresh(certificate)
+    return certificate

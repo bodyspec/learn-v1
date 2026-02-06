@@ -2,6 +2,8 @@ from app.services.certificate_service import (
     create_certificate,
     get_certificate_by_uid,
     get_user_certificates,
+    has_active_certificate,
+    revoke_certificate,
 )
 from app.services.pdf_generator import generate_certificate_pdf
 from app.services.progress_service import (
@@ -30,5 +32,7 @@ __all__ = [
     'create_certificate',
     'get_user_certificates',
     'get_certificate_by_uid',
+    'has_active_certificate',
+    'revoke_certificate',
     'generate_certificate_pdf',
 ]

@@ -2,7 +2,7 @@ import uuid
 from datetime import datetime
 from typing import TYPE_CHECKING
 
-from sqlalchemy import Boolean, DateTime, ForeignKey, Integer, String
+from sqlalchemy import Boolean, DateTime, ForeignKey, Index, Integer, String
 from sqlalchemy.dialects.postgresql import JSONB, UUID
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 from sqlalchemy.sql import func
@@ -52,3 +52,8 @@ class QuizAttempt(Base):
 
     # Relationships
     user: Mapped['User'] = relationship('User', back_populates='quiz_attempts')
+
+    __table_args__ = (
+        Index('idx_quiz_user_module', 'user_id', 'module_id'),
+        Index('idx_quiz_user_module_passed', 'user_id', 'module_id', 'passed'),
+    )

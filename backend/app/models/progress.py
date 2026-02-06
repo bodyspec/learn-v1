@@ -2,7 +2,7 @@ import uuid
 from datetime import datetime
 from typing import TYPE_CHECKING
 
-from sqlalchemy import DateTime, ForeignKey, String, UniqueConstraint
+from sqlalchemy import DateTime, ForeignKey, Index, String, UniqueConstraint
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 from sqlalchemy.sql import func
@@ -46,4 +46,5 @@ class SectionProgress(Base):
 
     __table_args__ = (
         UniqueConstraint('user_id', 'module_id', 'section_slug', name='unique_user_section'),
+        Index('idx_progress_user_module', 'user_id', 'module_id'),
     )
