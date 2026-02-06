@@ -32,7 +32,7 @@ This distinction is why total body fat percentage alone can be misleading. Two p
 
 BMI (Body Mass Index) is a poor proxy for metabolic risk because it cannot distinguish between fat and lean mass, let alone between visceral and subcutaneous fat:
 
-<!-- IMAGE: ../assets/diagrams/dexa-vs-bmi.svg showing same BMI, different VAT -->
+![Same BMI, different body composition](/content/assets/diagrams/dexa-vs-bmi.svg)
 
 - Studies show VAT can vary by 3-5 fold among individuals with the same BMI
 - A BMI of 25 can represent a muscular, metabolically healthy individual or a sedentary person with high VAT

@@ -1,8 +1,5 @@
 # Reading a BodySpec Report
 
-<!-- IMAGE: assets/report-samples/report-overview.png -->
-<!-- TODO: Full first page of a BodySpec report -->
-
 BodySpec reports are designed to present complex data in an accessible format. This section walks through each component of the report.
 
 ## Report Overview
@@ -32,9 +29,6 @@ Focus on body fat % and lean mass rather than total weight. The goal is usually 
 
 ## Body Composition Breakdown
 
-<!-- IMAGE: assets/report-samples/body-composition-section.png -->
-<!-- TODO: Screenshot of body composition breakdown from report -->
-
 This section shows the precise weights of each tissue type:
 
 | Tissue | Weight |
@@ -47,9 +41,6 @@ This section shows the precise weights of each tissue type:
 The visualization often includes a pie chart showing the proportion of each tissue type.
 
 ## Regional Analysis
-
-<!-- IMAGE: assets/report-samples/regional-analysis.png -->
-<!-- TODO: Screenshot of regional analysis section from report -->
 
 The regional breakdown divides the body into:
 
@@ -81,9 +72,6 @@ Significant asymmetries may indicate:
 
 ## Visceral Fat Section
 
-<!-- IMAGE: assets/report-samples/vat-section.png -->
-<!-- TODO: Screenshot of VAT measurement section from report -->
-
 The VAT section includes:
 
 - **VAT Mass** in grams
@@ -100,9 +88,6 @@ The VAT section includes:
 | >160 cm² | High | Recommend intervention |
 
 ## Trend Charts
-
-<!-- IMAGE: assets/report-samples/trend-chart.png -->
-<!-- TODO: Screenshot of multi-scan trend comparison -->
 
 For clients with multiple scans, trend charts show:
 

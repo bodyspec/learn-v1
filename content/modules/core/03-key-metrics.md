@@ -11,9 +11,9 @@ The percentage of total body weight that is fat tissue.
 
 **Healthy ranges:**
 
-<!-- IMAGE: assets/diagrams/body-fat-ranges-male.svg -->
-<!-- IMAGE: assets/diagrams/body-fat-ranges-female.svg -->
-<!-- TODO: Visual charts showing body fat categories for men and women -->
+![Body fat percentage ranges for men](/content/assets/diagrams/body-fat-ranges-male.svg)
+
+![Body fat percentage ranges for women](/content/assets/diagrams/body-fat-ranges-female.svg)
 
 | Category | Men | Women |
 |----------|-----|-------|
@@ -49,8 +49,7 @@ FFMI can help identify sarcopenia risk and assess whether someone is "overfat" d
 
 ## Regional Metrics
 
-<!-- IMAGE: assets/diagrams/android-gynoid-regions.svg -->
-<!-- TODO: Body outline showing android and gynoid measurement regions -->
+![Android and gynoid measurement regions](/content/assets/diagrams/android-gynoid-regions.svg)
 
 ### Android Fat (Belly Region)
 Fat stored in the abdominal region, measured between the ribs and top of the pelvis.
@@ -75,8 +74,7 @@ The ratio of android to gynoid fat percentages.
 
 ## Visceral Adipose Tissue (VAT)
 
-<!-- IMAGE: assets/diagrams/vat-sat-location.svg -->
-<!-- TODO: Diagram showing visceral vs subcutaneous fat locations -->
+![Visceral vs subcutaneous fat locations](/content/assets/diagrams/vat-sat-location.svg)
 
 ### What is VAT?
 Fat stored deep in the abdominal cavity, surrounding the organs. Also called "visceral fat" or "organ fat."
@@ -102,8 +100,7 @@ VAT can be elevated even in individuals with normal BMI or body fat percentageâ€
 
 ### VAT Thresholds
 
-<!-- IMAGE: assets/diagrams/vat-risk-zones.svg -->
-<!-- TODO: Visual showing VAT threshold zones with risk levels -->
+![VAT risk threshold zones](/content/assets/diagrams/vat-risk-zones.svg)
 
 | Risk Level | VAT Area |
 |------------|----------|

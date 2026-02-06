@@ -4,6 +4,7 @@ WORKDIR /frontend
 COPY frontend/package*.json ./
 RUN npm ci
 COPY frontend/ ./
+COPY content/assets ../content/assets
 ARG VITE_APP_NAME=BodySpec\ Learn
 ARG VITE_APP_VERSION=1.0.0
 ARG VITE_KEYCLOAK_URL

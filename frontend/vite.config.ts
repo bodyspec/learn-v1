@@ -1,16 +1,51 @@
 /// <reference types="vitest/config" />
 import react from '@vitejs/plugin-react';
 import yaml from '@rollup/plugin-yaml';
+import fs from 'node:fs';
 import path from 'path';
-import { defineConfig } from 'vite';
+import { defineConfig, type Plugin } from 'vite';
 import { fileURLToPath } from 'node:url';
 import { storybookTest } from '@storybook/addon-vitest/vitest-plugin';
 import { playwright } from '@vitest/browser-playwright';
 const dirname = typeof __dirname !== 'undefined' ? __dirname : path.dirname(fileURLToPath(import.meta.url));
 
+const contentAssetsDir = path.resolve(dirname, '../content/assets');
+
+function serveContentAssets(): Plugin {
+  return {
+    name: 'serve-content-assets',
+    configureServer(server) {
+      server.middlewares.use('/content/assets', (req, res, next) => {
+        const filePath = path.join(contentAssetsDir, decodeURIComponent(req.url || ''));
+        if (fs.existsSync(filePath) && fs.statSync(filePath).isFile()) {
+          const ext = path.extname(filePath).toLowerCase();
+          const mimeTypes: Record<string, string> = {
+            '.svg': 'image/svg+xml',
+            '.png': 'image/png',
+            '.jpg': 'image/jpeg',
+            '.jpeg': 'image/jpeg',
+            '.webp': 'image/webp',
+            '.gif': 'image/gif',
+          };
+          res.setHeader('Content-Type', mimeTypes[ext] || 'application/octet-stream');
+          fs.createReadStream(filePath).pipe(res);
+        } else {
+          next();
+        }
+      });
+    },
+    closeBundle() {
+      const outDir = path.resolve(dirname, 'dist/content/assets');
+      if (fs.existsSync(contentAssetsDir)) {
+        fs.cpSync(contentAssetsDir, outDir, { recursive: true });
+      }
+    },
+  };
+}
+
 // More info at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon
 export default defineConfig({
-  plugins: [react(), yaml()],
+  plugins: [react(), yaml(), serveContentAssets()],
   envDir: '..',
   resolve: {
     alias: {
