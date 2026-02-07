@@ -9,7 +9,9 @@ export default function ModuleList() {
   const { track } = useParams<{ track: Track }>()
   const { progress, isLoading } = useProgress()
 
-  if (!track) {
+  const validTracks: Track[] = ['physician', 'chiropractor', 'trainer']
+
+  if (!track || !validTracks.includes(track as Track)) {
     return <NotFound title="Track Not Found" />
   }
 
