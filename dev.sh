@@ -58,6 +58,52 @@ cleanup() {
     exit 0
 }
 
+# E2E subcommand: start servers and run Playwright
+cmd_e2e() {
+    kill_existing
+
+    BACKEND_PORT=$(find_open_port 8000)
+    FRONTEND_PORT=$(find_open_port $((BACKEND_PORT + 1000)))
+
+    echo -e "${YELLOW}Backend port: ${BACKEND_PORT}${NC}"
+    echo -e "${YELLOW}Frontend port: ${FRONTEND_PORT}${NC}"
+
+    trap cleanup SIGINT SIGTERM
+
+    # Start backend (no --reload for e2e)
+    echo -e "${GREEN}Starting backend on port ${BACKEND_PORT}...${NC}"
+    (cd "${BACKEND_DIR}" && source .venv/bin/activate && \
+        python -m uvicorn app.main:app --host 0.0.0.0 --port ${BACKEND_PORT}) &
+    BACKEND_PID=$!
+
+    # Start frontend
+    export VITE_BACKEND_PORT=${BACKEND_PORT}
+    echo -e "${GREEN}Starting frontend on port ${FRONTEND_PORT}...${NC}"
+    (cd "${FRONTEND_DIR}" && npm run dev -- --port ${FRONTEND_PORT}) &
+    FRONTEND_PID=$!
+
+    echo "$BACKEND_PID" > "$PID_FILE"
+    echo "$FRONTEND_PID" >> "$PID_FILE"
+
+    wait_for_healthy "http://localhost:${BACKEND_PORT}/health" 30
+    wait_for_healthy "http://localhost:${FRONTEND_PORT}" 30
+
+    echo -e "${GREEN}Servers ready. Running E2E tests...${NC}"
+
+    local exit_code=0
+    (cd "${FRONTEND_DIR}" && \
+        PLAYWRIGHT_BASE_URL="http://localhost:${FRONTEND_PORT}" \
+        npx playwright test "$@") || exit_code=$?
+
+    cleanup
+    exit $exit_code
+}
+
+# Handle e2e subcommand early (skips dependency installation)
+if [ "${1:-}" = "e2e" ]; then
+    cmd_e2e "${@:2}"
+fi
+
 echo -e "${GREEN}Starting BodySpec Learn development environment...${NC}"
 
 # Kill any leftover processes from a previous run
@@ -110,7 +156,7 @@ case "${1:-}" in
         ;; # default: start dev servers
     *)
         echo -e "${RED}Unknown command: $1${NC}"
-        echo "Usage: ./dev.sh [storybook]"
+        echo "Usage: ./dev.sh [storybook|e2e]"
         exit 1
         ;;
 esac
