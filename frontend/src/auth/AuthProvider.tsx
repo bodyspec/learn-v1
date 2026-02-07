@@ -20,15 +20,22 @@ const keycloak = new Keycloak({
   clientId: import.meta.env.VITE_KEYCLOAK_CLIENT_ID,
 })
 
+// Guard against React 19 StrictMode double-mount calling init() twice.
+// The second init() would fail because keycloak-js only allows one init(),
+// and during auth redirects the auth code gets consumed by the first call.
+let keycloakInitPromise: Promise<boolean> | null = null
+
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(null)
   const [token, setToken] = useState<string | null>(null)
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    keycloak.init({
-      onLoad: 'check-sso',
-    }).then(async (authenticated) => {
+    if (!keycloakInitPromise) {
+      keycloakInitPromise = keycloak.init({ onLoad: 'check-sso' })
+    }
+
+    keycloakInitPromise.then(async (authenticated) => {
       if (authenticated && keycloak.token) {
         setToken(keycloak.token)
         try {

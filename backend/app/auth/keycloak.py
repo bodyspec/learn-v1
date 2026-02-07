@@ -62,17 +62,24 @@ class KeycloakAuth:
             if public_key is None:
                 return None
 
-            # Decode and validate the token
+            # Decode and validate the token.
+            # Keycloak sets aud="account" by default; the requesting client
+            # is identified by the azp (authorized party) claim instead.
             payload = jwt.decode(
                 token,
                 public_key,
                 algorithms=['RS256'],
-                audience=self.settings.keycloak_client_id,
                 options={
-                    'verify_aud': True,
+                    'verify_aud': False,
                     'verify_exp': True,
                 },
             )
+
+            # Verify the token was issued for our client
+            azp = payload.get('azp')
+            if azp != self.settings.keycloak_client_id:
+                return None
+
             return payload
         except JWTError:
             return None
