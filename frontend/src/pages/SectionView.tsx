@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { useParams, Link, useNavigate } from 'react-router-dom'
 import { ArrowLeft, ArrowRight, CheckCircle } from 'lucide-react'
 import { getModule, getSectionContent } from '@/content'
@@ -12,6 +13,10 @@ export default function SectionView() {
   const navigate = useNavigate()
   const { token, isAuthenticated } = useAuth()
   const { progress, refetch } = useProgress()
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [sectionSlug])
 
   if (!moduleId || !sectionSlug) {
     return <NotFound title="Section Not Found" />
