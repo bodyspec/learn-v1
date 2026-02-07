@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { HeartPulse, Bone, Users, BookOpen, Award, Clock, BarChart3, Target, FileText, MessageCircle } from 'lucide-react'
+import TrackCard from '@/components/TrackCard'
 
 const tracks = [
   {
@@ -65,18 +66,7 @@ export default function Home() {
           </h2>
           <div className="grid md:grid-cols-3 gap-6">
             {tracks.map((track) => (
-              <Link
-                key={track.id}
-                to={`/track/${track.id}`}
-                className="bg-white border border-bs-dark15 rounded-lg p-6 hover:border-bs-dark55 hover:shadow-sm transition-all no-underline"
-              >
-                <track.icon className="w-8 h-8 text-bs-dark mb-4" />
-                <h3 className="text-lg font-semibold text-bs-dark">{track.title}</h3>
-                <p className="mt-2 text-bs-dark/80 text-sm">{track.description}</p>
-                <div className="mt-4 text-sm font-medium text-salad-100">
-                  Start learning →
-                </div>
-              </Link>
+              <TrackCard key={track.id} {...track} />
             ))}
           </div>
         </div>
