@@ -37,6 +37,7 @@ fi
 
 # Activate virtual environment and install dependencies
 source "${BACKEND_DIR}/.venv/bin/activate"
+pip install -q --upgrade pip
 echo -e "${YELLOW}Installing Python dependencies...${NC}"
 pip install -q -e "${BACKEND_DIR}[dev]"
 
