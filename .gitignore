@@ -67,3 +67,6 @@ storybook-static
 
 # Local WIP prompts
 *.local.md
+
+# Ralph
+.ralph/
