@@ -78,7 +78,7 @@ export default function ModuleView() {
                 <Link
                   key={section.slug}
                   to={`/module/${moduleId}/${section.slug}`}
-                  className="flex items-center gap-3 p-4 rounded-lg border border-gray-200 hover:border-primary-300 hover:bg-gray-50 transition-colors"
+                  className="flex items-center gap-3 p-4 rounded-lg border border-gray-200 hover:border-salad-80 hover:bg-gray-50 transition-colors"
                 >
                   {isComplete ? (
                     <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
@@ -91,13 +91,28 @@ export default function ModuleView() {
               )
             })}
           </div>
+          {(() => {
+            const allComplete = module.sections.length > 0 && module.sections.every(s => completedSlugs.has(s.slug))
+            if (allComplete) return null
+            const firstIncomplete = module.sections.find(s => !completedSlugs.has(s.slug))
+            const target = firstIncomplete || module.sections[0]
+            const hasStarted = completedSections.length > 0
+            return (
+              <Link
+                to={`/module/${moduleId}/${target.slug}`}
+                className="mt-6 btn-primary inline-block text-center"
+              >
+                {hasStarted ? 'Continue' : 'Get Started'}
+              </Link>
+            )
+          })()}
         </div>
 
         {quiz && (
           <div className="mt-8 pt-8 border-t border-gray-200">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <FileQuestion className="w-6 h-6 text-primary-600" />
+                <FileQuestion className="w-6 h-6 text-salad-100" />
                 <div>
                   <h2 className="text-lg font-semibold text-gray-900">Module Quiz</h2>
                   <p className="text-sm text-gray-600">
