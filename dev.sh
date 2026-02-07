@@ -5,6 +5,7 @@ set -e
 PROJECT_ROOT="$(cd "$(dirname "$0")" && pwd)"
 BACKEND_DIR="${PROJECT_ROOT}/backend"
 FRONTEND_DIR="${PROJECT_ROOT}/frontend"
+PID_FILE="${PROJECT_ROOT}/.dev.pid"
 
 # Colors for output
 RED='\033[0;31m'
@@ -12,19 +13,58 @@ GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
 NC='\033[0m' # No Color
 
-echo -e "${GREEN}Starting BodySpec Learn development environment...${NC}"
-
-# Find an open port
+# Find an open port starting from the given number
 find_open_port() {
-    local port=8000
+    local port=${1:-8000}
     while lsof -Pi :$port -sTCP:LISTEN -t >/dev/null 2>&1; do
         port=$((port + 1))
     done
     echo $port
 }
 
-BACKEND_PORT=$(find_open_port)
-FRONTEND_PORT=$((BACKEND_PORT + 1000))
+# Kill processes from a previous dev.sh run
+kill_existing() {
+    if [ -f "$PID_FILE" ]; then
+        while read -r pid; do
+            if kill -0 "$pid" 2>/dev/null; then
+                echo -e "${YELLOW}Killing existing process $pid...${NC}"
+                kill "$pid" 2>/dev/null || true
+            fi
+        done < "$PID_FILE"
+        rm -f "$PID_FILE"
+        sleep 1
+    fi
+}
+
+# Wait for a URL to respond successfully
+wait_for_healthy() {
+    local url=$1 timeout=${2:-30} elapsed=0
+    while ! curl -sf "$url" >/dev/null 2>&1; do
+        sleep 1
+        elapsed=$((elapsed + 1))
+        if [ $elapsed -ge $timeout ]; then
+            echo -e "${RED}Timeout waiting for $url${NC}"
+            exit 1
+        fi
+    done
+}
+
+# Cleanup function
+cleanup() {
+    echo -e "\n${YELLOW}Shutting down...${NC}"
+    kill $BACKEND_PID 2>/dev/null || true
+    kill $FRONTEND_PID 2>/dev/null || true
+    rm -f "$PID_FILE"
+    exit 0
+}
+
+echo -e "${GREEN}Starting BodySpec Learn development environment...${NC}"
+
+# Kill any leftover processes from a previous run
+kill_existing
+
+BACKEND_PORT=$(find_open_port 8000)
+FRONTEND_PORT=$(find_open_port $((BACKEND_PORT + 1000)))
 
 echo -e "${YELLOW}Backend port: ${BACKEND_PORT}${NC}"
 echo -e "${YELLOW}Frontend port: ${FRONTEND_PORT}${NC}"
@@ -55,14 +95,6 @@ fi
 
 # Export environment variables
 export VITE_BACKEND_PORT=${BACKEND_PORT}
-
-# Cleanup function
-cleanup() {
-    echo -e "\n${YELLOW}Shutting down...${NC}"
-    kill $BACKEND_PID 2>/dev/null || true
-    kill $FRONTEND_PID 2>/dev/null || true
-    exit 0
-}
 
 trap cleanup SIGINT SIGTERM
 
@@ -96,8 +128,8 @@ echo -e "${GREEN}Starting backend on port ${BACKEND_PORT}...${NC}"
 ) &
 BACKEND_PID=$!
 
-# Wait for backend to start
-sleep 2
+# Wait for backend to be healthy
+wait_for_healthy "http://localhost:${BACKEND_PORT}/health" 30
 
 # Start frontend
 echo -e "${GREEN}Starting frontend on port ${FRONTEND_PORT}...${NC}"
@@ -106,6 +138,10 @@ echo -e "${GREEN}Starting frontend on port ${FRONTEND_PORT}...${NC}"
     npm run dev -- --port ${FRONTEND_PORT}
 ) &
 FRONTEND_PID=$!
+
+# Write PID file for future runs
+echo "$BACKEND_PID" > "$PID_FILE"
+echo "$FRONTEND_PID" >> "$PID_FILE"
 
 echo -e "${GREEN}Development servers running!${NC}"
 echo -e "  Backend:  http://localhost:${BACKEND_PORT}"
