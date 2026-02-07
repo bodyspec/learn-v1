@@ -28,7 +28,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     keycloak.init({
       onLoad: 'check-sso',
-      silentCheckSsoRedirectUri: window.location.origin + '/silent-check-sso.html',
     }).then(async (authenticated) => {
       if (authenticated && keycloak.token) {
         setToken(keycloak.token)

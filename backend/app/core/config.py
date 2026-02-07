@@ -25,11 +25,15 @@ class Settings(BaseSettings):
 
     @property
     def database_url(self) -> str:
-        return f'postgresql://{self.database_user}:{self.database_pass}@{self.database_host}:{self.database_port}/{self.database_name}'
+        return (
+            f'postgresql://{self.database_user}:{self.database_pass}'
+            f'@{self.database_host}:{self.database_port}'
+            f'/{self.database_name}'
+        )
 
     # Keycloak Authentication
-    keycloak_url: str = 'https://keycloak.bodyspec.com/realms/bodyspec'
-    keycloak_client_id: str = 'dexa-education'
+    keycloak_url: str = 'https://auth.bodyspec.com/realms/bodyspec'
+    keycloak_client_id: str = 'bodyspec-learn-v1'
     keycloak_client_secret: SecretStr = SecretStr('')
     keycloak_redirect_uri: str = 'http://localhost:8000/api/v1/auth/callback'
 
