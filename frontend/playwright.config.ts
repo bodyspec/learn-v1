@@ -1,10 +1,11 @@
 import { defineConfig, devices } from '@playwright/test';
 import dotenv from 'dotenv';
+import { fileURLToPath } from 'url';
 import path from 'path';
 
-dotenv.config({ path: path.resolve(__dirname, '.env.e2e') });
+dotenv.config({ path: path.resolve(path.dirname(fileURLToPath(import.meta.url)), '.env.e2e') });
 
-const baseURL = process.env.PLAYWRIGHT_BASE_URL || 'http://localhost:5173';
+const baseURL = process.env.PLAYWRIGHT_BASE_URL || 'http://localhost:9000';
 
 export default defineConfig({
   testDir: './e2e',
@@ -28,8 +29,8 @@ export default defineConfig({
     ? {}
     : {
         webServer: {
-          command: `VITE_BACKEND_PORT=${process.env.VITE_BACKEND_PORT || '8000'} npm run dev -- --port 5173`,
-          url: 'http://localhost:5173',
+          command: `VITE_BACKEND_PORT=${process.env.VITE_BACKEND_PORT || '8000'} npm run dev -- --port 9000`,
+          url: 'http://localhost:9000',
           reuseExistingServer: !process.env.CI,
           timeout: 30000,
         },

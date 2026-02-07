@@ -7,33 +7,104 @@ BACKEND_DIR="${PROJECT_ROOT}/backend"
 FRONTEND_DIR="${PROJECT_ROOT}/frontend"
 PID_FILE="${PROJECT_ROOT}/.dev.pid"
 
+# Preferred ports — frontend range must match Keycloak redirect_uri whitelist
+BACKEND_PORT_START=8000
+BACKEND_PORT_MAX=8099
+FRONTEND_PORT_START=9000
+FRONTEND_PORT_MAX=9001
+
 # Colors for output
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
 NC='\033[0m' # No Color
 
-# Find an open port starting from the given number
-find_open_port() {
-    local port=${1:-8000}
-    while lsof -Pi :$port -sTCP:LISTEN -t >/dev/null 2>&1; do
-        port=$((port + 1))
-    done
-    echo $port
+# Check if a port is in use; returns 0 if busy
+port_busy() {
+    lsof -Pi :"$1" -sTCP:LISTEN -t >/dev/null 2>&1
 }
 
-# Kill processes from a previous dev.sh run
-kill_existing() {
+# Check if a PID from our PID file is still running
+pid_alive() {
+    kill -0 "$1" 2>/dev/null
+}
+
+# Find a free port starting from $1, warn if it exceeds $2 (configured max)
+find_port() {
+    local port=$1 max=$2 label=$3
+    while port_busy "$port"; do
+        port=$((port + 1))
+    done
+    if [ "$port" -gt "$max" ]; then
+        echo -e "${YELLOW}Port $port for $label is outside configured range ($1-$max).${NC}" >&2
+        echo -e "${YELLOW}Keycloak auth may not work on this port.${NC}" >&2
+        if [ ! -t 0 ]; then
+            echo -e "${RED}Non-interactive mode — aborting (no configured port available).${NC}" >&2
+            exit 1
+        fi
+        read -rp "Continue with port $port anyway? [y/N] " answer
+        case "$answer" in
+            [yY]|[yY][eE][sS]) ;;
+            *)
+                echo -e "${RED}Aborting.${NC}" >&2
+                exit 1
+                ;;
+        esac
+    fi
+    echo "$port"
+}
+
+# Kill a previous learn-v1 run if still alive, then find free ports
+acquire_ports() {
+    # Step 1: Handle our own previous run (from .dev.pid)
     if [ -f "$PID_FILE" ]; then
+        local stale_pids=()
         while read -r pid; do
-            if kill -0 "$pid" 2>/dev/null; then
-                echo -e "${YELLOW}Killing existing process $pid...${NC}"
-                kill "$pid" 2>/dev/null || true
+            if pid_alive "$pid"; then
+                stale_pids+=("$pid")
             fi
         done < "$PID_FILE"
+
+        if [ ${#stale_pids[@]} -gt 0 ]; then
+            echo -e "${YELLOW}Previous learn-v1 dev session still running (PIDs: ${stale_pids[*]})${NC}"
+
+            if [ ! -t 0 ]; then
+                echo -e "${YELLOW}Non-interactive mode — killing previous session...${NC}"
+            else
+                read -rp "Kill previous session? [y/N] " answer
+                case "$answer" in
+                    [yY]|[yY][eE][sS]) ;;
+                    *)
+                        echo -e "${RED}Aborting.${NC}"
+                        exit 1
+                        ;;
+                esac
+            fi
+
+            for pid in "${stale_pids[@]}"; do
+                echo -e "${YELLOW}Killing PID $pid...${NC}"
+                kill "$pid" 2>/dev/null || true
+            done
+
+            # Wait for processes to exit
+            local retries=10 i=0
+            for pid in "${stale_pids[@]}"; do
+                while pid_alive "$pid"; do
+                    sleep 0.5
+                    i=$((i + 1))
+                    if [ $i -ge $retries ]; then
+                        echo -e "${RED}Previous session still running after waiting. Aborting.${NC}"
+                        exit 1
+                    fi
+                done
+            done
+        fi
         rm -f "$PID_FILE"
-        sleep 1
     fi
+
+    # Step 2: Find free ports, auto-incrementing within configured range
+    BACKEND_PORT=$(find_port "$BACKEND_PORT_START" "$BACKEND_PORT_MAX" "backend")
+    FRONTEND_PORT=$(find_port "$FRONTEND_PORT_START" "$FRONTEND_PORT_MAX" "frontend")
 }
 
 # Wait for a URL to respond successfully
@@ -60,10 +131,7 @@ cleanup() {
 
 # E2E subcommand: start servers and run Playwright
 cmd_e2e() {
-    kill_existing
-
-    BACKEND_PORT=$(find_open_port 8000)
-    FRONTEND_PORT=$(find_open_port $((BACKEND_PORT + 1000)))
+    acquire_ports
 
     echo -e "${YELLOW}Backend port: ${BACKEND_PORT}${NC}"
     echo -e "${YELLOW}Frontend port: ${FRONTEND_PORT}${NC}"
@@ -106,11 +174,7 @@ fi
 
 echo -e "${GREEN}Starting BodySpec Learn development environment...${NC}"
 
-# Kill any leftover processes from a previous run
-kill_existing
-
-BACKEND_PORT=$(find_open_port 8000)
-FRONTEND_PORT=$(find_open_port $((BACKEND_PORT + 1000)))
+acquire_ports
 
 echo -e "${YELLOW}Backend port: ${BACKEND_PORT}${NC}"
 echo -e "${YELLOW}Frontend port: ${FRONTEND_PORT}${NC}"
