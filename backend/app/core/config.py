@@ -17,7 +17,15 @@ class Settings(BaseSettings):
     api_port: int = 8000
 
     # Database
-    database_url: str = 'postgresql://postgres:postgres@localhost:5432/learn'
+    database_host: str = 'localhost'
+    database_port: int = 5432
+    database_name: str = 'learn'
+    database_user: str = 'postgres'
+    database_pass: str = 'postgres'
+
+    @property
+    def database_url(self) -> str:
+        return f'postgresql://{self.database_user}:{self.database_pass}@{self.database_host}:{self.database_port}/{self.database_name}'
 
     # Keycloak Authentication
     keycloak_url: str = 'https://keycloak.bodyspec.com/realms/bodyspec'
