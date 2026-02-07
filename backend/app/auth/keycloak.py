@@ -8,23 +8,11 @@ from app.core.config import get_settings
 
 
 class KeycloakAuth:
-    """Keycloak authentication handler."""
+    """Keycloak authentication handler — validates JWTs via JWKS."""
 
     def __init__(self) -> None:
         self.settings = get_settings()
         self._public_keys: dict[str, Any] | None = None
-
-    @property
-    def auth_url(self) -> str:
-        return f'{self.settings.keycloak_url}/protocol/openid-connect/auth'
-
-    @property
-    def token_url(self) -> str:
-        return f'{self.settings.keycloak_url}/protocol/openid-connect/token'
-
-    @property
-    def logout_url(self) -> str:
-        return f'{self.settings.keycloak_url}/protocol/openid-connect/logout'
 
     @property
     def certs_url(self) -> str:
@@ -83,35 +71,6 @@ class KeycloakAuth:
             return payload
         except JWTError:
             return None
-
-    async def exchange_code(self, code: str) -> dict[str, Any] | None:
-        """Exchange authorization code for tokens."""
-        async with httpx.AsyncClient() as client:
-            response = await client.post(
-                self.token_url,
-                data={
-                    'grant_type': 'authorization_code',
-                    'client_id': self.settings.keycloak_client_id,
-                    'client_secret': self.settings.keycloak_client_secret.get_secret_value(),
-                    'code': code,
-                    'redirect_uri': self.settings.keycloak_redirect_uri,
-                },
-            )
-            if response.status_code != 200:
-                return None
-            return response.json()
-
-    def get_authorization_url(self, state: str) -> str:
-        """Generate Keycloak authorization URL."""
-        params = {
-            'client_id': self.settings.keycloak_client_id,
-            'redirect_uri': self.settings.keycloak_redirect_uri,
-            'response_type': 'code',
-            'scope': 'openid email profile',
-            'state': state,
-        }
-        query = '&'.join(f'{k}={v}' for k, v in params.items())
-        return f'{self.auth_url}?{query}'
 
 
 @lru_cache

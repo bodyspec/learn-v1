@@ -31,11 +31,9 @@ class Settings(BaseSettings):
             f'/{self.database_name}'
         )
 
-    # Keycloak Authentication
+    # Keycloak Authentication (PKCE — no client secret needed)
     keycloak_url: str = 'https://auth.bodyspec.com/realms/bodyspec'
     keycloak_client_id: str = 'bodyspec-learn-v1'
-    keycloak_client_secret: SecretStr = SecretStr('')
-    keycloak_redirect_uri: str = 'http://localhost:8000/api/v1/auth/callback'
 
     # App Secret
     secret_key: SecretStr = SecretStr('dev-secret-key-change-in-production')

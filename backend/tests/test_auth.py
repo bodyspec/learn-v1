@@ -9,24 +9,11 @@ from app.auth.keycloak import KeycloakAuth
 class TestKeycloakAuth:
     """Tests for Keycloak authentication handler."""
 
-    def test_url_properties(self) -> None:
-        """Keycloak URLs are built correctly from settings."""
+    def test_certs_url(self) -> None:
+        """Keycloak certs URL is built correctly from settings."""
         auth = KeycloakAuth()
         base = auth.settings.keycloak_url
-        assert auth.auth_url == f'{base}/protocol/openid-connect/auth'
-        assert auth.token_url == f'{base}/protocol/openid-connect/token'
-        assert auth.logout_url == f'{base}/protocol/openid-connect/logout'
         assert auth.certs_url == f'{base}/protocol/openid-connect/certs'
-
-    def test_get_authorization_url(self) -> None:
-        """get_authorization_url builds correct URL with params."""
-        auth = KeycloakAuth()
-        url = auth.get_authorization_url('test-state')
-        assert 'client_id=' in url
-        assert 'redirect_uri=' in url
-        assert 'response_type=code' in url
-        assert 'scope=openid+email+profile' in url or 'scope=openid email profile' in url
-        assert 'state=test-state' in url
 
     @pytest.mark.asyncio
     async def test_validate_token_invalid(self) -> None:
@@ -58,43 +45,6 @@ class TestKeycloakAuth:
             assert keys2 == mock_keys
             # Only called once due to caching
             mock_client.get.assert_called_once()
-
-    @pytest.mark.asyncio
-    async def test_exchange_code_success(self) -> None:
-        """exchange_code returns tokens on successful exchange."""
-        auth = KeycloakAuth()
-        mock_tokens = {
-            'access_token': 'test-access-token',
-            'refresh_token': 'test-refresh-token',
-        }
-
-        with patch('httpx.AsyncClient') as mock_client_cls:
-            mock_client = AsyncMock()
-            mock_response = MagicMock()
-            mock_response.status_code = 200
-            mock_response.json.return_value = mock_tokens
-            mock_client.post.return_value = mock_response
-            mock_client_cls.return_value.__aenter__ = AsyncMock(return_value=mock_client)
-            mock_client_cls.return_value.__aexit__ = AsyncMock(return_value=False)
-
-            result = await auth.exchange_code('test-code')
-            assert result == mock_tokens
-
-    @pytest.mark.asyncio
-    async def test_exchange_code_failure(self) -> None:
-        """exchange_code returns None on HTTP error."""
-        auth = KeycloakAuth()
-
-        with patch('httpx.AsyncClient') as mock_client_cls:
-            mock_client = AsyncMock()
-            mock_response = MagicMock()
-            mock_response.status_code = 400
-            mock_client.post.return_value = mock_response
-            mock_client_cls.return_value.__aenter__ = AsyncMock(return_value=mock_client)
-            mock_client_cls.return_value.__aexit__ = AsyncMock(return_value=False)
-
-            result = await auth.exchange_code('bad-code')
-            assert result is None
 
 
 class TestAuthDependencies:
