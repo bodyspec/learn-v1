@@ -37,7 +37,7 @@ export default function QuizResults({ result, quiz, onRetry, showSignInPrompt }:
             <Award className="w-8 h-8 text-yellow-500 mx-auto mb-2" />
             <p className="text-sm text-gray-700">
               You're eligible for a certificate! Visit your{' '}
-              <Link to="/certificates" className="text-primary-600 hover:underline">
+              <Link to="/certificates" className="text-salad-100 hover:underline">
                 certificates page
               </Link>{' '}
               to claim it.
@@ -52,7 +52,7 @@ export default function QuizResults({ result, quiz, onRetry, showSignInPrompt }:
         )}
         {showSignInPrompt && (
           <div className="mt-6 p-4 bg-white rounded-lg border border-gray-200">
-            <LogIn className="w-6 h-6 text-primary-500 mx-auto mb-2" />
+            <LogIn className="w-6 h-6 text-salad-100 mx-auto mb-2" />
             <p className="text-sm text-gray-700 mb-3">
               Sign in to save your progress and earn certificates.
             </p>

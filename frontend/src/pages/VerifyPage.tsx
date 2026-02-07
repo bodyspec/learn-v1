@@ -42,7 +42,7 @@ export default function VerifyPage() {
     return (
       <div className="max-w-xl mx-auto flex items-center justify-center min-h-[50vh]">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary-600 mx-auto"></div>
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-salad-100 mx-auto"></div>
           <p className="mt-4 text-gray-500">Verifying certificate...</p>
         </div>
       </div>

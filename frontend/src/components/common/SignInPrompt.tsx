@@ -16,7 +16,7 @@ export default function SignInPrompt({
     return (
       <button
         onClick={login}
-        className="inline-flex items-center gap-2 text-sm text-primary-600 hover:text-primary-700"
+        className="inline-flex items-center gap-2 text-sm text-salad-100 hover:text-greentext"
       >
         <LogIn className="w-4 h-4" />
         Sign in to save progress

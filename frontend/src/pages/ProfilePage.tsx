@@ -67,7 +67,7 @@ export default function ProfilePage() {
               id="name"
               value={name}
               onChange={e => setName(e.target.value)}
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-primary-500 focus:border-primary-500"
+              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-salad-100 focus:border-salad-100"
               placeholder="Dr. Jane Smith"
             />
             <p className="mt-1 text-xs text-gray-500">
@@ -83,7 +83,7 @@ export default function ProfilePage() {
               id="roleType"
               value={roleType}
               onChange={e => setRoleType(e.target.value as RoleType | '')}
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-primary-500 focus:border-primary-500"
+              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-salad-100 focus:border-salad-100"
             >
               <option value="">Select your role...</option>
               <option value="physician">Physician (MD, DO, NP, PA)</option>
@@ -102,7 +102,7 @@ export default function ProfilePage() {
               id="organization"
               value={organization}
               onChange={e => setOrganization(e.target.value)}
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-primary-500 focus:border-primary-500"
+              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-salad-100 focus:border-salad-100"
               placeholder="Acme Health Clinic"
             />
           </div>

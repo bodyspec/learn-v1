@@ -45,8 +45,8 @@ export default function Dashboard() {
       <div className="grid md:grid-cols-3 gap-6">
         <div className="card p-6">
           <div className="flex items-center gap-4">
-            <div className="p-3 bg-primary-100 rounded-lg">
-              <BookOpen className="w-6 h-6 text-primary-600" />
+            <div className="p-3 bg-salad-60 rounded-lg">
+              <BookOpen className="w-6 h-6 text-salad-100" />
             </div>
             <div>
               <p className="text-2xl font-bold text-gray-900">
@@ -113,7 +113,7 @@ export default function Dashboard() {
                     )}
                     <Link
                       to={`/track/${track}`}
-                      className="text-sm text-primary-600 hover:underline"
+                      className="text-sm text-salad-100 hover:underline"
                     >
                       Continue →
                     </Link>

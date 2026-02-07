@@ -134,7 +134,7 @@ export default function Quiz({ quiz, onComplete }: QuizProps) {
         </div>
         <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
           <div
-            className="h-full bg-primary-500 rounded-full transition-all"
+            className="h-full bg-salad-100 rounded-full transition-all"
             style={{ width: `${((currentQuestion + 1) / totalQuestions) * 100}%` }}
           />
         </div>

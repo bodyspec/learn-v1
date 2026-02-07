@@ -33,7 +33,7 @@ export default function QuizQuestion({
           const isCorrect = showResult && index === correctOption
           const isWrong = showResult && isSelected && index !== correctOption
 
-          let borderColor = 'border-gray-200 hover:border-salad-80'
+          let borderColor = 'border-gray-200 hover:border-gray-400'
           let bgColor = 'bg-white'
 
           if (isSelected && !showResult) {
