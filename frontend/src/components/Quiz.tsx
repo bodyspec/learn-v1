@@ -3,7 +3,7 @@ import type { Quiz as QuizType, QuizSubmissionResult } from '@/types'
 import QuizQuestion from './QuizQuestion'
 import QuizResults from './QuizResults'
 import { useAuth } from '@/auth/AuthProvider'
-import { submitQuiz } from '@/api/quiz'
+import { useSubmitQuiz } from '@/hooks/queries'
 
 interface QuizProps {
   quiz: QuizType
@@ -12,10 +12,10 @@ interface QuizProps {
 
 export default function Quiz({ quiz, onComplete }: QuizProps) {
   const { token, isAuthenticated } = useAuth()
+  const submitQuizMutation = useSubmitQuiz()
   const [currentQuestion, setCurrentQuestion] = useState(0)
   const [answers, setAnswers] = useState<Record<string, number>>({})
   const [result, setResult] = useState<QuizSubmissionResult | null>(null)
-  const [isSubmitting, setIsSubmitting] = useState(false)
   const [startTime] = useState(Date.now())
   const [showLocalResults, setShowLocalResults] = useState(false)
 
@@ -84,10 +84,9 @@ export default function Quiz({ quiz, onComplete }: QuizProps) {
       return
     }
 
-    setIsSubmitting(true)
     try {
       const timeSpent = Math.round((Date.now() - startTime) / 1000)
-      const submissionResult = await submitQuiz(token, {
+      const submissionResult = await submitQuizMutation.mutateAsync({
         module_id: quiz.module_id,
         answers,
         time_spent_seconds: timeSpent,
@@ -96,8 +95,6 @@ export default function Quiz({ quiz, onComplete }: QuizProps) {
       onComplete?.(submissionResult)
     } catch (error) {
       console.error('Failed to submit quiz:', error)
-    } finally {
-      setIsSubmitting(false)
     }
   }
 
@@ -163,10 +160,10 @@ export default function Quiz({ quiz, onComplete }: QuizProps) {
           ) : (
             <button
               onClick={handleSubmit}
-              disabled={!allAnswered || isSubmitting}
+              disabled={!allAnswered || submitQuizMutation.isPending}
               className="btn-primary disabled:opacity-50"
             >
-              {isSubmitting ? 'Submitting...' : 'Submit Quiz'}
+              {submitQuizMutation.isPending ? 'Submitting...' : 'Submit Quiz'}
             </button>
           )}
         </div>

@@ -1,7 +1,7 @@
 import { useParams, useNavigate, Link } from 'react-router-dom'
 import { Clock, CheckCircle, Circle, FileQuestion } from 'lucide-react'
 import { getModule, getQuiz } from '@/content'
-import { useProgress } from '@/hooks/useProgress'
+import { useProgress } from '@/hooks/queries'
 import ProgressIndicator from '@/components/ProgressIndicator'
 import { NotFound, BackLink, SignInPrompt } from '@/components/common'
 

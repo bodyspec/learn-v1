@@ -1,10 +1,6 @@
-import { useState } from 'react'
 import { Award, Plus } from 'lucide-react'
-import { useAuth } from '@/auth/AuthProvider'
-import { useCertificates } from '@/hooks/useCertificates'
-import { useProgress } from '@/hooks/useProgress'
+import { useCertificates, useRequestCertificate, useProgress } from '@/hooks/queries'
 import Certificate from '@/components/Certificate'
-import { requestCertificate } from '@/api/certificates'
 
 const TRACKS = [
   { id: 'physician', title: 'Clinical Applications', requiredModules: ['core', 'physician'] },
@@ -13,11 +9,9 @@ const TRACKS = [
 ]
 
 export default function CertificatesPage() {
-  const { token } = useAuth()
-  const { certificates, isLoading, refetch } = useCertificates()
+  const { certificates, isLoading } = useCertificates()
   const { progress } = useProgress()
-  const [requesting, setRequesting] = useState<string | null>(null)
-  const [error, setError] = useState<string | null>(null)
+  const requestCert = useRequestCertificate()
 
   const isEligible = (trackId: string) => {
     const track = TRACKS.find(t => t.id === trackId)
@@ -29,20 +23,8 @@ export default function CertificatesPage() {
     return certificates.some(c => c.track === trackId)
   }
 
-  const handleRequestCertificate = async (trackId: string) => {
-    if (!token) return
-
-    setRequesting(trackId)
-    setError(null)
-
-    try {
-      await requestCertificate(token, trackId)
-      await refetch()
-    } catch (err: any) {
-      setError(err.data?.message || 'Failed to request certificate')
-    } finally {
-      setRequesting(null)
-    }
+  const handleRequestCertificate = (trackId: string) => {
+    requestCert.mutate(trackId)
   }
 
   if (isLoading) {
@@ -52,6 +34,8 @@ export default function CertificatesPage() {
       </div>
     )
   }
+
+  const error = requestCert.error as (Error & { data?: { message?: string } }) | null
 
   return (
     <div className="max-w-4xl mx-auto space-y-8">
@@ -64,7 +48,7 @@ export default function CertificatesPage() {
 
       {error && (
         <div className="p-4 bg-red-50 border border-red-200 rounded-lg text-red-700">
-          {error}
+          {error.data?.message || 'Failed to request certificate'}
         </div>
       )}
 
@@ -88,6 +72,7 @@ export default function CertificatesPage() {
         <div className="space-y-4">
           {TRACKS.filter(track => !hasCertificate(track.id)).map(track => {
             const eligible = isEligible(track.id)
+            const isRequesting = requestCert.isPending && requestCert.variables === track.id
 
             return (
               <div key={track.id} className="card p-6">
@@ -109,10 +94,10 @@ export default function CertificatesPage() {
                   {eligible && (
                     <button
                       onClick={() => handleRequestCertificate(track.id)}
-                      disabled={requesting === track.id}
+                      disabled={isRequesting}
                       className="btn-primary inline-flex items-center gap-2"
                     >
-                      {requesting === track.id ? (
+                      {isRequesting ? (
                         'Processing...'
                       ) : (
                         <>

@@ -1,38 +1,29 @@
 import { useState } from 'react'
 import { useAuth } from '@/auth/AuthProvider'
-import { apiClient } from '@/api/client'
-import type { RoleType, User } from '@/types'
+import { useUpdateProfile } from '@/hooks/queries'
+import type { RoleType } from '@/types'
 
 export default function ProfilePage() {
-  const { user, token } = useAuth()
+  const { user } = useAuth()
   const [name, setName] = useState(user?.name || '')
   const [roleType, setRoleType] = useState<RoleType | ''>(user?.role_type || '')
   const [organization, setOrganization] = useState(user?.organization || '')
-  const [isSaving, setIsSaving] = useState(false)
   const [message, setMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null)
+  const updateProfile = useUpdateProfile()
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    if (!token) return
-
-    setIsSaving(true)
     setMessage(null)
 
     try {
-      await apiClient.put<User>(
-        '/users/me',
-        {
-          name: name || null,
-          role_type: roleType || null,
-          organization: organization || null,
-        },
-        token
-      )
+      await updateProfile.mutateAsync({
+        name: name || null,
+        role_type: roleType || null,
+        organization: organization || null,
+      })
       setMessage({ type: 'success', text: 'Profile updated successfully!' })
-    } catch (err) {
+    } catch {
       setMessage({ type: 'error', text: 'Failed to update profile' })
-    } finally {
-      setIsSaving(false)
     }
   }
 
@@ -121,10 +112,10 @@ export default function ProfilePage() {
 
           <button
             type="submit"
-            disabled={isSaving}
+            disabled={updateProfile.isPending}
             className="w-full btn-primary disabled:opacity-50"
           >
-            {isSaving ? 'Saving...' : 'Save Changes'}
+            {updateProfile.isPending ? 'Saving...' : 'Save Changes'}
           </button>
         </form>
       </div>

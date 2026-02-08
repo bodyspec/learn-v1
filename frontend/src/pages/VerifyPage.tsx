@@ -1,31 +1,10 @@
 import { useParams } from 'react-router-dom'
-import { useEffect, useState } from 'react'
 import CertificateVerification from '@/components/CertificateVerification'
-import { verifyCertificate } from '@/api/certificates'
-import type { CertificateVerification as CertificateVerificationType } from '@/types'
+import { useVerifyCertificate } from '@/hooks/queries'
 
 export default function VerifyPage() {
   const { certificateUid } = useParams<{ certificateUid: string }>()
-  const [verification, setVerification] = useState<CertificateVerificationType | null>(null)
-  const [isLoading, setIsLoading] = useState(true)
-  const [error, setError] = useState<string | null>(null)
-
-  useEffect(() => {
-    if (!certificateUid) return
-
-    const verify = async () => {
-      try {
-        const result = await verifyCertificate(certificateUid)
-        setVerification(result)
-      } catch (err) {
-        setError('Failed to verify certificate')
-      } finally {
-        setIsLoading(false)
-      }
-    }
-
-    verify()
-  }, [certificateUid])
+  const { data: verification, isLoading, error } = useVerifyCertificate(certificateUid)
 
   if (!certificateUid) {
     return (
@@ -53,7 +32,7 @@ export default function VerifyPage() {
     return (
       <div className="max-w-xl mx-auto text-center py-12">
         <h2 className="text-2xl font-bold text-red-700">Verification Failed</h2>
-        <p className="mt-2 text-gray-600">{error}</p>
+        <p className="mt-2 text-gray-600">Failed to verify certificate</p>
       </div>
     )
   }

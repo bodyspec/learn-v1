@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom'
 import ModuleCard from '@/components/ModuleCard'
 import { getModulesByTrack, getTrackInfo } from '@/content'
-import { useProgress } from '@/hooks/useProgress'
+import { useProgress } from '@/hooks/queries'
 import { NotFound, BackLink, LoadingSpinner } from '@/components/common'
 import type { Track } from '@/types'
 

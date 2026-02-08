@@ -3,16 +3,16 @@ import { useParams, Link, useNavigate } from 'react-router-dom'
 import { ArrowLeft, ArrowRight, CheckCircle } from 'lucide-react'
 import { getModule, getSectionContent } from '@/content'
 import SectionContent from '@/components/SectionContent'
-import { useProgress } from '@/hooks/useProgress'
+import { useProgress, useMarkSectionComplete } from '@/hooks/queries'
 import { useAuth } from '@/auth/AuthProvider'
-import { markSectionComplete } from '@/api/progress'
 import { NotFound, BackLink, SignInPrompt } from '@/components/common'
 
 export default function SectionView() {
   const { moduleId, sectionSlug } = useParams<{ moduleId: string; sectionSlug: string }>()
   const navigate = useNavigate()
   const { token, isAuthenticated } = useAuth()
-  const { progress, refetch } = useProgress()
+  const { progress } = useProgress()
+  const markComplete = useMarkSectionComplete()
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -53,8 +53,7 @@ export default function SectionView() {
     // If authenticated, mark section complete
     if (token) {
       try {
-        await markSectionComplete(token, moduleId, sectionSlug)
-        await refetch()
+        await markComplete.mutateAsync({ moduleId, sectionSlug })
       } catch (error) {
         console.error('Failed to mark section complete:', error)
       }
