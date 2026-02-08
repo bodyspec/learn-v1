@@ -20,10 +20,27 @@ const keycloak = new Keycloak({
   clientId: import.meta.env.VITE_KEYCLOAK_CLIENT_ID,
 })
 
-// Guard against React 19 StrictMode double-mount calling init() twice.
-// The second init() would fail because keycloak-js only allows one init(),
-// and during auth redirects the auth code gets consumed by the first call.
-let keycloakInitPromise: Promise<boolean> | null = null
+// Guard against React 19 StrictMode double-mount. Both keycloak.init() and
+// the /auth/me fetch are shared at module level so the second mount joins
+// the in-flight request instead of firing a new one.
+let authInitPromise: Promise<{ token: string; user: User | null } | null> | null = null
+
+function initAuth(): Promise<{ token: string; user: User | null } | null> {
+  if (!authInitPromise) {
+    authInitPromise = (async () => {
+      const authenticated = await keycloak.init({ onLoad: 'check-sso' })
+      if (!authenticated || !keycloak.token) return null
+      try {
+        const user = await apiClient.get<User>('/auth/me', keycloak.token)
+        return { token: keycloak.token, user }
+      } catch (error) {
+        console.error('Failed to fetch user profile:', error)
+        return { token: keycloak.token, user: null }
+      }
+    })()
+  }
+  return authInitPromise
+}
 
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(null)
@@ -31,24 +48,18 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    if (!keycloakInitPromise) {
-      keycloakInitPromise = keycloak.init({ onLoad: 'check-sso' })
-    }
+    let cancelled = false
 
-    keycloakInitPromise.then(async (authenticated) => {
-      if (authenticated && keycloak.token) {
-        setToken(keycloak.token)
-        try {
-          const userProfile = await apiClient.get<User>('/auth/me', keycloak.token)
-          setUser(userProfile)
-        } catch (error) {
-          console.error('Failed to fetch user profile:', error)
-        }
+    initAuth().then((result) => {
+      if (cancelled) return
+      if (result) {
+        setToken(result.token)
+        if (result.user) setUser(result.user)
       }
       setIsLoading(false)
     }).catch((error) => {
       console.error('Keycloak init failed:', error)
-      setIsLoading(false)
+      if (!cancelled) setIsLoading(false)
     })
 
     // Set up token refresh
@@ -62,6 +73,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         logout()
       })
     }
+
+    return () => { cancelled = true }
   }, [])
 
   const login = () => {
