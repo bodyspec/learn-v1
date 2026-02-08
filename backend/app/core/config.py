@@ -23,13 +23,18 @@ class Settings(BaseSettings):
     database_user: str = 'postgres'
     database_pass: str = 'postgres'
 
+    database_ssl: bool = False
+
     @property
     def database_url(self) -> str:
-        return (
+        url = (
             f'postgresql://{self.database_user}:{self.database_pass}'
             f'@{self.database_host}:{self.database_port}'
             f'/{self.database_name}'
         )
+        if self.database_ssl:
+            url += '?ssl=require'
+        return url
 
     # Keycloak Authentication (PKCE — no client secret needed)
     keycloak_url: str = 'https://auth.bodyspec.com/realms/bodyspec'
