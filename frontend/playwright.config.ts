@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 import { fileURLToPath } from 'url';
 import path from 'path';
 
-dotenv.config({ path: path.resolve(path.dirname(fileURLToPath(import.meta.url)), '.env.e2e') });
+dotenv.config({ path: path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '.env.e2e') });
 
 const baseURL = process.env.PLAYWRIGHT_BASE_URL || 'http://localhost:9000';
 

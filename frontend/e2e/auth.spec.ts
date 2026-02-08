@@ -6,7 +6,7 @@ test.describe('Authentication Flow', () => {
 
   test.beforeAll(() => {
     if (!TEST_EMAIL || !TEST_PASSWORD) {
-      throw new Error('E2E_TEST_EMAIL and E2E_TEST_PASSWORD must be set (see frontend/.env.e2e.example)');
+      throw new Error('E2E_TEST_EMAIL and E2E_TEST_PASSWORD must be set (see .env.e2e.example)');
     }
   });
 
