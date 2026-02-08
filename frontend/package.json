@@ -17,6 +17,8 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.90.20",
+    "@tanstack/react-query-devtools": "^5.91.3",
     "keycloak-js": "^26.0.0",
     "lucide-react": "^0.469.0",
     "react": "^19.0.0",
