@@ -55,6 +55,65 @@ export async function completeQuizWithFirstOptions(page: Page): Promise<number> 
 }
 
 /**
+ * Correct answer texts for each quiz module, in question order.
+ * These match the `correct: true` options in content/quizzes/*.yaml.
+ */
+const CORRECT_ANSWERS: Record<string, string[]> = {
+  core: [
+    'Three-compartment model',
+    'BIA is highly sensitive to hydration status and uses a less accurate two-compartment model',
+    'Muscle fiber composition',
+    '1-2%',
+    'It is metabolically active and associated with increased disease risk',
+    'Body recomposition',
+    'More fat is stored in the abdominal region, indicating higher metabolic risk',
+    'Clothing color',
+  ],
+  physician: [
+    '100 cm²',
+    'TOFI (Thin Outside, Fat Inside)',
+    '<7.0 kg/m²',
+    '40% lean loss - concerning, as ideal is <25% lean loss',
+    '>5% lean mass loss in 3-6 months without intentional restriction',
+    'To differentiate fat loss from concerning muscle loss',
+    'Sarcopenic obesity',
+    'No, osteoporosis diagnosis requires site-specific (hip/spine) DEXA protocols',
+  ],
+};
+
+/**
+ * Answers all quiz questions correctly using known correct answers,
+ * then submits the quiz. Returns the total number of questions.
+ */
+export async function completeQuizCorrectly(page: Page, moduleId: string): Promise<number> {
+  const correctAnswers = CORRECT_ANSWERS[moduleId];
+  if (!correctAnswers) {
+    throw new Error(`No correct answers defined for module: ${moduleId}`);
+  }
+
+  await expect(page.getByText(/Question 1 of/)).toBeVisible({ timeout: 10000 });
+  const totalText = await page.getByText(/Question 1 of/).textContent();
+  const total = parseInt(totalText!.match(/of (\d+)/)![1]);
+
+  for (let i = 0; i < total; i++) {
+    await expect(page.getByText(`Question ${i + 1} of ${total}`)).toBeVisible({ timeout: 10000 });
+
+    // Click the correct answer option by its text content
+    const optionButtons = page.locator('.card button.w-full');
+    await expect(optionButtons.first()).toBeVisible({ timeout: 5000 });
+    await optionButtons.filter({ hasText: correctAnswers[i] }).click();
+
+    if (i < total - 1) {
+      await page.getByRole('button', { name: 'Next' }).click();
+    }
+  }
+
+  await expect(page.getByRole('button', { name: 'Submit Quiz' })).toBeVisible({ timeout: 10000 });
+  await page.getByRole('button', { name: 'Submit Quiz' }).click();
+  return total;
+}
+
+/**
  * Validates that the test credentials environment variables are set.
  * Call this in test.beforeAll().
  */
