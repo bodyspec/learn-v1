@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { signIn, requireAuth } from './helpers';
+import { signIn, requireAuth, completeQuizCorrectly } from './helpers';
 
 test.describe('Module Page with Progress', () => {
   test.beforeAll(() => {
@@ -48,5 +48,28 @@ test.describe('Module Page with Progress', () => {
     const isVisible = await getStartedOrContinue.isVisible().catch(() => false);
     // Just verify the module page renders without error
     expect(true).toBe(true);
+  });
+
+  test('passed quiz shows Complete badge and Passed status on module page', async ({ page }) => {
+    test.setTimeout(120000);
+    await signIn(page);
+
+    // First pass the core quiz with correct answers
+    await page.goto('/quiz/core');
+    await expect(page.getByText(/Question 1 of/)).toBeVisible({ timeout: 15000 });
+    await page.waitForTimeout(1000);
+    await completeQuizCorrectly(page, 'core');
+    await expect(page.getByText(/You scored/)).toBeVisible({ timeout: 15000 });
+    await expect(page.getByText('Congratulations!')).toBeVisible();
+
+    // Navigate to module page
+    await page.goto('/module/core');
+    await expect(page.getByRole('heading', { level: 1 })).toContainText('DEXA Fundamentals', { timeout: 10000 });
+
+    // "Complete" badge should be visible near the title
+    await expect(page.getByText('Complete', { exact: true })).toBeVisible();
+
+    // Quiz section should show "Passed" instead of "Take Quiz"
+    await expect(page.getByText('Passed')).toBeVisible();
   });
 });

@@ -1,5 +1,5 @@
 import { test, expect, Page } from '@playwright/test';
-import { signIn, requireAuth } from './helpers';
+import { signIn, requireAuth, completeQuizWithFirstOptions } from './helpers';
 
 function collectErrors(page: Page): string[] {
   const errors: string[] = [];
@@ -42,6 +42,15 @@ test.describe('No Console Errors', () => {
     const errors = collectErrors(page);
     await page.goto('/quiz/core');
     await expect(page.getByText(/Question 1 of/)).toBeVisible({ timeout: 10000 });
+    expect(errors).toEqual([]);
+  });
+
+  test('quiz submission has no JS errors', async ({ page }) => {
+    const errors = collectErrors(page);
+    await page.goto('/quiz/core');
+    await expect(page.getByText(/Question 1 of/)).toBeVisible({ timeout: 10000 });
+    await completeQuizWithFirstOptions(page);
+    await expect(page.getByText(/You scored/)).toBeVisible({ timeout: 10000 });
     expect(errors).toEqual([]);
   });
 });

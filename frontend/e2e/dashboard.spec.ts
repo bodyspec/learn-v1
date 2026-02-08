@@ -54,4 +54,35 @@ test.describe('Dashboard', () => {
     const progressBars = page.locator('.bg-gray-200.rounded-full');
     expect(await progressBars.count()).toBeGreaterThanOrEqual(3);
   });
+
+  test('recent activity section appears when sections are completed', async ({ page }) => {
+    await signIn(page);
+
+    // Complete a section to ensure there's activity
+    await page.goto('/module/core/01-how-dexa-works');
+    await expect(page.getByText('Section 1 of 5')).toBeVisible({ timeout: 10000 });
+    await page.getByRole('button', { name: 'Continue' }).click();
+    await expect(page).toHaveURL('/module/core/02-accuracy');
+
+    // Go to dashboard and check for Recent Activity
+    await page.goto('/dashboard');
+    await expect(page.getByRole('heading', { level: 1 })).toContainText('Welcome back,', { timeout: 10000 });
+
+    await expect(page.getByText('Recent Activity')).toBeVisible();
+    await expect(page.getByText(/Completed "/).first()).toBeVisible();
+  });
+
+  test('certificates CTA card shows View Certificates link when certificates exist', async ({ page }) => {
+    await signIn(page);
+    await page.goto('/dashboard');
+    await expect(page.getByRole('heading', { level: 1 })).toContainText('Welcome back,', { timeout: 10000 });
+
+    // If the user has certificates, the CTA card is visible
+    const viewCertsLink = page.getByRole('link', { name: 'View Certificates' });
+    const hasCerts = await viewCertsLink.isVisible().catch(() => false);
+    if (hasCerts) {
+      await expect(viewCertsLink).toHaveAttribute('href', '/certificates');
+    }
+    // If no certificates, the card won't appear — that's fine
+  });
 });

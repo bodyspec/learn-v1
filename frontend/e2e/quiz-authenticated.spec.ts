@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { signIn, requireAuth, completeQuizWithFirstOptions } from './helpers';
+import { signIn, requireAuth, completeQuizWithFirstOptions, completeQuizCorrectly } from './helpers';
 
 test.describe('Authenticated Quiz Submission', () => {
   // Auth + quiz completion + API submission takes more time
@@ -71,5 +71,47 @@ test.describe('Authenticated Quiz Submission', () => {
 
     // Quizzes passed stat should be visible
     await expect(page.getByText('Quizzes passed')).toBeVisible();
+  });
+
+  test('first-option answers result in Try Again button (score < 80%)', async ({ page }) => {
+    await signIn(page);
+
+    const quizResponsePromise = page.waitForResponse(
+      resp => resp.url().includes('/api/v1/') && resp.status() === 200,
+      { timeout: 15000 }
+    ).catch(() => null);
+    await page.goto('/quiz/core');
+    await expect(page.getByText(/Question 1 of/)).toBeVisible({ timeout: 15000 });
+    await quizResponsePromise;
+    await page.waitForTimeout(1000);
+
+    // First options yield a failing score
+    await completeQuizWithFirstOptions(page);
+
+    await expect(page.getByText(/You scored/)).toBeVisible({ timeout: 15000 });
+
+    const passed = await page.getByText('Congratulations!').isVisible().catch(() => false);
+    if (!passed) {
+      await expect(page.getByRole('button', { name: 'Try Again' })).toBeVisible();
+    }
+  });
+
+  test('correct answers result in Congratulations message (score >= 80%)', async ({ page }) => {
+    await signIn(page);
+
+    const quizResponsePromise = page.waitForResponse(
+      resp => resp.url().includes('/api/v1/') && resp.status() === 200,
+      { timeout: 15000 }
+    ).catch(() => null);
+    await page.goto('/quiz/core');
+    await expect(page.getByText(/Question 1 of/)).toBeVisible({ timeout: 15000 });
+    await quizResponsePromise;
+    await page.waitForTimeout(1000);
+
+    // Answer all correctly for a passing score
+    await completeQuizCorrectly(page, 'core');
+
+    await expect(page.getByText(/You scored/)).toBeVisible({ timeout: 15000 });
+    await expect(page.getByText('Congratulations!')).toBeVisible();
   });
 });

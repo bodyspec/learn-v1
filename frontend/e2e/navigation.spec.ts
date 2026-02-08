@@ -39,4 +39,14 @@ test.describe('Navigation', () => {
     await expect(page).toHaveURL('/track/physician');
     await expect(page.getByRole('heading', { level: 1 })).toContainText('Clinical Applications');
   });
+
+  test('clicking logo from deep page navigates to homepage', async ({ page }) => {
+    // Start on a deep section page
+    await page.goto('/module/core/03-key-metrics');
+    await expect(page.getByText('Section 3 of 5')).toBeVisible({ timeout: 10000 });
+
+    // Click logo to go home
+    await page.locator('nav').getByRole('link', { name: /BodySpec/ }).click();
+    await expect(page).toHaveURL('/');
+  });
 });
