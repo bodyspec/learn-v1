@@ -125,6 +125,8 @@ cleanup() {
     echo -e "\n${YELLOW}Shutting down...${NC}"
     kill $BACKEND_PID 2>/dev/null || true
     kill $FRONTEND_PID 2>/dev/null || true
+    wait $BACKEND_PID 2>/dev/null
+    wait $FRONTEND_PID 2>/dev/null
     rm -f "$PID_FILE"
     exit 0
 }
