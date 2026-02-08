@@ -15,7 +15,7 @@ from app.schemas.quiz import (
     QuizSubmissionResult,
 )
 
-CONTENT_DIR = Path(__file__).parent.parent.parent.parent.parent / 'content'
+CONTENT_DIR = Path(__file__).parent.parent.parent.parent / 'content'
 
 
 def load_quiz(module_id: str) -> dict[str, Any] | None:
