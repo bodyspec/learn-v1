@@ -129,8 +129,36 @@ cleanup() {
     exit 0
 }
 
-# E2E subcommand: start servers and run Playwright
+# Install all dependencies (Python venv, npm, .env)
+install_deps() {
+    if [ ! -d "${BACKEND_DIR}/.venv" ]; then
+        echo -e "${YELLOW}Creating Python virtual environment...${NC}"
+        python3 -m venv "${BACKEND_DIR}/.venv"
+    fi
+    source "${BACKEND_DIR}/.venv/bin/activate"
+    pip install -q --upgrade pip
+    echo -e "${YELLOW}Installing Python dependencies...${NC}"
+    pip install -q -e "${BACKEND_DIR}[dev]"
+
+    if [ ! -d "${FRONTEND_DIR}/node_modules" ]; then
+        echo -e "${YELLOW}Installing npm dependencies...${NC}"
+        (cd "${FRONTEND_DIR}" && npm install)
+    fi
+
+    if [ ! -f "${PROJECT_ROOT}/.env" ]; then
+        echo -e "${YELLOW}Creating .env from .env.example...${NC}"
+        cp "${PROJECT_ROOT}/.env.example" "${PROJECT_ROOT}/.env"
+    fi
+}
+
+# E2E subcommand: install deps, start servers, run Playwright
 cmd_e2e() {
+    install_deps
+
+    # Ensure Playwright browsers are installed
+    echo -e "${YELLOW}Checking Playwright browsers...${NC}"
+    (cd "${FRONTEND_DIR}" && npx playwright install --with-deps chromium)
+
     acquire_ports
 
     echo -e "${YELLOW}Backend port: ${BACKEND_PORT}${NC}"
@@ -167,63 +195,38 @@ cmd_e2e() {
     exit $exit_code
 }
 
-# Handle e2e subcommand early (skips dependency installation)
-if [ "${1:-}" = "e2e" ]; then
-    cmd_e2e "${@:2}"
-fi
-
-echo -e "${GREEN}Starting BodySpec Learn development environment...${NC}"
-
-acquire_ports
-
-echo -e "${YELLOW}Backend port: ${BACKEND_PORT}${NC}"
-echo -e "${YELLOW}Frontend port: ${FRONTEND_PORT}${NC}"
-
-# Setup Python virtual environment
-if [ ! -d "${BACKEND_DIR}/.venv" ]; then
-    echo -e "${YELLOW}Creating Python virtual environment...${NC}"
-    python3 -m venv "${BACKEND_DIR}/.venv"
-fi
-
-# Activate virtual environment and install dependencies
-source "${BACKEND_DIR}/.venv/bin/activate"
-pip install -q --upgrade pip
-echo -e "${YELLOW}Installing Python dependencies...${NC}"
-pip install -q -e "${BACKEND_DIR}[dev]"
-
-# Setup frontend
-if [ ! -d "${FRONTEND_DIR}/node_modules" ]; then
-    echo -e "${YELLOW}Installing npm dependencies...${NC}"
-    (cd "${FRONTEND_DIR}" && npm install)
-fi
-
-# Create .env if it doesn't exist
-if [ ! -f "${PROJECT_ROOT}/.env" ]; then
-    echo -e "${YELLOW}Creating .env from .env.example...${NC}"
-    cp "${PROJECT_ROOT}/.env.example" "${PROJECT_ROOT}/.env"
-fi
-
-# Export environment variables
-export VITE_BACKEND_PORT=${BACKEND_PORT}
-
-trap cleanup SIGINT SIGTERM
-
-# Subcommands
+# Handle subcommands
 case "${1:-}" in
+    e2e)
+        cmd_e2e "${@:2}"
+        ;;
     storybook)
+        install_deps
         echo -e "${GREEN}Starting Storybook...${NC}"
         cd "${FRONTEND_DIR}"
         npm run storybook
         exit 0
         ;;
     "")
-        ;; # default: start dev servers
+        ;; # default: start dev servers below
     *)
         echo -e "${RED}Unknown command: $1${NC}"
         echo "Usage: ./dev.sh [storybook|e2e]"
         exit 1
         ;;
 esac
+
+echo -e "${GREEN}Starting BodySpec Learn development environment...${NC}"
+
+install_deps
+acquire_ports
+
+echo -e "${YELLOW}Backend port: ${BACKEND_PORT}${NC}"
+echo -e "${YELLOW}Frontend port: ${FRONTEND_PORT}${NC}"
+
+export VITE_BACKEND_PORT=${BACKEND_PORT}
+
+trap cleanup SIGINT SIGTERM
 
 # Start backend
 echo -e "${GREEN}Starting backend on port ${BACKEND_PORT}...${NC}"
