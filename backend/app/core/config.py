@@ -23,7 +23,7 @@ class Settings(BaseSettings):
     database_user: str = 'postgres'
     database_pass: str = 'postgres'
 
-    database_ssl: bool = False
+    database_ssl: bool = True
 
     @property
     def database_url(self) -> str:
