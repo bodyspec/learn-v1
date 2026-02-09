@@ -190,7 +190,7 @@ check_env() {
 # Run Alembic migrations
 run_migrations() {
     warn "Running database migrations..."
-    if ! (cd "${BACKEND_DIR}" && source .venv/bin/activate && alembic upgrade head); then
+    if ! (cd "${BACKEND_DIR}" && alembic upgrade head); then
         err "DATABASE MIGRATIONS FAILED — the app will likely not work correctly."
         err "Run 'cd backend && alembic upgrade head' to see full error output."
         exit 1
@@ -456,7 +456,15 @@ cmd_e2e() {
     export VITE_BACKEND_PORT=${BACKEND_PORT}
 
     # Source .env.e2e for Keycloak test account credentials
-    source "${PROJECT_ROOT}/.env.e2e" 2>/dev/null || true
+    if [ -f "${PROJECT_ROOT}/.env.e2e" ]; then
+        source "${PROJECT_ROOT}/.env.e2e"
+    fi
+
+    if [ -z "${E2E_TEST_EMAIL:-}" ] || [ -z "${E2E_TEST_PASSWORD:-}" ]; then
+        err "E2E_TEST_EMAIL and E2E_TEST_PASSWORD must be set."
+        err "Create .env.e2e in the project root with these variables."
+        exit 1
+    fi
 
     # Start backend in background
     (
@@ -496,13 +504,35 @@ cmd_e2e() {
     log "Servers healthy. Running Playwright..."
 
     # Run Playwright tests, passing through any extra args (e.g. --headed, test file)
+    local e2e_rc=0
     (
         cd "${PROJECT_ROOT}/e2e"
         E2E_FRONTEND_PORT=${FRONTEND_PORT} \
         E2E_TEST_EMAIL="${E2E_TEST_EMAIL}" \
         E2E_TEST_PASSWORD="${E2E_TEST_PASSWORD}" \
         npx playwright test "$@"
-    )
+    ) || e2e_rc=$?
+
+    # Kill servers (trap handles pidfile cleanup)
+    kill $backend_pid $frontend_pid 2>/dev/null || true
+
+    local report="${PROJECT_ROOT}/e2e/playwright-report/index.html"
+    if [ $e2e_rc -ne 0 ]; then
+        err "E2E tests failed (exit code $e2e_rc)"
+    else
+        log "E2E tests passed!"
+    fi
+
+    if [ -f "$report" ]; then
+        if [ -t 1 ]; then
+            log "Opening test report..."
+            open "$report" 2>/dev/null || xdg-open "$report" 2>/dev/null || true
+        else
+            echo ""
+            echo "Report: $report"
+        fi
+    fi
+    exit $e2e_rc
 }
 
 cmd_storybook() {
