@@ -198,3 +198,45 @@ async def test_request_certificate_missing_partial_quizzes(
     data = response.json()
     detail = data['detail']
     assert 'physician' in detail['missing']['quizzes']
+
+
+@pytest.mark.asyncio
+async def test_request_certificate_duplicate_409(
+    client: AsyncClient,
+    db_session: AsyncSession,
+    sample_user: User,
+    sample_certificate: Certificate,
+) -> None:
+    """POST /api/v1/certificates returns 409 when active cert already exists."""
+    # sample_certificate is an active physician cert for sample_user
+    # Create passing quiz attempts so the requirements check passes first
+    for module_id in ['core', 'physician']:
+        attempt = QuizAttempt(
+            user_id=sample_user.id,
+            module_id=module_id,
+            score=90,
+            passed=True,
+            answers={'q1': 1},
+        )
+        db_session.add(attempt)
+    await db_session.commit()
+
+    response = await client.post(
+        '/api/v1/certificates',
+        json={'track': 'physician'},
+    )
+    assert response.status_code == 409
+    data = response.json()
+    assert 'active certificate already exists' in data['detail']
+
+
+@pytest.mark.asyncio
+async def test_request_certificate_invalid_track_422(
+    client: AsyncClient,
+) -> None:
+    """POST /api/v1/certificates returns 422 for invalid track name."""
+    response = await client.post(
+        '/api/v1/certificates',
+        json={'track': 'invalid_track'},
+    )
+    assert response.status_code == 422
