@@ -41,6 +41,9 @@ learn-v1/
 │   ├── deep-dives/    # Optional deep-dive content
 │   ├── quizzes/       # Quiz definitions
 │   └── assets/        # Images, report samples
+├── e2e/               # Playwright E2E tests (standalone package)
+│   ├── tests/         # Test spec files + helpers
+│   └── playwright.config.ts
 ├── setup/             # Production scripts
 ├── dev.sh             # Development launcher
 └── Dockerfile         # Multi-stage build
@@ -57,13 +60,20 @@ learn-v1/
 
 ```bash
 # Development
-./dev.sh              # Start both frontend and backend
+./dev.sh              # Start both frontend and backend (alias: ./dev.sh up)
+./dev.sh help         # Show all commands
+
+# Testing
+./dev.sh test         # Run unit tests (backend + frontend)
+./dev.sh e2e          # Run Playwright E2E tests (starts servers automatically)
+./dev.sh e2e auth.spec.ts  # Run a specific test file
+./dev.sh e2e --headed # Run with visible browser
 
 # Linting
-./lint.sh             # Run flake8, mypy, eslint
+./dev.sh lint         # Run flake8 + eslint
 
 # Database migrations
-cd backend && alembic upgrade head
+./dev.sh db migrate   # Run alembic upgrade head
 cd backend && alembic revision --autogenerate -m "description"
 
 # Build
