@@ -466,21 +466,21 @@ cmd_e2e() {
         exit 1
     fi
 
-    # Start backend in background
+    # Start backend in background (suppress output; wait_for_healthy catches failures)
     (
         cd "${BACKEND_DIR}"
         source .venv/bin/activate
         exec python -m uvicorn app.main:app \
             --host 0.0.0.0 \
             --port ${BACKEND_PORT}
-    ) &
+    ) > /dev/null 2>&1 &
     local backend_pid=$!
 
-    # Start frontend in background
+    # Start frontend in background (suppress output; wait_for_healthy catches failures)
     (
         cd "${FRONTEND_DIR}"
         exec npm run dev -- --port ${FRONTEND_PORT}
-    ) &
+    ) > /dev/null 2>&1 &
     local frontend_pid=$!
 
     # Write PID file for e2e servers too
@@ -489,7 +489,24 @@ cmd_e2e() {
     write_pidfile
 
     # Tear down servers on exit (success or failure)
-    trap 'kill $backend_pid $frontend_pid 2>/dev/null; remove_pidfile; exit' EXIT INT TERM
+    e2e_cleanup() {
+        kill $backend_pid $frontend_pid 2>/dev/null || true
+        local waited=0
+        while [ $waited -lt 6 ]; do
+            local alive=0
+            kill -0 $backend_pid 2>/dev/null && alive=1
+            kill -0 $frontend_pid 2>/dev/null && alive=1
+            [ $alive -eq 0 ] && break
+            sleep 0.5
+            waited=$((waited + 1))
+        done
+        kill -9 $backend_pid $frontend_pid 2>/dev/null || true
+        wait $backend_pid 2>/dev/null
+        wait $frontend_pid 2>/dev/null
+        remove_pidfile
+    }
+    trap e2e_cleanup EXIT
+    trap 'exit 1' INT TERM
 
     # Wait for both servers to be healthy
     log "Waiting for servers..."
@@ -539,9 +556,6 @@ cmd_e2e() {
     if [ $parallel_rc -ne 0 ] || [ $serial_rc -ne 0 ]; then
         e2e_rc=1
     fi
-
-    # Kill servers (trap handles pidfile cleanup)
-    kill $backend_pid $frontend_pid 2>/dev/null || true
 
     local report="${PROJECT_ROOT}/e2e/playwright-report/index.html"
     if [ $e2e_rc -ne 0 ]; then
