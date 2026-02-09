@@ -3,7 +3,6 @@ import {
   getCertificates,
   requestCertificate,
   verifyCertificate,
-  getCertificatePdfUrl,
 } from '@/api/certificates'
 
 describe('certificates API', () => {
@@ -122,10 +121,4 @@ describe('certificates API', () => {
     })
   })
 
-  describe('getCertificatePdfUrl', () => {
-    it('returns correct PDF download URL', () => {
-      const url = getCertificatePdfUrl('BS-2024-ABC123')
-      expect(url).toBe('/api/v1/certificates/BS-2024-ABC123/pdf')
-    })
-  })
 })

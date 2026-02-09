@@ -90,12 +90,9 @@ test.describe('Certificate Lifecycle', () => {
     // Issued date should be visible
     await expect(page.getByText(/Issued:/)).toBeVisible();
 
-    // Download PDF button
-    const downloadButton = page.getByRole('link', { name: 'Download PDF' });
+    // Download PDF button (now a button, not a link — uses JS blob download with auth token)
+    const downloadButton = page.getByRole('button', { name: 'Download PDF' });
     await expect(downloadButton).toBeVisible();
-    const pdfHref = await downloadButton.getAttribute('href');
-    expect(pdfHref).toContain('/api/v1/certificates/');
-    expect(pdfHref).toContain('/pdf');
 
     // Copy Verify Link button
     const copyButton = page.getByRole('button', { name: 'Copy Verify Link' });

@@ -17,7 +17,3 @@ export async function verifyCertificate(
 ): Promise<CertificateVerification> {
   return apiClient.get<CertificateVerification>(`/verify/${certificateUid}`)
 }
-
-export function getCertificatePdfUrl(certificateUid: string): string {
-  return `/api/v1/certificates/${certificateUid}/pdf`
-}
