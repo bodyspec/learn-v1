@@ -1,3 +1,4 @@
+import logging
 from collections.abc import AsyncGenerator
 from contextlib import asynccontextmanager
 
@@ -22,7 +23,15 @@ async def lifespan(app: FastAPI) -> AsyncGenerator[None, None]:
     await close_db()
 
 
+def _configure_logging() -> None:
+    """Quiet down noisy third-party loggers."""
+    for name in ('sqlalchemy.engine', 'uvicorn.access', 'alembic'):
+        logging.getLogger(name).setLevel(logging.WARNING)
+
+
 def create_app() -> FastAPI:
+    _configure_logging()
+
     app = FastAPI(
         title='BodySpec Learn',
         description='DEXA Education Platform API',
