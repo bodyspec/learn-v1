@@ -507,18 +507,21 @@ cmd_e2e() {
     # Helper: run a playwright project, ignoring "No tests found" (exit 1 when
     # a specific file doesn't match the project's testMatch/testIgnore).
     run_pw() {
-        local output rc=0
-        output=$(
+        local tmpfile rc=0
+        tmpfile=$(mktemp)
+        (
             cd "${PROJECT_ROOT}/e2e"
             E2E_FRONTEND_PORT=${FRONTEND_PORT} \
             E2E_TEST_EMAIL="${E2E_TEST_EMAIL}" \
             E2E_TEST_PASSWORD="${E2E_TEST_PASSWORD}" \
             npx playwright test "$@" 2>&1
-        ) || rc=$?
-        echo "$output"
-        if [ $rc -ne 0 ] && echo "$output" | grep -q "No tests found"; then
+        ) | tee "$tmpfile"
+        rc=${PIPESTATUS[0]}
+        if [ $rc -ne 0 ] && grep -q "No tests found" "$tmpfile"; then
+            rm -f "$tmpfile"
             return 0
         fi
+        rm -f "$tmpfile"
         return $rc
     }
 
