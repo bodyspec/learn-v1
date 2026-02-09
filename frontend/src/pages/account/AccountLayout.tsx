@@ -20,7 +20,7 @@ export default function AccountLayout() {
   }
 
   return (
-    <div className="flex flex-col md:flex-row flex-1 min-h-0">
+    <div className="flex flex-col md:flex-row flex-1 min-h-0 -mx-4 sm:-mx-6 lg:-mx-8 -my-8">
       <AccountSidebar isOpen={sidebarOpen} onToggle={() => setSidebarOpen(prev => !prev)} onClose={() => setSidebarOpen(false)} />
       <main className="flex-1 px-4 sm:px-6 lg:px-8 py-8 max-w-5xl w-full">
         <Outlet />
