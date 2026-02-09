@@ -55,6 +55,7 @@ export default function ModuleList() {
                   module={module}
                   isComplete={isComplete}
                   sectionsComplete={sectionsComplete}
+                  fromTrack={track}
                 />
               )
             })}
@@ -81,6 +82,7 @@ export default function ModuleList() {
                   module={module}
                   isComplete={isComplete}
                   sectionsComplete={sectionsComplete}
+                  fromTrack={track}
                 />
               )
             })}

@@ -94,4 +94,32 @@ describe('Content Integrity', () => {
       })
     }
   })
+
+  describe('all generated routes are valid', () => {
+    // Module back links: module.track must be a user-facing track or core
+    // (core modules use fromTrack state, but if accessed directly they fall back)
+    const validBackTracks = ['core', 'physician', 'chiropractor', 'trainer']
+    for (const mod of modules) {
+      it(`"${mod.id}" track "${mod.track}" is a known track`, () => {
+        expect(
+          validBackTracks.includes(mod.track),
+          `Module "${mod.id}" has unknown track "${mod.track}"`,
+        ).toBe(true)
+      })
+    }
+
+    // Every module that appears in a user-facing track should be reachable
+    for (const track of userTracks) {
+      const trackModules = getModulesByTrack(track)
+      for (const mod of trackModules) {
+        it(`module "${mod.id}" in track "${track}" has a valid route`, () => {
+          expect(mod.id).toBeTruthy()
+          expect(mod.sections.length).toBeGreaterThan(0)
+          // First section should be reachable
+          const content = getSectionContent(mod.id, mod.sections[0].slug)
+          expect(content, `First section of "${mod.id}" has no content`).toBeDefined()
+        })
+      }
+    }
+  })
 })

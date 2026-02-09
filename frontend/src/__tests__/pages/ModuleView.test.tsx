@@ -55,9 +55,12 @@ const fakeQuiz = {
   questions: [{ id: 'q1' }, { id: 'q2' }, { id: 'q3' }],
 }
 
-function renderPage(moduleId = 'core') {
+function renderPage(moduleId = 'core', state?: { fromTrack?: string }) {
+  const entry = state
+    ? { pathname: `/module/${moduleId}`, state }
+    : `/module/${moduleId}`
   return render(
-    <MemoryRouter initialEntries={[`/module/${moduleId}`]}>
+    <MemoryRouter initialEntries={[entry]}>
       <Routes>
         <Route path="/module/:moduleId" element={<ModuleView />} />
       </Routes>
@@ -144,5 +147,24 @@ describe('ModuleView', () => {
     mockProgressState = { progress: null, isAuthenticated: false }
     renderPage()
     expect(screen.getByTestId('sign-in-prompt')).toBeInTheDocument()
+  })
+
+  it('back link uses fromTrack state when available', () => {
+    renderPage('core', { fromTrack: 'chiropractor' })
+    const backLink = screen.getByText('Back to Chiropractor Track')
+    expect(backLink).toHaveAttribute('href', '/track/chiropractor')
+  })
+
+  it('back link uses module track for non-core modules', () => {
+    mockGetModule.mockReturnValue({ ...fakeModule, id: 'physician', track: 'physician' })
+    renderPage('physician')
+    const backLink = screen.getByText('Back to Physician Track')
+    expect(backLink).toHaveAttribute('href', '/track/physician')
+  })
+
+  it('back link falls back to home for core modules without state', () => {
+    renderPage('core')
+    const backLink = screen.getByText('Back to Home')
+    expect(backLink).toHaveAttribute('href', '/')
   })
 })

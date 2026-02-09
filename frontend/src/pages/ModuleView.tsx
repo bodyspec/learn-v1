@@ -1,4 +1,4 @@
-import { useParams, useNavigate, Link } from 'react-router-dom'
+import { useParams, useNavigate, useLocation, Link } from 'react-router-dom'
 import { Clock, CheckCircle, Circle, FileQuestion } from 'lucide-react'
 import { getModule, getQuiz } from '@/content'
 import { useProgress } from '@/hooks/queries'
@@ -8,7 +8,9 @@ import { NotFound, BackLink, SignInPrompt } from '@/components/common'
 export default function ModuleView() {
   const { moduleId } = useParams<{ moduleId: string }>()
   const navigate = useNavigate()
+  const location = useLocation()
   const { progress, isAuthenticated } = useProgress()
+  const fromTrack = (location.state as { fromTrack?: string })?.fromTrack
 
   if (!moduleId) {
     return <NotFound title="Module Not Found" />
@@ -29,11 +31,14 @@ export default function ModuleView() {
 
   const hasPassed = progress?.quizzes_passed[moduleId] !== undefined
 
-  const trackLabel = module.track === 'core' ? 'Core Track' : `${module.track.charAt(0).toUpperCase() + module.track.slice(1)} Track`
+  const validTracks = ['physician', 'chiropractor', 'trainer']
+  const backTrack = fromTrack && validTracks.includes(fromTrack) ? fromTrack : validTracks.includes(module.track) ? module.track : null
+  const backTo = backTrack ? `/track/${backTrack}` : '/'
+  const backLabel = backTrack ? `Back to ${backTrack.charAt(0).toUpperCase() + backTrack.slice(1)} Track` : 'Back to Home'
 
   return (
     <div className="max-w-4xl mx-auto">
-      <BackLink to={`/track/${module.track}`} label={`Back to ${trackLabel}`} className="mb-6" />
+      <BackLink to={backTo} label={backLabel} className="mb-6" />
 
       <div className="card p-8">
         <div className="flex items-start justify-between">

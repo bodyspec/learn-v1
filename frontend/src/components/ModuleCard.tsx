@@ -6,14 +6,15 @@ interface ModuleCardProps {
   module: Module
   isComplete?: boolean
   sectionsComplete?: number
+  fromTrack?: string
 }
 
-export default function ModuleCard({ module, isComplete, sectionsComplete = 0 }: ModuleCardProps) {
+export default function ModuleCard({ module, isComplete, sectionsComplete = 0, fromTrack }: ModuleCardProps) {
   const totalSections = module.sections.length
   const progress = totalSections > 0 ? (sectionsComplete / totalSections) * 100 : 0
 
   return (
-    <Link to={`/module/${module.id}`} className="card-hover block p-6 no-underline hover:no-underline group">
+    <Link to={`/module/${module.id}`} state={fromTrack ? { fromTrack } : undefined} className="card-hover block p-6 no-underline hover:no-underline group">
       <div className="flex items-start justify-between">
         <div className="flex-1">
           <div className="flex items-center gap-2">
