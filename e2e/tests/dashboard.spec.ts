@@ -60,14 +60,28 @@ test.describe('Dashboard', () => {
     // Complete a section to ensure there's activity
     await page.goto('/module/core/01-how-dexa-works');
     await expect(page.getByText('Section 1 of 5')).toBeVisible({ timeout: 10000 });
+
+    // Wait for auth and progress to be fully loaded (the section-complete POST
+    // requires a valid token, which is only available after progress query loads)
+    await page.waitForResponse(
+      resp => resp.url().includes('/api/v1/progress') && resp.ok(),
+      { timeout: 10000 },
+    );
+
+    // Set up response listener BEFORE clicking
+    const sectionResp = page.waitForResponse(
+      resp => resp.url().includes('/api/v1/progress/section') && resp.request().method() === 'POST' && resp.ok(),
+      { timeout: 15000 },
+    );
     await page.getByRole('button', { name: 'Continue' }).click();
+    await sectionResp;
     await expect(page).toHaveURL('/module/core/02-accuracy');
 
     // Go to dashboard and check for Recent Activity
     await page.goto('/account/dashboard');
     await expect(page.getByRole('heading', { level: 1 })).toContainText('Welcome back,', { timeout: 10000 });
 
-    await expect(page.getByText('Recent Activity')).toBeVisible();
+    await expect(page.getByText('Recent Activity')).toBeVisible({ timeout: 10000 });
     await expect(page.getByText(/Completed "/).first()).toBeVisible();
   });
 

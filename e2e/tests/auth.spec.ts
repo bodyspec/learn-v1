@@ -31,8 +31,8 @@ test.describe('Authentication Flow', () => {
     // "Sign in" button should no longer be visible
     await expect(page.getByRole('button', { name: /Sign in/ })).not.toBeVisible({ timeout: 15000 });
 
-    // Verify account info appears in the nav (user menu button with icon)
-    await expect(page.locator('nav').getByRole('button').filter({ has: page.locator('svg') })).toBeVisible({ timeout: 10000 });
+    // Verify Account link appears in the nav
+    await expect(page.locator('nav a[href="/account/dashboard"]')).toBeVisible({ timeout: 10000 });
   });
 
   test('sign out and verify nav resets', async ({ page }) => {
@@ -48,10 +48,11 @@ test.describe('Authentication Flow', () => {
     // Wait for user to be fully loaded
     await expect(page.getByRole('button', { name: /Sign in/ })).not.toBeVisible({ timeout: 15000 });
 
-    // Open user dropdown menu
-    await page.locator('nav').getByRole('button').filter({ has: page.locator('svg') }).click();
+    // Navigate to account page where Sign Out lives in the sidebar
+    await page.locator('nav a[href="/account/dashboard"]').click();
+    await page.waitForURL(/\/account\//, { timeout: 10000 });
 
-    // Click "Sign Out"
+    // Click "Sign Out" in the sidebar
     await page.getByRole('button', { name: /Sign Out/ }).click();
 
     // Should be logged out - "Sign in" button reappears

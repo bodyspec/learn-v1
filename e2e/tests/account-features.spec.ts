@@ -59,18 +59,19 @@ test.describe('Account Features', () => {
     await page.getByRole('button', { name: 'Reset Progress...' }).click();
 
     // Modal should be visible with warning
-    await expect(page.getByText('This action cannot be undone')).toBeVisible();
+    await expect(page.getByText('This action cannot be undone. All selected progress')).toBeVisible();
 
-    // Checkboxes should be visible
-    await expect(page.getByText('Section progress')).toBeVisible();
-    await expect(page.getByText('Quiz attempts')).toBeVisible();
-    await expect(page.getByText('Certificates')).toBeVisible();
+    // Checkboxes should be visible (scoped to modal to avoid sidebar link ambiguity)
+    const modal = page.locator('[role="dialog"], .fixed.inset-0');
+    await expect(modal.getByText('Section progress')).toBeVisible();
+    await expect(modal.getByText('Quiz attempts')).toBeVisible();
+    await expect(modal.getByText(/^Certificates/)).toBeVisible();
 
     // Type RESET confirmation input
     await expect(page.getByPlaceholder('RESET')).toBeVisible();
 
     // Reset button should be disabled when nothing selected
-    const resetSubmitButton = page.getByRole('button', { name: 'Reset Progress' });
+    const resetSubmitButton = page.getByRole('button', { name: 'Reset Progress', exact: true });
     await expect(resetSubmitButton).toBeDisabled();
 
     // Select a checkbox
@@ -89,7 +90,7 @@ test.describe('Account Features', () => {
     await page.getByRole('button', { name: 'Cancel' }).click();
 
     // Modal should close
-    await expect(page.getByText('This action cannot be undone')).toBeHidden();
+    await expect(page.getByText('This action cannot be undone. All selected progress')).toBeHidden();
   });
 
   test('reset progress full cycle: reset sections then re-complete', async ({ page }) => {
@@ -122,7 +123,7 @@ test.describe('Account Features', () => {
     await page.waitForTimeout(500);
 
     await page.getByRole('button', { name: 'Reset Progress...' }).click();
-    await expect(page.getByText('This action cannot be undone')).toBeVisible();
+    await expect(page.getByText('This action cannot be undone. All selected progress')).toBeVisible();
 
     // Check sections checkbox
     await page.getByText('Section progress').click();
@@ -135,12 +136,12 @@ test.describe('Account Features', () => {
       resp => resp.url().includes('/api/v1/users/me/reset-progress') && resp.request().method() === 'POST',
       { timeout: 15000 },
     );
-    await page.getByRole('button', { name: 'Reset Progress' }).click();
+    await page.getByRole('button', { name: 'Reset Progress', exact: true }).click();
     const response = await resetResp;
     expect(response.ok()).toBeTruthy();
 
-    // Modal should close
-    await expect(page.getByText('This action cannot be undone')).toBeHidden({ timeout: 10000 });
+    // Modal should close (check the modal overlay is gone)
+    await expect(page.locator('.fixed.inset-0')).toBeHidden({ timeout: 10000 });
 
     // Step 4: Re-complete the section to verify progress tracking still works
     await page.goto('/module/core/01-how-dexa-works');

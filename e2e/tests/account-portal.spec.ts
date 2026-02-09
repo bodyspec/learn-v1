@@ -25,7 +25,7 @@ test.describe('Account Portal Navigation', () => {
     await expect(page.getByRole('heading', { level: 1 })).toContainText('Welcome back,', { timeout: 10000 });
 
     // Click Certificates in sidebar
-    await page.getByRole('link', { name: 'Certificates' }).click();
+    await page.getByRole('link', { name: 'Certificates', exact: true }).click();
     await expect(page).toHaveURL(/\/account\/certificates/);
     await expect(page.getByRole('heading', { level: 1 })).toContainText('Your Certificates', { timeout: 10000 });
 

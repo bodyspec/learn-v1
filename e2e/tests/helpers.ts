@@ -19,9 +19,10 @@ export async function signIn(page: Page, email?: string, password?: string) {
   await page.getByRole('button', { name: /sign in|log in|submit/i }).click();
   await page.waitForURL(/localhost/, { timeout: 15000 });
 
-  // Wait for auth to complete (user menu button visible)
+  // Wait for auth to complete (Account link visible in nav)
+  // On mobile the "Account" text is hidden, so fall back to checking for the link by href
   await expect(
-    page.locator('nav').getByRole('button').filter({ has: page.locator('svg') })
+    page.locator('nav a[href="/account/dashboard"]')
   ).toBeVisible({ timeout: 15000 });
 }
 

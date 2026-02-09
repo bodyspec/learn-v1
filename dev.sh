@@ -504,14 +504,38 @@ cmd_e2e() {
     log "Servers healthy. Running Playwright..."
 
     # Run Playwright tests, passing through any extra args (e.g. --headed, test file)
+    # Helper: run a playwright project, ignoring "No tests found" (exit 1 when
+    # a specific file doesn't match the project's testMatch/testIgnore).
+    run_pw() {
+        local output rc=0
+        output=$(
+            cd "${PROJECT_ROOT}/e2e"
+            E2E_FRONTEND_PORT=${FRONTEND_PORT} \
+            E2E_TEST_EMAIL="${E2E_TEST_EMAIL}" \
+            E2E_TEST_PASSWORD="${E2E_TEST_PASSWORD}" \
+            npx playwright test "$@" 2>&1
+        ) || rc=$?
+        echo "$output"
+        if [ $rc -ne 0 ] && echo "$output" | grep -q "No tests found"; then
+            return 0
+        fi
+        return $rc
+    }
+
     local e2e_rc=0
-    (
-        cd "${PROJECT_ROOT}/e2e"
-        E2E_FRONTEND_PORT=${FRONTEND_PORT} \
-        E2E_TEST_EMAIL="${E2E_TEST_EMAIL}" \
-        E2E_TEST_PASSWORD="${E2E_TEST_PASSWORD}" \
-        npx playwright test "$@"
-    ) || e2e_rc=$?
+    local parallel_rc=0 serial_rc=0
+
+    # Phase 1: unauthenticated tests run in parallel (fast)
+    log "Running parallel tests (unauthenticated)..."
+    run_pw --project=parallel --workers=4 "$@" || parallel_rc=$?
+
+    # Phase 2: authenticated tests run serially (shared user state)
+    log "Running serial tests (authenticated)..."
+    run_pw --project=serial --workers=1 "$@" || serial_rc=$?
+
+    if [ $parallel_rc -ne 0 ] || [ $serial_rc -ne 0 ]; then
+        e2e_rc=1
+    fi
 
     # Kill servers (trap handles pidfile cleanup)
     kill $backend_pid $frontend_pid 2>/dev/null || true

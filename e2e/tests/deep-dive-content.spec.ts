@@ -14,14 +14,14 @@ test.describe('Deep Dive Content', () => {
       await expect(page.getByRole('heading', { level: 1 })).toContainText(mod.title, { timeout: 10000 });
 
       // Should show "Deep Dive" badge
-      await expect(page.getByText('Deep Dive')).toBeVisible();
+      await expect(page.getByText('Deep Dive', { exact: true })).toBeVisible();
     });
 
     test(`deep-dive module "${mod.id}" has section with rendered markdown content`, async ({ page }) => {
       await page.goto(`/module/${mod.id}/${mod.firstSection}`);
 
-      // Section should show title and content
-      await expect(page.getByRole('heading', { level: 1 })).toBeVisible({ timeout: 10000 });
+      // Section should show title and content (first h1 is the page title, markdown may add another)
+      await expect(page.getByRole('heading', { level: 1 }).first()).toBeVisible({ timeout: 10000 });
 
       // Markdown content should render (check for substantial text, not just a shell)
       const contentArea = page.locator('.prose, .card');
