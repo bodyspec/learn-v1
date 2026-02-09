@@ -42,12 +42,18 @@ test.describe('Module Page with Progress', () => {
 
     await expect(page.getByRole('heading', { level: 1 })).toContainText('DEXA Fundamentals', { timeout: 10000 });
 
-    // Should show either "Get Started" or "Continue" depending on progress
+    // Should show either "Get Started" or "Continue" link depending on progress,
+    // unless all sections are already complete (then the link is hidden)
     const getStartedOrContinue = page.getByRole('link', { name: /Get Started|Continue/ });
-    // This may not be visible if all sections are complete
     const isVisible = await getStartedOrContinue.isVisible().catch(() => false);
-    // Just verify the module page renders without error
-    expect(true).toBe(true);
+    if (isVisible) {
+      const href = await getStartedOrContinue.getAttribute('href');
+      expect(href).toMatch(/^\/module\/core\//);
+    } else {
+      // All sections complete — verify section links are still rendered
+      const sectionLinks = page.locator('a[href^="/module/core/"]');
+      expect(await sectionLinks.count()).toBeGreaterThan(0);
+    }
   });
 
   test('passed quiz shows Complete badge and Passed status on module page', async ({ page }) => {

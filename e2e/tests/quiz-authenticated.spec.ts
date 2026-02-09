@@ -88,12 +88,9 @@ test.describe('Authenticated Quiz Submission', () => {
     // First options yield a failing score
     await completeQuizWithFirstOptions(page);
 
+    // First options for core quiz yield a failing score (only 2/8 correct)
     await expect(page.getByText(/You scored/)).toBeVisible({ timeout: 15000 });
-
-    const passed = await page.getByText('Congratulations!').isVisible().catch(() => false);
-    if (!passed) {
-      await expect(page.getByRole('button', { name: 'Try Again' })).toBeVisible();
-    }
+    await expect(page.getByRole('button', { name: 'Try Again' })).toBeVisible();
   });
 
   test('correct answers result in Congratulations message (score >= 80%)', async ({ page }) => {

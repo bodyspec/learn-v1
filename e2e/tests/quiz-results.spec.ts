@@ -14,17 +14,12 @@ test.describe('Quiz Results Details', () => {
     await page.goto('/quiz/core');
     await completeQuizWithFirstOptions(page);
 
-    // Picking first option for all questions likely results in a fail
+    // First options for core quiz yield a failing score (only 2/8 correct)
     await expect(page.getByText(/You scored/)).toBeVisible({ timeout: 10000 });
 
-    // If failed, should show Try Again and requirement
-    const tryAgainButton = page.getByRole('button', { name: 'Try Again' });
-    const passed = await page.getByText('Congratulations!').isVisible().catch(() => false);
-
-    if (!passed) {
-      await expect(tryAgainButton).toBeVisible();
-      await expect(page.getByText(/80% required to pass/)).toBeVisible();
-    }
+    // Should show Try Again button and passing score requirement
+    await expect(page.getByRole('button', { name: 'Try Again' })).toBeVisible();
+    await expect(page.getByText(/80% required to pass/)).toBeVisible();
   });
 
   test('results show Review Your Answers section', async ({ page }) => {
@@ -74,14 +69,13 @@ test.describe('Quiz Results Details', () => {
 
     await expect(page.getByText(/You scored/)).toBeVisible({ timeout: 10000 });
 
+    // First options for core quiz yield a fail, so Try Again is always visible
     const tryAgainButton = page.getByRole('button', { name: 'Try Again' });
-    const isVisible = await tryAgainButton.isVisible().catch(() => false);
+    await expect(tryAgainButton).toBeVisible();
 
-    if (isVisible) {
-      await tryAgainButton.click();
-      await expect(page.getByText(/Question 1 of/)).toBeVisible();
-      await expect(page.getByText(/0 of \d+ answered/)).toBeVisible();
-    }
+    await tryAgainButton.click();
+    await expect(page.getByText(/Question 1 of/)).toBeVisible();
+    await expect(page.getByText(/0 of \d+ answered/)).toBeVisible();
   });
 
   test('unauthenticated quiz results show sign-in prompt', async ({ page }) => {

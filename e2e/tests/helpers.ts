@@ -79,6 +79,25 @@ const CORRECT_ANSWERS: Record<string, string[]> = {
     'Sarcopenic obesity',
     'No, osteoporosis diagnosis requires site-specific (hip/spine) DEXA protocols',
   ],
+  chiropractor: [
+    'Approximately 4 pounds',
+    '>10%',
+    'Core weakness and anterior weight shift contribute to LBP; DEXA can help identify patients who would benefit from body composition-focused interventions',
+    'Core weakness that may contribute to spinal instability',
+    'It reveals muscle imbalances and regions needing strengthening beyond standard orthopedic assessment',
+    'The asymmetry indicates incomplete rehabilitation and guides targeted strengthening exercises',
+    '3-4 months',
+  ],
+  trainer: [
+    '1-2 lbs',
+    'Body recomposition is achievable for beginners with higher body fat',
+    '2.0-2.4 g/kg lean mass',
+    'This is excellent body recomposition — they lost fat while gaining muscle, exactly the goal',
+    '12 weeks',
+    'Normal weight with high body fat percentage and low lean mass',
+    'Increase protein intake and add resistance training, monitoring for lean mass gains and fat loss',
+    'Scale weight trends, body measurements, strength performance, and progress photos',
+  ],
 };
 
 /**
