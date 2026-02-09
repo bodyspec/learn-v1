@@ -11,6 +11,8 @@ from app.services.certificate_service import (
     create_certificate,
     get_certificate_by_uid,
     get_user_certificates,
+    has_active_certificate,
+    revoke_certificate,
     verify_certificate,
 )
 
@@ -200,3 +202,105 @@ class TestTrackInfo:
         for track_name, info in TRACK_INFO.items():
             assert 'title' in info, f'{track_name} missing title'
             assert 'description' in info, f'{track_name} missing description'
+
+
+class TestHasActiveCertificate:
+    """Tests for has_active_certificate()."""
+
+    @pytest.mark.asyncio
+    async def test_returns_true_for_active_certificate(
+        self, db_session: AsyncSession, sample_user: User, sample_certificate: Certificate
+    ) -> None:
+        """Returns True when an active (non-revoked, non-expired) certificate exists."""
+        result = await has_active_certificate(db_session, sample_user.id, 'physician')
+        assert result is True
+
+    @pytest.mark.asyncio
+    async def test_returns_false_when_no_certificate(
+        self, db_session: AsyncSession, sample_user: User
+    ) -> None:
+        """Returns False when no certificate exists for the user."""
+        result = await has_active_certificate(db_session, sample_user.id, 'physician')
+        assert result is False
+
+    @pytest.mark.asyncio
+    async def test_returns_false_for_revoked_certificate(
+        self, db_session: AsyncSession, sample_user: User, revoked_certificate: Certificate
+    ) -> None:
+        """Returns False when only revoked certificates exist."""
+        result = await has_active_certificate(db_session, sample_user.id, 'trainer')
+        assert result is False
+
+    @pytest.mark.asyncio
+    async def test_returns_false_for_expired_certificate(
+        self, db_session: AsyncSession, sample_user: User, expired_certificate: Certificate
+    ) -> None:
+        """Returns False when only expired certificates exist."""
+        result = await has_active_certificate(db_session, sample_user.id, 'chiropractor')
+        assert result is False
+
+    @pytest.mark.asyncio
+    async def test_returns_false_for_different_track(
+        self, db_session: AsyncSession, sample_user: User, sample_certificate: Certificate
+    ) -> None:
+        """Returns False when certificate exists for a different track."""
+        # sample_certificate is for 'physician', querying 'chiropractor'
+        result = await has_active_certificate(db_session, sample_user.id, 'chiropractor')
+        assert result is False
+
+
+class TestRevokeCertificate:
+    """Tests for revoke_certificate()."""
+
+    @pytest.mark.asyncio
+    async def test_revokes_existing_certificate(
+        self, db_session: AsyncSession, sample_user: User, sample_certificate: Certificate
+    ) -> None:
+        """Successfully revokes a certificate, setting revoked_at and reason."""
+        result = await revoke_certificate(
+            db_session, sample_certificate.certificate_uid, 'Policy violation'
+        )
+        assert result is not None
+        assert result.revoked_at is not None
+        assert result.revocation_reason == 'Policy violation'
+        assert result.certificate_uid == sample_certificate.certificate_uid
+
+    @pytest.mark.asyncio
+    async def test_returns_none_for_unknown_uid(
+        self, db_session: AsyncSession
+    ) -> None:
+        """Returns None when certificate UID is not found."""
+        result = await revoke_certificate(db_session, 'BS-9999-NONEXIST', 'Test reason')
+        assert result is None
+
+    @pytest.mark.asyncio
+    async def test_revoking_already_revoked_overwrites_timestamp(
+        self, db_session: AsyncSession, sample_user: User, revoked_certificate: Certificate
+    ) -> None:
+        """Revoking an already-revoked certificate overwrites the timestamp and reason."""
+        original_revoked_at = revoked_certificate.revoked_at
+        result = await revoke_certificate(
+            db_session, revoked_certificate.certificate_uid, 'New reason'
+        )
+        assert result is not None
+        assert result.revocation_reason == 'New reason'
+        assert result.revoked_at >= original_revoked_at
+
+
+class TestVerifyCertificateUnknownTrack:
+    """Test for verify_certificate() with unknown track fallback."""
+
+    def test_unknown_track_falls_back_to_title_case(self) -> None:
+        """Certificate with unknown track uses track.title() as track_title."""
+        from unittest.mock import MagicMock
+        cert = MagicMock(spec=Certificate)
+        cert.revoked_at = None
+        cert.expires_at = None
+        cert.certificate_uid = 'BS-2026-CUSTOM'
+        cert.recipient_name = 'Test User'
+        cert.track = 'radiology'
+        cert.issued_at = datetime(2026, 1, 1, tzinfo=timezone.utc)
+
+        result = verify_certificate(cert)
+        assert result.valid is True
+        assert result.track_title == 'Radiology'
