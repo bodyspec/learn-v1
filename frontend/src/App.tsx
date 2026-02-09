@@ -10,6 +10,8 @@ import AccountLayout from './pages/account/AccountLayout'
 import Dashboard from './pages/Dashboard'
 import CertificatesPage from './pages/CertificatesPage'
 import ProfilePage from './pages/ProfilePage'
+import AdminUserList from './pages/account/admin/AdminUserList'
+import AdminUserDetail from './pages/account/admin/AdminUserDetail'
 
 function App() {
   return (
@@ -29,8 +31,8 @@ function App() {
           <Route path="dashboard" element={<Dashboard />} />
           <Route path="certificates" element={<CertificatesPage />} />
           <Route path="profile" element={<ProfilePage />} />
-          <Route path="admin" element={<div className="text-bs-dark55">Admin panel — coming soon</div>} />
-          <Route path="admin/users/:userId" element={<div className="text-bs-dark55">User detail — coming soon</div>} />
+          <Route path="admin" element={<AdminUserList />} />
+          <Route path="admin/users/:userId" element={<AdminUserDetail />} />
         </Route>
 
         {/* Redirects from old routes */}

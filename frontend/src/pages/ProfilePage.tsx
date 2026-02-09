@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useAuth } from '@/auth/AuthProvider'
 import { useUpdateProfile } from '@/hooks/queries'
 import type { RoleType } from '@/types'
+import ResetProgressModal from './account/ResetProgressModal'
 
 export default function ProfilePage() {
   const { user } = useAuth()
@@ -9,6 +10,7 @@ export default function ProfilePage() {
   const [roleType, setRoleType] = useState<RoleType | ''>(user?.role_type || '')
   const [organization, setOrganization] = useState(user?.organization || '')
   const [message, setMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null)
+  const [showReset, setShowReset] = useState(false)
   const updateProfile = useUpdateProfile()
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -119,6 +121,21 @@ export default function ProfilePage() {
           </button>
         </form>
       </div>
+      {/* Danger Zone */}
+      <div className="mt-8 card p-6 border-red-200">
+        <h2 className="text-lg font-semibold text-red-600 mb-2">Danger Zone</h2>
+        <p className="text-sm text-gray-500 mb-4">
+          Reset your learning progress. This action cannot be undone.
+        </p>
+        <button
+          onClick={() => setShowReset(true)}
+          className="bg-red-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-red-700"
+        >
+          Reset Progress...
+        </button>
+      </div>
+
+      {showReset && <ResetProgressModal onClose={() => setShowReset(false)} />}
     </div>
   )
 }
