@@ -23,7 +23,6 @@ vi.mock('@/api/admin', () => ({
 
 import {
   useAdminUsers,
-  useAdminUserDetail,
   usePromoteUser,
   useDemoteUser,
   useDeleteUser,

@@ -1,6 +1,6 @@
-import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
-import { renderHook, waitFor } from '@testing-library/react'
-import { renderHookWithProviders, mockResponse } from '../test-utils'
+import { describe, it, expect, vi, beforeEach } from 'vitest'
+import { waitFor } from '@testing-library/react'
+import { renderHookWithProviders } from '../test-utils'
 
 let mockAuthState = {
   token: null as string | null,
