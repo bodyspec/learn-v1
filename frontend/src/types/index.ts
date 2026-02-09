@@ -48,6 +48,7 @@ export interface User {
   name: string | null
   role_type: RoleType | null
   organization: string | null
+  is_admin: boolean
 }
 
 export interface Progress {

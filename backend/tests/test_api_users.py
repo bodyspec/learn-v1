@@ -51,3 +51,4 @@ async def test_update_user_response_format(client: AsyncClient) -> None:
     assert 'name' in data
     assert 'role_type' in data
     assert 'organization' in data
+    assert 'is_admin' in data

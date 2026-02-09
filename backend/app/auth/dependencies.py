@@ -52,6 +52,18 @@ async def get_current_user(
     return user
 
 
+async def get_admin_user(
+    current_user: Annotated[User, Depends(get_current_user)],
+) -> User:
+    """Get current user if they are an admin. Raises 403 if not admin."""
+    if not current_user.is_admin:
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail='Admin access required',
+        )
+    return current_user
+
+
 async def get_optional_user(
     token: Annotated[str | None, Depends(oauth2_scheme)],
     db: Annotated[AsyncSession, Depends(get_db)],

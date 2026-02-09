@@ -10,6 +10,7 @@ class UserResponse(BaseModel):
     name: str | None
     role_type: Literal['physician', 'chiropractor', 'trainer', 'other'] | None
     organization: str | None
+    is_admin: bool
 
     class Config:
         from_attributes = True
