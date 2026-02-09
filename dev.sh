@@ -222,6 +222,14 @@ check_existing() {
                 fi
             done
             remove_pidfile
+            # Wait for ports to actually be released by the OS
+            for port in $saved_backend_port $saved_frontend_port; do
+                local pw=0
+                while port_busy "$port" && [ $pw -lt 10 ]; do
+                    sleep 0.5
+                    pw=$((pw + 1))
+                done
+            done
             # Reuse the same ports
             REUSE_BACKEND_PORT=$saved_backend_port
             REUSE_FRONTEND_PORT=$saved_frontend_port
@@ -259,7 +267,7 @@ cmd_up() {
     (
         cd "${BACKEND_DIR}"
         source .venv/bin/activate
-        python -m uvicorn app.main:app \
+        exec python -m uvicorn app.main:app \
             --host 0.0.0.0 \
             --port ${BACKEND_PORT} \
             --reload \
@@ -274,7 +282,7 @@ cmd_up() {
     log "Starting frontend on port ${FRONTEND_PORT}..."
     (
         cd "${FRONTEND_DIR}"
-        npm run dev -- --port ${FRONTEND_PORT}
+        exec npm run dev -- --port ${FRONTEND_PORT}
     ) &
     FRONTEND_PID=$!
 
@@ -356,7 +364,7 @@ cmd_e2e() {
     (
         cd "${BACKEND_DIR}"
         source .venv/bin/activate
-        python -m uvicorn app.main:app \
+        exec python -m uvicorn app.main:app \
             --host 0.0.0.0 \
             --port ${BACKEND_PORT}
     ) &
@@ -365,7 +373,7 @@ cmd_e2e() {
     # Start frontend in background
     (
         cd "${FRONTEND_DIR}"
-        npm run dev -- --port ${FRONTEND_PORT}
+        exec npm run dev -- --port ${FRONTEND_PORT}
     ) &
     local frontend_pid=$!
 
