@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test';
 const deepDiveModules = [
   { id: 'bone-health', title: 'Bone Health & DEXA', track: 'physician', firstSection: '01-bone-density-basics' },
   { id: 'glp1-monitoring', title: 'GLP-1 Medications & Body Composition', track: 'physician', firstSection: '01-tracking-weight-loss' },
-  { id: 'sarcopenia-deep-dive', title: 'Sarcopenia & Aging', track: 'physician', firstSection: '01-sarcopenia-aging' },
+  { id: 'sarcopenia', title: 'Sarcopenia & Aging', track: 'core', firstSection: '01-sarcopenia-aging' },
   { id: 'visceral-fat', title: 'Understanding Visceral Fat', track: 'physician', firstSection: '01-understanding-vat' },
 ];
 
