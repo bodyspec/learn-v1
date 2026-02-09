@@ -1,14 +1,7 @@
 import { test, expect } from '@playwright/test';
-import { signIn, requireAuth } from './helpers';
 
 test.describe('Section Progress Tracking', () => {
-  test.beforeAll(() => {
-    requireAuth();
-  });
-
   test('clicking Continue marks section complete and updates dashboard', async ({ page }) => {
-    await signIn(page);
-
     // Go to a section
     await page.goto('/module/core/01-how-dexa-works');
     await expect(page.getByText('Section 1 of 5')).toBeVisible({ timeout: 10000 });

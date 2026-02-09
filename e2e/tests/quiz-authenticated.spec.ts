@@ -1,26 +1,14 @@
 import { test, expect } from '@playwright/test';
-import { signIn, requireAuth, completeQuizWithFirstOptions, completeQuizCorrectly } from './helpers';
+import { completeQuizWithFirstOptions, completeQuizCorrectly } from './helpers';
 
 test.describe('Authenticated Quiz Submission', () => {
   // Auth + quiz completion + API submission takes more time
   test.setTimeout(90000);
 
-  test.beforeAll(() => {
-    requireAuth();
-  });
-
   test('signed-in user can submit quiz and see results', async ({ page }) => {
-    await signIn(page);
-
-    // Navigate to quiz and wait for all initial API calls to settle
-    const quizResponsePromise = page.waitForResponse(
-      resp => resp.url().includes('/api/v1/') && resp.status() === 200,
-      { timeout: 15000 }
-    ).catch(() => null);
     await page.goto('/quiz/core');
     await expect(page.getByText(/Question 1 of/)).toBeVisible({ timeout: 15000 });
-    await quizResponsePromise;
-    await page.waitForTimeout(1000);
+    await page.waitForLoadState('networkidle');
 
     await completeQuizWithFirstOptions(page);
 
@@ -30,16 +18,9 @@ test.describe('Authenticated Quiz Submission', () => {
   });
 
   test('results do not show sign-in prompt for authenticated users', async ({ page }) => {
-    await signIn(page);
-
-    const quizResponsePromise = page.waitForResponse(
-      resp => resp.url().includes('/api/v1/') && resp.status() === 200,
-      { timeout: 15000 }
-    ).catch(() => null);
     await page.goto('/quiz/core');
     await expect(page.getByText(/Question 1 of/)).toBeVisible({ timeout: 15000 });
-    await quizResponsePromise;
-    await page.waitForTimeout(1000);
+    await page.waitForLoadState('networkidle');
 
     await completeQuizWithFirstOptions(page);
 
@@ -50,16 +31,9 @@ test.describe('Authenticated Quiz Submission', () => {
   });
 
   test('quiz attempt is reflected on dashboard', async ({ page }) => {
-    await signIn(page);
-
-    const quizResponsePromise = page.waitForResponse(
-      resp => resp.url().includes('/api/v1/') && resp.status() === 200,
-      { timeout: 15000 }
-    ).catch(() => null);
     await page.goto('/quiz/core');
     await expect(page.getByText(/Question 1 of/)).toBeVisible({ timeout: 15000 });
-    await quizResponsePromise;
-    await page.waitForTimeout(1000);
+    await page.waitForLoadState('networkidle');
 
     await completeQuizWithFirstOptions(page);
 
@@ -74,16 +48,9 @@ test.describe('Authenticated Quiz Submission', () => {
   });
 
   test('first-option answers result in Try Again button (score < 80%)', async ({ page }) => {
-    await signIn(page);
-
-    const quizResponsePromise = page.waitForResponse(
-      resp => resp.url().includes('/api/v1/') && resp.status() === 200,
-      { timeout: 15000 }
-    ).catch(() => null);
     await page.goto('/quiz/core');
     await expect(page.getByText(/Question 1 of/)).toBeVisible({ timeout: 15000 });
-    await quizResponsePromise;
-    await page.waitForTimeout(1000);
+    await page.waitForLoadState('networkidle');
 
     // First options yield a failing score
     await completeQuizWithFirstOptions(page);
@@ -94,16 +61,9 @@ test.describe('Authenticated Quiz Submission', () => {
   });
 
   test('correct answers result in Congratulations message (score >= 80%)', async ({ page }) => {
-    await signIn(page);
-
-    const quizResponsePromise = page.waitForResponse(
-      resp => resp.url().includes('/api/v1/') && resp.status() === 200,
-      { timeout: 15000 }
-    ).catch(() => null);
     await page.goto('/quiz/core');
     await expect(page.getByText(/Question 1 of/)).toBeVisible({ timeout: 15000 });
-    await quizResponsePromise;
-    await page.waitForTimeout(1000);
+    await page.waitForLoadState('networkidle');
 
     // Answer all correctly for a passing score
     await completeQuizCorrectly(page, 'core');

@@ -1,15 +1,9 @@
 import { test, expect } from '@playwright/test';
-import { signIn, requireAuth } from './helpers';
 
 test.describe('Account Features', () => {
   test.setTimeout(120000);
 
-  test.beforeAll(() => {
-    requireAuth();
-  });
-
   test('certificate PDF download returns a valid file', async ({ page }) => {
-    await signIn(page);
     await page.goto('/account/certificates');
     await expect(page.getByRole('heading', { level: 1 })).toContainText('Your Certificates', { timeout: 10000 });
 
@@ -18,7 +12,6 @@ test.describe('Account Features', () => {
       resp => resp.url().includes('/api/v1/certificates') && resp.ok(),
       { timeout: 15000 },
     ).catch(() => null);
-    await page.waitForTimeout(500);
 
     // Check if there's a Download PDF button (user might not have certificates)
     const downloadButton = page.getByRole('button', { name: 'Download PDF' }).first();
@@ -38,7 +31,6 @@ test.describe('Account Features', () => {
   });
 
   test('profile page shows Danger Zone with reset progress button', async ({ page }) => {
-    await signIn(page);
     await page.goto('/account/profile');
     await expect(page.getByRole('heading', { level: 1 })).toContainText('Profile Settings', { timeout: 10000 });
 
@@ -51,7 +43,6 @@ test.describe('Account Features', () => {
   });
 
   test('reset progress modal has type-to-confirm safety', async ({ page }) => {
-    await signIn(page);
     await page.goto('/account/profile');
     await expect(page.getByRole('heading', { level: 1 })).toContainText('Profile Settings', { timeout: 10000 });
 
@@ -94,8 +85,6 @@ test.describe('Account Features', () => {
   });
 
   test('reset progress full cycle: reset sections then re-complete', async ({ page }) => {
-    await signIn(page);
-
     // Step 1: Complete a section to ensure there's progress
     await page.goto('/module/core/01-how-dexa-works');
     await expect(page.getByText('Section 1 of 5')).toBeVisible({ timeout: 10000 });
@@ -120,7 +109,6 @@ test.describe('Account Features', () => {
       resp => resp.url().includes('/api/v1/progress') && resp.ok(),
       { timeout: 15000 },
     ).catch(() => null);
-    await page.waitForTimeout(500);
 
     await page.getByRole('button', { name: 'Reset Progress...' }).click();
     await expect(page.getByText('This action cannot be undone. All selected progress')).toBeVisible();

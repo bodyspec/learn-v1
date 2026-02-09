@@ -1,16 +1,17 @@
 import { test, expect } from '@playwright/test';
-import { signIn, requireAuth } from './helpers';
 
 test.describe('Admin Route Protection', () => {
-  test('unauthenticated user visiting /account/admin is redirected', async ({ page }) => {
-    await page.goto('/account/admin');
-    // AccountLayout redirects unauthenticated users to "/"
-    await expect(page).toHaveURL('/', { timeout: 10000 });
+  test.describe('unauthenticated', () => {
+    test.use({ storageState: { cookies: [], origins: [] } });
+
+    test('unauthenticated user visiting /account/admin is redirected', async ({ page }) => {
+      await page.goto('/account/admin');
+      // AccountLayout redirects unauthenticated users to "/"
+      await expect(page).toHaveURL('/', { timeout: 10000 });
+    });
   });
 
   test('authenticated user without admin sees no Admin sidebar link', async ({ page }) => {
-    requireAuth();
-    await signIn(page);
     await page.goto('/account/dashboard');
     await expect(page.getByRole('heading', { level: 1 })).toContainText('Welcome back,', { timeout: 10000 });
 
@@ -26,9 +27,6 @@ test.describe('Admin Route Protection', () => {
   });
 
   test('navigating directly to /account/admin as non-admin shows user management page but API fails', async ({ page }) => {
-    requireAuth();
-    await signIn(page);
-
     // Even non-admin users can navigate to the route (no route-level guard),
     // but the admin API call will fail with 403
     await page.goto('/account/admin');

@@ -1,14 +1,8 @@
 import { test, expect } from '@playwright/test';
-import { signIn, requireAuth } from './helpers';
 
 test.describe('Account Portal Navigation', () => {
-  test.beforeAll(() => {
-    requireAuth();
-  });
-
   test('clicking Account navigates to portal with sidebar', async ({ page }) => {
-    await signIn(page);
-
+    await page.goto('/');
     await page.locator('nav').getByRole('link', { name: 'Account' }).click();
     await expect(page).toHaveURL(/\/account\/dashboard/);
 
@@ -19,7 +13,6 @@ test.describe('Account Portal Navigation', () => {
   });
 
   test('sidebar navigation switches content', async ({ page }) => {
-    await signIn(page);
     await page.goto('/account/dashboard');
 
     await expect(page.getByRole('heading', { level: 1 })).toContainText('Welcome back,', { timeout: 10000 });
@@ -41,26 +34,21 @@ test.describe('Account Portal Navigation', () => {
   });
 
   test('old /dashboard route redirects to /account/dashboard when authenticated', async ({ page }) => {
-    await signIn(page);
     await page.goto('/dashboard');
     await expect(page).toHaveURL(/\/account\/dashboard/, { timeout: 10000 });
   });
 
   test('old /certificates route redirects to /account/certificates when authenticated', async ({ page }) => {
-    await signIn(page);
     await page.goto('/certificates');
     await expect(page).toHaveURL(/\/account\/certificates/, { timeout: 10000 });
   });
 
   test('old /profile route redirects to /account/profile when authenticated', async ({ page }) => {
-    await signIn(page);
     await page.goto('/profile');
     await expect(page).toHaveURL(/\/account\/profile/, { timeout: 10000 });
   });
 
   test('screenshots: desktop portal pages', async ({ page }) => {
-    await signIn(page);
-
     await page.setViewportSize({ width: 1280, height: 720 });
 
     await page.goto('/account/dashboard');
@@ -78,7 +66,6 @@ test.describe('Account Portal Navigation', () => {
 
   test('mobile sidebar toggle and navigation', async ({ page }) => {
     await page.setViewportSize({ width: 375, height: 667 });
-    await signIn(page);
     await page.goto('/account/dashboard');
 
     await expect(page.getByRole('heading', { level: 1 })).toContainText('Welcome back,', { timeout: 10000 });

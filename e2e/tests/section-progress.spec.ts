@@ -1,16 +1,9 @@
 import { test, expect } from '@playwright/test';
-import { signIn, requireAuth } from './helpers';
 
 test.describe('Section View with Completion State', () => {
   test.setTimeout(60000);
 
-  test.beforeAll(() => {
-    requireAuth();
-  });
-
   test('completed section shows Complete badge on revisit', async ({ page }) => {
-    await signIn(page);
-
     // Set up response listener BEFORE navigating
     const progressResponsePromise = page.waitForResponse(
       resp => resp.url().includes('/api/v1/auth/me') && resp.ok(),
@@ -23,8 +16,6 @@ test.describe('Section View with Completion State', () => {
 
     // Wait for auth/me to confirm auth is fully established
     await progressResponsePromise;
-    // Small buffer for React to process the auth state update
-    await page.waitForTimeout(500);
 
     // Click Continue to mark section as complete and navigate to next section
     await page.getByRole('button', { name: 'Continue' }).click();
@@ -39,8 +30,6 @@ test.describe('Section View with Completion State', () => {
   });
 
   test('authenticated section view does not show SignInPrompt', async ({ page }) => {
-    await signIn(page);
-
     await page.goto('/module/core/01-how-dexa-works');
     await expect(page.getByText('Section 1 of 5')).toBeVisible({ timeout: 10000 });
 

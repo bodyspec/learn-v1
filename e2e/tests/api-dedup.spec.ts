@@ -1,5 +1,4 @@
 import { test, expect } from '@playwright/test';
-import { signIn, requireAuth } from './helpers';
 
 /** Track API calls and assert no duplicates */
 function setupApiTracker(page: import('@playwright/test').Page) {
@@ -24,42 +23,35 @@ function setupApiTracker(page: import('@playwright/test').Page) {
 }
 
 test.describe('API request deduplication', () => {
-  test.beforeAll(() => {
-    requireAuth();
-  });
-
   test('authenticated dashboard fires each API endpoint exactly once', async ({ page }) => {
     const tracker = setupApiTracker(page);
-    await signIn(page);
     tracker.clear();
 
     await page.goto('/account/dashboard');
     await expect(page.getByRole('heading', { level: 1 })).toContainText('Welcome', { timeout: 15000 });
-    await page.waitForTimeout(1000);
+    await page.waitForLoadState('networkidle');
 
     tracker.assertNoDuplicates();
   });
 
   test('certificates page fires each API endpoint exactly once', async ({ page }) => {
     const tracker = setupApiTracker(page);
-    await signIn(page);
     tracker.clear();
 
     await page.goto('/account/certificates');
     await expect(page.getByRole('heading', { level: 1 })).toContainText('Your Certificates', { timeout: 15000 });
-    await page.waitForTimeout(1000);
+    await page.waitForLoadState('networkidle');
 
     tracker.assertNoDuplicates();
   });
 
   test('profile page fires each API endpoint exactly once', async ({ page }) => {
     const tracker = setupApiTracker(page);
-    await signIn(page);
     tracker.clear();
 
     await page.goto('/account/profile');
     await expect(page.getByRole('heading', { level: 1 })).toContainText('Profile Settings', { timeout: 15000 });
-    await page.waitForTimeout(1000);
+    await page.waitForLoadState('networkidle');
 
     tracker.assertNoDuplicates();
   });

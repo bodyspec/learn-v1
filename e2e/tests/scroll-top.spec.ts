@@ -10,7 +10,6 @@ test.describe('Scroll to Top on Section Navigation', () => {
 
     // Scroll down to the Continue button area
     await page.getByRole('button', { name: 'Continue' }).scrollIntoViewIfNeeded();
-    await page.waitForTimeout(300);
 
     const scrollBefore = await page.evaluate(() => window.scrollY);
     if (scrollBefore > 0) {

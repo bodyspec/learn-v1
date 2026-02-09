@@ -1,15 +1,9 @@
 import { test, expect } from '@playwright/test';
-import { signIn, requireAuth } from './helpers';
 
 test.describe('Track Page with Progress', () => {
   test.setTimeout(60000);
 
-  test.beforeAll(() => {
-    requireAuth();
-  });
-
   test('authenticated user sees module cards on track page', async ({ page }) => {
-    await signIn(page);
     await page.goto('/track/physician');
 
     await expect(page.getByRole('heading', { level: 1 })).toContainText('Clinical Applications', { timeout: 15000 });
@@ -20,8 +14,6 @@ test.describe('Track Page with Progress', () => {
   });
 
   test('module cards show progress text when sections are partially complete', async ({ page }) => {
-    await signIn(page);
-
     // Complete a section - wait for auth to be fully established first
     await page.goto('/module/core/01-how-dexa-works');
     await expect(page.getByText('Section 1 of 5')).toBeVisible({ timeout: 15000 });

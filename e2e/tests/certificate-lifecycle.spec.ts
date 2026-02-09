@@ -1,41 +1,25 @@
 import { test, expect } from '@playwright/test';
-import { signIn, requireAuth, completeQuizCorrectly } from './helpers';
+import { completeQuizCorrectly } from './helpers';
 
 test.describe('Certificate Lifecycle', () => {
-  // This test flow involves signing in, passing two quizzes, claiming a certificate,
+  // This test flow involves passing two quizzes, claiming a certificate,
   // and verifying it — needs generous timeout
   test.setTimeout(180000);
 
-  test.beforeAll(() => {
-    requireAuth();
-  });
-
   test('full lifecycle: pass quizzes, claim certificate, verify', async ({ page }) => {
-    await signIn(page);
-
     // Step 1: Pass the core quiz with correct answers
-    const coreQuizResponse = page.waitForResponse(
-      resp => resp.url().includes('/api/v1/') && resp.ok(),
-      { timeout: 15000 }
-    ).catch(() => null);
     await page.goto('/quiz/core');
     await expect(page.getByText(/Question 1 of/)).toBeVisible({ timeout: 15000 });
-    await coreQuizResponse;
-    await page.waitForTimeout(1000);
+    await page.waitForLoadState('networkidle');
 
     await completeQuizCorrectly(page, 'core');
     await expect(page.getByText(/You scored/)).toBeVisible({ timeout: 15000 });
     await expect(page.getByText('Congratulations!')).toBeVisible();
 
     // Step 2: Pass the physician quiz with correct answers
-    const physicianQuizResponse = page.waitForResponse(
-      resp => resp.url().includes('/api/v1/') && resp.ok(),
-      { timeout: 15000 }
-    ).catch(() => null);
     await page.goto('/quiz/physician');
     await expect(page.getByText(/Question 1 of/)).toBeVisible({ timeout: 15000 });
-    await physicianQuizResponse;
-    await page.waitForTimeout(1000);
+    await page.waitForLoadState('networkidle');
 
     await completeQuizCorrectly(page, 'physician');
     await expect(page.getByText(/You scored/)).toBeVisible({ timeout: 15000 });
@@ -54,7 +38,6 @@ test.describe('Certificate Lifecycle', () => {
       resp => resp.url().includes('/api/v1/progress') && resp.ok(),
       { timeout: 15000 }
     ).catch(() => null);
-    await page.waitForTimeout(1000);
 
     // Step 4: Claim the physician track certificate
     const claimButton = page.getByRole('button', { name: /Claim Certificate/ });
@@ -69,12 +52,9 @@ test.describe('Certificate Lifecycle', () => {
 
       await claimButton.first().click();
 
-      // Button should show "Processing..." while request is in flight
-      // (may be too fast to catch, so we don't assert it strictly)
-
       await certResponse;
-      // Wait for the page to update with the new certificate
-      await page.waitForTimeout(2000);
+      // Wait for the certificate ID to appear on the page
+      await expect(page.getByText(/Certificate ID: BS-\d{4}-[A-Z0-9]{6}/)).toBeVisible({ timeout: 15000 });
     }
 
     // Step 5: Verify certificate card is displayed

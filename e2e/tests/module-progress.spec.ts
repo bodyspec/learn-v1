@@ -1,13 +1,8 @@
 import { test, expect } from '@playwright/test';
-import { signIn, requireAuth, completeQuizCorrectly } from './helpers';
+import { completeQuizCorrectly } from './helpers';
 
 test.describe('Module Page with Progress', () => {
-  test.beforeAll(() => {
-    requireAuth();
-  });
-
   test('authenticated user sees progress bar on module page', async ({ page }) => {
-    await signIn(page);
     await page.goto('/module/core');
 
     await expect(page.getByRole('heading', { level: 1 })).toContainText('DEXA Fundamentals', { timeout: 10000 });
@@ -18,8 +13,6 @@ test.describe('Module Page with Progress', () => {
   });
 
   test('completing a section shows checkmark on module page', async ({ page }) => {
-    await signIn(page);
-
     // Complete a section first
     await page.goto('/module/core/01-how-dexa-works');
     await expect(page.getByText('Section 1 of 5')).toBeVisible({ timeout: 10000 });
@@ -37,7 +30,6 @@ test.describe('Module Page with Progress', () => {
   });
 
   test('module page shows Get Started or Continue button', async ({ page }) => {
-    await signIn(page);
     await page.goto('/module/core');
 
     await expect(page.getByRole('heading', { level: 1 })).toContainText('DEXA Fundamentals', { timeout: 10000 });
@@ -58,12 +50,11 @@ test.describe('Module Page with Progress', () => {
 
   test('passed quiz shows Complete badge and Passed status on module page', async ({ page }) => {
     test.setTimeout(120000);
-    await signIn(page);
 
     // First pass the core quiz with correct answers
     await page.goto('/quiz/core');
     await expect(page.getByText(/Question 1 of/)).toBeVisible({ timeout: 15000 });
-    await page.waitForTimeout(1000);
+    await page.waitForLoadState('networkidle');
     await completeQuizCorrectly(page, 'core');
     await expect(page.getByText(/You scored/)).toBeVisible({ timeout: 15000 });
     await expect(page.getByText('Congratulations!')).toBeVisible();

@@ -71,7 +71,7 @@ test.describe('Link Crawler', () => {
       }
 
       // Wait for React to render content
-      await page.waitForTimeout(500);
+      await page.waitForLoadState('networkidle');
 
       // Check for error markers
       for (const marker of ERROR_MARKERS) {

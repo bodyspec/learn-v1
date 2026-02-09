@@ -10,7 +10,6 @@ const AUTHENTICATED_TESTS = [
   '**/admin-protection.spec.ts',
   '**/admin.spec.ts',
   '**/api-dedup.spec.ts',
-  '**/auth.spec.ts',
   '**/certificate-lifecycle.spec.ts',
   '**/certificates.spec.ts',
   '**/console-errors.spec.ts',
@@ -42,15 +41,29 @@ export default defineConfig({
   },
   projects: [
     {
+      name: 'setup',
+      testMatch: '**/auth.setup.ts',
+    },
+    {
       name: 'parallel',
       use: { browserName: 'chromium' },
-      testIgnore: AUTHENTICATED_TESTS,
+      testIgnore: [...AUTHENTICATED_TESTS, '**/auth.setup.ts', '**/auth.spec.ts'],
       fullyParallel: true,
     },
     {
       name: 'serial',
-      use: { browserName: 'chromium' },
+      use: {
+        browserName: 'chromium',
+        storageState: 'tests/.auth/user.json',
+      },
       testMatch: AUTHENTICATED_TESTS,
+      dependencies: ['setup'],
+    },
+    {
+      name: 'auth',
+      use: { browserName: 'chromium' },
+      testMatch: '**/auth.spec.ts',
+      dependencies: ['setup'],
     },
   ],
   outputDir: 'test-results',

@@ -1,26 +1,22 @@
 import { test, expect } from '@playwright/test';
-import { signIn, requireAuth } from './helpers';
 
 test.describe('Profile Page', () => {
-  test.beforeAll(() => {
-    requireAuth();
-  });
+  test.describe('unauthenticated', () => {
+    test.use({ storageState: { cookies: [], origins: [] } });
 
-  test('unauthenticated visit redirects to home', async ({ page }) => {
-    await page.goto('/account/profile');
-
-    await expect(page).toHaveURL('/', { timeout: 10000 });
+    test('unauthenticated visit redirects to home', async ({ page }) => {
+      await page.goto('/account/profile');
+      await expect(page).toHaveURL('/', { timeout: 10000 });
+    });
   });
 
   test('shows Profile Settings heading after sign in', async ({ page }) => {
-    await signIn(page);
     await page.goto('/account/profile');
 
     await expect(page.getByRole('heading', { level: 1 })).toContainText('Profile Settings', { timeout: 10000 });
   });
 
   test('email field is visible, disabled, and pre-filled', async ({ page }) => {
-    await signIn(page);
     await page.goto('/account/profile');
 
     await expect(page.getByRole('heading', { level: 1 })).toContainText('Profile Settings', { timeout: 10000 });
@@ -32,7 +28,6 @@ test.describe('Profile Page', () => {
   });
 
   test('email has helper text about identity provider', async ({ page }) => {
-    await signIn(page);
     await page.goto('/account/profile');
 
     await expect(page.getByRole('heading', { level: 1 })).toContainText('Profile Settings', { timeout: 10000 });
@@ -40,7 +35,6 @@ test.describe('Profile Page', () => {
   });
 
   test('name field is editable', async ({ page }) => {
-    await signIn(page);
     await page.goto('/account/profile');
 
     await expect(page.getByRole('heading', { level: 1 })).toContainText('Profile Settings', { timeout: 10000 });
@@ -51,7 +45,6 @@ test.describe('Profile Page', () => {
   });
 
   test('role dropdown has correct options', async ({ page }) => {
-    await signIn(page);
     await page.goto('/account/profile');
 
     await expect(page.getByRole('heading', { level: 1 })).toContainText('Profile Settings', { timeout: 10000 });
@@ -71,7 +64,6 @@ test.describe('Profile Page', () => {
   });
 
   test('organization field is editable', async ({ page }) => {
-    await signIn(page);
     await page.goto('/account/profile');
 
     await expect(page.getByRole('heading', { level: 1 })).toContainText('Profile Settings', { timeout: 10000 });
@@ -82,7 +74,6 @@ test.describe('Profile Page', () => {
   });
 
   test('save changes button submits form and shows success', async ({ page }) => {
-    await signIn(page);
     await page.goto('/account/profile');
 
     await expect(page.getByRole('heading', { level: 1 })).toContainText('Profile Settings', { timeout: 10000 });

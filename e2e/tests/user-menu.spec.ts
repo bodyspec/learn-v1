@@ -1,13 +1,8 @@
 import { test, expect } from '@playwright/test';
-import { signIn, requireAuth } from './helpers';
 
 test.describe('Account Navigation', () => {
-  test.beforeAll(() => {
-    requireAuth();
-  });
-
   test('Account link is visible for authenticated users', async ({ page }) => {
-    await signIn(page);
+    await page.goto('/');
 
     // Account link in nav should be visible
     const accountLink = page.locator('nav').getByRole('link', { name: 'Account' });
@@ -15,7 +10,7 @@ test.describe('Account Navigation', () => {
   });
 
   test('Account link navigates to account portal with sidebar', async ({ page }) => {
-    await signIn(page);
+    await page.goto('/');
 
     await page.locator('nav').getByRole('link', { name: 'Account' }).click();
     await expect(page).toHaveURL(/\/account\/dashboard/);
@@ -27,7 +22,7 @@ test.describe('Account Navigation', () => {
   });
 
   test('sidebar Sign Out resets nav to show sign-in button', async ({ page }) => {
-    await signIn(page);
+    await page.goto('/');
 
     await page.locator('nav').getByRole('link', { name: 'Account' }).click();
     await expect(page).toHaveURL(/\/account\/dashboard/);

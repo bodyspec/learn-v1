@@ -1,26 +1,22 @@
 import { test, expect } from '@playwright/test';
-import { signIn, requireAuth } from './helpers';
 
 test.describe('Dashboard', () => {
-  test.beforeAll(() => {
-    requireAuth();
-  });
+  test.describe('unauthenticated', () => {
+    test.use({ storageState: { cookies: [], origins: [] } });
 
-  test('unauthenticated visit redirects to home', async ({ page }) => {
-    await page.goto('/account/dashboard');
-
-    await expect(page).toHaveURL('/', { timeout: 10000 });
+    test('unauthenticated visit redirects to home', async ({ page }) => {
+      await page.goto('/account/dashboard');
+      await expect(page).toHaveURL('/', { timeout: 10000 });
+    });
   });
 
   test('authenticated dashboard shows welcome heading', async ({ page }) => {
-    await signIn(page);
     await page.goto('/account/dashboard');
 
     await expect(page.getByRole('heading', { level: 1 })).toContainText('Welcome back,', { timeout: 10000 });
   });
 
   test('shows three quick-stat cards', async ({ page }) => {
-    await signIn(page);
     await page.goto('/account/dashboard');
 
     await expect(page.getByText('Sections completed')).toBeVisible({ timeout: 10000 });
@@ -29,7 +25,6 @@ test.describe('Dashboard', () => {
   });
 
   test('shows track progress section with all three tracks', async ({ page }) => {
-    await signIn(page);
     await page.goto('/account/dashboard');
 
     await expect(page.getByText('Track Progress')).toBeVisible({ timeout: 10000 });
@@ -45,7 +40,6 @@ test.describe('Dashboard', () => {
   });
 
   test('progress bars are visible in track progress', async ({ page }) => {
-    await signIn(page);
     await page.goto('/account/dashboard');
 
     await expect(page.getByText('Track Progress')).toBeVisible({ timeout: 10000 });
@@ -55,8 +49,6 @@ test.describe('Dashboard', () => {
   });
 
   test('recent activity section appears when sections are completed', async ({ page }) => {
-    await signIn(page);
-
     // Complete a section to ensure there's activity
     await page.goto('/module/core/01-how-dexa-works');
     await expect(page.getByText('Section 1 of 5')).toBeVisible({ timeout: 10000 });
@@ -86,7 +78,6 @@ test.describe('Dashboard', () => {
   });
 
   test('certificates CTA card shows View Certificates link when certificates exist', async ({ page }) => {
-    await signIn(page);
     await page.goto('/account/dashboard');
     await expect(page.getByRole('heading', { level: 1 })).toContainText('Welcome back,', { timeout: 10000 });
 
