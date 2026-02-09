@@ -1,12 +1,11 @@
 import { Link } from 'react-router-dom'
-import { Menu, X, User, LogOut, LayoutDashboard, Award, BookOpen } from 'lucide-react'
+import { Menu, X, User } from 'lucide-react'
 import { useState } from 'react'
 import { useAuth } from '@/auth/AuthProvider'
 
 export default function Navigation() {
-  const { user, isAuthenticated, login, logout } = useAuth()
+  const { isAuthenticated, login } = useAuth()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [userMenuOpen, setUserMenuOpen] = useState(false)
 
   return (
     <nav className="bg-white border-b border-bs-dark15">
@@ -41,54 +40,13 @@ export default function Navigation() {
 
           <div className="flex items-center">
             {isAuthenticated ? (
-              <div className="relative">
-                <button
-                  onClick={() => setUserMenuOpen(!userMenuOpen)}
-                  className="flex items-center gap-2 text-sm font-medium text-bs-dark hover:text-bs-dark55"
-                >
-                  <User className="h-5 w-5" />
-                  <span className="hidden sm:inline">{user?.name || user?.email}</span>
-                </button>
-                {userMenuOpen && (
-                  <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-1 z-50 border border-bs-dark15">
-                    <Link
-                      to="/dashboard"
-                      className="flex items-center gap-2 px-4 py-2 text-sm text-bs-dark hover:bg-bs-dark3 no-underline"
-                      onClick={() => setUserMenuOpen(false)}
-                    >
-                      <LayoutDashboard className="h-4 w-4" />
-                      Dashboard
-                    </Link>
-                    <Link
-                      to="/certificates"
-                      className="flex items-center gap-2 px-4 py-2 text-sm text-bs-dark hover:bg-bs-dark3 no-underline"
-                      onClick={() => setUserMenuOpen(false)}
-                    >
-                      <Award className="h-4 w-4" />
-                      Certificates
-                    </Link>
-                    <Link
-                      to="/profile"
-                      className="flex items-center gap-2 px-4 py-2 text-sm text-bs-dark hover:bg-bs-dark3 no-underline"
-                      onClick={() => setUserMenuOpen(false)}
-                    >
-                      <User className="h-4 w-4" />
-                      Profile
-                    </Link>
-                    <hr className="my-1 border-bs-dark15" />
-                    <button
-                      onClick={() => {
-                        setUserMenuOpen(false)
-                        logout()
-                      }}
-                      className="flex items-center gap-2 w-full px-4 py-2 text-sm text-bs-dark hover:bg-bs-dark3"
-                    >
-                      <LogOut className="h-4 w-4" />
-                      Sign Out
-                    </button>
-                  </div>
-                )}
-              </div>
+              <Link
+                to="/account/dashboard"
+                className="flex items-center gap-2 text-sm font-medium text-bs-dark hover:text-bs-dark55 no-underline"
+              >
+                <User className="h-5 w-5" />
+                <span className="hidden sm:inline">Account</span>
+              </Link>
             ) : (
               <button onClick={login} className="text-sm font-medium text-bs-dark hover:text-bs-dark55 flex items-center gap-1">
                 Sign in <span aria-hidden="true">→</span>

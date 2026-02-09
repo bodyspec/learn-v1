@@ -6,23 +6,22 @@ test.describe('Dashboard', () => {
     requireAuth();
   });
 
-  test('unauthenticated visit shows sign-in prompt', async ({ page }) => {
-    await page.goto('/dashboard');
+  test('unauthenticated visit redirects to home', async ({ page }) => {
+    await page.goto('/account/dashboard');
 
-    await expect(page.getByText('Please sign in to access this page.')).toBeVisible({ timeout: 10000 });
-    await expect(page.getByRole('button', { name: 'Sign In', exact: true })).toBeVisible();
+    await expect(page).toHaveURL('/', { timeout: 10000 });
   });
 
   test('authenticated dashboard shows welcome heading', async ({ page }) => {
     await signIn(page);
-    await page.goto('/dashboard');
+    await page.goto('/account/dashboard');
 
     await expect(page.getByRole('heading', { level: 1 })).toContainText('Welcome back,', { timeout: 10000 });
   });
 
   test('shows three quick-stat cards', async ({ page }) => {
     await signIn(page);
-    await page.goto('/dashboard');
+    await page.goto('/account/dashboard');
 
     await expect(page.getByText('Sections completed')).toBeVisible({ timeout: 10000 });
     await expect(page.getByText('Quizzes passed')).toBeVisible();
@@ -31,7 +30,7 @@ test.describe('Dashboard', () => {
 
   test('shows track progress section with all three tracks', async ({ page }) => {
     await signIn(page);
-    await page.goto('/dashboard');
+    await page.goto('/account/dashboard');
 
     await expect(page.getByText('Track Progress')).toBeVisible({ timeout: 10000 });
 
@@ -47,7 +46,7 @@ test.describe('Dashboard', () => {
 
   test('progress bars are visible in track progress', async ({ page }) => {
     await signIn(page);
-    await page.goto('/dashboard');
+    await page.goto('/account/dashboard');
 
     await expect(page.getByText('Track Progress')).toBeVisible({ timeout: 10000 });
     // Progress bars use bg-gray-200 background
@@ -65,7 +64,7 @@ test.describe('Dashboard', () => {
     await expect(page).toHaveURL('/module/core/02-accuracy');
 
     // Go to dashboard and check for Recent Activity
-    await page.goto('/dashboard');
+    await page.goto('/account/dashboard');
     await expect(page.getByRole('heading', { level: 1 })).toContainText('Welcome back,', { timeout: 10000 });
 
     await expect(page.getByText('Recent Activity')).toBeVisible();
@@ -74,14 +73,14 @@ test.describe('Dashboard', () => {
 
   test('certificates CTA card shows View Certificates link when certificates exist', async ({ page }) => {
     await signIn(page);
-    await page.goto('/dashboard');
+    await page.goto('/account/dashboard');
     await expect(page.getByRole('heading', { level: 1 })).toContainText('Welcome back,', { timeout: 10000 });
 
     // If the user has certificates, the CTA card is visible
     const viewCertsLink = page.getByRole('link', { name: 'View Certificates' });
     const hasCerts = await viewCertsLink.isVisible().catch(() => false);
     if (hasCerts) {
-      await expect(viewCertsLink).toHaveAttribute('href', '/certificates');
+      await expect(viewCertsLink).toHaveAttribute('href', '/account/certificates');
     }
     // If no certificates, the card won't appear — that's fine
   });

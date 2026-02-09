@@ -63,7 +63,7 @@ test.describe('No Console Errors (Authenticated)', () => {
   test('dashboard has no JS errors', async ({ page }) => {
     await signIn(page);
     const errors = collectErrors(page);
-    await page.goto('/dashboard');
+    await page.goto('/account/dashboard');
     await expect(page.getByRole('heading', { level: 1 })).toContainText('Welcome', { timeout: 10000 });
     expect(errors).toEqual([]);
   });
@@ -71,7 +71,7 @@ test.describe('No Console Errors (Authenticated)', () => {
   test('certificates page has no JS errors', async ({ page }) => {
     await signIn(page);
     const errors = collectErrors(page);
-    await page.goto('/certificates');
+    await page.goto('/account/certificates');
     await expect(page.getByRole('heading', { level: 1 })).toContainText('Your Certificates', { timeout: 10000 });
     expect(errors).toEqual([]);
   });
@@ -79,7 +79,7 @@ test.describe('No Console Errors (Authenticated)', () => {
   test('profile page has no JS errors', async ({ page }) => {
     await signIn(page);
     const errors = collectErrors(page);
-    await page.goto('/profile');
+    await page.goto('/account/profile');
     await expect(page.getByRole('heading', { level: 1 })).toContainText('Profile Settings', { timeout: 10000 });
     expect(errors).toEqual([]);
   });

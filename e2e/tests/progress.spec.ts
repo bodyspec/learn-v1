@@ -18,7 +18,7 @@ test.describe('Section Progress Tracking', () => {
     await expect(page).toHaveURL('/module/core/02-accuracy');
 
     // Navigate to dashboard
-    await page.goto('/dashboard');
+    await page.goto('/account/dashboard');
     await expect(page.getByRole('heading', { level: 1 })).toContainText('Welcome back,', { timeout: 10000 });
 
     // Sections completed count should be at least 1

@@ -1,69 +1,38 @@
 import { test, expect } from '@playwright/test';
 import { signIn, requireAuth } from './helpers';
 
-test.describe('User Menu Dropdown', () => {
+test.describe('Account Navigation', () => {
   test.beforeAll(() => {
     requireAuth();
   });
 
-  test('user menu button shows user name or email', async ({ page }) => {
+  test('Account link is visible for authenticated users', async ({ page }) => {
     await signIn(page);
 
-    // User menu button in nav should be visible with text
-    const userMenuButton = page.locator('nav').getByRole('button').filter({ has: page.locator('svg') });
-    await expect(userMenuButton).toBeVisible();
+    // Account link in nav should be visible
+    const accountLink = page.locator('nav').getByRole('link', { name: 'Account' });
+    await expect(accountLink).toBeVisible();
   });
 
-  test('clicking user menu shows dropdown with navigation links', async ({ page }) => {
+  test('Account link navigates to account portal with sidebar', async ({ page }) => {
     await signIn(page);
 
-    // Open user menu
-    const userMenuButton = page.locator('nav').getByRole('button').filter({ has: page.locator('svg') });
-    await userMenuButton.click();
+    await page.locator('nav').getByRole('link', { name: 'Account' }).click();
+    await expect(page).toHaveURL(/\/account\/dashboard/);
 
-    // Dropdown should show all menu items
+    // Sidebar should show navigation links (on desktop)
     await expect(page.getByRole('link', { name: 'Dashboard' })).toBeVisible();
     await expect(page.getByRole('link', { name: 'Certificates' })).toBeVisible();
     await expect(page.getByRole('link', { name: 'Profile' })).toBeVisible();
-    await expect(page.getByRole('button', { name: 'Sign Out' })).toBeVisible();
   });
 
-  test('Dashboard link navigates to /dashboard', async ({ page }) => {
+  test('sidebar Sign Out resets nav to show sign-in button', async ({ page }) => {
     await signIn(page);
 
-    const userMenuButton = page.locator('nav').getByRole('button').filter({ has: page.locator('svg') });
-    await userMenuButton.click();
+    await page.locator('nav').getByRole('link', { name: 'Account' }).click();
+    await expect(page).toHaveURL(/\/account\/dashboard/);
 
-    await page.getByRole('link', { name: 'Dashboard' }).click();
-    await expect(page).toHaveURL('/dashboard');
-  });
-
-  test('Certificates link navigates to /certificates', async ({ page }) => {
-    await signIn(page);
-
-    const userMenuButton = page.locator('nav').getByRole('button').filter({ has: page.locator('svg') });
-    await userMenuButton.click();
-
-    await page.getByRole('link', { name: 'Certificates' }).click();
-    await expect(page).toHaveURL('/certificates');
-  });
-
-  test('Profile link navigates to /profile', async ({ page }) => {
-    await signIn(page);
-
-    const userMenuButton = page.locator('nav').getByRole('button').filter({ has: page.locator('svg') });
-    await userMenuButton.click();
-
-    await page.getByRole('link', { name: 'Profile' }).click();
-    await expect(page).toHaveURL('/profile');
-  });
-
-  test('Sign Out resets nav to show sign-in button', async ({ page }) => {
-    await signIn(page);
-
-    const userMenuButton = page.locator('nav').getByRole('button').filter({ has: page.locator('svg') });
-    await userMenuButton.click();
-
+    // Click Sign Out in sidebar
     await page.getByRole('button', { name: 'Sign Out' }).click();
 
     // Sign in button should reappear

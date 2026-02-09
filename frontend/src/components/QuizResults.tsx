@@ -37,7 +37,7 @@ export default function QuizResults({ result, quiz, onRetry, showSignInPrompt }:
             <Award className="w-8 h-8 text-yellow-500 mx-auto mb-2" />
             <p className="text-sm text-gray-700">
               You're eligible for a certificate! Visit your{' '}
-              <Link to="/certificates" className="text-salad-100 hover:underline">
+              <Link to="/account/certificates" className="text-salad-100 hover:underline">
                 certificates page
               </Link>{' '}
               to claim it.

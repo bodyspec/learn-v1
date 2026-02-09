@@ -46,7 +46,7 @@ test.describe('Certificate Lifecycle', () => {
     await expect(page.getByRole('link', { name: 'certificates page' })).toBeVisible();
 
     // Step 3: Navigate to certificates page
-    await page.goto('/certificates');
+    await page.goto('/account/certificates');
     await expect(page.getByRole('heading', { level: 1 })).toContainText('Your Certificates', { timeout: 10000 });
 
     // Wait for progress data to load

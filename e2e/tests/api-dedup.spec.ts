@@ -33,7 +33,7 @@ test.describe('API request deduplication', () => {
     await signIn(page);
     tracker.clear();
 
-    await page.goto('/dashboard');
+    await page.goto('/account/dashboard');
     await expect(page.getByRole('heading', { level: 1 })).toContainText('Welcome', { timeout: 15000 });
     await page.waitForTimeout(1000);
 
@@ -45,7 +45,7 @@ test.describe('API request deduplication', () => {
     await signIn(page);
     tracker.clear();
 
-    await page.goto('/certificates');
+    await page.goto('/account/certificates');
     await expect(page.getByRole('heading', { level: 1 })).toContainText('Your Certificates', { timeout: 15000 });
     await page.waitForTimeout(1000);
 
@@ -57,7 +57,7 @@ test.describe('API request deduplication', () => {
     await signIn(page);
     tracker.clear();
 
-    await page.goto('/profile');
+    await page.goto('/account/profile');
     await expect(page.getByRole('heading', { level: 1 })).toContainText('Profile Settings', { timeout: 15000 });
     await page.waitForTimeout(1000);
 

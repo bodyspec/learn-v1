@@ -66,7 +66,7 @@ test.describe('Authenticated Quiz Submission', () => {
     await expect(page.getByText(/You scored/)).toBeVisible({ timeout: 15000 });
 
     // Navigate to dashboard to verify
-    await page.goto('/dashboard');
+    await page.goto('/account/dashboard');
     await expect(page.getByRole('heading', { level: 1 })).toContainText('Welcome back,', { timeout: 15000 });
 
     // Quizzes passed stat should be visible

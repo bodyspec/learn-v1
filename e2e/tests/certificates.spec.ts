@@ -6,23 +6,22 @@ test.describe('Certificates Page', () => {
     requireAuth();
   });
 
-  test('unauthenticated visit shows sign-in prompt', async ({ page }) => {
-    await page.goto('/certificates');
+  test('unauthenticated visit redirects to home', async ({ page }) => {
+    await page.goto('/account/certificates');
 
-    await expect(page.getByText('Please sign in to access this page.')).toBeVisible({ timeout: 10000 });
-    await expect(page.getByRole('button', { name: 'Sign In', exact: true })).toBeVisible();
+    await expect(page).toHaveURL('/', { timeout: 10000 });
   });
 
   test('shows Your Certificates heading after sign in', async ({ page }) => {
     await signIn(page);
-    await page.goto('/certificates');
+    await page.goto('/account/certificates');
 
     await expect(page.getByRole('heading', { level: 1 })).toContainText('Your Certificates', { timeout: 10000 });
   });
 
   test('shows available tracks section', async ({ page }) => {
     await signIn(page);
-    await page.goto('/certificates');
+    await page.goto('/account/certificates');
 
     await expect(page.getByRole('heading', { level: 1 })).toContainText('Your Certificates', { timeout: 10000 });
 
@@ -32,7 +31,7 @@ test.describe('Certificates Page', () => {
 
   test('each track card shows requirement text', async ({ page }) => {
     await signIn(page);
-    await page.goto('/certificates');
+    await page.goto('/account/certificates');
 
     await expect(page.getByRole('heading', { level: 1 })).toContainText('Your Certificates', { timeout: 10000 });
 
@@ -48,7 +47,7 @@ test.describe('Certificates Page', () => {
 
   test('shows empty state message when no certificates and no eligibility', async ({ page }) => {
     await signIn(page);
-    await page.goto('/certificates');
+    await page.goto('/account/certificates');
 
     await expect(page.getByRole('heading', { level: 1 })).toContainText('Your Certificates', { timeout: 10000 });
 

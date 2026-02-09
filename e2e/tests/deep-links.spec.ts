@@ -34,15 +34,17 @@ test.describe('Direct URL Access', () => {
     await expect(page.getByText(/Certificate Verification|Verification Failed/i)).toBeVisible({ timeout: 10000 });
   });
 
-  test('dashboard shows sign-in prompt when accessed directly', async ({ page }) => {
+  test('old /dashboard redirects to /account/dashboard', async ({ page }) => {
     await page.goto('/dashboard');
 
-    await expect(page.getByText('Please sign in to access this page.')).toBeVisible({ timeout: 10000 });
+    // Unauthenticated: redirected to home page (AccountLayout redirects to /)
+    await expect(page).toHaveURL('/', { timeout: 10000 });
   });
 
-  test('certificates shows sign-in prompt when accessed directly', async ({ page }) => {
+  test('old /certificates redirects to /account/certificates', async ({ page }) => {
     await page.goto('/certificates');
 
-    await expect(page.getByText('Please sign in to access this page.')).toBeVisible({ timeout: 10000 });
+    // Unauthenticated: redirected to home page
+    await expect(page).toHaveURL('/', { timeout: 10000 });
   });
 });

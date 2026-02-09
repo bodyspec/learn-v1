@@ -162,7 +162,7 @@ export default function Dashboard() {
                 Download and share your achievements.
               </p>
             </div>
-            <Link to="/certificates" className="btn-primary">
+            <Link to="/account/certificates" className="btn-primary">
               View Certificates
             </Link>
           </div>
