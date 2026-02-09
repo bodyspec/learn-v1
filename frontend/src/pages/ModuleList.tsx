@@ -22,7 +22,7 @@ export default function ModuleList() {
   const coreModules = modules.filter(m => m.track === 'core')
   const trackModules = modules.filter(m => m.track === track)
 
-  const getModuleProgress = (moduleId: string, sectionCount: number) => {
+  const getModuleProgress = (moduleId: string) => {
     if (!progress) return { isComplete: false, sectionsComplete: 0 }
     const completedSections = progress.sections_completed.filter(s => s.module_id === moduleId)
     const hasPassed = progress.quizzes_passed[moduleId] !== undefined
@@ -48,7 +48,7 @@ export default function ModuleList() {
           </p>
           <div className="space-y-4">
             {coreModules.map(module => {
-              const { isComplete, sectionsComplete } = getModuleProgress(module.id, module.sections.length)
+              const { isComplete, sectionsComplete } = getModuleProgress(module.id)
               return (
                 <ModuleCard
                   key={module.id}
@@ -74,7 +74,7 @@ export default function ModuleList() {
           </p>
           <div className="space-y-4">
             {trackModules.map(module => {
-              const { isComplete, sectionsComplete } = getModuleProgress(module.id, module.sections.length)
+              const { isComplete, sectionsComplete } = getModuleProgress(module.id)
               return (
                 <ModuleCard
                   key={module.id}

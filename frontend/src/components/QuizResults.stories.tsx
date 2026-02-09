@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { MemoryRouter } from 'react-router-dom'
 import { fn } from 'storybook/test'
 import { CheckCircle, XCircle, Award, RotateCcw, LogIn } from 'lucide-react'
 import React from 'react'

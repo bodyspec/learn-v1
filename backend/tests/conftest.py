@@ -1,13 +1,11 @@
 import uuid
 from collections.abc import AsyncGenerator
 from datetime import datetime, timezone
-from unittest.mock import AsyncMock, patch
 
 import pytest
 from fastapi import FastAPI
 from httpx import ASGITransport, AsyncClient
 from sqlalchemy import event
-from sqlalchemy.dialects.postgresql import JSONB, UUID
 from sqlalchemy.dialects.sqlite.base import SQLiteTypeCompiler
 from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker, create_async_engine
 
@@ -27,11 +25,15 @@ TEST_DATABASE_URL = 'sqlite+aiosqlite:///:memory:'
 engine = create_async_engine(TEST_DATABASE_URL, echo=False)
 
 # Enable foreign key enforcement for SQLite
+
+
 @event.listens_for(engine.sync_engine, 'connect')
 def set_sqlite_pragma(dbapi_conn, connection_record):
     cursor = dbapi_conn.cursor()
     cursor.execute('PRAGMA foreign_keys=ON')
     cursor.close()
+
+
 TestingSessionLocal = async_sessionmaker(
     engine,
     class_=AsyncSession,

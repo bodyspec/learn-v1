@@ -1,7 +1,4 @@
-import uuid
-
 import pytest
-from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.models.user import User

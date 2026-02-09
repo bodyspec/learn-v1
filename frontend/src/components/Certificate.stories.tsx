@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { Download, Copy, Check, ExternalLink } from 'lucide-react'
+import { Download, Copy, Check } from 'lucide-react'
 import React, { useState } from 'react'
 import type { Certificate as CertificateType } from '@/types'
 

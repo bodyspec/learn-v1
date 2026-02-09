@@ -37,7 +37,7 @@ const allMarkdown = { ...markdownFiles, ...deepDiveMarkdown }
 
 export function getModules(): Module[] {
   return Object.entries(allModuleYamls)
-    .map(([path, module]) => ({
+    .map(([, module]) => ({
       ...module,
     }))
     .sort((a, b) => a.sort_order - b.sort_order)

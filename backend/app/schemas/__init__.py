@@ -1,8 +1,8 @@
 from app.schemas.certificate import (
     CertificateCreate,
     CertificateResponse,
-    CertificateVerifyResponse,
     CertificatesListResponse,
+    CertificateVerifyResponse,
 )
 from app.schemas.progress import (
     ProgressResponse,
