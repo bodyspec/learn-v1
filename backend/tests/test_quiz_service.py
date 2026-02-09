@@ -295,3 +295,158 @@ async def test_has_passed_quiz_false_only_failed(
     """has_passed_quiz returns False when only failed attempts exist."""
     result = await has_passed_quiz(db_session, sample_user.id, 'core')
     assert result is False
+
+
+class TestGradeQuizEdgeCases:
+    """Edge case tests for grade_quiz."""
+
+    @patch('app.services.quiz_service.load_quiz')
+    def test_empty_questions_list(self, mock_load: object) -> None:
+        """Quiz with empty questions list returns score=0 and passed=False."""
+        mock_load.return_value = {  # type: ignore[attr-defined]
+            'module_id': 'empty',
+            'passing_score': 80,
+            'questions': [],
+        }
+        submission = QuizSubmission(module_id='empty', answers={})
+        result = grade_quiz(submission)
+        assert result is not None
+        assert result.score == 0
+        assert result.passed is False
+        assert result.results == []
+
+    @patch('app.services.quiz_service.load_quiz')
+    def test_custom_passing_score(self, mock_load: object) -> None:
+        """Quiz with custom passing_score (70) respects the threshold."""
+        mock_load.return_value = {  # type: ignore[attr-defined]
+            'module_id': 'custom',
+            'passing_score': 70,
+            'questions': SAMPLE_QUIZ['questions'][:5],
+        }
+        # 4/5 = 80% — passes with 70 threshold
+        submission = QuizSubmission(
+            module_id='custom',
+            answers={'q1': 1, 'q2': 1, 'q3': 1, 'q4': 1, 'q5': 0},
+        )
+        result = grade_quiz(submission)
+        assert result is not None
+        assert result.score == 80
+        assert result.passed is True
+        assert result.passing_score == 70
+
+    @patch('app.services.quiz_service.load_quiz')
+    def test_question_with_no_correct_option(self, mock_load: object) -> None:
+        """Question with no correct:true option has correct_option=-1, all answers wrong."""
+        mock_load.return_value = {  # type: ignore[attr-defined]
+            'module_id': 'bad',
+            'passing_score': 80,
+            'questions': [
+                {
+                    'id': 'q1',
+                    'type': 'multiple_choice',
+                    'text': 'No correct answer',
+                    'options': [
+                        {'text': 'A', 'correct': False},
+                        {'text': 'B', 'correct': False},
+                    ],
+                    'explanation': 'None are correct',
+                },
+            ],
+        }
+        submission = QuizSubmission(module_id='bad', answers={'q1': 0})
+        result = grade_quiz(submission)
+        assert result is not None
+        assert result.results[0].correct_option == -1
+        assert result.results[0].correct is False
+
+    @patch('app.services.quiz_service.load_quiz')
+    def test_question_missing_explanation(self, mock_load: object) -> None:
+        """Question without explanation field defaults to empty string."""
+        mock_load.return_value = {  # type: ignore[attr-defined]
+            'module_id': 'no-explain',
+            'passing_score': 80,
+            'questions': [
+                {
+                    'id': 'q1',
+                    'type': 'multiple_choice',
+                    'text': 'No explanation',
+                    'options': [
+                        {'text': 'A', 'correct': True},
+                    ],
+                    # no 'explanation' key
+                },
+            ],
+        }
+        submission = QuizSubmission(module_id='no-explain', answers={'q1': 0})
+        result = grade_quiz(submission)
+        assert result is not None
+        assert result.results[0].explanation == ''
+
+
+@pytest.mark.asyncio
+async def test_record_quiz_attempt_null_time(
+    db_session: AsyncSession, sample_user: User
+) -> None:
+    """record_quiz_attempt stores NULL when time_spent_seconds is None."""
+    submission = QuizSubmission(
+        module_id='core',
+        answers={'q1': 1},
+        time_spent_seconds=None,
+    )
+    result = QuizSubmissionResult(
+        score=100, passed=True, passing_score=80,
+        results=[], certificate_eligible=True,
+    )
+    attempt = await record_quiz_attempt(db_session, sample_user.id, submission, result)
+    assert attempt.time_spent_seconds is None
+
+
+@pytest.mark.asyncio
+async def test_get_quiz_attempts_filters_by_module(
+    db_session: AsyncSession, sample_user: User
+) -> None:
+    """get_quiz_attempts returns only attempts for the requested module."""
+    # Create attempts for two different modules
+    for module_id in ['core', 'physician']:
+        attempt = QuizAttempt(
+            user_id=sample_user.id,
+            module_id=module_id,
+            score=90,
+            passed=True,
+            answers={'q1': 1},
+        )
+        db_session.add(attempt)
+    await db_session.commit()
+
+    response = await get_quiz_attempts(db_session, sample_user.id, 'core')
+    assert len(response.attempts) == 1
+
+    response2 = await get_quiz_attempts(db_session, sample_user.id, 'physician')
+    assert len(response2.attempts) == 1
+
+
+@pytest.mark.asyncio
+async def test_get_quiz_attempts_best_score_from_non_latest(
+    db_session: AsyncSession, sample_user: User
+) -> None:
+    """best_score is the highest score even if it's not from the latest attempt."""
+    # First attempt: high score
+    a1 = QuizAttempt(
+        user_id=sample_user.id, module_id='core',
+        score=95, passed=True, answers={'q1': 1},
+    )
+    db_session.add(a1)
+    await db_session.commit()
+
+    # Second attempt: lower score
+    a2 = QuizAttempt(
+        user_id=sample_user.id, module_id='core',
+        score=70, passed=False, answers={'q1': 0},
+    )
+    db_session.add(a2)
+    await db_session.commit()
+
+    response = await get_quiz_attempts(db_session, sample_user.id, 'core')
+    assert len(response.attempts) == 2
+    assert response.best_score == 95
+    assert response.passed is True
