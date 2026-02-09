@@ -5,6 +5,7 @@ import { useAuth } from '@/auth/AuthProvider'
 interface AccountSidebarProps {
   isOpen: boolean
   onToggle: () => void
+  onClose: () => void
 }
 
 const navItems = [
@@ -13,7 +14,7 @@ const navItems = [
   { to: '/account/profile', label: 'Profile', icon: User },
 ]
 
-export default function AccountSidebar({ isOpen, onToggle }: AccountSidebarProps) {
+export default function AccountSidebar({ isOpen, onToggle, onClose }: AccountSidebarProps) {
   const { user, logout } = useAuth()
   const location = useLocation()
 
@@ -35,13 +36,13 @@ export default function AccountSidebar({ isOpen, onToggle }: AccountSidebarProps
 
       <nav className="flex-1 py-2">
         {navItems.map(({ to, label, icon: Icon }) => (
-          <Link key={to} to={to} className={linkClasses(to)} onClick={onToggle}>
+          <Link key={to} to={to} className={linkClasses(to)} onClick={onClose}>
             <Icon className="h-5 w-5 flex-shrink-0" />
             {label}
           </Link>
         ))}
         {user?.is_admin && (
-          <Link to="/account/admin" className={linkClasses('/account/admin')} onClick={onToggle}>
+          <Link to="/account/admin" className={linkClasses('/account/admin')} onClick={onClose}>
             <Shield className="h-5 w-5 flex-shrink-0" />
             Admin
           </Link>
@@ -50,7 +51,7 @@ export default function AccountSidebar({ isOpen, onToggle }: AccountSidebarProps
 
       <div className="border-t border-bs-dark15 py-2">
         <button
-          onClick={() => { onToggle(); logout() }}
+          onClick={() => { onClose(); logout() }}
           className="flex items-center gap-3 w-full px-4 py-3 text-sm font-medium text-bs-dark55 hover:bg-bs-dark3 hover:text-bs-dark transition-colors"
         >
           <LogOut className="h-5 w-5 flex-shrink-0" />
@@ -78,7 +79,7 @@ export default function AccountSidebar({ isOpen, onToggle }: AccountSidebarProps
       {/* Mobile overlay */}
       {isOpen && (
         <>
-          <div className="fixed inset-0 bg-black/40 z-40 md:hidden" onClick={onToggle} />
+          <div className="fixed inset-0 bg-black/40 z-40 md:hidden" onClick={onClose} />
           <aside className="fixed inset-y-0 left-0 w-64 bg-white z-50 md:hidden shadow-lg">
             {sidebar}
           </aside>
