@@ -59,6 +59,76 @@ find_open_port() {
     echo "$port"
 }
 
+# Check system prerequisites
+preflight() {
+    log "Checking system prerequisites..."
+    local fail=0
+
+    # Python 3.12+
+    if command -v python3 &>/dev/null; then
+        local pyver
+        pyver=$(python3 -c 'import sys; print(f"{sys.version_info.major}.{sys.version_info.minor}.{sys.version_info.micro}")')
+        if python3 -c 'import sys; sys.exit(0 if sys.version_info >= (3,12) else 1)'; then
+            echo -e "  ${GREEN}✓${NC} Python $pyver"
+        else
+            echo -e "  ${RED}✗${NC} Python $pyver — need 3.12+"
+            fail=1
+        fi
+    else
+        echo -e "  ${RED}✗${NC} Python not found — install Python 3.12+"
+        fail=1
+    fi
+
+    # Node.js 18+
+    if command -v node &>/dev/null; then
+        local nodever
+        nodever=$(node --version)
+        local nodemajor
+        nodemajor=$(node -e 'console.log(process.versions.node.split(".")[0])')
+        if [ "$nodemajor" -ge 18 ] 2>/dev/null; then
+            echo -e "  ${GREEN}✓${NC} Node.js $nodever"
+        else
+            echo -e "  ${RED}✗${NC} Node.js $nodever — need v18+"
+            fail=1
+        fi
+    else
+        echo -e "  ${RED}✗${NC} Node.js not found — install Node 18+"
+        fail=1
+    fi
+
+    # npm
+    if command -v npm &>/dev/null; then
+        echo -e "  ${GREEN}✓${NC} npm $(npm --version)"
+    else
+        echo -e "  ${RED}✗${NC} npm not found"
+        fail=1
+    fi
+
+    # PostgreSQL reachable (soft check — warn only)
+    local db_host db_port
+    if [ -f "${PROJECT_ROOT}/.env" ]; then
+        db_host=$(grep '^DATABASE_HOST=' "${PROJECT_ROOT}/.env" 2>/dev/null | cut -d= -f2)
+        db_port=$(grep '^DATABASE_PORT=' "${PROJECT_ROOT}/.env" 2>/dev/null | cut -d= -f2)
+    fi
+    db_host="${db_host:-localhost}"
+    db_port="${db_port:-5432}"
+    if command -v pg_isready &>/dev/null; then
+        if pg_isready -h "$db_host" -p "$db_port" -t 2 &>/dev/null; then
+            echo -e "  ${GREEN}✓${NC} PostgreSQL ($db_host:$db_port)"
+        else
+            echo -e "  ${YELLOW}!${NC} PostgreSQL not reachable at $db_host:$db_port — migrations will fail"
+        fi
+    else
+        echo -e "  ${YELLOW}!${NC} pg_isready not found — cannot check PostgreSQL"
+    fi
+
+    if [ $fail -ne 0 ]; then
+        err "Missing required prerequisites. Install them and try again."
+        exit 1
+    fi
+    echo ""
+}
+
 # Ensure Python venv exists and deps are installed
 setup_backend() {
     if [ ! -d "${BACKEND_DIR}/.venv" ]; then
@@ -76,24 +146,44 @@ setup_backend() {
     fi
 }
 
-# Ensure node_modules exists
+# Ensure frontend dependencies are in sync
 setup_frontend() {
-    if [ ! -d "${FRONTEND_DIR}/node_modules" ]; then
-        warn "Installing npm dependencies..."
-        (cd "${FRONTEND_DIR}" && npm install)
-    fi
+    warn "Installing npm dependencies..."
+    (cd "${FRONTEND_DIR}" && npm install)
 }
 
 # Ensure e2e deps and Playwright browsers are installed
 setup_e2e() {
     local E2E_DIR="${PROJECT_ROOT}/e2e"
-    if [ ! -d "${E2E_DIR}/node_modules" ]; then
-        warn "Installing e2e dependencies..."
-        (cd "${E2E_DIR}" && npm install)
-    fi
+    warn "Installing e2e dependencies..."
+    (cd "${E2E_DIR}" && npm install)
     if ! (cd "${E2E_DIR}" && npx playwright install --with-deps chromium) >/dev/null 2>&1; then
         warn "Installing Playwright browsers..."
         (cd "${E2E_DIR}" && npx playwright install chromium)
+    fi
+}
+
+# Validate required .env variables
+check_env() {
+    local missing=()
+    local envfile="${PROJECT_ROOT}/.env"
+
+    for var in DATABASE_HOST DATABASE_NAME DATABASE_USER DATABASE_PASS \
+               VITE_KEYCLOAK_URL VITE_KEYCLOAK_REALM VITE_KEYCLOAK_CLIENT_ID; do
+        local val
+        val=$(grep "^${var}=" "$envfile" 2>/dev/null | cut -d= -f2-)
+        if [ -z "$val" ]; then
+            missing+=("$var")
+        fi
+    done
+
+    if [ ${#missing[@]} -gt 0 ]; then
+        warn "Missing required .env variables:"
+        for var in "${missing[@]}"; do
+            echo -e "  ${RED}✗${NC} $var"
+        done
+        warn "Edit .env to fill in missing values."
+        exit 1
     fi
 }
 
@@ -246,6 +336,7 @@ check_existing() {
 
 cmd_up() {
     check_existing
+    preflight
     BACKEND_PORT=${REUSE_BACKEND_PORT:-$(find_open_port "$BACKEND_PORT_START" "$BACKEND_PORT_MAX" "backend")}
     FRONTEND_PORT=${REUSE_FRONTEND_PORT:-$(find_open_port "$FRONTEND_PORT_START" "$FRONTEND_PORT_MAX" "frontend")}
 
@@ -256,6 +347,7 @@ cmd_up() {
 
     setup_backend
     setup_frontend
+    check_env
     run_migrations
 
     export VITE_BACKEND_PORT=${BACKEND_PORT}
@@ -301,6 +393,7 @@ cmd_up() {
 }
 
 cmd_test() {
+    preflight
     setup_backend
     setup_frontend
 
@@ -314,6 +407,7 @@ cmd_test() {
 }
 
 cmd_lint() {
+    preflight
     setup_backend
     setup_frontend
 
@@ -329,7 +423,9 @@ cmd_lint() {
 cmd_db() {
     case "${1:-}" in
         migrate)
+            preflight
             setup_backend
+            check_env
             run_migrations
             ;;
         *)
@@ -341,6 +437,7 @@ cmd_db() {
 
 cmd_e2e() {
     check_existing
+    preflight
 
     BACKEND_PORT=${REUSE_BACKEND_PORT:-$(find_open_port "$BACKEND_PORT_START" "$BACKEND_PORT_MAX" "backend")}
     FRONTEND_PORT=${REUSE_FRONTEND_PORT:-$(find_open_port "$FRONTEND_PORT_START" "$FRONTEND_PORT_MAX" "frontend")}
@@ -353,6 +450,7 @@ cmd_e2e() {
     setup_backend
     setup_frontend
     setup_e2e
+    check_env
     run_migrations
 
     export VITE_BACKEND_PORT=${BACKEND_PORT}
@@ -408,6 +506,7 @@ cmd_e2e() {
 }
 
 cmd_storybook() {
+    preflight
     setup_frontend
     log "Starting Storybook..."
     (cd "${FRONTEND_DIR}" && npm run storybook)
