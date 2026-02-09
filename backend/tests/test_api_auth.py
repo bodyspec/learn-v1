@@ -2,6 +2,8 @@ import pytest
 from httpx import ASGITransport, AsyncClient
 from sqlalchemy.ext.asyncio import AsyncSession
 
+from app.core.database import get_db
+from app.main import create_app
 from app.models.user import User
 
 
@@ -26,9 +28,6 @@ async def test_get_me_unauthenticated(
     db_session: AsyncSession,
 ) -> None:
     """GET /api/v1/auth/me returns 401 when no token provided."""
-    from app.main import create_app
-    from app.core.database import get_db
-
     app = create_app()
 
     async def override_get_db():

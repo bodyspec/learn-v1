@@ -1,8 +1,6 @@
 from datetime import datetime, timezone
 from unittest.mock import MagicMock, patch
 
-import pytest
-
 from app.models.certificate import Certificate
 from app.services.pdf_generator import generate_certificate_pdf
 
@@ -44,7 +42,7 @@ class TestGenerateCertificatePdf:
         mock_html_cls.return_value.write_pdf.return_value = b'%PDF-fake'
 
         cert = _make_cert(track='radiology')
-        result = generate_certificate_pdf(cert)
+        generate_certificate_pdf(cert)
 
         call_args = mock_html_cls.call_args
         html_string = call_args[1]['string']

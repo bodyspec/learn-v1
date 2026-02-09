@@ -3,7 +3,6 @@ from unittest.mock import AsyncMock, MagicMock, patch
 
 import pytest
 from cryptography.hazmat.primitives.asymmetric import rsa
-from cryptography.hazmat.primitives.serialization import Encoding, PublicFormat
 from fastapi import HTTPException
 from jose import jwt as jose_jwt
 
@@ -149,6 +148,7 @@ class TestAuthDependencies:
     async def test_get_current_user_no_token(self) -> None:
         """get_current_user raises 401 when no token is provided."""
         from unittest.mock import AsyncMock
+
         from app.auth.dependencies import get_current_user
 
         with pytest.raises(HTTPException) as exc_info:
@@ -173,6 +173,7 @@ class TestAuthDependencies:
     async def test_get_current_user_valid_token(self) -> None:
         """get_current_user returns user when token is valid."""
         from unittest.mock import ANY
+
         from app.auth.dependencies import get_current_user
 
         mock_user = MagicMock()
