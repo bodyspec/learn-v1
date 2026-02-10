@@ -163,6 +163,30 @@ setup_e2e() {
     fi
 }
 
+# Parallel dependency installation.
+# Pass "e2e" as $1 to also install e2e deps + Playwright.
+setup_deps() {
+    setup_frontend &
+    local fe_pid=$!
+
+    if [ "${1:-}" = "e2e" ]; then
+        setup_e2e &
+        local e2e_pid=$!
+    fi
+
+    setup_backend  # foreground — check_env/migrations need its venv
+
+    local failed=0
+    wait $fe_pid || failed=1
+    if [ "${1:-}" = "e2e" ]; then
+        wait $e2e_pid || failed=1
+    fi
+    if [ $failed -ne 0 ]; then
+        err "Dependency installation failed."
+        exit 1
+    fi
+}
+
 # Validate required .env variables
 check_env() {
     local missing=()
@@ -345,8 +369,7 @@ cmd_up() {
     echo -e "  ${CYAN}Frontend port: ${FRONTEND_PORT}${NC}"
     echo ""
 
-    setup_backend
-    setup_frontend
+    setup_deps
     check_env
     run_migrations
 
@@ -394,8 +417,7 @@ cmd_up() {
 
 cmd_test() {
     preflight
-    setup_backend
-    setup_frontend
+    setup_deps
 
     log "Running backend tests..."
     (cd "${BACKEND_DIR}" && source .venv/bin/activate && python -m pytest tests/ -v)
@@ -408,8 +430,7 @@ cmd_test() {
 
 cmd_lint() {
     preflight
-    setup_backend
-    setup_frontend
+    setup_deps
 
     log "Running backend lint..."
     (cd "${BACKEND_DIR}" && source .venv/bin/activate && python -m flake8 app/ tests/)
@@ -447,9 +468,7 @@ cmd_e2e() {
     echo -e "  ${CYAN}Frontend port: ${FRONTEND_PORT}${NC}"
     echo ""
 
-    setup_backend
-    setup_frontend
-    setup_e2e
+    setup_deps e2e
     check_env
     run_migrations
 
@@ -508,14 +527,17 @@ cmd_e2e() {
     trap e2e_cleanup EXIT
     trap 'exit 1' INT TERM
 
-    # Wait for both servers to be healthy
+    # Wait for both servers to be healthy (in parallel)
     log "Waiting for servers..."
-    if ! wait_for_healthy "http://localhost:${BACKEND_PORT}/health" 30; then
-        err "Backend failed to start"
-        exit 1
-    fi
-    if ! wait_for_healthy "http://localhost:${FRONTEND_PORT}" 30; then
-        err "Frontend failed to start"
+    wait_for_healthy "http://localhost:${BACKEND_PORT}/health" 30 &
+    local hb=$!
+    wait_for_healthy "http://localhost:${FRONTEND_PORT}" 30 &
+    local hf=$!
+    local health_fail=""
+    wait $hb || health_fail="Backend"
+    wait $hf || health_fail="${health_fail:+$health_fail and }Frontend"
+    if [ -n "$health_fail" ]; then
+        err "$health_fail failed to start"
         exit 1
     fi
     log "Servers healthy. Running Playwright..."
@@ -543,21 +565,18 @@ cmd_e2e() {
     }
 
     local e2e_rc=0
-    local parallel_rc=0 parallel_auth_rc=0 serial_rc=0
+    local parallel_rc=0 serial_rc=0
 
-    # Phase 1: unauthenticated tests run in parallel (fast)
-    log "Running parallel tests (unauthenticated)..."
-    run_pw --project=parallel --workers=4 "$@" || parallel_rc=$?
+    # Phase 1: all parallel-safe tests (unauthenticated + read-only auth + auth flow)
+    # Playwright runs setup concurrently, then starts auth-dependent projects once ready.
+    log "Running parallel tests..."
+    run_pw --project=parallel --project=parallel-auth --project=auth --workers=4 "$@" || parallel_rc=$?
 
-    # Phase 2: read-only authenticated tests run in parallel (fast)
-    log "Running parallel tests (authenticated, read-only)..."
-    run_pw --project=parallel-auth --workers=4 "$@" || parallel_auth_rc=$?
-
-    # Phase 3: mutating authenticated tests run serially (shared user state)
-    log "Running serial tests (authenticated, mutating)..."
+    # Phase 2: mutating authenticated tests run serially (shared user state)
+    log "Running serial tests..."
     run_pw --project=serial --workers=1 "$@" || serial_rc=$?
 
-    if [ $parallel_rc -ne 0 ] || [ $parallel_auth_rc -ne 0 ] || [ $serial_rc -ne 0 ]; then
+    if [ $parallel_rc -ne 0 ] || [ $serial_rc -ne 0 ]; then
         e2e_rc=1
     fi
 
