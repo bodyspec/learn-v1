@@ -30,8 +30,8 @@ export default function ProfilePage() {
   }
 
   return (
-    <div className="max-w-xl mx-auto">
-      <h1 className="text-3xl font-bold text-gray-900 mb-8">Profile Settings</h1>
+    <div className="max-w-2xl space-y-8">
+      <h1 className="text-3xl font-bold text-gray-900">Profile Settings</h1>
 
       <div className="card p-6">
         <form onSubmit={handleSubmit} className="space-y-6">
@@ -122,7 +122,7 @@ export default function ProfilePage() {
         </form>
       </div>
       {/* Danger Zone */}
-      <div className="mt-8 card p-6 border-red-200">
+      <div className="card p-6 border-red-200">
         <h2 className="text-lg font-semibold text-red-600 mb-2">Danger Zone</h2>
         <p className="text-sm text-gray-500 mb-4">
           Reset your learning progress. This action cannot be undone.

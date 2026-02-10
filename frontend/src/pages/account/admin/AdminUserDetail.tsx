@@ -42,7 +42,7 @@ export default function AdminUserDetail() {
       <div className="card p-6 mb-6">
         <div className="flex justify-between items-start">
           <div>
-            <h1 className="text-2xl font-bold text-bs-dark">
+            <h1 className="text-3xl font-bold text-gray-900">
               {user.name || 'Unnamed User'}
               {user.is_admin && <span className="ml-3 text-sm bg-salad-60 text-bs-dark px-2 py-1 rounded">Admin</span>}
             </h1>

@@ -38,7 +38,7 @@ export default function CertificatesPage() {
   const error = requestCert.error as (Error & { data?: { message?: string } }) | null
 
   return (
-    <div className="max-w-4xl mx-auto space-y-8">
+    <div className="space-y-8">
       <div>
         <h1 className="text-3xl font-bold text-gray-900">Your Certificates</h1>
         <p className="mt-2 text-gray-600">

@@ -33,7 +33,7 @@ export default function AdminUserList() {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold text-bs-dark mb-6">User Management</h1>
+      <h1 className="text-3xl font-bold text-gray-900 mb-6">User Management</h1>
 
       <form onSubmit={handleSearch} className="mb-6 flex gap-2">
         <div className="relative flex-1">
