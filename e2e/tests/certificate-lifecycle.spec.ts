@@ -10,7 +10,6 @@ test.describe('Certificate Lifecycle', () => {
     // Step 1: Pass the core quiz with correct answers
     await page.goto('/quiz/core');
     await expect(page.getByText(/Question 1 of/)).toBeVisible({ timeout: 15000 });
-    await page.waitForLoadState('networkidle');
 
     await completeQuizCorrectly(page, 'core');
     await expect(page.getByText(/You scored/)).toBeVisible({ timeout: 15000 });
@@ -19,7 +18,6 @@ test.describe('Certificate Lifecycle', () => {
     // Step 2: Pass the physician quiz with correct answers
     await page.goto('/quiz/physician');
     await expect(page.getByText(/Question 1 of/)).toBeVisible({ timeout: 15000 });
-    await page.waitForLoadState('networkidle');
 
     await completeQuizCorrectly(page, 'physician');
     await expect(page.getByText(/You scored/)).toBeVisible({ timeout: 15000 });

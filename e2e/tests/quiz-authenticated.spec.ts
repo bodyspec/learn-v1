@@ -8,7 +8,6 @@ test.describe('Authenticated Quiz Submission', () => {
   test('signed-in user can submit quiz and see results', async ({ page }) => {
     await page.goto('/quiz/core');
     await expect(page.getByText(/Question 1 of/)).toBeVisible({ timeout: 15000 });
-    await page.waitForLoadState('networkidle');
 
     await completeQuizWithFirstOptions(page);
 
@@ -20,7 +19,6 @@ test.describe('Authenticated Quiz Submission', () => {
   test('results do not show sign-in prompt for authenticated users', async ({ page }) => {
     await page.goto('/quiz/core');
     await expect(page.getByText(/Question 1 of/)).toBeVisible({ timeout: 15000 });
-    await page.waitForLoadState('networkidle');
 
     await completeQuizWithFirstOptions(page);
 
@@ -33,7 +31,6 @@ test.describe('Authenticated Quiz Submission', () => {
   test('quiz attempt is reflected on dashboard', async ({ page }) => {
     await page.goto('/quiz/core');
     await expect(page.getByText(/Question 1 of/)).toBeVisible({ timeout: 15000 });
-    await page.waitForLoadState('networkidle');
 
     await completeQuizWithFirstOptions(page);
 
@@ -50,7 +47,6 @@ test.describe('Authenticated Quiz Submission', () => {
   test('first-option answers result in Try Again button (score < 80%)', async ({ page }) => {
     await page.goto('/quiz/core');
     await expect(page.getByText(/Question 1 of/)).toBeVisible({ timeout: 15000 });
-    await page.waitForLoadState('networkidle');
 
     // First options yield a failing score
     await completeQuizWithFirstOptions(page);
@@ -63,7 +59,6 @@ test.describe('Authenticated Quiz Submission', () => {
   test('correct answers result in Congratulations message (score >= 80%)', async ({ page }) => {
     await page.goto('/quiz/core');
     await expect(page.getByText(/Question 1 of/)).toBeVisible({ timeout: 15000 });
-    await page.waitForLoadState('networkidle');
 
     // Answer all correctly for a passing score
     await completeQuizCorrectly(page, 'core');

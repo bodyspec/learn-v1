@@ -543,17 +543,21 @@ cmd_e2e() {
     }
 
     local e2e_rc=0
-    local parallel_rc=0 serial_rc=0
+    local parallel_rc=0 parallel_auth_rc=0 serial_rc=0
 
     # Phase 1: unauthenticated tests run in parallel (fast)
     log "Running parallel tests (unauthenticated)..."
     run_pw --project=parallel --workers=4 "$@" || parallel_rc=$?
 
-    # Phase 2: authenticated tests run serially (shared user state)
-    log "Running serial tests (authenticated)..."
+    # Phase 2: read-only authenticated tests run in parallel (fast)
+    log "Running parallel tests (authenticated, read-only)..."
+    run_pw --project=parallel-auth --workers=4 "$@" || parallel_auth_rc=$?
+
+    # Phase 3: mutating authenticated tests run serially (shared user state)
+    log "Running serial tests (authenticated, mutating)..."
     run_pw --project=serial --workers=1 "$@" || serial_rc=$?
 
-    if [ $parallel_rc -ne 0 ] || [ $serial_rc -ne 0 ]; then
+    if [ $parallel_rc -ne 0 ] || [ $parallel_auth_rc -ne 0 ] || [ $serial_rc -ne 0 ]; then
         e2e_rc=1
     fi
 

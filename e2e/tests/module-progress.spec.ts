@@ -54,7 +54,6 @@ test.describe('Module Page with Progress', () => {
     // First pass the core quiz with correct answers
     await page.goto('/quiz/core');
     await expect(page.getByText(/Question 1 of/)).toBeVisible({ timeout: 15000 });
-    await page.waitForLoadState('networkidle');
     await completeQuizCorrectly(page, 'core');
     await expect(page.getByText(/You scored/)).toBeVisible({ timeout: 15000 });
     await expect(page.getByText('Congratulations!')).toBeVisible();

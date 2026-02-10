@@ -49,7 +49,6 @@ test.describe('No Console Errors', () => {
     const errors = collectErrors(page);
     await page.goto('/quiz/core');
     await expect(page.getByText(/Question 1 of/)).toBeVisible({ timeout: 10000 });
-    await page.waitForLoadState('networkidle');
     await completeQuizWithFirstOptions(page);
     await expect(page.getByText(/You scored/)).toBeVisible({ timeout: 10000 });
     expect(errors).toEqual([]);

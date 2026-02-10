@@ -1,17 +1,26 @@
 import { defineConfig } from '@playwright/test';
 
 /**
- * Authenticated tests share a single Keycloak user and mutate server state
- * (complete sections, reset progress, etc.), so they must run serially.
+ * Read-only authenticated tests: these use storageState but never mutate
+ * server-side data (no POST/PUT/DELETE). Safe to run in parallel.
  */
-const AUTHENTICATED_TESTS = [
-  '**/account-features.spec.ts',
+const PARALLEL_AUTH_TESTS = [
   '**/account-portal.spec.ts',
   '**/admin-protection.spec.ts',
   '**/admin.spec.ts',
   '**/api-dedup.spec.ts',
-  '**/certificate-lifecycle.spec.ts',
   '**/certificates.spec.ts',
+  '**/user-menu.spec.ts',
+];
+
+/**
+ * Serial authenticated tests: these mutate server state (complete sections,
+ * submit quizzes, reset progress, etc.) and share a single Keycloak user,
+ * so they must run one at a time.
+ */
+const SERIAL_AUTH_TESTS = [
+  '**/account-features.spec.ts',
+  '**/certificate-lifecycle.spec.ts',
   '**/console-errors.spec.ts',
   '**/dashboard.spec.ts',
   '**/module-progress.spec.ts',
@@ -20,8 +29,9 @@ const AUTHENTICATED_TESTS = [
   '**/quiz-authenticated.spec.ts',
   '**/section-progress.spec.ts',
   '**/track-progress.spec.ts',
-  '**/user-menu.spec.ts',
 ];
+
+const ALL_AUTHENTICATED_TESTS = [...PARALLEL_AUTH_TESTS, ...SERIAL_AUTH_TESTS];
 
 export default defineConfig({
   testDir: './tests',
@@ -47,8 +57,18 @@ export default defineConfig({
     {
       name: 'parallel',
       use: { browserName: 'chromium' },
-      testIgnore: [...AUTHENTICATED_TESTS, '**/auth.setup.ts', '**/auth.spec.ts'],
+      testIgnore: [...ALL_AUTHENTICATED_TESTS, '**/auth.setup.ts', '**/auth.spec.ts'],
       fullyParallel: true,
+    },
+    {
+      name: 'parallel-auth',
+      use: {
+        browserName: 'chromium',
+        storageState: 'tests/.auth/user.json',
+      },
+      testMatch: PARALLEL_AUTH_TESTS,
+      fullyParallel: true,
+      dependencies: ['setup'],
     },
     {
       name: 'serial',
@@ -56,7 +76,7 @@ export default defineConfig({
         browserName: 'chromium',
         storageState: 'tests/.auth/user.json',
       },
-      testMatch: AUTHENTICATED_TESTS,
+      testMatch: SERIAL_AUTH_TESTS,
       dependencies: ['setup'],
     },
     {
