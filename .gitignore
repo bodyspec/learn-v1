@@ -78,3 +78,6 @@ storybook-static
 # Dev process tracking
 .dev.pid
 .worktrees/
+
+# Diagram generator runs
+diagram-specs/run_*/
