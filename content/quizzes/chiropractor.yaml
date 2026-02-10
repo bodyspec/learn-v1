@@ -144,3 +144,24 @@ questions:
       in body composition that exceed measurement precision. Scanning more
       frequently may show changes within the measurement error, which can
       be misleading. This interval also aligns with treatment plan milestones.
+
+  - id: chiro-q8
+    type: multiple_choice
+    text: "Why is elevated visceral fat (android distribution) relevant to a chiropractic patient with chronic low back pain?"
+    options:
+      - text: "It suggests the patient has a genetic predisposition to back pain"
+        correct: false
+      - text: "It shifts the center of gravity forward, increasing lumbar spine loading"
+        correct: true
+      - text: "It indicates the patient cannot safely exercise"
+        correct: false
+      - text: "It has no direct relationship to musculoskeletal complaints"
+        correct: false
+    explanation: |
+      Central adiposity shifts the center of gravity anteriorly, increasing
+      lumbar lordosis and facet joint loading. This mechanical effect
+      contributes to chronic low back pain. Additionally, the inflammatory
+      compounds produced by visceral fat may contribute to systemic
+      inflammation. Addressing body composition through exercise and
+      lifestyle changes can improve both the mechanical and metabolic
+      contributors to LBP.

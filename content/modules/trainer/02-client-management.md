@@ -25,6 +25,8 @@ When reviewing initial DEXA results:
 
 ## Demonstrating Progress
 
+![Favorable vs concerning weight loss composition](/content/assets/diagrams/weight-loss-quality.svg)
+
 ### Beyond the Scale
 
 DEXA shows progress that scales miss:

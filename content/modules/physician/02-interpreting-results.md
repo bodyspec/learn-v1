@@ -85,6 +85,8 @@ Sarcopenia is associated with:
 
 ## Weight Loss Quality Assessment
 
+![Favorable vs concerning weight loss composition](/content/assets/diagrams/weight-loss-quality.svg)
+
 Not all weight loss is equal. DEXA allows you to evaluate:
 
 ### Favorable Weight Loss Pattern

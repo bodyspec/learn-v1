@@ -4,7 +4,7 @@ description: "Learn how DEXA technology works and what it measures"
 track: core
 is_deep_dive: false
 parent_module: null
-estimated_minutes: 20
+estimated_minutes: 25
 required_for_certificate: true
 sort_order: 1
 
@@ -28,3 +28,7 @@ sections:
   - slug: 05-misconceptions
     file: 05-misconceptions.md
     title: "Misconceptions & FAQs"
+
+  - slug: 06-scan-preparation
+    file: 06-scan-preparation.md
+    title: "Scan Preparation"

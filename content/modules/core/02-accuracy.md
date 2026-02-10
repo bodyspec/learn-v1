@@ -48,6 +48,8 @@ Several factors can influence DEXA measurements:
 
 ## Comparing Methods
 
+![Comparison of DEXA, BIA, and skinfold caliper accuracy](/content/assets/diagrams/method-comparison.svg)
+
 DEXA significantly outperforms consumer-grade methods[^3][^4]:
 
 | Method | Typical Error |

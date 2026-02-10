@@ -80,6 +80,8 @@ Multiple factors contribute:
 
 ## Assessment
 
+![EWGSOP2 sarcopenia diagnostic algorithm](/content/assets/diagrams/sarcopenia-diagnostic-algorithm.svg)
+
 ### Using DEXA for Sarcopenia Assessment
 
 DEXA provides:

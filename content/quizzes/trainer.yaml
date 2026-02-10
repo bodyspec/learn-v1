@@ -50,20 +50,20 @@ questions:
 
   - id: trainer-q3
     type: multiple_choice
-    text: "What is the recommended minimum protein intake for a client trying to preserve lean mass during fat loss?"
+    text: "What is the recommended protein intake for a client trying to preserve lean mass during fat loss?"
     options:
       - text: "0.8 g/kg bodyweight"
         correct: false
       - text: "1.2 g/kg bodyweight"
         correct: false
-      - text: "2.0-2.4 g/kg lean mass"
+      - text: "2.3-3.1 g/kg lean mass"
         correct: true
       - text: "3.5 g/kg bodyweight"
         correct: false
     explanation: |
-      For preserving lean mass during caloric restriction, protein intake
-      should be 2.0-2.4 g/kg of lean mass (or approximately 1.6-2.2 g/kg
-      of total bodyweight). This higher protein intake helps signal muscle
+      For preserving lean mass during caloric restriction, protein intake of
+      2.3-3.1 g/kg of lean mass is recommended per the ISSN position stand
+      (Jager et al., 2017). This higher protein intake helps signal muscle
       retention even in a caloric deficit. Lower protein during dieting
       increases muscle loss risk.
 

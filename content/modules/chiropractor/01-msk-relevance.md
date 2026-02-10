@@ -25,7 +25,11 @@ Adequate muscle mass provides:
 - Postural support
 - Load distribution
 
+Research demonstrates that lean mass is positively associated with joint stability and functional capacity, and that muscle weakness is a primary risk factor for falls and musculoskeletal injury in older adults (Cruz-Jentoft et al., 2019)[^2].
+
 ## Regional Analysis Applications
+
+![Body outline showing arm, leg, and trunk divisions](/content/assets/diagrams/regional-divisions.svg)
 
 ### Trunk Composition
 
@@ -100,3 +104,4 @@ This data complements functional assessments and patient-reported outcomes.
 ## References
 
 [^1]: Messier SP, Gutekunst DJ, Davis C, DeVita P. "Weight loss reduces knee-joint loads in overweight and obese older adults with knee osteoarthritis." *Arthritis Rheum*. 2005;52(7):2026-2032. doi:10.1002/art.21139
+[^2]: Cruz-Jentoft AJ, Bahat G, Bauer J, et al. "Sarcopenia: revised European consensus on definition and diagnosis." *Age Ageing*. 2019;48(1):16-31. doi:10.1093/ageing/afy169
