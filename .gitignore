@@ -77,3 +77,4 @@ storybook-static
 
 # Dev process tracking
 .dev.pid
+.worktrees/
