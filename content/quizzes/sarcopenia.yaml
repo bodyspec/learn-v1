@@ -23,7 +23,8 @@ questions:
       DEXA or other methods). Low strength alone is classified as "probable"
       sarcopenia, while adding low physical performance elevates it to
       "severe" sarcopenia. This staged approach emphasizes that strength—not
-      mass alone—is the primary clinical concern.
+      mass alone—is the primary clinical concern, because low strength
+      predicts adverse outcomes more reliably than low mass in isolation.
 
   - id: sarc-q2
     type: scenario
@@ -45,11 +46,12 @@ questions:
     explanation: |
       This patient meets all three EWGSOP2 criteria: low grip strength
       (<16 kg for women), low ALMI (<5.5 kg/m² for women), and low physical
-      performance (chair stand >15 seconds is impaired, but her 13-second
-      time combined with the other criteria and gait speed/SPPB context
-      qualifies as severe). All three domains affected—strength, mass, and
-      function—defines severe sarcopenia, warranting comprehensive
-      intervention.
+      performance. Her chair stand time of 13 seconds is within normal range
+      in isolation, but the combination of impaired grip strength, low
+      muscle mass, and the overall clinical picture qualifies as severe
+      sarcopenia—all three domains affected. This classification warrants
+      comprehensive intervention including resistance training, protein
+      optimization, and regular monitoring.
 
   - id: sarc-q3
     type: multiple_choice
@@ -68,7 +70,9 @@ questions:
       and below 5.5 kg/m² for women. ALMI is calculated as appendicular
       lean mass (arms + legs) divided by height squared. An alternative
       metric, ALM/BMI, may be more appropriate for obese patients, with
-      cut-points of <0.789 for men and <0.512 for women.
+      cut-points of <0.789 for men and <0.512 for women. Knowing these
+      sex-specific thresholds is essential for correctly interpreting
+      DEXA results and identifying patients who meet diagnostic criteria.
 
   - id: sarc-q4
     type: scenario
