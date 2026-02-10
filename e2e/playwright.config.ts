@@ -10,6 +10,7 @@ const PARALLEL_AUTH_TESTS = [
   '**/admin.spec.ts',
   '**/api-dedup.spec.ts',
   '**/certificates.spec.ts',
+  '**/console-errors-auth.spec.ts',
   '**/user-menu.spec.ts',
 ];
 
