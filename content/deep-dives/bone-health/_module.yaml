@@ -4,10 +4,13 @@ description: "Understanding bone density measurements, osteoporosis screening, a
 track: core
 is_deep_dive: true
 parent_module: core
-estimated_minutes: 12
-required_for_certificate: false
+estimated_minutes: 22
+required_for_certificate: true
 sort_order: 13
 sections:
   - slug: 01-bone-density-basics
     file: 01-bone-density-basics.md
     title: "Bone Density Basics"
+  - slug: 02-clinical-context
+    file: 02-clinical-context.md
+    title: "Clinical Context & Next Steps"

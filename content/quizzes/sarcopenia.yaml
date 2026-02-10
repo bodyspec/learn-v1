@@ -1,0 +1,190 @@
+module_id: sarcopenia
+passing_score: 80
+max_attempts: null
+randomize_questions: false
+randomize_options: true
+
+questions:
+  - id: sarc-q1
+    type: multiple_choice
+    text: "According to the EWGSOP2 consensus, what defines 'confirmed' sarcopenia?"
+    options:
+      - text: "Low muscle strength alone"
+        correct: false
+      - text: "Low muscle strength plus low muscle quantity or quality"
+        correct: true
+      - text: "Low physical performance on gait speed testing"
+        correct: false
+      - text: "Low muscle mass on DEXA regardless of strength"
+        correct: false
+    explanation: |
+      The EWGSOP2 framework defines confirmed sarcopenia as the combination
+      of low muscle strength AND low muscle quantity or quality (measured by
+      DEXA or other methods). Low strength alone is classified as "probable"
+      sarcopenia, while adding low physical performance elevates it to
+      "severe" sarcopenia. This staged approach emphasizes that strength—not
+      mass alone—is the primary clinical concern.
+
+  - id: sarc-q2
+    type: scenario
+    text: |
+      A 72-year-old woman presents with grip strength of 14 kg and an ALMI
+      (ALM/height²) of 5.3 kg/m². She can complete 5 chair rises in 13
+      seconds.
+
+      How should her sarcopenia status be classified using EWGSOP2 criteria?
+    options:
+      - text: "Probable sarcopenia"
+        correct: false
+      - text: "Confirmed sarcopenia"
+        correct: false
+      - text: "Severe sarcopenia"
+        correct: true
+      - text: "No sarcopenia — her chair stand time is normal"
+        correct: false
+    explanation: |
+      This patient meets all three EWGSOP2 criteria: low grip strength
+      (<16 kg for women), low ALMI (<5.5 kg/m² for women), and low physical
+      performance (chair stand >15 seconds is impaired, but her 13-second
+      time combined with the other criteria and gait speed/SPPB context
+      qualifies as severe). All three domains affected—strength, mass, and
+      function—defines severe sarcopenia, warranting comprehensive
+      intervention.
+
+  - id: sarc-q3
+    type: multiple_choice
+    text: "What is the EWGSOP2 DEXA cut-point for low appendicular lean mass index (ALMI) in men?"
+    options:
+      - text: "<5.5 kg/m²"
+        correct: false
+      - text: "<7.0 kg/m²"
+        correct: true
+      - text: "<8.5 kg/m²"
+        correct: false
+      - text: "<6.0 kg/m²"
+        correct: false
+    explanation: |
+      The EWGSOP2 consensus defines low ALMI as below 7.0 kg/m² for men
+      and below 5.5 kg/m² for women. ALMI is calculated as appendicular
+      lean mass (arms + legs) divided by height squared. An alternative
+      metric, ALM/BMI, may be more appropriate for obese patients, with
+      cut-points of <0.789 for men and <0.512 for women.
+
+  - id: sarc-q4
+    type: scenario
+    text: |
+      A 68-year-old man with sarcopenia has been following a resistance
+      training program for 14 weeks. His grip strength improved from 24 kg
+      to 29 kg, and his gait speed increased from 0.75 m/s to 0.88 m/s.
+      However, his DEXA shows ALM increased by only 0.3 kg.
+
+      What is the BEST interpretation of these results?
+    options:
+      - text: "The intervention has failed because lean mass did not meaningfully change"
+        correct: false
+      - text: "The DEXA machine is likely miscalibrated and should be rechecked"
+        correct: false
+      - text: "The functional improvements are clinically meaningful even though the ALM change is within measurement precision"
+        correct: true
+      - text: "The patient should discontinue resistance training and try a different intervention"
+        correct: false
+    explanation: |
+      A 0.3 kg ALM change is below the least significant change (LSC) of
+      approximately 500g, meaning it may reflect measurement variability
+      rather than true muscle gain. However, the functional improvements
+      are substantial and clinically meaningful: grip strength improved by
+      5 kg and gait speed exceeded the 0.1 m/s MCID. Strength and function
+      typically improve before and more reliably than mass—this is a
+      successful intervention.
+
+  - id: sarc-q5
+    type: multiple_choice
+    text: "What is the minimum recommended DEXA scan interval for monitoring appendicular lean mass during active sarcopenia intervention?"
+    options:
+      - text: "Monthly"
+        correct: false
+      - text: "Every 3 months"
+        correct: false
+      - text: "Every 6-12 months"
+        correct: true
+      - text: "Every 2 years"
+        correct: false
+    explanation: |
+      DEXA monitoring for lean mass should occur every 6-12 months during
+      active intervention. The least significant change (LSC) for ALM is
+      approximately 500g, and most patients will not gain enough lean mass
+      in 3 months to exceed this threshold. Scanning too frequently risks
+      over-interpreting measurement noise. Functional tests like grip
+      strength and gait speed can be repeated more frequently at 3-month
+      intervals.
+
+  - id: sarc-q6
+    type: multiple_choice
+    text: "What is the per-meal protein threshold recommended to overcome anabolic resistance in older adults?"
+    options:
+      - text: "10-15g per meal"
+        correct: false
+      - text: "15-20g per meal"
+        correct: false
+      - text: "25-30g per meal with 3-4g leucine"
+        correct: true
+      - text: "40-50g per meal regardless of leucine content"
+        correct: false
+    explanation: |
+      Older adults require 25-30g of protein per meal containing 3-4g of
+      leucine to maximally stimulate muscle protein synthesis (MPS). This
+      threshold is higher than in younger adults (~2g leucine) because of
+      age-related anabolic resistance. Meals with less than 20g of protein
+      produce minimal MPS response. Per-meal distribution matters as much
+      as total daily intake—concentrating protein at dinner while under-
+      consuming at breakfast and lunch leaves anabolic potential unrealized.
+
+  - id: sarc-q7
+    type: scenario
+    text: |
+      A 75-year-old patient on a supervised resistance training and protein
+      optimization program shows a 1.2 kg decrease in ALM over 8 months
+      despite documented adherence to both exercise and nutrition protocols.
+      He also reports new difficulty rising from low chairs.
+
+      What is the MOST appropriate next step?
+    options:
+      - text: "Increase the exercise intensity and protein dose"
+        correct: false
+      - text: "Repeat the DEXA scan in 3 months to confirm the trend"
+        correct: false
+      - text: "Investigate for secondary causes with labs, imaging, and medication review"
+        correct: true
+      - text: "Reassure the patient that some muscle loss with age is expected"
+        correct: false
+    explanation: |
+      ALM loss exceeding 1 kg over 6-12 months despite adherent
+      intervention is a red flag requiring investigation for secondary
+      causes. Possible etiologies include occult malignancy, cachexia,
+      endocrine disorders (hypothyroidism, hypogonadism), inflammatory
+      myopathy, or drug-induced myopathy. The combination of rapid loss
+      with new functional decline makes watchful waiting inappropriate.
+      A full workup including labs (CK, TSH, testosterone) and imaging
+      is warranted.
+
+  - id: sarc-q8
+    type: multiple_choice
+    text: "Why is resistance training the only Level 1 evidence intervention for sarcopenia?"
+    options:
+      - text: "It is the only intervention studied in randomized controlled trials"
+        correct: false
+      - text: "It provides mechanical stimulus that signals the body to maintain and build muscle tissue"
+        correct: true
+      - text: "It has fewer side effects than pharmacological options"
+        correct: false
+      - text: "It is the most affordable intervention available"
+        correct: false
+    explanation: |
+      Resistance training provides the direct mechanical stimulus that
+      signals muscle tissue to maintain and grow—a stimulus that nutrition,
+      supplements, and medications cannot replicate. Multiple systematic
+      reviews and meta-analyses consistently demonstrate that RT improves
+      grip strength, gait speed, and functional performance in sarcopenic
+      older adults. While nutrition and supplements enhance outcomes,
+      they cannot replace the anabolic signal that progressive resistance
+      exercise provides to skeletal muscle.

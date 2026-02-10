@@ -1,0 +1,196 @@
+module_id: glp1-monitoring
+passing_score: 80
+max_attempts: null
+randomize_questions: false
+randomize_options: true
+
+questions:
+  - id: glp1-q1
+    type: multiple_choice
+    text: "What percentage of total weight loss during GLP-1 therapy may consist of lean mass?"
+    options:
+      - text: "5-10%"
+        correct: false
+      - text: "10-15%"
+        correct: false
+      - text: "25-40%"
+        correct: true
+      - text: "50-60%"
+        correct: false
+    explanation: |
+      Clinical trial DEXA substudies show that 25-40% of weight lost during
+      GLP-1 therapy may be lean mass. The STEP 1 study found approximately
+      39% lean mass loss with semaglutide, while the SURMOUNT-1 study
+      found approximately 25% with tirzepatide. This range is higher than
+      diet plus exercise alone (15-25%), likely driven by significant
+      appetite suppression reducing protein intake, rapid weight loss rate,
+      and reduced meal frequency.
+
+  - id: glp1-q2
+    type: scenario
+    text: |
+      A 55-year-old man has been on semaglutide for 4 months. His DEXA
+      shows he lost 12 kg total: 6.5 kg fat mass and 5.5 kg lean mass.
+      His ALM/height² is 7.2 kg/m².
+
+      What is the BEST assessment of his weight loss composition?
+    options:
+      - text: "Favorable — he lost more fat than lean mass"
+        correct: false
+      - text: "Concerning — lean mass loss exceeds 40% of total weight loss and warrants intervention"
+        correct: true
+      - text: "Normal — all GLP-1 patients lose this proportion of lean mass"
+        correct: false
+      - text: "Cannot be assessed until 6 months of treatment"
+        correct: false
+    explanation: |
+      Lean mass accounts for 5.5 of 12 kg lost, or approximately 46% of
+      total weight loss. This exceeds the concerning threshold of 40%.
+      While some lean mass loss during GLP-1 therapy is expected, this
+      proportion warrants intervention: intensified protein intake (1.6-2.2
+      g/kg/day), initiation or escalation of resistance training, and
+      possibly discussion with the prescriber about dose adjustment. His
+      ALM/height² remains above sarcopenia thresholds, but the trajectory
+      needs correction.
+
+  - id: glp1-q3
+    type: multiple_choice
+    text: "When should the baseline DEXA scan be performed for a patient starting GLP-1 therapy?"
+    options:
+      - text: "After 3 months of treatment to establish a treatment baseline"
+        correct: false
+      - text: "Before starting medication or within the first 2 weeks of treatment"
+        correct: true
+      - text: "Only if the patient reports muscle weakness"
+        correct: false
+      - text: "At 6 months when weight loss has stabilized"
+        correct: false
+    explanation: |
+      A baseline DEXA scan should be performed before starting GLP-1
+      medication or within the first 2 weeks of treatment. This establishes
+      starting body composition, identifies pre-existing sarcopenia risk,
+      quantifies baseline VAT for tracking metabolic improvement, and
+      measures appendicular lean mass. Without a true baseline, it is
+      impossible to accurately assess the composition of subsequent weight
+      loss or identify concerning trends early.
+
+  - id: glp1-q4
+    type: scenario
+    text: |
+      A 62-year-old woman has been on tirzepatide for 6 months. Her DEXA
+      shows VAT decreased by 35% and total body fat decreased by 22%.
+      However, her ALM decreased by 8% and her grip strength dropped from
+      22 kg to 18 kg.
+
+      What is the BEST interpretation?
+    options:
+      - text: "Excellent results — the VAT reduction outweighs all other concerns"
+        correct: false
+      - text: "The metabolic improvement from VAT loss is positive, but the lean mass loss and functional decline require intervention"
+        correct: true
+      - text: "The medication should be discontinued immediately due to muscle loss"
+        correct: false
+      - text: "These results are typical and require no changes to the treatment plan"
+        correct: false
+    explanation: |
+      The VAT reduction is metabolically favorable, but the 8% ALM decline
+      combined with grip strength dropping below the sarcopenia threshold
+      (16 kg for women) is concerning. This does not mean stopping the
+      medication—the metabolic benefits often outweigh lean mass concerns
+      when appropriate interventions are in place. The priority is
+      intensifying protein optimization and resistance training, and
+      discussing dose adjustment with the prescriber if lean mass loss
+      continues despite lifestyle intervention.
+
+  - id: glp1-q5
+    type: multiple_choice
+    text: "What is the recommended protein target for a patient on GLP-1 therapy who is also performing resistance training?"
+    options:
+      - text: "0.8 g/kg body weight per day"
+        correct: false
+      - text: "1.0-1.2 g/kg body weight per day"
+        correct: false
+      - text: "1.6-2.2 g/kg body weight per day"
+        correct: true
+      - text: "2.5-3.0 g/kg body weight per day"
+        correct: false
+    explanation: |
+      The ISSN recommends 1.4-2.0 g/kg/day for exercising individuals,
+      and during active weight loss with resistance training, the optimal
+      range is 1.6-2.2 g/kg/day for muscle preservation. This is
+      significantly above the general RDA of 0.8 g/kg/day. During GLP-1
+      therapy specifically, appetite suppression makes achieving these
+      targets challenging, requiring strategies like prioritizing protein
+      at every meal, liquid protein supplements, and timing intake around
+      periods of better appetite.
+
+  - id: glp1-q6
+    type: multiple_choice
+    text: "Why is resistance training considered non-negotiable during GLP-1 therapy?"
+    options:
+      - text: "It increases the weight loss effect of the medication"
+        correct: false
+      - text: "It provides the mechanical stimulus that signals the body to preserve muscle tissue during caloric deficit"
+        correct: true
+      - text: "It prevents GI side effects from the medication"
+        correct: false
+      - text: "It is required by prescribing guidelines before starting GLP-1 medications"
+        correct: false
+    explanation: |
+      Resistance training provides the direct mechanical stimulus that
+      signals the body to maintain muscle tissue even during a caloric
+      deficit. Without this signal, the body preferentially breaks down
+      muscle along with fat. Research shows RT during weight loss reduces
+      lean mass loss by 50% or more compared to diet alone, maintains or
+      improves muscle strength, and preserves resting metabolic rate.
+      If a patient can only do one type of exercise, resistance training
+      provides greater muscle-preservation benefit than aerobic exercise.
+
+  - id: glp1-q7
+    type: scenario
+    text: |
+      A 58-year-old patient on semaglutide reports that nausea and food
+      aversions have made it difficult to eat adequate protein. She
+      currently manages about 50g per day and cannot tolerate meat or eggs.
+      She weighs 85 kg.
+
+      What is the BEST approach to address her protein deficit?
+    options:
+      - text: "Discontinue the GLP-1 medication until protein intake improves"
+        correct: false
+      - text: "Accept the lower protein intake as unavoidable during GLP-1 therapy"
+        correct: false
+      - text: "Prioritize liquid protein sources like whey shakes, time intake around lower-nausea windows, and consider a registered dietitian referral"
+        correct: true
+      - text: "Switch to a plant-based diet to avoid the food aversions"
+        correct: false
+    explanation: |
+      At 85 kg, her minimum target during weight loss should be at least
+      1.2 g/kg/day (~102g), so 50g is significantly below target. Practical
+      strategies include liquid protein (whey shakes are often better
+      tolerated than solid food), timing larger protein meals during
+      windows of lower nausea (often 3-5 days post-injection), using
+      protein powder in foods like oatmeal or soups, and a registered
+      dietitian referral for intensive nutrition counseling. Medication
+      discontinuation should be a last resort.
+
+  - id: glp1-q8
+    type: multiple_choice
+    text: "What is the primary reason that early lean mass losses during GLP-1 therapy may overestimate true muscle loss?"
+    options:
+      - text: "DEXA scanners are less accurate during the first months of treatment"
+        correct: false
+      - text: "GLP-1 medications cause temporary fluid retention that masks fat loss"
+        correct: false
+      - text: "Reduced food intake decreases organ mass, glycogen stores, and associated water, which are measured as lean mass"
+        correct: true
+      - text: "Patients typically gain muscle in the first months before losing it"
+        correct: false
+    explanation: |
+      Not all lean mass loss on DEXA represents muscle loss. Reduced food
+      intake during early GLP-1 therapy leads to smaller GI organ mass,
+      depleted muscle glycogen stores (with associated water), and reduced
+      excess lean tissue that overweight individuals carry to support their
+      body weight. These components are all measured as "lean mass" by DEXA.
+      This is why serial scans over 3-6 months provide a more accurate
+      picture of true muscle status than early measurements alone.

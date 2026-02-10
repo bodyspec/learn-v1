@@ -5,7 +5,7 @@ track: physician
 is_deep_dive: true
 parent_module: physician
 estimated_minutes: 15
-required_for_certificate: false
+required_for_certificate: true
 sort_order: 11
 sections:
   - slug: 01-tracking-weight-loss

@@ -1,0 +1,194 @@
+module_id: bone-health
+passing_score: 80
+max_attempts: null
+randomize_questions: false
+randomize_options: true
+
+questions:
+  - id: bone-q1
+    type: multiple_choice
+    text: "What does body composition DEXA measure regarding bone?"
+    options:
+      - text: "Site-specific T-scores at the hip and spine"
+        correct: false
+      - text: "Total body bone mineral content (BMC) averaged across the entire skeleton"
+        correct: true
+      - text: "Bone mineral density at the femoral neck only"
+        correct: false
+      - text: "FRAX fracture risk probability scores"
+        correct: false
+    explanation: |
+      Body composition DEXA measures total body bone mineral content (BMC)
+      in grams, averaged across the entire skeleton. It does not provide
+      site-specific T-scores, which require clinical BMD DEXA at validated
+      sites (femoral neck, total hip, lumbar spine, 33% radius). BMC is a
+      real physical measurement that provides general skeletal health
+      information, but it cannot diagnose osteoporosis or calculate FRAX
+      scores, which require femoral neck BMD specifically.
+
+  - id: bone-q2
+    type: scenario
+    text: |
+      A 60-year-old woman asks during her body composition DEXA results
+      review: "My doctor told me to get a DEXA scan — is this what they
+      meant?"
+
+      What is the BEST response?
+    options:
+      - text: "Yes, this is the same DEXA scan your doctor ordered"
+        correct: false
+      - text: "If your doctor mentioned bone density or osteoporosis, they likely meant a clinical BMD scan, which is different from this body composition scan"
+        correct: true
+      - text: "No, your doctor was wrong — you don't need a bone density test"
+        correct: false
+      - text: "This scan is actually better than a clinical bone density test because it covers your whole body"
+        correct: false
+    explanation: |
+      When a doctor orders a "DEXA scan" for bone health, they typically
+      mean a clinical BMD scan focused on the hip and spine for osteoporosis
+      screening. Body composition DEXA and clinical BMD DEXA use the same
+      underlying technology but serve different purposes, use different
+      protocols, and produce different clinical outputs. The patient should
+      clarify with their doctor which type was intended, as body composition
+      DEXA cannot substitute for clinical BMD testing.
+
+  - id: bone-q3
+    type: multiple_choice
+    text: "Which skeletal sites are valid for osteoporosis diagnosis according to the ISCD 2023 positions?"
+    options:
+      - text: "Whole body, ribs, and pelvis"
+        correct: false
+      - text: "Any skeletal site measured by DEXA"
+        correct: false
+      - text: "Femoral neck, total hip, lumbar spine (L1-L4), and 33% radius"
+        correct: true
+      - text: "Lumbar spine and calcaneus (heel)"
+        correct: false
+    explanation: |
+      The ISCD 2023 Official Positions specify that osteoporosis diagnosis
+      requires a T-score of -2.5 or below at the femoral neck, total hip,
+      lumbar spine (L1-L4), or 33% radius. These are the only validated
+      diagnostic sites. Whole-body BMD or BMC from body composition DEXA
+      is explicitly NOT a valid diagnostic site for osteoporosis. This
+      distinction is fundamental to understanding the different roles of
+      body composition and clinical BMD DEXA.
+
+  - id: bone-q4
+    type: scenario
+    text: |
+      A 52-year-old postmenopausal woman's body composition DEXA shows her
+      total body BMC is at the 7th percentile for age and sex. She has no
+      known bone health conditions and has not had a clinical bone density
+      test.
+
+      What is the MOST appropriate recommendation?
+    options:
+      - text: "Start osteoporosis medication immediately based on this finding"
+        correct: false
+      - text: "Reassure her that whole-body BMC is not clinically relevant"
+        correct: false
+      - text: "Recommend she discuss a clinical BMD test with her doctor given her low percentile and postmenopausal status"
+        correct: true
+      - text: "Repeat the body composition DEXA in 3 months to confirm the result"
+        correct: false
+    explanation: |
+      A BMC below the 10th percentile warrants a conversation about
+      clinical BMD referral, especially in a postmenopausal woman. This
+      finding cannot diagnose osteoporosis, but combined with her menopausal
+      status (a key risk factor), it creates a strong case for formal
+      evaluation. Body composition bone data is an opportunistic screening
+      tool—it identifies patients who need further investigation. Treatment
+      decisions require site-specific clinical BMD results, not whole-body
+      BMC data.
+
+  - id: bone-q5
+    type: multiple_choice
+    text: "At what age does the USPSTF 2025 guideline recommend universal BMD screening for women?"
+    options:
+      - text: "50 years"
+        correct: false
+      - text: "55 years"
+        correct: false
+      - text: "65 years"
+        correct: true
+      - text: "70 years"
+        correct: false
+    explanation: |
+      The USPSTF 2025 recommendation statement recommends universal BMD
+      screening for women aged 65 and older (Grade B recommendation).
+      Postmenopausal women under 65 with increased risk should undergo
+      clinical risk assessment first to determine whether BMD screening is
+      warranted. For men, the USPSTF states evidence is insufficient for
+      universal screening, though other organizations recommend screening
+      men aged 70 and older.
+
+  - id: bone-q6
+    type: multiple_choice
+    text: "What is osteosarcopenia?"
+    options:
+      - text: "A bone disorder caused by excessive protein intake"
+        correct: false
+      - text: "The co-occurrence of sarcopenia and osteopenia or osteoporosis in the same individual"
+        correct: true
+      - text: "A condition where bone mineral density is normal but muscle mass is low"
+        correct: false
+      - text: "Age-related bone loss that occurs independently of muscle status"
+        correct: false
+    explanation: |
+      Osteosarcopenia is the co-occurrence of sarcopenia (low muscle mass,
+      strength, and/or function) and osteopenia or osteoporosis within the
+      same individual. It affects approximately 21% of community-dwelling
+      older adults and carries compounding risks: 2.46x fracture risk,
+      1.66x mortality risk, and 1.62x fall risk. Body composition DEXA
+      is uniquely positioned to identify both conditions simultaneously
+      through low ALMI and low BMC in a single scan.
+
+  - id: bone-q7
+    type: scenario
+    text: |
+      A 58-year-old postmenopausal woman presents for a body composition
+      DEXA scan. Her results show BMC at the 12th percentile and ALMI at
+      5.8 kg/m². She reports a family history of hip fracture in her mother
+      and takes no medications.
+
+      What is the MOST appropriate recommendation?
+    options:
+      - text: "No action needed — her BMC is above the 10th percentile"
+        correct: false
+      - text: "Start calcium and vitamin D supplementation only"
+        correct: false
+      - text: "Refer for clinical BMD testing given her postmenopausal status, borderline BMC, and family history of hip fracture"
+        correct: true
+      - text: "Diagnose osteoporosis based on the low BMC percentile"
+        correct: false
+    explanation: |
+      Multiple risk factors converge here: postmenopausal status, borderline
+      low BMC (12th percentile), family history of hip fracture (a FRAX
+      risk factor), and borderline lean mass. While BMC is above the 10th
+      percentile threshold, the combination of risk factors makes clinical
+      BMD referral appropriate. This exemplifies body composition DEXA as
+      opportunistic screening—the bone data combined with clinical context
+      identifies a patient who needs formal evaluation. Only clinical BMD
+      can diagnose osteoporosis.
+
+  - id: bone-q8
+    type: multiple_choice
+    text: "Why is body composition DEXA clinically useful for bone health if it cannot diagnose osteoporosis?"
+    options:
+      - text: "It provides T-scores that are close enough for clinical decisions"
+        correct: false
+      - text: "It replaces the need for clinical BMD testing in most patients"
+        correct: false
+      - text: "It serves as opportunistic screening that identifies patients who may benefit from formal BMD evaluation"
+        correct: true
+      - text: "It measures bone quality rather than bone quantity"
+        correct: false
+    explanation: |
+      Body composition DEXA serves as opportunistic screening for bone
+      health. It reaches patients who may not otherwise be evaluated—
+      individuals getting scans for fitness or body composition goals who
+      may not have considered bone health. Low BMC percentile, declining
+      BMC trends, or low BMC combined with low lean mass can identify
+      patients who need formal clinical BMD referral. Additionally, body
+      composition DEXA uniquely captures both muscle and bone status,
+      enabling identification of osteosarcopenia risk.

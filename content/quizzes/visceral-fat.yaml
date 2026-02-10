@@ -1,0 +1,198 @@
+module_id: visceral-fat
+passing_score: 80
+max_attempts: null
+randomize_questions: false
+randomize_options: true
+
+questions:
+  - id: vfat-q1
+    type: multiple_choice
+    text: "What is the widely established VAT area threshold for elevated metabolic risk?"
+    options:
+      - text: "50 cm²"
+        correct: false
+      - text: "100 cm²"
+        correct: true
+      - text: "150 cm²"
+        correct: false
+      - text: "200 cm²"
+        correct: false
+    explanation: |
+      The 100 cm² threshold is widely established in metabolic research as
+      the cut-point for elevated metabolic risk. Below 100 cm² is
+      considered normal/low risk. From 100-160 cm² is elevated (moderate
+      risk requiring lifestyle intervention), above 160 cm² is high risk
+      (structured intervention indicated), and above 200 cm² is severely
+      elevated (comprehensive medical evaluation warranted). These
+      thresholds are derived from CT-validated research correlating VAT
+      area with metabolic outcomes.
+
+  - id: vfat-q2
+    type: scenario
+    text: |
+      A 45-year-old man has a BMI of 23.5 (normal weight) but his DEXA
+      shows a VAT area of 135 cm². His fasting glucose is 108 mg/dL and
+      triglycerides are 185 mg/dL.
+
+      What is the clinical significance of these findings?
+    options:
+      - text: "His normal BMI means his metabolic risk is low despite the lab values"
+        correct: false
+      - text: "He represents the TOFI phenotype — normal weight but elevated visceral fat with metabolic abnormalities"
+        correct: true
+      - text: "The DEXA VAT measurement is likely inaccurate given his normal BMI"
+        correct: false
+      - text: "His lab values are unrelated to his visceral fat level"
+        correct: false
+    explanation: |
+      This patient is a classic example of the TOFI (Thin Outside, Fat
+      Inside) phenotype — normal BMI with elevated visceral fat and
+      metabolic abnormalities. VAT can vary 3-5 fold among individuals
+      with the same BMI. His elevated fasting glucose and triglycerides
+      are likely driven by the portal drainage of free fatty acids from
+      visceral fat, which impairs hepatic insulin clearance. This is
+      precisely why DEXA-based VAT measurement adds clinical value that
+      BMI alone cannot provide.
+
+  - id: vfat-q3
+    type: multiple_choice
+    text: "What makes visceral fat more metabolically dangerous than subcutaneous fat?"
+    options:
+      - text: "Visceral fat is harder to lose through exercise"
+        correct: false
+      - text: "Visceral fat releases free fatty acids directly into the portal vein and produces more inflammatory cytokines"
+        correct: true
+      - text: "Visceral fat contains more fat cells per gram of tissue"
+        correct: false
+      - text: "Visceral fat is found only in individuals with obesity"
+        correct: false
+    explanation: |
+      Visceral fat's anatomical position is the key to its metabolic
+      danger. It drains free fatty acids directly into the portal vein,
+      which carries blood straight to the liver — the "portal hypothesis."
+      This impairs hepatic insulin clearance, increases VLDL production,
+      and contributes to fatty liver disease. Additionally, VAT produces
+      more pro-inflammatory cytokines (TNF-alpha, IL-6, CRP) and less
+      protective adiponectin than subcutaneous fat, creating chronic
+      inflammation that drives insulin resistance and atherosclerosis.
+
+  - id: vfat-q4
+    type: scenario
+    text: |
+      A 53-year-old woman's DEXA shows a VAT area of 210 cm². She has a
+      family history of type 2 diabetes and her fasting glucose is 118
+      mg/dL. She is otherwise physically active and eats a balanced diet.
+
+      What is the MOST appropriate clinical response?
+    options:
+      - text: "Reassure her that her active lifestyle is protective despite the VAT level"
+        correct: false
+      - text: "Recommend she increase her exercise to 5 days per week"
+        correct: false
+      - text: "Classify as severely elevated VAT, recommend comprehensive medical evaluation alongside structured lifestyle intervention"
+        correct: true
+      - text: "Repeat the DEXA in 6 months before taking any action"
+        correct: false
+    explanation: |
+      A VAT area above 200 cm² is classified as severely elevated,
+      warranting comprehensive medical evaluation. Combined with impaired
+      fasting glucose (118 mg/dL) and family history of type 2 diabetes,
+      this patient has significant metabolic risk. A comprehensive
+      approach should include medical evaluation (metabolic panel, HbA1c,
+      lipid panel), structured exercise prescription emphasizing aerobic
+      exercise for VAT reduction, dietary assessment targeting specific
+      VAT-reducing strategies, and follow-up DEXA to track response.
+
+  - id: vfat-q5
+    type: multiple_choice
+    text: "What is the recommended minimum DEXA scan interval for tracking VAT changes during intervention?"
+    options:
+      - text: "Monthly"
+        correct: false
+      - text: "3-6 months"
+        correct: true
+      - text: "12 months"
+        correct: false
+      - text: "2 years"
+        correct: false
+    explanation: |
+      DEXA scans for VAT monitoring should be spaced 3-6 months apart for
+      most interventions. DEXA VAT precision has a coefficient of variation
+      of 2-4%, and changes greater than 10% likely represent true change.
+      Very early changes (first 4-8 weeks) may reflect fluid shifts and
+      glycogen changes rather than true fat loss. Allow at least 12 weeks
+      for reliable assessment of fat depot changes. Initial rapid response
+      is common in the first 3-4 months, with rates typically slowing as
+      levels approach normal ranges.
+
+  - id: vfat-q6
+    type: multiple_choice
+    text: "Which non-pharmacological intervention approach produces the greatest VAT reduction?"
+    options:
+      - text: "Resistance training alone"
+        correct: false
+      - text: "A low-carbohydrate diet"
+        correct: false
+      - text: "Combined aerobic exercise plus dietary modification"
+        correct: true
+      - text: "Intermittent fasting"
+        correct: false
+    explanation: |
+      Combined diet and exercise produces the greatest non-pharmacological
+      VAT reduction — approximately 15-25% over 3 months. Among single
+      interventions, aerobic exercise (10-20% reduction) is most effective.
+      Resistance training alone produces 5-10% reduction but offers
+      additional lean mass benefits. GLP-1 medications with lifestyle
+      changes can achieve 20-35% reduction at 6 months, but for non-
+      pharmacological intervention, the combined aerobic-plus-diet approach
+      is most effective. Dietary patterns alone produce 10-20% reduction.
+
+  - id: vfat-q7
+    type: scenario
+    text: |
+      A patient's serial DEXA scans show that over 6 months of a caloric
+      deficit, her total body weight decreased by 4 kg but her VAT area
+      increased from 120 cm² to 138 cm². Her lean mass decreased by 3 kg
+      while fat mass decreased by 1 kg.
+
+      What is the MOST appropriate response?
+    options:
+      - text: "The VAT increase is within measurement variability and can be ignored"
+        correct: false
+      - text: "Encourage her to continue the current plan since she is losing weight"
+        correct: false
+      - text: "Investigate for underlying causes — VAT increasing during weight loss with disproportionate lean mass loss is a concerning pattern"
+        correct: true
+      - text: "Recommend switching from caloric restriction to intermittent fasting"
+        correct: false
+    explanation: |
+      VAT increasing while total weight decreases is an unusual and
+      concerning pattern. Combined with disproportionate lean mass loss
+      (3 kg lean vs. 1 kg fat), this suggests an unfavorable metabolic
+      trajectory. Possible causes include hormonal dysfunction, Cushing's
+      syndrome, medication effects, or severe stress/sleep deprivation.
+      This pattern warrants medical evaluation rather than simple dietary
+      modification. The body is losing muscle while accumulating visceral
+      fat — the opposite of the desired outcome.
+
+  - id: vfat-q8
+    type: multiple_choice
+    text: "Why does visceral fat typically respond preferentially during early weight loss?"
+    options:
+      - text: "Because visceral fat cells are larger and easier to mobilize"
+        correct: false
+      - text: "Because visceral fat has higher lipolytic activity and is more metabolically responsive to caloric deficit and exercise"
+        correct: true
+      - text: "Because the body prioritizes losing internal fat for organ protection"
+        correct: false
+      - text: "Because DEXA scanners are more sensitive to visceral fat changes"
+        correct: false
+    explanation: |
+      Visceral fat has higher lipolytic (fat-breakdown) activity than
+      subcutaneous fat, making it more metabolically responsive to caloric
+      deficit and exercise interventions. This higher turnover rate means
+      VAT is generally the first fat depot to shrink during weight loss.
+      This is favorable for metabolic health because even modest lifestyle
+      changes can produce meaningful VAT reductions and improve metabolic
+      risk markers—often before significant changes in total body weight
+      or subcutaneous fat are visible.

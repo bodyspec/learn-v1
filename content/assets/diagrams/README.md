@@ -40,6 +40,44 @@ This directory should contain educational diagrams and illustrations.
 |----------|-------------|--------|--------|
 | `sarcopenia-diagnostic-algorithm.svg` | Flowchart showing EWGSOP2 sarcopenia diagnosis pathway | `deep-dives/sarcopenia/01-sarcopenia-aging.md` | ⬜ TODO |
 | `weight-loss-quality.svg` | Diagram showing "good" (fat loss, lean preserved) vs "bad" (muscle loss) weight loss | `physician/02-interpreting-results.md`, `trainer/02-client-management.md` | ⬜ TODO |
+| `clinical-indications-matrix.svg` | Grid mapping clinical indications to relevant DEXA metrics | `physician/01-clinical-indications.md` | ⬜ TODO |
+| `red-flags-thresholds.svg` | Dashboard of 4 clinical red flag threshold gauges | `physician/04-red-flags.md` | ⬜ TODO |
+| `assessment-workflow.svg` | 4-step chiropractic assessment integration workflow | `chiropractor/02-assessment-integration.md` | ⬜ TODO |
+| `bone-health-referral-pathway.svg` | Decision flowchart for clinical BMD referral based on body-comp DEXA findings | `deep-dives/bone-health/02-clinical-context.md` | ⬜ TODO |
+
+---
+
+## Report & Tracking Diagrams
+
+| Filename | Description | Use In | Status |
+|----------|-------------|--------|--------|
+| `report-anatomy.svg` | Annotated BodySpec report layout with 6 labeled sections | `core/04-reading-results.md` | ⬜ TODO |
+| `scan-timeline.svg` | 12-month scan cadence timeline by phase | `trainer/03-scan-protocols.md` | ⬜ TODO |
+| `goal-setting-framework.svg` | Client management cycle with 12-week targets | `trainer/02-client-management.md` | ⬜ TODO |
+| `glp1-monitoring-protocol.svg` | 4-phase DEXA monitoring timeline for GLP-1 therapy | `deep-dives/glp1-monitoring/01-tracking-weight-loss.md` | ⬜ TODO |
+| `sarcopenia-monitoring-timeline.svg` | 12-month sarcopenia intervention + DEXA checkpoints | `deep-dives/sarcopenia/02-intervention-monitoring.md` | ⬜ TODO |
+
+---
+
+## Patient Communication Diagrams
+
+| Filename | Description | Use In | Status |
+|----------|-------------|--------|--------|
+| `conversation-framework.svg` | 3-step patient conversation flow (context → metrics → action) | `physician/03-patient-communication.md` | ⬜ TODO |
+| `progress-visualization.svg` | Before/after regional comparison showing composition improvement | `chiropractor/03-patient-communication.md` | ⬜ TODO |
+
+---
+
+## Body Composition Framework Diagrams
+
+| Filename | Description | Use In | Status |
+|----------|-------------|--------|--------|
+| `structural-load-impact.svg` | Body outline showing fat load vs lean support pathways | `chiropractor/01-msk-relevance.md` | ⬜ TODO |
+| `client-categorization.svg` | 2×2 matrix: lean mass vs body fat programming quadrants | `trainer/01-practical-application.md` | ⬜ TODO |
+| `bmd-vs-body-comp-dexa.svg` | Side-by-side comparison of two DEXA scan types | `deep-dives/bone-health/01-bone-density-basics.md` | ⬜ TODO |
+| `muscle-preservation-strategies.svg` | 4-tier intervention pyramid for GLP-1 patients | `deep-dives/glp1-monitoring/02-preserving-muscle.md` | ⬜ TODO |
+| `vat-disease-pathways.svg` | Hub-and-spoke: VAT → pathways → disease outcomes | `deep-dives/visceral-fat/01-understanding-vat.md` | ⬜ TODO |
+| `vat-intervention-response.svg` | Line chart of VAT reduction curves by intervention | `deep-dives/visceral-fat/02-intervention-tracking.md` | ⬜ TODO |
 
 ---
 

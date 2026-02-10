@@ -4,11 +4,14 @@ description: "Deep dive into age-related muscle loss, assessment, and interventi
 track: core
 is_deep_dive: true
 parent_module: core
-estimated_minutes: 15
-required_for_certificate: false
+estimated_minutes: 25
+required_for_certificate: true
 sort_order: 10
 
 sections:
   - slug: 01-sarcopenia-aging
     file: 01-sarcopenia-aging.md
     title: "Understanding Sarcopenia"
+  - slug: 02-intervention-monitoring
+    file: 02-intervention-monitoring.md
+    title: "Intervention & Monitoring"
