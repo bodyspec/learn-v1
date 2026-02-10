@@ -29,7 +29,7 @@ export default function QuizPage() {
   }
 
   return (
-    <div className="max-w-3xl mx-auto">
+    <div>
       <BackLink to={`/module/${moduleId}`} label={`Back to ${module.title}`} className="mb-6" />
 
       <div className="mb-8">

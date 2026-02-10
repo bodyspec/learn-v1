@@ -1,5 +1,6 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
 import Layout from './components/Layout'
+import ContentLayout from './components/ContentLayout'
 import Home from './pages/Home'
 import ModuleList from './pages/ModuleList'
 import ModuleView from './pages/ModuleView'
@@ -17,13 +18,17 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
-        {/* Public routes - all content is freely accessible */}
+        {/* Public routes - full width (max-w-7xl from Layout) */}
         <Route index element={<Home />} />
-        <Route path="track/:track" element={<ModuleList />} />
-        <Route path="module/:moduleId" element={<ModuleView />} />
-        <Route path="module/:moduleId/:sectionSlug" element={<SectionView />} />
-        <Route path="quiz/:moduleId" element={<QuizPage />} />
         <Route path="verify/:certificateUid" element={<VerifyPage />} />
+
+        {/* Content learning pages - narrower width (max-w-4xl) */}
+        <Route element={<ContentLayout />}>
+          <Route path="track/:track" element={<ModuleList />} />
+          <Route path="module/:moduleId" element={<ModuleView />} />
+          <Route path="module/:moduleId/:sectionSlug" element={<SectionView />} />
+          <Route path="quiz/:moduleId" element={<QuizPage />} />
+        </Route>
 
         {/* Account portal - protected routes with sidebar layout */}
         <Route path="account" element={<AccountLayout />}>

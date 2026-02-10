@@ -68,7 +68,7 @@ export default function SectionView() {
   }
 
   return (
-    <div className="max-w-4xl mx-auto">
+    <div>
       <BackLink to={`/module/${moduleId}`} label={`Back to ${module.title}`} className="mb-8" />
 
       <div className="card p-8">

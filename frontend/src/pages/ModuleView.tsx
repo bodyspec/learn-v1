@@ -37,7 +37,7 @@ export default function ModuleView() {
   const backLabel = backTrack ? `Back to ${backTrack.charAt(0).toUpperCase() + backTrack.slice(1)} Track` : 'Back to Home'
 
   return (
-    <div className="max-w-4xl mx-auto">
+    <div>
       <BackLink to={backTo} label={backLabel} className="mb-6" />
 
       <div className="card p-8">
