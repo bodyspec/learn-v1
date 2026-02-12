@@ -26,10 +26,12 @@ vi.mock('@/hooks/queries', () => ({
 
 const mockGetModule = vi.fn()
 const mockGetSectionContent = vi.fn()
+const mockGetQuiz = vi.fn()
 
 vi.mock('@/content', () => ({
   getModule: (...args: unknown[]) => mockGetModule(...args),
   getSectionContent: (...args: unknown[]) => mockGetSectionContent(...args),
+  getQuiz: (...args: unknown[]) => mockGetQuiz(...args),
 }))
 
 vi.mock('@/components/SectionContent', () => ({
@@ -55,6 +57,12 @@ const fakeModule = {
   ],
 }
 
+const fakeQuiz = {
+  module_id: 'core',
+  passing_score: 80,
+  questions: [{ id: 'q1', type: 'multiple_choice', text: 'Q?', options: [], explanation: '' }],
+}
+
 function renderPage(moduleId = 'core', sectionSlug = '02-tech') {
   return render(
     <MemoryRouter initialEntries={[`/module/${moduleId}/${sectionSlug}`]}>
@@ -72,6 +80,7 @@ describe('SectionView', () => {
     mockProgressState = { progress: null, isAuthenticated: true }
     mockGetModule.mockReturnValue(fakeModule)
     mockGetSectionContent.mockReturnValue('# Some content')
+    mockGetQuiz.mockReturnValue(null)
     mockMarkComplete.mutateAsync.mockResolvedValue({})
   })
 
@@ -112,14 +121,14 @@ describe('SectionView', () => {
     expect(screen.getByText('Content not available yet.')).toBeInTheDocument()
   })
 
-  it('Previous link absent on first section', () => {
+  it('always shows "Back to Module" button', () => {
     renderPage('core', '01-intro')
-    expect(screen.queryByText('Previous')).not.toBeInTheDocument()
+    expect(screen.getByText('Back to Module')).toBeInTheDocument()
   })
 
-  it('authenticated: Continue calls markComplete then navigates', async () => {
+  it('authenticated: Next Section calls markComplete then navigates', async () => {
     renderPage()
-    fireEvent.click(screen.getByText('Continue'))
+    fireEvent.click(screen.getByText('Next Section'))
 
     await waitFor(() => {
       expect(mockMarkComplete.mutateAsync).toHaveBeenCalledWith({
@@ -127,28 +136,62 @@ describe('SectionView', () => {
         sectionSlug: '02-tech',
       })
     })
-    expect(mockNavigate).toHaveBeenCalledWith('/module/core/03-metrics')
+    expect(mockNavigate).toHaveBeenCalledWith('/module/core/03-metrics', { state: undefined })
   })
 
-  it('unauthenticated: Continue just navigates without marking complete', async () => {
+  it('unauthenticated: Next Section just navigates without marking complete', async () => {
     mockAuthState = { token: null, isAuthenticated: false }
     renderPage()
-    fireEvent.click(screen.getByText('Continue'))
+    fireEvent.click(screen.getByText('Next Section'))
 
     await waitFor(() => {
-      expect(mockNavigate).toHaveBeenCalledWith('/module/core/03-metrics')
+      expect(mockNavigate).toHaveBeenCalledWith('/module/core/03-metrics', { state: undefined })
     })
     expect(mockMarkComplete.mutateAsync).not.toHaveBeenCalled()
   })
 
-  it('last section: shows "Finish & View Module" and navigates to module', async () => {
+  it('last section without quiz: shows "Finish" and navigates to module', async () => {
     renderPage('core', '03-metrics')
-    expect(screen.getByText('Finish & View Module')).toBeInTheDocument()
+    expect(screen.getByText('Finish')).toBeInTheDocument()
 
-    fireEvent.click(screen.getByText('Finish & View Module'))
+    fireEvent.click(screen.getByText('Finish'))
     await waitFor(() => {
-      expect(mockNavigate).toHaveBeenCalledWith('/module/core')
+      expect(mockNavigate).toHaveBeenCalledWith('/module/core', { state: undefined })
     })
+  })
+
+  it('last section with all sections complete and quiz: shows "Take Quiz"', async () => {
+    mockGetQuiz.mockReturnValue(fakeQuiz)
+    mockProgressState = {
+      progress: {
+        sections_completed: [
+          { module_id: 'core', section_slug: '01-intro' },
+          { module_id: 'core', section_slug: '02-tech' },
+        ],
+      },
+      isAuthenticated: true,
+    }
+    renderPage('core', '03-metrics')
+    expect(screen.getByText('Take Quiz')).toBeInTheDocument()
+
+    fireEvent.click(screen.getByText('Take Quiz'))
+    await waitFor(() => {
+      expect(mockNavigate).toHaveBeenCalledWith('/quiz/core')
+    })
+  })
+
+  it('last section with incomplete sections: shows "Finish" not "Take Quiz"', () => {
+    mockGetQuiz.mockReturnValue(fakeQuiz)
+    // Only first section complete, second is not
+    mockProgressState = {
+      progress: {
+        sections_completed: [{ module_id: 'core', section_slug: '01-intro' }],
+      },
+      isAuthenticated: true,
+    }
+    renderPage('core', '03-metrics')
+    expect(screen.getByText('Finish')).toBeInTheDocument()
+    expect(screen.queryByText('Take Quiz')).not.toBeInTheDocument()
   })
 
   it('shows SignInPrompt for unauthenticated users', () => {

@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
-import { useParams, Link, useNavigate } from 'react-router-dom'
+import { useParams, Link, useNavigate, useLocation } from 'react-router-dom'
 import { ArrowLeft, ArrowRight, CheckCircle } from 'lucide-react'
-import { getModule, getSectionContent } from '@/content'
+import { getModule, getSectionContent, getQuiz } from '@/content'
 import SectionContent from '@/components/SectionContent'
 import { useProgress, useMarkSectionComplete } from '@/hooks/queries'
 import { useAuth } from '@/auth/AuthProvider'
@@ -10,9 +10,11 @@ import { NotFound, BackLink, SignInPrompt } from '@/components/common'
 export default function SectionView() {
   const { moduleId, sectionSlug } = useParams<{ moduleId: string; sectionSlug: string }>()
   const navigate = useNavigate()
+  const location = useLocation()
   const { token, isAuthenticated } = useAuth()
   const { progress } = useProgress()
   const markComplete = useMarkSectionComplete()
+  const fromTrack = (location.state as { fromTrack?: string })?.fromTrack
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -40,8 +42,8 @@ export default function SectionView() {
 
   const section = module.sections[sectionIndex]
   const content = getSectionContent(moduleId, sectionSlug)
+  const quiz = getQuiz(moduleId)
 
-  const prevSection = sectionIndex > 0 ? module.sections[sectionIndex - 1] : null
   const nextSection = sectionIndex < module.sections.length - 1 ? module.sections[sectionIndex + 1] : null
   const isLastSection = !nextSection
 
@@ -49,8 +51,21 @@ export default function SectionView() {
     s => s.module_id === moduleId && s.section_slug === sectionSlug
   )
 
+  const completedSlugs = new Set(
+    progress?.sections_completed
+      .filter(s => s.module_id === moduleId)
+      .map(s => s.section_slug) ?? []
+  )
+
+  // All sections will be complete after marking the current one
+  const allSectionsWillBeComplete = module.sections.every(s =>
+    s.slug === sectionSlug || completedSlugs.has(s.slug)
+  )
+
+  const stateForModule = fromTrack ? { fromTrack } : undefined
+  const stateForSection = fromTrack ? { fromTrack } : undefined
+
   const handleContinue = async () => {
-    // If authenticated, mark section complete
     if (token) {
       try {
         await markComplete.mutateAsync({ moduleId, sectionSlug })
@@ -59,17 +74,23 @@ export default function SectionView() {
       }
     }
 
-    // Navigate regardless of auth status
     if (nextSection) {
-      navigate(`/module/${moduleId}/${nextSection.slug}`)
+      navigate(`/module/${moduleId}/${nextSection.slug}`, { state: stateForSection })
+    } else if (allSectionsWillBeComplete && quiz) {
+      navigate(`/quiz/${moduleId}`)
     } else {
-      navigate(`/module/${moduleId}`)
+      navigate(`/module/${moduleId}`, { state: stateForModule })
     }
   }
 
   return (
     <div>
-      <BackLink to={`/module/${moduleId}`} label={`Back to ${module.title}`} className="mb-8" />
+      <BackLink
+        to={`/module/${moduleId}`}
+        label={`Back to ${module.title}`}
+        state={stateForModule}
+        className="mb-8"
+      />
 
       <div className="card p-8">
         <div className="flex items-center justify-between mb-6">
@@ -104,26 +125,26 @@ export default function SectionView() {
 
         <div className="mt-8 pt-8 border-t border-gray-200">
           <div className="flex items-center justify-between">
-            <div>
-              {prevSection ? (
-                <Link
-                  to={`/module/${moduleId}/${prevSection.slug}`}
-                  className="btn-secondary inline-flex items-center gap-2"
-                >
-                  <ArrowLeft className="w-4 h-4" />
-                  Previous
-                </Link>
-              ) : (
-                <span />
-              )}
-            </div>
+            <Link
+              to={`/module/${moduleId}`}
+              state={stateForModule}
+              className="btn-secondary inline-flex items-center gap-2"
+            >
+              <ArrowLeft className="w-4 h-4" />
+              Back to Module
+            </Link>
 
             <button onClick={handleContinue} className="btn-primary inline-flex items-center gap-2">
-              {isLastSection ? (
-                'Finish & View Module'
+              {isLastSection && allSectionsWillBeComplete && quiz ? (
+                <>
+                  Take Quiz
+                  <ArrowRight className="w-4 h-4" />
+                </>
+              ) : isLastSection ? (
+                'Finish'
               ) : (
                 <>
-                  Continue
+                  Next Section
                   <ArrowRight className="w-4 h-4" />
                 </>
               )}

@@ -83,6 +83,7 @@ export default function ModuleView() {
                 <Link
                   key={section.slug}
                   to={`/module/${moduleId}/${section.slug}`}
+                  state={backTrack ? { fromTrack: backTrack } : undefined}
                   className="flex items-center gap-3 p-4 rounded-lg border border-gray-200 hover:border-salad-80 hover:bg-gray-50 transition-colors"
                 >
                   {isComplete ? (
@@ -105,6 +106,7 @@ export default function ModuleView() {
             return (
               <Link
                 to={`/module/${moduleId}/${target.slug}`}
+                state={backTrack ? { fromTrack: backTrack } : undefined}
                 className="mt-6 btn-primary inline-block text-center"
               >
                 {hasStarted ? 'Continue' : 'Get Started'}
