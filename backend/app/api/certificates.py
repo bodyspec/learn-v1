@@ -21,16 +21,9 @@ from app.services.certificate_service import (
     verify_certificate,
 )
 from app.services.pdf_generator import generate_certificate_pdf
-from app.services.quiz_service import has_passed_quiz
+from app.services.quiz_service import TRACK_REQUIREMENTS, has_passed_quiz
 
 router = APIRouter()
-
-# Track requirements: which modules must be passed
-TRACK_REQUIREMENTS = {
-    'physician': ['core', 'physician'],
-    'chiropractor': ['core', 'chiropractor'],
-    'trainer': ['core', 'trainer'],
-}
 
 
 @router.get('/certificates', response_model=CertificatesListResponse)

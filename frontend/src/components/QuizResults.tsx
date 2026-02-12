@@ -110,7 +110,7 @@ export default function QuizResults({ result, quiz, onRetry, showSignInPrompt }:
                         <span className={isCorrect ? 'text-green-700' : isWrongSelection ? 'text-red-700' : 'text-gray-600'}>
                           {option.text}
                         </span>
-                        {wasSelected && <span className="text-xs text-gray-500 ml-auto">(your answer)</span>}
+                        {wasSelected && <span className="text-xs text-gray-500 ml-auto whitespace-nowrap flex-shrink-0">(your answer)</span>}
                       </div>
                     </div>
                   )
@@ -119,7 +119,7 @@ export default function QuizResults({ result, quiz, onRetry, showSignInPrompt }:
                 {question.explanation && (
                   <div className="mt-4 p-4 bg-blue-50 rounded-lg">
                     <p className="text-sm font-medium text-blue-700 mb-1">Explanation:</p>
-                    <p className="text-sm text-blue-600 whitespace-pre-line">{question.explanation}</p>
+                    <p className="text-sm text-blue-600">{question.explanation}</p>
                   </div>
                 )}
               </div>

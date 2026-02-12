@@ -17,6 +17,13 @@ from app.schemas.quiz import (
 
 CONTENT_DIR = Path(__file__).parent.parent.parent.parent / 'content'
 
+# Track requirements: which modules must be passed for each track certificate
+TRACK_REQUIREMENTS = {
+    'physician': ['core', 'physician'],
+    'chiropractor': ['core', 'chiropractor'],
+    'trainer': ['core', 'trainer'],
+}
+
 
 def load_quiz(module_id: str) -> dict[str, Any] | None:
     """Load quiz definition from YAML file."""
@@ -70,7 +77,7 @@ def grade_quiz(submission: QuizSubmission) -> QuizSubmissionResult | None:
         passed=passed,
         passing_score=passing_score,
         results=results,
-        certificate_eligible=passed,
+        certificate_eligible=False,
     )
 
 

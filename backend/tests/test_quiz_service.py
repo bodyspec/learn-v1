@@ -94,7 +94,7 @@ class TestGradeQuiz:
         assert result is not None
         assert result.score == 100
         assert result.passed is True
-        assert result.certificate_eligible is True
+        assert result.certificate_eligible is False  # grade_quiz doesn't check track eligibility
         assert len(result.results) == 5
         assert all(r.correct for r in result.results)
 

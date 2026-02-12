@@ -7,7 +7,13 @@ from app.auth.dependencies import get_current_user
 from app.core.database import get_db
 from app.models.user import User
 from app.schemas.quiz import QuizAttemptsResponse, QuizSubmission, QuizSubmissionResult
-from app.services.quiz_service import get_quiz_attempts, grade_quiz, record_quiz_attempt
+from app.services.quiz_service import (
+    TRACK_REQUIREMENTS,
+    get_quiz_attempts,
+    grade_quiz,
+    has_passed_quiz,
+    record_quiz_attempt,
+)
 
 router = APIRouter()
 
@@ -28,6 +34,19 @@ async def submit_quiz(
 
     # Record the attempt
     await record_quiz_attempt(db, current_user.id, submission, result)
+
+    # Check actual track eligibility if the quiz was passed
+    if result.passed:
+        for track, required_modules in TRACK_REQUIREMENTS.items():
+            if submission.module_id in required_modules:
+                all_passed = True
+                for mod in required_modules:
+                    if not await has_passed_quiz(db, current_user.id, mod):
+                        all_passed = False
+                        break
+                if all_passed:
+                    result.certificate_eligible = True
+                    break
 
     return result
 
