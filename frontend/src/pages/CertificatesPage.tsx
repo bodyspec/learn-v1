@@ -53,7 +53,7 @@ export default function CertificatesPage() {
       {certificates.length > 0 && (
         <div>
           <h2 className="text-lg font-semibold text-bs-dark mb-4">Earned Certificates</h2>
-          <div className="space-y-4">
+          <div className="space-y-6">
             {certificates.map(cert => (
               <Certificate key={cert.id} certificate={cert} />
             ))}
@@ -63,10 +63,10 @@ export default function CertificatesPage() {
 
       {/* Available Certificates */}
       <div>
-        <h2 className="text-lg font-semibold text-bs-dark mb-4">
-          {certificates.length > 0 ? 'Other Tracks' : 'Available Tracks'}
-        </h2>
-        <div className="space-y-4">
+        {certificates.length > 0 && (
+          <h2 className="text-lg font-semibold text-bs-dark mb-4">Other Tracks</h2>
+        )}
+        <div className="space-y-6">
           {TRACKS.filter(track => !hasCertificate(track.id)).map(track => {
             const eligible = isEligible(track.id)
             const isRequesting = requestCert.isPending && requestCert.variables === track.id

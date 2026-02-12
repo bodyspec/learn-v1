@@ -57,7 +57,7 @@ export default function AdminUserList() {
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b border-bs-dark15 text-left text-bs-dark55">
+                <tr className="border-b border-bs-dark15 text-left text-bs-dark55 whitespace-nowrap">
                   <th className="pb-3 font-medium">Name</th>
                   <th className="pb-3 font-medium">Email</th>
                   <th className="pb-3 font-medium">Role</th>
@@ -69,17 +69,17 @@ export default function AdminUserList() {
               <tbody>
                 {data?.users.map((u) => (
                   <tr key={u.id} className="border-b border-bs-dark15 hover:bg-bs-dark3">
-                    <td className="py-3">
+                    <td className="py-3 whitespace-nowrap">
                       <Link to={`/account/admin/users/${u.id}`} className="text-bs-dark hover:text-salad-100 no-underline font-medium">
                         {u.name || '—'}
                         {u.is_admin && <span className="ml-2 text-xs bg-salad-60 text-bs-dark px-2 py-0.5 rounded">Admin</span>}
                       </Link>
                     </td>
-                    <td className="py-3 text-bs-dark55">{u.email}</td>
-                    <td className="py-3 text-bs-dark55 capitalize">{u.role_type || '—'}</td>
-                    <td className="py-3 text-right text-bs-dark55">{u.sections_completed} sections</td>
-                    <td className="py-3 text-right text-bs-dark55">{u.certificates_count}</td>
-                    <td className="py-3 text-right">
+                    <td className="py-3 text-bs-dark55 whitespace-nowrap">{u.email}</td>
+                    <td className="py-3 text-bs-dark55 capitalize whitespace-nowrap">{u.role_type || '—'}</td>
+                    <td className="py-3 text-right text-bs-dark55 whitespace-nowrap">{u.sections_completed} sections</td>
+                    <td className="py-3 text-right text-bs-dark55 whitespace-nowrap">{u.certificates_count}</td>
+                    <td className="py-3 text-right whitespace-nowrap">
                       <div className="flex gap-1 justify-end">
                         {u.is_admin ? (
                           u.id !== currentUser?.id && (

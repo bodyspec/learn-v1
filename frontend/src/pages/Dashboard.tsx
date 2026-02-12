@@ -41,7 +41,7 @@ export default function Dashboard() {
       </div>
 
       {/* Quick Stats */}
-      <div className="grid md:grid-cols-3 gap-6">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         <div className="card p-6">
           <div className="flex items-center gap-4">
             <div className="p-3 bg-salad-60 rounded-lg">
