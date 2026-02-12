@@ -11,7 +11,7 @@ export default function BackLink({ to, label, className = 'mb-6' }: BackLinkProp
   return (
     <Link
       to={to}
-      className={`inline-flex items-center gap-2 text-gray-600 hover:text-gray-900 ${className}`}
+      className={`inline-flex items-center gap-2 text-bs-dark55 hover:text-bs-dark ${className}`}
     >
       <ArrowLeft className="w-4 h-4" />
       {label}

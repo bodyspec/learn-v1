@@ -53,20 +53,20 @@ export default function Certificate({ certificate }: CertificateProps) {
     <div className="card p-6">
       <div className="flex justify-between items-start">
         <div>
-          <h3 className="text-lg font-semibold text-gray-900">
+          <h3 className="text-lg font-semibold text-bs-dark">
             {trackTitles[certificate.track] || certificate.track}
           </h3>
-          <p className="text-sm text-gray-500 mt-1">
+          <p className="text-sm text-bs-dark55 mt-1">
             Certificate ID: {certificate.certificate_uid}
           </p>
-          <p className="text-sm text-gray-500">
+          <p className="text-sm text-bs-dark55">
             Issued to: {certificate.recipient_name}
           </p>
-          <p className="text-sm text-gray-500">
+          <p className="text-sm text-bs-dark55">
             Issued: {new Date(certificate.issued_at).toLocaleDateString()}
           </p>
           {certificate.expires_at && (
-            <p className="text-sm text-gray-500">
+            <p className="text-sm text-bs-dark55">
               Expires: {new Date(certificate.expires_at).toLocaleDateString()}
             </p>
           )}
