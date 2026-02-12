@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { Shield, ShieldOff, Trash2, Search, ChevronLeft, ChevronRight } from 'lucide-react'
 import { useAuth } from '@/auth/AuthProvider'
 import { useAdminUsers, usePromoteUser, useDemoteUser, useDeleteUser } from '@/hooks/queries'
+import { LoadingSpinner } from '@/components/common'
 import type { AdminUserSummary } from '@/api/admin'
 
 export default function AdminUserList() {
@@ -32,10 +33,10 @@ export default function AdminUserList() {
   const totalPages = data ? Math.ceil(data.total / data.per_page) : 0
 
   return (
-    <div>
-      <h1 className="text-3xl font-bold text-gray-900 mb-6">User Management</h1>
+    <div className="space-y-6">
+      <h1 className="text-3xl font-bold text-bs-dark">User Management</h1>
 
-      <form onSubmit={handleSearch} className="mb-6 flex gap-2">
+      <form onSubmit={handleSearch} className="flex gap-2">
         <div className="relative flex-1">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-bs-dark55" />
           <input
@@ -50,9 +51,7 @@ export default function AdminUserList() {
       </form>
 
       {isLoading ? (
-        <div className="flex justify-center py-12">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-salad-100" />
-        </div>
+        <LoadingSpinner fullHeight={false} />
       ) : (
         <>
           <div className="overflow-x-auto">
@@ -73,7 +72,7 @@ export default function AdminUserList() {
                     <td className="py-3">
                       <Link to={`/account/admin/users/${u.id}`} className="text-bs-dark hover:text-salad-100 no-underline font-medium">
                         {u.name || '—'}
-                        {u.is_admin && <span className="ml-2 text-xs bg-salad-60 text-bs-dark px-1.5 py-0.5 rounded">Admin</span>}
+                        {u.is_admin && <span className="ml-2 text-xs bg-salad-60 text-bs-dark px-2 py-0.5 rounded">Admin</span>}
                       </Link>
                     </td>
                     <td className="py-3 text-bs-dark55">{u.email}</td>
@@ -123,7 +122,7 @@ export default function AdminUserList() {
           </div>
 
           {totalPages > 1 && (
-            <div className="flex items-center justify-between mt-4">
+            <div className="flex items-center justify-between">
               <span className="text-sm text-bs-dark55">{data?.total} users total</span>
               <div className="flex gap-2">
                 <button

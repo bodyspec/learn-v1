@@ -19,12 +19,12 @@ export default function PageHeader({
   children,
 }: PageHeaderProps) {
   return (
-    <div className="mb-8">
+    <div>
       {backTo && backLabel && <BackLink to={backTo} label={backLabel} className="mb-4" />}
       <div className="flex items-start justify-between">
         <div>
-          <h1 className="text-3xl font-bold text-gray-900">{title}</h1>
-          {description && <p className="mt-2 text-lg text-gray-600">{description}</p>}
+          <h1 className="text-3xl font-bold text-bs-dark">{title}</h1>
+          {description && <p className="mt-2 text-bs-dark55">{description}</p>}
         </div>
         {badge}
       </div>

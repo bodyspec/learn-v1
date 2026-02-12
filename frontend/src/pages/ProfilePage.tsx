@@ -30,13 +30,13 @@ export default function ProfilePage() {
   }
 
   return (
-    <div className="max-w-2xl space-y-8">
-      <h1 className="text-3xl font-bold text-gray-900">Profile Settings</h1>
+    <div className="space-y-6">
+      <h1 className="text-3xl font-bold text-bs-dark">Profile Settings</h1>
 
       <div className="card p-6">
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+            <label htmlFor="email" className="block text-sm font-medium text-bs-dark">
               Email
             </label>
             <input
@@ -44,15 +44,15 @@ export default function ProfilePage() {
               id="email"
               value={user?.email || ''}
               disabled
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm bg-gray-50 text-gray-500"
+              className="mt-1 block w-full px-3 py-2 border border-bs-dark15 rounded-lg bg-bs-dark3 text-bs-dark55"
             />
-            <p className="mt-1 text-xs text-gray-500">
+            <p className="mt-1 text-xs text-bs-dark55">
               Email is managed by your identity provider and cannot be changed here.
             </p>
           </div>
 
           <div>
-            <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+            <label htmlFor="name" className="block text-sm font-medium text-bs-dark">
               Full Name
             </label>
             <input
@@ -60,23 +60,23 @@ export default function ProfilePage() {
               id="name"
               value={name}
               onChange={e => setName(e.target.value)}
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-salad-100 focus:border-salad-100"
+              className="mt-1 block w-full px-3 py-2 border border-bs-dark15 rounded-lg focus:ring-salad-100 focus:border-salad-100"
               placeholder="Dr. Jane Smith"
             />
-            <p className="mt-1 text-xs text-gray-500">
+            <p className="mt-1 text-xs text-bs-dark55">
               This name will appear on your certificates.
             </p>
           </div>
 
           <div>
-            <label htmlFor="roleType" className="block text-sm font-medium text-gray-700">
+            <label htmlFor="roleType" className="block text-sm font-medium text-bs-dark">
               Professional Role
             </label>
             <select
               id="roleType"
               value={roleType}
               onChange={e => setRoleType(e.target.value as RoleType | '')}
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-salad-100 focus:border-salad-100"
+              className="mt-1 block w-full px-3 py-2 border border-bs-dark15 rounded-lg focus:ring-salad-100 focus:border-salad-100"
             >
               <option value="">Select your role...</option>
               <option value="physician">Physician (MD, DO, NP, PA)</option>
@@ -87,7 +87,7 @@ export default function ProfilePage() {
           </div>
 
           <div>
-            <label htmlFor="organization" className="block text-sm font-medium text-gray-700">
+            <label htmlFor="organization" className="block text-sm font-medium text-bs-dark">
               Organization / Practice
             </label>
             <input
@@ -95,14 +95,14 @@ export default function ProfilePage() {
               id="organization"
               value={organization}
               onChange={e => setOrganization(e.target.value)}
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-salad-100 focus:border-salad-100"
+              className="mt-1 block w-full px-3 py-2 border border-bs-dark15 rounded-lg focus:ring-salad-100 focus:border-salad-100"
               placeholder="Acme Health Clinic"
             />
           </div>
 
           {message && (
             <div
-              className={`p-3 rounded-md ${
+              className={`p-3 rounded-lg ${
                 message.type === 'success'
                   ? 'bg-green-50 text-green-700 border border-green-200'
                   : 'bg-red-50 text-red-700 border border-red-200'
@@ -123,8 +123,8 @@ export default function ProfilePage() {
       </div>
       {/* Danger Zone */}
       <div className="card p-6 border-red-200">
-        <h2 className="text-lg font-semibold text-red-600 mb-2">Danger Zone</h2>
-        <p className="text-sm text-gray-500 mb-4">
+        <h2 className="text-lg font-semibold text-red-600 mb-4">Danger Zone</h2>
+        <p className="text-sm text-bs-dark55 mb-4">
           Reset your learning progress. This action cannot be undone.
         </p>
         <button

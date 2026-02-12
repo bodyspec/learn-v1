@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Navigate, Outlet } from 'react-router-dom'
 import { useAuth } from '@/auth/AuthProvider'
+import { LoadingSpinner } from '@/components/common'
 import AccountSidebar from './AccountSidebar'
 
 export default function AccountLayout() {
@@ -8,11 +9,7 @@ export default function AccountLayout() {
   const [sidebarOpen, setSidebarOpen] = useState(false)
 
   if (isLoading) {
-    return (
-      <div className="flex items-center justify-center min-h-[50vh]">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-salad-100"></div>
-      </div>
-    )
+    return <LoadingSpinner fullHeight />
   }
 
   if (!isAuthenticated) {

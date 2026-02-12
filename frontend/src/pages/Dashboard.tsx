@@ -30,12 +30,12 @@ export default function Dashboard() {
   }
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-6">
       <div>
-        <h1 className="text-3xl font-bold text-gray-900">
+        <h1 className="text-3xl font-bold text-bs-dark">
           Welcome back, {user?.name || user?.email}
         </h1>
-        <p className="mt-2 text-gray-600">
+        <p className="mt-2 text-bs-dark55">
           Track your learning progress and manage your certificates.
         </p>
       </div>
@@ -48,10 +48,10 @@ export default function Dashboard() {
               <BookOpen className="w-6 h-6 text-salad-100" />
             </div>
             <div>
-              <p className="text-2xl font-bold text-gray-900">
+              <p className="text-2xl font-bold text-bs-dark">
                 {progress?.sections_completed.length || 0}
               </p>
-              <p className="text-sm text-gray-500">Sections completed</p>
+              <p className="text-sm text-bs-dark55">Sections completed</p>
             </div>
           </div>
         </div>
@@ -62,10 +62,10 @@ export default function Dashboard() {
               <CheckCircle className="w-6 h-6 text-green-600" />
             </div>
             <div>
-              <p className="text-2xl font-bold text-gray-900">
+              <p className="text-2xl font-bold text-bs-dark">
                 {Object.keys(progress?.quizzes_passed || {}).length}
               </p>
-              <p className="text-sm text-gray-500">Quizzes passed</p>
+              <p className="text-sm text-bs-dark55">Quizzes passed</p>
             </div>
           </div>
         </div>
@@ -76,10 +76,10 @@ export default function Dashboard() {
               <Award className="w-6 h-6 text-yellow-600" />
             </div>
             <div>
-              <p className="text-2xl font-bold text-gray-900">
+              <p className="text-2xl font-bold text-bs-dark">
                 {certificates.length}
               </p>
-              <p className="text-sm text-gray-500">Certificates earned</p>
+              <p className="text-sm text-bs-dark55">Certificates earned</p>
             </div>
           </div>
         </div>
@@ -87,19 +87,19 @@ export default function Dashboard() {
 
       {/* Track Progress */}
       <div className="card p-6">
-        <h2 className="text-xl font-semibold text-gray-900 mb-6">Track Progress</h2>
-        <div className="space-y-6">
+        <h2 className="text-lg font-semibold text-bs-dark mb-4">Track Progress</h2>
+        <div className="space-y-4">
           {tracks.map(track => {
             const trackProgress = getTrackProgress(track)
             const trackInfo = getTrackInfo(track)
             const hasCertificate = certificates.some(c => c.track === track)
 
             return (
-              <div key={track} className="border-b border-gray-100 pb-6 last:border-0 last:pb-0">
+              <div key={track} className="border-b border-bs-dark15 pb-4 last:border-0 last:pb-0">
                 <div className="flex items-center justify-between mb-2">
                   <div>
-                    <h3 className="font-medium text-gray-900">{trackInfo.title}</h3>
-                    <p className="text-sm text-gray-500">
+                    <h3 className="font-medium text-bs-dark">{trackInfo.title}</h3>
+                    <p className="text-sm text-bs-dark55">
                       {trackProgress.completed} of {trackProgress.total} modules complete
                     </p>
                   </div>
@@ -128,7 +128,7 @@ export default function Dashboard() {
       {/* Recent Activity */}
       {progress && progress.sections_completed.length > 0 && (
         <div className="card p-6">
-          <h2 className="text-xl font-semibold text-gray-900 mb-4">Recent Activity</h2>
+          <h2 className="text-lg font-semibold text-bs-dark mb-4">Recent Activity</h2>
           <div className="space-y-3">
             {progress.sections_completed.slice(-5).reverse().map((section, idx) => {
               const module = modules.find(m => m.id === section.module_id)
@@ -137,10 +137,10 @@ export default function Dashboard() {
               return (
                 <div key={idx} className="flex items-center gap-3 text-sm">
                   <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                  <span className="text-gray-900">
+                  <span className="text-bs-dark">
                     Completed "{sectionInfo?.title || section.section_slug}"
                   </span>
-                  <span className="text-gray-400">
+                  <span className="text-bs-dark55">
                     {new Date(section.completed_at).toLocaleDateString()}
                   </span>
                 </div>
@@ -155,10 +155,10 @@ export default function Dashboard() {
         <div className="card p-6 bg-gradient-to-r from-yellow-50 to-amber-50 border-yellow-200">
           <div className="flex items-center justify-between">
             <div>
-              <h3 className="font-semibold text-gray-900">
+              <h3 className="font-semibold text-bs-dark">
                 You have {certificates.length} certificate{certificates.length > 1 ? 's' : ''}!
               </h3>
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-bs-dark55">
                 Download and share your achievements.
               </p>
             </div>

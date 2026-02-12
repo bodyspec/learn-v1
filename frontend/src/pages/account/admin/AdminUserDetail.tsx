@@ -1,7 +1,8 @@
-import { useParams, Link } from 'react-router-dom'
-import { ArrowLeft, Shield, ShieldOff, Trash2 } from 'lucide-react'
+import { useParams } from 'react-router-dom'
+import { Shield, ShieldOff, Trash2 } from 'lucide-react'
 import { useAuth } from '@/auth/AuthProvider'
 import { useAdminUserDetail, usePromoteUser, useDemoteUser, useDeleteUser } from '@/hooks/queries'
+import { BackLink, LoadingSpinner } from '@/components/common'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
@@ -16,11 +17,7 @@ export default function AdminUserDetail() {
   const [showDeleteModal, setShowDeleteModal] = useState(false)
 
   if (isLoading) {
-    return (
-      <div className="flex justify-center py-12">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-salad-100" />
-      </div>
-    )
+    return <LoadingSpinner fullHeight={false} />
   }
 
   if (!user) {
@@ -33,18 +30,16 @@ export default function AdminUserDetail() {
   }
 
   return (
-    <div>
-      <Link to="/account/admin" className="inline-flex items-center gap-1 text-sm text-bs-dark55 hover:text-bs-dark no-underline mb-6">
-        <ArrowLeft className="h-4 w-4" /> Back to users
-      </Link>
+    <div className="space-y-6">
+      <BackLink to="/account/admin" label="Back to users" className="" />
 
       {/* Header */}
-      <div className="card p-6 mb-6">
+      <div className="card p-6">
         <div className="flex justify-between items-start">
           <div>
-            <h1 className="text-3xl font-bold text-gray-900">
+            <h1 className="text-3xl font-bold text-bs-dark">
               {user.name || 'Unnamed User'}
-              {user.is_admin && <span className="ml-3 text-sm bg-salad-60 text-bs-dark px-2 py-1 rounded">Admin</span>}
+              {user.is_admin && <span className="ml-3 text-xs bg-salad-60 text-bs-dark px-2 py-0.5 rounded">Admin</span>}
             </h1>
             <p className="text-bs-dark55 mt-1">{user.email}</p>
             <div className="flex gap-4 mt-2 text-sm text-bs-dark55">
@@ -104,7 +99,7 @@ export default function AdminUserDetail() {
 
       {/* Module Progress */}
       {user.module_progress.length > 0 && (
-        <div className="card p-6 mb-6">
+        <div className="card p-6">
           <h2 className="text-lg font-semibold text-bs-dark mb-4">Module Progress</h2>
           <div className="space-y-3">
             {user.module_progress.map((mp) => (
@@ -119,28 +114,28 @@ export default function AdminUserDetail() {
 
       {/* Quiz Attempts */}
       {user.quiz_attempts.length > 0 && (
-        <div className="card p-6 mb-6">
+        <div className="card p-6">
           <h2 className="text-lg font-semibold text-bs-dark mb-4">Quiz Attempts</h2>
           <table className="w-full text-sm">
             <thead>
               <tr className="border-b border-bs-dark15 text-left text-bs-dark55">
-                <th className="pb-2 font-medium">Module</th>
-                <th className="pb-2 font-medium text-right">Score</th>
-                <th className="pb-2 font-medium text-right">Result</th>
-                <th className="pb-2 font-medium text-right">Date</th>
+                <th className="pb-3 font-medium">Module</th>
+                <th className="pb-3 font-medium text-right">Score</th>
+                <th className="pb-3 font-medium text-right">Result</th>
+                <th className="pb-3 font-medium text-right">Date</th>
               </tr>
             </thead>
             <tbody>
               {user.quiz_attempts.map((qa) => (
                 <tr key={qa.id} className="border-b border-bs-dark15">
-                  <td className="py-2 capitalize">{qa.module_id}</td>
-                  <td className="py-2 text-right">{qa.score}%</td>
-                  <td className="py-2 text-right">
+                  <td className="py-3 capitalize">{qa.module_id}</td>
+                  <td className="py-3 text-right">{qa.score}%</td>
+                  <td className="py-3 text-right">
                     <span className={qa.passed ? 'text-green-600' : 'text-red-600'}>
                       {qa.passed ? 'Passed' : 'Failed'}
                     </span>
                   </td>
-                  <td className="py-2 text-right text-bs-dark55">
+                  <td className="py-3 text-right text-bs-dark55">
                     {new Date(qa.attempted_at).toLocaleDateString()}
                   </td>
                 </tr>

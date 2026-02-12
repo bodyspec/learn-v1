@@ -1,6 +1,7 @@
 import { Award, Plus } from 'lucide-react'
 import { useCertificates, useRequestCertificate, useProgress } from '@/hooks/queries'
 import Certificate from '@/components/Certificate'
+import { LoadingSpinner } from '@/components/common'
 
 const TRACKS = [
   { id: 'physician', title: 'Clinical Applications', requiredModules: ['core', 'physician'] },
@@ -28,20 +29,16 @@ export default function CertificatesPage() {
   }
 
   if (isLoading) {
-    return (
-      <div className="flex items-center justify-center min-h-[50vh]">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-salad-100"></div>
-      </div>
-    )
+    return <LoadingSpinner fullHeight />
   }
 
   const error = requestCert.error as (Error & { data?: { message?: string } }) | null
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-6">
       <div>
-        <h1 className="text-3xl font-bold text-gray-900">Your Certificates</h1>
-        <p className="mt-2 text-gray-600">
+        <h1 className="text-3xl font-bold text-bs-dark">Your Certificates</h1>
+        <p className="mt-2 text-bs-dark55">
           Earn certificates by completing all modules and passing quizzes in a track.
         </p>
       </div>
@@ -55,7 +52,7 @@ export default function CertificatesPage() {
       {/* Earned Certificates */}
       {certificates.length > 0 && (
         <div>
-          <h2 className="text-xl font-semibold text-gray-900 mb-4">Earned Certificates</h2>
+          <h2 className="text-lg font-semibold text-bs-dark mb-4">Earned Certificates</h2>
           <div className="space-y-4">
             {certificates.map(cert => (
               <Certificate key={cert.id} certificate={cert} />
@@ -66,7 +63,7 @@ export default function CertificatesPage() {
 
       {/* Available Certificates */}
       <div>
-        <h2 className="text-xl font-semibold text-gray-900 mb-4">
+        <h2 className="text-lg font-semibold text-bs-dark mb-4">
           {certificates.length > 0 ? 'Other Tracks' : 'Available Tracks'}
         </h2>
         <div className="space-y-4">
@@ -78,12 +75,12 @@ export default function CertificatesPage() {
               <div key={track.id} className="card p-6">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-4">
-                    <div className={`p-3 rounded-lg ${eligible ? 'bg-green-100' : 'bg-gray-100'}`}>
-                      <Award className={`w-6 h-6 ${eligible ? 'text-green-600' : 'text-gray-400'}`} />
+                    <div className={`p-3 rounded-lg ${eligible ? 'bg-green-100' : 'bg-bs-dark3'}`}>
+                      <Award className={`w-6 h-6 ${eligible ? 'text-green-600' : 'text-bs-dark55'}`} />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-gray-900">{track.title}</h3>
-                      <p className="text-sm text-gray-500">
+                      <h3 className="font-medium text-bs-dark">{track.title}</h3>
+                      <p className="text-sm text-bs-dark55">
                         {eligible
                           ? 'You are eligible for this certificate!'
                           : `Complete ${track.requiredModules.join(' and ')} modules to earn`}
@@ -115,8 +112,8 @@ export default function CertificatesPage() {
       </div>
 
       {certificates.length === 0 && TRACKS.every(t => !isEligible(t.id)) && (
-        <div className="text-center py-12 text-gray-500">
-          <Award className="w-16 h-16 mx-auto mb-4 text-gray-300" />
+        <div className="text-center py-12 text-bs-dark55">
+          <Award className="w-16 h-16 mx-auto mb-4 text-bs-dark15" />
           <p>Complete a learning track to earn your first certificate.</p>
         </div>
       )}
