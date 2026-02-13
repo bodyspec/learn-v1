@@ -10,7 +10,7 @@ if [[ "${1:-}" == "--dry-run" ]]; then
     DRY_RUN=true
 fi
 
-SPEC_DIR="diagram-specs"
+SPEC_DIR="specs/diagrams"
 OUTPUT_DIR="content/assets/diagrams"
 PASS=0
 FAIL=0

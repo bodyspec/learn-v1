@@ -72,7 +72,7 @@ Based on `web-v3/src/components/Button/styles.module.scss`:
 
 ### Font Stack
 ```css
-font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 ```
 
 ### Font Weights
@@ -115,7 +115,7 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 
 ## Tailwind Configuration
 
-Add to `tailwind.config.js`:
+In `tailwind.config.js`:
 
 ```javascript
 colors: {
@@ -133,7 +133,12 @@ colors: {
     60: '#E5F6EB',
   },
   greentext: '#60C888',
-}
+},
+fontFamily: {
+  sans: ['Poppins', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+},
+// ...
+plugins: [require('@tailwindcss/typography')]
 ```
 
 ---

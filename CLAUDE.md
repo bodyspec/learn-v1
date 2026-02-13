@@ -35,12 +35,17 @@ learn-v1/
 │       ├── pages/     # Page components
 │       ├── hooks/     # Custom hooks
 │       ├── content/   # Content loader
+│       ├── lib/       # Query client, query keys
+│       ├── styles/    # Global CSS
 │       └── types/     # TypeScript types
 ├── content/           # Educational content (markdown/YAML)
 │   ├── modules/       # Track modules
 │   ├── deep-dives/    # Optional deep-dive content
 │   ├── quizzes/       # Quiz definitions
-│   └── assets/        # Images, report samples
+│   └── assets/        # Images, diagrams
+├── scripts/           # Helper scripts (diagram generation)
+├── specs/             # Feature specs and diagram specs
+│   └── diagrams/      # PaperBanana diagram specs
 ├── e2e/               # Playwright E2E tests (standalone package)
 │   ├── tests/         # Test spec files + helpers
 │   └── playwright.config.ts
@@ -76,6 +81,9 @@ learn-v1/
 ./dev.sh db migrate   # Run alembic upgrade head
 cd backend && alembic revision --autogenerate -m "description"
 
+# Storybook
+./dev.sh storybook    # Start Storybook
+
 # Build
 docker build -t bodyspec-learn .
 ```
@@ -90,8 +98,8 @@ docker build -t bodyspec-learn .
 ## Environment Variables
 
 See `.env.example` for required configuration. Key variables:
-- `DATABASE_URL` - PostgreSQL connection string
-- `KEYCLOAK_*` - Authentication configuration
+- `DATABASE_HOST`, `DATABASE_NAME`, `DATABASE_USER`, `DATABASE_PASS`, `DATABASE_PORT`, `DATABASE_SSL` - PostgreSQL connection
+- `VITE_KEYCLOAK_URL`, `VITE_KEYCLOAK_REALM`, `VITE_KEYCLOAK_CLIENT_ID` - Keycloak authentication
 - `SECRET_KEY` - JWT signing key
 
 ## API Documentation
@@ -106,7 +114,13 @@ When running in development, API docs are available at:
 ```yaml
 id: core
 title: "DEXA Fundamentals"
+description: "Learn how DEXA technology works and what it measures"
 track: core
+is_deep_dive: false
+parent_module: null
+estimated_minutes: 25
+required_for_certificate: true
+sort_order: 1
 sections:
   - slug: 01-how-dexa-works
     file: 01-how-dexa-works.md
@@ -117,9 +131,12 @@ sections:
 ```yaml
 module_id: core
 passing_score: 80
+max_attempts: null
+randomize_questions: false
+randomize_options: true
 questions:
   - id: core-q1
-    type: multiple_choice
+    type: multiple_choice  # or: scenario
     text: "Question text"
     options:
       - text: "Option A"
@@ -137,3 +154,12 @@ questions:
 | Physician | MDs, DOs, NPs, PAs | Clinical applications |
 | Chiropractor | DCs | MSK relevance |
 | Trainer | Personal trainers | Programming with DEXA data |
+
+### Deep-Dive Modules
+
+| Module | Parent Track | Focus |
+|--------|-------------|-------|
+| Sarcopenia & Aging | Core | Age-related muscle loss, assessment, intervention |
+| Bone Health & DEXA | Core | Bone density measurements, osteoporosis screening |
+| Visceral Fat | Core | VAT measurement, health implications, interventions |
+| GLP-1 Medications | Physician | Body composition monitoring during GLP-1 therapy |
