@@ -8,15 +8,11 @@ DEXA transforms client conversations from subjective assessments to objective da
 
 ### First Scan Discussion
 
-When reviewing initial DEXA results:
-
-1. **Normalize the data:** "DEXA is more accurate than consumer devices—many people are surprised their body fat is higher than their scale says."
-
-2. **Frame as a starting point:** "This gives us a precise baseline to work from. The numbers matter less than how they change."
-
-3. **Set realistic goals:** "Based on where you are now, here's what we can realistically target in the next 12 weeks."
+Reviewing initial DEXA results is a pivotal moment in the client relationship—it sets the tone for how data will be used going forward. The conversation should normalize the data ("DEXA is more accurate than consumer devices—many people are surprised their body fat is higher than their scale says"), frame the results as a starting point rather than a verdict ("This gives us a precise baseline to work from—the numbers matter less than how they change"), and establish realistic goals based on the client's current composition ("Based on where you are now, here's what we can realistically target in the next 12 weeks").
 
 ### Goal Setting Framework
+
+Evidence-based goal setting depends on the client's starting point. The following framework provides realistic 12-week targets that set achievable expectations while maintaining motivation.
 
 | Starting Point | 12-Week Goal | Focus |
 |----------------|--------------|-------|
@@ -31,7 +27,7 @@ When reviewing initial DEXA results:
 
 ### Beyond the Scale
 
-DEXA shows progress that scales miss:
+DEXA reveals progress that the scale simply cannot capture, making it one of the most powerful tools for demonstrating the value of a well-designed program.
 
 **Scenario:** Client's weight is unchanged after 8 weeks
 
@@ -43,11 +39,7 @@ DEXA shows progress that scales miss:
 
 ### Visualizing Changes
 
-Use DEXA reports to show:
-- Regional changes (where muscle was gained)
-- Fat loss patterns
-- Symmetry improvements
-- Percentile rank changes
+DEXA reports offer multiple ways to make progress tangible. Regional analysis shows exactly where muscle was gained, fat loss patterns reveal whether the client is losing from the areas that matter most for health, symmetry improvements document the success of corrective programming, and percentile rank changes provide motivating context by showing how the client compares to the broader population.
 
 :::tip
 Side-by-side comparison of reports makes progress tangible. Save and compare results visually with clients.
@@ -57,21 +49,11 @@ Side-by-side comparison of reports makes progress tangible. Save and compare res
 
 ### Results Don't Match Effort
 
-When a client's DEXA doesn't show expected progress:
-
-1. **Acknowledge their effort:** "I know you've been working hard."
-2. **Explore factors:** Training consistency, nutrition adherence, sleep, stress
-3. **Check expectations:** Were goals realistic for the timeframe?
-4. **Adjust plan:** Make specific changes based on findings
+When a client's DEXA doesn't show expected progress, the conversation requires both empathy and investigation. Start by acknowledging their effort—"I know you've been working hard"—before exploring contributing factors such as training consistency, nutrition adherence, sleep quality, and stress levels. Check whether the original goals were realistic for the timeframe. Then adjust the plan with specific, data-informed changes that give the client a clear path forward.
 
 ### Results Are Worse Than Expected
 
-Sometimes composition goes the wrong direction:
-
-1. **Stay calm:** Emotional reactions aren't helpful
-2. **Investigate:** Life changes, injuries, adherence issues
-3. **Reframe if appropriate:** Sometimes muscle loss reflects valid priorities (injury recovery, life stress)
-4. **Plan forward:** Focus on what we can control going forward
+Sometimes composition moves in the wrong direction, and how you handle this moment defines the client relationship. Stay calm—emotional reactions from the trainer amplify the client's disappointment. Investigate what changed: life circumstances, injuries, or adherence challenges often explain the data. Reframe when appropriate—sometimes muscle loss reflects valid competing priorities like injury recovery or a period of high life stress. Focus the conversation on what can be controlled going forward rather than dwelling on the results.
 
 ### Client Fixated on Weight
 
@@ -83,48 +65,22 @@ For clients who can't stop focusing on the scale:
 
 ### Using Data for Accountability
 
-DEXA creates external accountability:
-- Scheduled scans provide milestones
-- Objective data removes guesswork
-- Progress is visible and undeniable
+DEXA creates a form of external accountability that few other tools can match. Scheduled scans provide concrete milestones that give structure to the training timeline. Objective data removes the guesswork that can erode both trainer and client confidence. When progress is visible and undeniable, adherence and motivation naturally improve.
 
 ### Celebrating Wins
 
-Highlight improvements explicitly:
-- "You gained 2 pounds of muscle—that's metabolically active tissue that burns more calories."
-- "Your VAT dropped 20%—that's a significant health improvement."
-- "Your leg asymmetry improved—the corrective work is paying off."
+Highlighting improvements explicitly reinforces the behaviors that produced them. Specific, data-grounded praise—"You gained 2 pounds of muscle, that's metabolically active tissue that burns more calories," or "Your VAT dropped 20 percent, that's a significant health improvement," or "Your leg asymmetry improved, the corrective work is paying off"—connects effort to outcome in a way that general encouragement cannot.
 
 ### Building Long-Term Relationships
 
-Regular DEXA tracking:
-- Creates ongoing touchpoints
-- Provides reasons to check in
-- Demonstrates value of your programming
-- Builds data-driven trust
+Regular DEXA tracking naturally supports long-term client relationships. Scheduled scans create ongoing touchpoints that maintain engagement between training phases. The data provides concrete reasons to check in, demonstrates the measurable value of your programming, and builds a foundation of data-driven trust that differentiates your practice.
 
 ## Best Practices
 
-### Do:
-- Review results together, explaining each metric
-- Connect findings to specific program elements
-- Set concrete goals for next scan
-- Celebrate progress, however small
-- Use data to refine programming
+Effective use of DEXA data in client management follows a few guiding principles. Review results together with the client, explaining each metric in plain language and connecting findings to specific elements of their program. Set concrete goals for the next scan and celebrate progress, however small. Use the data to refine programming—adjusting volume, intensity, or nutritional guidance based on what the numbers reveal.
 
-### Don't:
-- Make clients feel bad about results
-- Promise specific outcomes you can't control
-- Ignore concerning patterns
-- Over-interpret small changes (within precision bounds)
-- Compare clients to each other
+Equally important is knowing what to avoid. Making clients feel bad about results undermines the relationship and discourages future scanning. Promising specific outcomes that depend on factors outside your control sets up disappointment. Ignoring concerning patterns—such as progressive lean mass loss or rising body fat despite adherence—misses the opportunity for early intervention. Over-interpreting small changes that fall within DEXA's precision bounds leads to unnecessary program changes. Comparing clients to each other violates trust and ignores the reality that individual variation is enormous.
 
 ## Documentation
 
-Keep records of:
-- All DEXA results
-- Goals set at each scan
-- Programming adjustments based on data
-- Client responses and feedback
-
-This history becomes valuable for understanding what works for each client over time.
+Maintaining thorough records of all DEXA results, the goals set at each scan, programming adjustments made in response to data, and client responses and feedback creates a longitudinal history that becomes increasingly valuable over time. This documentation helps identify what works for each individual client and supports evidence-based refinement of your training approach.

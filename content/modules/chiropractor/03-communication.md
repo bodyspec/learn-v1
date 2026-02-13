@@ -14,12 +14,7 @@ Patients care most about their presenting problem. Link body composition to thei
 
 ### Use Visual Aids
 
-BodySpec reports include graphics that help patients understand:
-- How they compare to healthy ranges
-- Regional breakdowns showing where mass is distributed
-- Trends over time (for repeat scans)
-
-Walk through the report visually rather than just citing numbers.
+BodySpec reports include graphics that make abstract numbers intuitive and accessible. These visuals show patients how they compare to healthy ranges, provide regional breakdowns showing where mass is distributed throughout the body, and display trends over time for repeat scans. Walking through the report visually rather than just citing numbers consistently produces better patient understanding and engagement.
 
 ### Make It Actionable
 
@@ -51,17 +46,11 @@ Every finding should connect to something the patient can do:
 
 ### Emphasize What's Modifiable
 
-Body composition is highly responsive to intervention. Emphasize:
-- Muscle can be built at any age
-- Visceral fat responds quickly to exercise
-- Small consistent efforts compound over time
+Body composition is highly responsive to intervention, and emphasizing this modifiability empowers patients to take action. Muscle can be built at any age with appropriate resistance training and nutrition. Visceral fat responds quickly to exercise—often showing measurable improvement within weeks. Small, consistent efforts compound over time, producing body composition changes that translate directly into musculoskeletal benefits.
 
 ### Frame Progress Positively
 
-Even when results aren't ideal:
-- Focus on what's working
-- Identify specific improvements
-- Set achievable next goals
+Even when results are not ideal, the conversation should focus on what is working, identify specific improvements however small, and set achievable next goals that maintain momentum. Patients who feel their effort is recognized and their progress is acknowledged—even incremental progress—stay more engaged with treatment plans.
 
 :::tip
 "Progress" is better than "perfect." Patients who see improvement, even if not ideal, stay engaged with care.
@@ -69,12 +58,7 @@ Even when results aren't ideal:
 
 ### Handle Disappointment
 
-When results aren't what patients hoped:
-
-1. **Acknowledge feelings:** "I understand this isn't what you expected to see."
-2. **Provide context:** "Body composition changes take time, and we're only [X] weeks in."
-3. **Identify positives:** "I do see that your [specific positive] has improved."
-4. **Adjust plan:** "Let's look at what we can modify to accelerate your progress."
+When results are not what patients hoped, a structured approach keeps the conversation constructive. Acknowledging feelings first ("I understand this isn't what you expected to see") validates the patient's experience. Providing context ("Body composition changes take time, and we're only [X] weeks in") sets realistic expectations. Identifying positives ("I do see that your [specific positive] has improved") maintains motivation. Adjusting the plan ("Let's look at what we can modify to accelerate your progress") demonstrates responsiveness and keeps the patient invested in the process.
 
 ## Building Ongoing Engagement
 

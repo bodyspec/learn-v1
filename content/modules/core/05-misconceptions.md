@@ -12,10 +12,7 @@ This is why two people at the same weight can look very different. The person wi
 
 ### "I want to turn fat into muscle"
 
-**Reality:** Fat and muscle are completely different tissues. You cannot convert one to the other. However, you can:
-- Lose fat through a caloric deficit
-- Build muscle through resistance training and adequate protein
-- Do both simultaneously under certain conditions (body recomposition)
+**Reality:** Fat and muscle are completely different tissues. You cannot convert one to the other. However, you can lose fat through a caloric deficit, build muscle through resistance training and adequate protein, and under certain conditions do both simultaneously—a process known as body recomposition.
 
 :::note
 Body recomposition—losing fat while gaining muscle—is most achievable for beginners to resistance training, those returning after a break, or those with higher body fat levels (Barakat et al., 2020)[^2].
@@ -37,12 +34,7 @@ Fat loss follows genetic patterns. Most people lose visceral fat first (which is
 
 ### "Low body fat is always better"
 
-**Reality:** Essential fat is required for normal physiological function. Going too low can cause:
-- Hormonal disruption
-- Immune suppression
-- Loss of menstruation in women
-- Decreased athletic performance
-- Increased injury risk
+**Reality:** Essential fat is required for normal physiological function. Dropping below essential fat levels can cause hormonal disruption, immune suppression, loss of menstruation in women, decreased athletic performance, and increased injury risk. The health benefits of lower body fat follow a U-shaped curve—both very high and very low levels carry significant risks.
 
 :::warning
 Athletes pursuing very low body fat should do so under professional supervision and only for limited competition periods.
@@ -65,13 +57,7 @@ For most people, every 3-6 months is appropriate. This allows time for meaningfu
 
 ### Will my results be different at different times of day?
 
-Yes, minor variations occur due to:
-- Hydration status
-- Recent meals
-- Bladder/bowel contents
-- Exercise-induced fluid shifts
-
-For best consistency, scan at the same time of day under similar conditions.
+Yes, minor variations occur due to hydration status, recent meals, bladder and bowel contents, and exercise-induced fluid shifts. For best consistency, scan at the same time of day under similar conditions.
 
 ### Why is my DEXA body fat higher than other methods?
 
@@ -83,10 +69,7 @@ Different manufacturers and even different models can produce slightly different
 
 ### Does muscle loss show up immediately?
 
-Muscle loss takes time to develop. If you've taken time off from training, initial "losses" may be:
-- Reduced muscle glycogen and water
-- Natural measurement variation
-- True muscle atrophy (after extended periods)
+Muscle loss takes time to develop. If you've taken time off from training, initial "losses" may reflect reduced muscle glycogen and associated water (which DEXA counts as lean mass), natural measurement variation, or—after extended periods of inactivity—true muscle atrophy. Distinguishing between these requires serial scans over time.
 
 :::tip
 Focus on trends over 3+ months rather than single data points. Short-term fluctuations are normal.
@@ -100,10 +83,7 @@ No. Although DEXA radiation is very low, BodySpec does not scan pregnant women a
 
 Yes. A DEXA body composition scan delivers approximately 1-10 microsieverts (μSv) of radiation[^1]—less than a chest X-ray (~20-100 μSv), a coast-to-coast flight (~30-40 μSv), or a day of natural background exposure (~8 μSv). The diagnostic value far exceeds any theoretical risk for most people.
 
-People who should consult their doctor before scanning:
-- Those who have had significant recent radiation exposure
-- Those undergoing radiation therapy
-- Women who may be pregnant
+Individuals who have had significant recent radiation exposure, those undergoing radiation therapy, and women who may be pregnant should consult their doctor before scanning.
 
 ## Summary
 

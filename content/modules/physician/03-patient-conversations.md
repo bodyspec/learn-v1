@@ -8,24 +8,15 @@ Communicating DEXA results effectively requires translating complex metrics into
 
 ### Lead with Context
 
-Before discussing numbers, establish:
-- Why the patient got the scan
-- What they hoped to learn
-- Their current understanding of body composition
+Before discussing numbers, establishing context ensures the conversation is patient-centered rather than data-centered. Understanding why the patient got the scan, what they hoped to learn, and their current understanding of body composition allows the clinician to tailor the conversation to what matters most to that individual.
 
 ### Focus on Actionable Insights
 
-Patients don't need to understand every metric. Prioritize:
-1. What the results mean for their health
-2. What actions they can take
-3. How we'll track progress
+Patients do not need to understand every metric on their report. The most effective conversations prioritize what the results mean for the patient's health, what specific actions they can take in response, and how progress will be tracked over time. This framework transforms a data review into a clinical action plan.
 
 ### Use Visual References
 
-BodySpec reports include graphics that help patients understand:
-- Their position relative to healthy ranges
-- How their metrics compare to population norms
-- Changes over time (for repeat scans)
+BodySpec reports include graphics that make abstract numbers concrete and intuitive. These visuals help patients understand their position relative to healthy ranges, how their metrics compare to population norms, and how their composition has changed over time on repeat scans. Walking through the report visually is consistently more effective than citing numbers verbally.
 
 ## Discussing Body Fat Percentage
 
@@ -36,16 +27,15 @@ BodySpec reports include graphics that help patients understand:
 
 ### Addressing Emotional Reactions
 
-Many patients feel:
-- Surprised their body fat is higher than expected
-- Frustrated that the "accurate" number is worse than their scale
-- Overwhelmed by the data
+Emotional reactions to DEXA results are common and should be anticipated. Many patients are surprised that their body fat is higher than expected, frustrated that the "accurate" number is worse than what their bathroom scale indicated, or simply overwhelmed by the volume of data. Acknowledging these reactions before moving to interpretation creates space for productive conversation.
 
 :::tip
 Normalize the reaction: "It's common for DEXA to show higher body fat than bathroom scales. That's not because you're worse off—it's because DEXA is more accurate. Consumer devices tend to underestimate."
 :::
 
 ### Setting Realistic Expectations
+
+Setting realistic expectations from the first conversation prevents frustration and builds trust. The following table provides evidence-based targets for body fat percentage reduction over six months, scaled to starting body fat level. Patients with higher initial body fat can expect larger absolute reductions, while those already at lower levels should focus on composition maintenance or modest improvements.
 
 | Initial Body Fat | Realistic 6-month Goal |
 |------------------|------------------------|
@@ -111,11 +101,11 @@ Normalize the reaction: "It's common for DEXA to show higher body fat than bathr
 
 ### Setting Expectations for Next Scan
 
-- **Timing:** "Let's plan to repeat this in 3-4 months. That's enough time to see meaningful changes with consistent effort."
-- **Goals:** "Our targets are [specific, measurable]. We'll see if we're on track."
-- **Accountability:** "This gives us objective data to see how our plan is working."
+Establishing a clear follow-up plan reinforces commitment and provides structure. A typical framing covers timing ("Let's plan to repeat this in 3-4 months—that's enough time to see meaningful changes with consistent effort"), specific goals ("Our targets are [specific, measurable]—we'll see if we're on track"), and accountability ("This gives us objective data to see how our plan is working").
 
 ### Adjusting Interventions Based on Results
+
+Follow-up DEXA results guide clinical decision-making about whether to continue the current approach or make adjustments. The following framework maps common result patterns to appropriate clinical actions.
 
 | Result | Action |
 |--------|--------|
@@ -126,9 +116,4 @@ Normalize the reaction: "It's common for DEXA to show higher body fat than bathr
 
 ## Documentation
 
-For chart documentation, include:
-- Key metrics (body fat %, lean mass, VAT)
-- Clinical interpretation
-- Patient education provided
-- Plan adjustments made
-- Follow-up timeline
+Chart documentation should capture the key metrics discussed (body fat percentage, lean mass, VAT), the clinical interpretation provided, the patient education delivered, any plan adjustments made based on the results, and the follow-up timeline established. This documentation creates a clear record connecting objective data to clinical decision-making and supports continuity of care across visits.

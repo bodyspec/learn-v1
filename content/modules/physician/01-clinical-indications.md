@@ -8,16 +8,7 @@ Body composition assessment via DEXA provides clinically actionable data for a w
 
 ### Metabolic Assessment
 
-**When to consider:**
-- Elevated fasting glucose or HbA1c
-- Metabolic syndrome features
-- Family history of type 2 diabetes
-- PCOS with insulin resistance features
-
-**What DEXA adds:**
-- VAT quantification provides metabolic risk stratification beyond BMI
-- Identifies "metabolically obese normal weight" individuals
-- Tracks response to interventions
+DEXA body composition assessment is particularly valuable for patients with metabolic risk factors, including elevated fasting glucose or HbA1c, features of metabolic syndrome, a family history of type 2 diabetes, or PCOS with insulin resistance features. For these patients, DEXA adds clinically meaningful information that standard measures cannot provide. VAT quantification enables metabolic risk stratification beyond what BMI offers, identifies "metabolically obese normal weight" individuals who would otherwise appear low-risk, and provides objective tracking of response to lifestyle or pharmacological interventions.
 
 :::clinical
 VAT is an independent predictor of metabolic disease risk (Neeland et al., 2019)[^1]. Two patients with identical BMI can have vastly different VAT levels and correspondingly different risk profiles.
@@ -25,46 +16,15 @@ VAT is an independent predictor of metabolic disease risk (Neeland et al., 2019)
 
 ### Sarcopenia Screening
 
-**When to consider:**
-- Adults over 65
-- Unexplained weight loss
-- Functional decline
-- Falls history
-- Chronic disease (cancer, COPD, heart failure, CKD)
-
-**What DEXA adds:**
-- Quantifies lean mass and FFMI
-- Identifies early sarcopenia before functional impairment
-- Monitors muscle-wasting conditions
-- Assesses appendicular lean mass (ALM) for sarcopenia diagnosis
+Sarcopenia screening via DEXA is indicated for adults over 65, patients with unexplained weight loss or functional decline, those with a falls history, and individuals with chronic diseases known to cause muscle wasting—including cancer, COPD, heart failure, and chronic kidney disease. DEXA quantifies lean mass and Fat-Free Mass Index (FFMI), enabling identification of early sarcopenia before functional impairment becomes clinically apparent. It also monitors muscle-wasting conditions over time and provides appendicular lean mass (ALM) measurements used in formal sarcopenia diagnosis criteria.
 
 ### Weight Management
 
-**When to consider:**
-- Obesity management programs
-- Medical weight loss interventions
-- Bariatric surgery planning and follow-up
-- Concerns about muscle preservation during weight loss
-
-**What DEXA adds:**
-- Distinguishes fat loss from muscle loss
-- Identifies if weight loss is "successful" (fat loss with lean preservation)
-- Detects regain patterns
-- Provides objective progress metrics
+Weight management represents one of the most impactful applications of DEXA body composition assessment. Patients in obesity management programs, those undergoing medical weight loss interventions, bariatric surgery candidates and post-surgical patients, and anyone with concerns about muscle preservation during weight loss all benefit from objective composition data. DEXA distinguishes fat loss from muscle loss—a distinction that determines whether weight loss is truly "successful" in terms of preserving metabolic health and functional capacity. Serial scans detect unfavorable regain patterns early and provide the objective progress metrics that motivate sustained adherence.
 
 ### Endocrine Disorders
 
-**When to consider:**
-- Hypothyroidism/hyperthyroidism
-- Cushing's syndrome
-- Hypogonadism
-- Growth hormone deficiency
-- Adrenal disorders
-
-**What DEXA adds:**
-- Baseline and follow-up composition assessment
-- Tracks impact of hormone optimization
-- Identifies composition changes before weight changes
+Endocrine disorders frequently alter body composition in ways that precede changes in total body weight. Patients with hypothyroidism, hyperthyroidism, Cushing's syndrome, hypogonadism, growth hormone deficiency, and adrenal disorders can all benefit from DEXA assessment. DEXA provides baseline composition data against which the impact of hormone optimization can be measured, and it often identifies composition changes—such as shifts in the fat-to-lean ratio or changes in fat distribution—before those changes manifest as weight changes on the scale.
 
 ## Secondary Clinical Applications
 
@@ -80,11 +40,7 @@ VAT is an independent predictor of metabolic disease risk (Neeland et al., 2019)
 
 ### Medication Effects
 
-DEXA can track body composition changes related to:
-- Corticosteroid therapy (increased VAT, decreased lean mass)
-- Antiretroviral therapy (lipodystrophy)
-- Antipsychotics (metabolic effects)
-- GLP-1 agonists (composition of weight loss)
+Several medication classes produce body composition changes that DEXA can objectively track. Corticosteroid therapy often increases VAT while decreasing lean mass, a combination with significant metabolic implications. Antiretroviral therapy may cause lipodystrophy—abnormal fat redistribution that DEXA can quantify and monitor. Antipsychotics frequently produce metabolic effects including fat gain that may not be fully captured by weight alone. GLP-1 agonists produce significant weight loss where the composition of that loss—the ratio of fat to lean mass reduction—is clinically important for long-term outcomes.
 
 :::note
 For patients on GLP-1 medications like semaglutide, DEXA can differentiate desired fat loss from concerning muscle loss—an important distinction for long-term outcomes (Wilding et al., 2021)[^2].
@@ -92,46 +48,29 @@ For patients on GLP-1 medications like semaglutide, DEXA can differentiate desir
 
 ### Athletic/Performance Medicine
 
-**When to consider:**
-- Pre-participation physicals
-- Relative Energy Deficiency in Sport (RED-S)
-- Weight-class sport athletes
-- Female Athlete Triad concerns
-- Return-to-play assessment
+DEXA body composition assessment serves important roles in sports medicine contexts. Pre-participation physicals benefit from baseline composition data, particularly for weight-class sport athletes where body composition directly affects competition eligibility and performance. DEXA can help identify Relative Energy Deficiency in Sport (RED-S) and Female Athlete Triad concerns, where low energy availability manifests in measurable body composition changes. Return-to-play assessments use DEXA to confirm that athletes have regained adequate lean mass after injury-related deconditioning.
 
 ### Research and Clinical Trials
 
-DEXA is the accepted standard for body composition endpoints in:
-- Pharmaceutical trials
-- Nutrition intervention studies
-- Exercise science research
+DEXA is the accepted standard for body composition endpoints in clinical research, including pharmaceutical trials, nutrition intervention studies, and exercise science research. Its combination of precision, reproducibility, and ability to measure regional composition makes it the preferred modality for quantifying body composition outcomes.
 
 ## Contraindications and Limitations
 
 ### Relative Contraindications
-- Pregnancy (or possibility of pregnancy)
-- Recent barium or nuclear medicine studies
-- Significant movement disorders
-- Unable to lie flat for 7 minutes
+
+DEXA body composition scanning should be deferred in certain clinical situations. Pregnancy or the possibility of pregnancy is a contraindication, as is recent barium or nuclear medicine studies that may interfere with X-ray attenuation measurements. Patients with significant movement disorders may be unable to remain still for the duration of the scan, and those unable to lie flat for approximately 7 minutes cannot be scanned.
 
 ### Not Diagnostic For
-- Osteoporosis (requires site-specific BMD protocol)
-- Specific metabolic disorders
-- Inflammatory conditions
+
+Body composition DEXA is not diagnostic for osteoporosis, which requires a site-specific BMD protocol targeting the hip and spine. It is also not diagnostic for specific metabolic disorders or inflammatory conditions, though it may reveal composition patterns suggestive of these conditions.
 
 ### Size Limitations
-Most DEXA tables accommodate patients up to approximately:
-- 350-400 lbs (varies by machine)
-- 6'6" height
+
+Most DEXA tables accommodate patients up to approximately 350-400 pounds (varying by machine) and 6 feet 6 inches in height. Patients who exceed these limits may require alternative assessment methods.
 
 ## Ordering Considerations
 
-When recommending DEXA body composition:
-
-1. **Frame the purpose:** Help patients understand why composition matters beyond weight
-2. **Set expectations:** First scan establishes baseline; value increases with tracking
-3. **Consider frequency:** 3-6 months for active interventions; annually for maintenance
-4. **Integrate with care:** Connect results to specific health goals and interventions
+Effective use of DEXA body composition starts with how the recommendation is framed. Helping patients understand why composition matters beyond weight increases engagement and follow-through. Setting clear expectations—that the first scan establishes a baseline and the value increases with serial tracking—prepares patients for a longitudinal relationship with their data. Scan frequency should match clinical intensity: every 3 to 6 months during active interventions and annually for maintenance monitoring. Connecting results to specific health goals and interventions ensures that DEXA data drives clinical action rather than serving as an isolated data point.
 
 ## References
 

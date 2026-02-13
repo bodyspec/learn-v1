@@ -10,17 +10,7 @@ DEXA body composition results can reveal findings that warrant further investiga
 
 **Finding:** VAT area >200 cm²[^1]
 
-**Concerns:**
-- High metabolic disease risk
-- May indicate insulin resistance
-- Associated with NAFLD/NASH
-
-**Actions:**
-- Comprehensive metabolic panel
-- Consider liver function tests
-- Lipid panel if not recent
-- Evaluate for metabolic syndrome
-- Consider GLP-1 agonist or other medication intervention
+A VAT area exceeding 200 cm² places the patient in a high metabolic disease risk category. This level of visceral adiposity is strongly associated with insulin resistance and NAFLD/NASH, and warrants aggressive clinical follow-up. Appropriate evaluation includes a comprehensive metabolic panel, liver function tests, and a lipid panel if not recently obtained. The patient should be evaluated for metabolic syndrome, and pharmacological intervention—including GLP-1 agonists—should be considered alongside lifestyle modifications.
 
 :::warning
 VAT >200 cm² warrants aggressive intervention, particularly in younger patients where this level suggests significant metabolic dysfunction.
@@ -30,17 +20,7 @@ VAT >200 cm² warrants aggressive intervention, particularly in younger patients
 
 **Finding:** >10% increase in fat mass over 3-6 months without intentional weight gain
 
-**Concerns:**
-- Endocrine dysfunction (Cushing's, hypothyroidism)
-- Medication effect
-- Significant lifestyle change
-- Depression or other psychiatric condition
-
-**Actions:**
-- Detailed medication review
-- Thyroid panel
-- Morning cortisol if appropriate
-- Mental health screening
+Rapid unintentional fat accumulation raises concern for several underlying conditions. Endocrine dysfunction—particularly Cushing's syndrome and hypothyroidism—should be considered, along with medication effects, significant unrecognized lifestyle changes, and depression or other psychiatric conditions that affect eating behavior and activity levels. The clinical workup should include a detailed medication review, thyroid panel, morning cortisol if the clinical picture suggests hypercortisolism, and mental health screening.
 
 ## Sarcopenia Red Flags
 
@@ -48,34 +28,13 @@ VAT >200 cm² warrants aggressive intervention, particularly in younger patients
 
 **Finding:** FFMI <16 in men, <13 in women (well below 5th percentile)
 
-**Concerns:**
-- Advanced sarcopenia
-- Possible underlying disease
-- Malnutrition
-- Functional impairment likely
-
-**Actions:**
-- Functional assessment (grip strength, gait speed)
-- Nutritional evaluation
-- Screen for underlying conditions
-- Consider physical therapy referral
+An FFMI this far below expected values suggests advanced sarcopenia and raises concern for possible underlying disease, malnutrition, or both. Functional impairment is likely at this level of muscle deficit. Clinical evaluation should include functional assessment with grip strength and gait speed testing, a comprehensive nutritional evaluation, screening for underlying conditions that cause muscle wasting, and consideration of physical therapy referral for supervised strengthening.
 
 ### Rapid Muscle Loss
 
 **Finding:** >5% lean mass loss in 3-6 months without intentional caloric restriction[^2]
 
-**Concerns:**
-- Occult malignancy
-- Inflammatory condition
-- Malabsorption
-- Severe depression
-- Medication effect (corticosteroids)
-
-**Actions:**
-- CBC, CMP, inflammatory markers
-- Age-appropriate cancer screening
-- Detailed review of symptoms
-- GI evaluation if indicated
+Unexplained rapid muscle loss is among the most clinically significant findings on serial DEXA and should prompt a thorough evaluation. The differential includes occult malignancy, inflammatory conditions, malabsorption syndromes, severe depression, and medication effects—particularly corticosteroids. The workup should include CBC, comprehensive metabolic panel, and inflammatory markers as a starting point, along with age-appropriate cancer screening, a detailed review of systems, and GI evaluation if malabsorption is suspected.
 
 :::clinical
 Unexplained rapid muscle loss in an adult should prompt evaluation for underlying malignancy or serious systemic disease.
@@ -87,31 +46,13 @@ Unexplained rapid muscle loss in an adult should prompt evaluation for underlyin
 
 **Finding:** >15% difference in lean mass between matched limbs[^3]
 
-**Concerns:**
-- Previous injury not fully rehabilitated
-- Neurological condition
-- Undiagnosed injury
-- Compensation pattern leading to injury risk
-
-**Actions:**
-- Detailed history of injury/surgery
-- Neurological examination if no clear cause
-- Physical therapy referral for rehabilitation
-- Consider imaging if structural concern
+A lean mass asymmetry exceeding 15 percent between matched limbs is clinically significant and warrants investigation. This degree of difference may reflect a previous injury that was not fully rehabilitated, an underlying neurological condition, an undiagnosed injury, or a compensation pattern that itself increases the risk of future injury. Evaluation should include a detailed history of injury or surgery, neurological examination if no clear cause is identified, physical therapy referral for targeted rehabilitation, and imaging if a structural concern is suspected.
 
 ### New Asymmetry on Serial Scan
 
 **Finding:** Asymmetry that wasn't present on prior scan
 
-**Concerns:**
-- Recent injury (possibly occult)
-- Nerve injury
-- Activity change causing imbalance
-
-**Actions:**
-- Detailed interval history
-- Focused examination of affected area
-- Imaging if trauma suspected
+The emergence of a new asymmetry between serial scans is particularly concerning because it indicates an active process rather than a longstanding condition. Possible causes include a recent injury that may be occult, nerve injury affecting muscle innervation, or an activity change creating an imbalance. A detailed interval history should be obtained, followed by focused examination of the affected area and imaging if trauma is suspected.
 
 ## Composition Pattern Red Flags
 
@@ -119,33 +60,13 @@ Unexplained rapid muscle loss in an adult should prompt evaluation for underlyin
 
 **Finding:** Low fat mass + low lean mass + unintentional weight loss[^4]
 
-**Concerns:**
-- Cancer cachexia
-- Advanced heart failure
-- End-stage liver disease
-- Severe COPD
-- HIV/AIDS wasting
-
-**Actions:**
-- Comprehensive evaluation for underlying disease
-- Nutritional support
-- Disease-specific management
+The combination of low fat mass, low lean mass, and unintentional weight loss constitutes a cachexia pattern that signals serious underlying disease. This presentation is associated with cancer cachexia, advanced heart failure, end-stage liver disease, severe COPD, and HIV/AIDS wasting. Comprehensive evaluation for underlying disease is essential, alongside nutritional support and disease-specific management tailored to the identified etiology.
 
 ### Sarcopenic Obesity
 
 **Finding:** High body fat + low lean mass (relative to size)
 
-**Concerns:**
-- Highest functional risk
-- Poor surgical outcomes
-- Falls and fractures
-- Metabolic dysfunction
-
-**Actions:**
-- Combined nutrition and exercise intervention
-- Assess functional capacity
-- Consider medication effects
-- May need supervised exercise program
+Sarcopenic obesity—the combination of excess fat and insufficient muscle mass—represents one of the highest-risk body composition phenotypes. Patients with this pattern face elevated functional risk, poor surgical outcomes, increased susceptibility to falls and fractures, and compounded metabolic dysfunction. Management requires a combined nutrition and exercise intervention, formal assessment of functional capacity, review of medications that may be contributing, and in many cases a supervised exercise program to ensure safe and effective strength training.
 
 :::note
 Sarcopenic obesity carries higher health risks than either condition alone. These patients need comprehensive intervention addressing both excess fat and insufficient muscle.
@@ -157,54 +78,29 @@ Sarcopenic obesity carries higher health risks than either condition alone. Thes
 
 **Finding:** Whole-body BMD significantly below age-expected values
 
-**Important:** Whole-body DEXA is not diagnostic for osteoporosis
-
-**Actions:**
-- Refer for site-specific DEXA (hip and spine) if indicated
-- Do not diagnose or treat osteoporosis based on whole-body scan alone
-- Consider FRAX score for fracture risk assessment
+Whole-body DEXA is not diagnostic for osteoporosis, but significantly low whole-body BMD should not be ignored. The appropriate response is to refer for site-specific DEXA of the hip and spine if clinically indicated, while being careful not to diagnose or treat osteoporosis based on whole-body scan results alone. Calculating a FRAX score for fracture risk assessment can help determine the urgency and appropriateness of referral.
 
 ## When to Refer
 
 ### Endocrinology Referral
 
-Consider for:
-- Unexplained severe or rapid composition changes
-- Suspected Cushing's syndrome
-- Suspected hypogonadism affecting composition
-- Resistant obesity with metabolic dysfunction
+Endocrinology referral is appropriate when DEXA reveals unexplained severe or rapid composition changes, when the clinical picture suggests Cushing's syndrome or hypogonadism affecting body composition, or when a patient presents with resistant obesity and metabolic dysfunction that has not responded to standard interventions.
 
 ### Physical Medicine / Physical Therapy
 
-Consider for:
-- Significant asymmetries requiring rehabilitation
-- Sarcopenia with functional impairment
-- Post-injury composition deficits
-- Need for supervised strength training
+Physical medicine or physical therapy referral should be considered for patients with significant limb asymmetries requiring targeted rehabilitation, sarcopenia with functional impairment, post-injury composition deficits documented on serial DEXA, or those who need supervised strength training to safely address muscle deficits.
 
 ### Nutrition / Dietitian
 
-Consider for:
-- Inability to gain or preserve muscle despite training
-- Suspected malnutrition or malabsorption
-- Complex dietary needs (cancer, renal disease)
-- Eating disorder concerns
+Referral to a registered dietitian is indicated when a patient cannot gain or preserve muscle despite adequate training, when malnutrition or malabsorption is suspected, when complex dietary needs arise from conditions such as cancer or renal disease, or when eating disorder concerns are identified.
 
 ### Psychiatry / Psychology
 
-Consider for:
-- Body dysmorphia concerns despite normal results
-- Disordered eating patterns
-- Composition changes associated with psychiatric medication
+Psychiatric or psychological referral should be considered when patients express body dysmorphia concerns despite objectively normal DEXA results, when disordered eating patterns are identified, or when body composition changes appear to be associated with psychiatric medication effects.
 
 ## Documentation for Referrals
 
-Include in referral:
-- Key DEXA metrics
-- Comparison to prior scans if available
-- Clinical concern
-- What you've already ruled out
-- Specific question for specialist
+Effective referral documentation should include the key DEXA metrics that prompted concern, comparison to prior scans if available to demonstrate the trajectory, the specific clinical concern driving the referral, what has already been evaluated or ruled out, and a clear question for the specialist. This level of detail ensures the specialist can act efficiently and avoids unnecessary duplication of workup.
 
 ## Summary
 
