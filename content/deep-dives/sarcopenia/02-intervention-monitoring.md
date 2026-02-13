@@ -2,7 +2,7 @@
 
 ## Overview
 
-Sarcopenia is treatable. While section one covered what sarcopenia is and how to identify it, this section focuses on what to do about it—and how to track whether interventions are working. The evidence is clear: structured resistance training combined with protein optimization can meaningfully improve muscle mass, strength, and function in older adults with sarcopenia. DEXA provides the objective monitoring data to evaluate progress, but interpreting serial scans requires an understanding of measurement precision and realistic timelines. This section equips providers with evidence-based protocols for exercise, nutrition, DEXA monitoring, and clinical decision-making during sarcopenia management.
+Sarcopenia is treatable. Once identified through DEXA-based lean mass assessment and functional testing, the condition responds to targeted intervention—and the evidence is clear: structured resistance training combined with protein optimization can meaningfully improve muscle mass, strength, and function in older adults with sarcopenia. DEXA provides the objective monitoring data to evaluate progress, but interpreting serial scans requires an understanding of measurement precision and realistic timelines. This section equips providers with evidence-based protocols for exercise, nutrition, DEXA monitoring, and clinical decision-making during sarcopenia management.
 
 ## Evidence-Based Exercise
 
@@ -34,14 +34,7 @@ For frail patients who cannot tolerate higher intensities, low-load resistance t
 
 Resistance training should not happen in isolation. The EWGSOP2 consensus recommends multicomponent exercise programs that combine resistance training with aerobic exercise and balance training[^1]. This combined approach is most effective for physical function improvements—gait speed, balance, and fall prevention—even though resistance training alone produces the greatest muscle mass gains.
 
-A practical multicomponent prescription for sarcopenic older adults:
-
-- **Resistance training:** 2-3 sessions per week (as prescribed above)
-- **Aerobic exercise:** 150 minutes per week of moderate-intensity activity (walking, cycling, swimming)
-- **Balance training:** Incorporated into resistance sessions or as separate brief sessions
-- **Flexibility:** Gentle stretching after exercise sessions
-
-For patients new to exercise, starting with two sessions per week and building gradually over 4-6 weeks improves adherence and reduces injury risk.
+A practical multicomponent prescription for sarcopenic older adults combines resistance training (2 to 3 sessions per week as prescribed above) with aerobic exercise (150 minutes per week of moderate-intensity activity such as walking, cycling, or swimming), balance training (incorporated into resistance sessions or as separate brief sessions), and flexibility work (gentle stretching after exercise sessions). For patients new to exercise, starting with two sessions per week and building gradually over 4 to 6 weeks improves adherence and reduces injury risk.
 
 ![Sarcopenia monitoring timeline](/content/assets/diagrams/sarcopenia-monitoring-timeline.png)
 
@@ -108,9 +101,7 @@ MCID = Minimal Clinically Important Difference. Changes meeting or exceeding the
 
 Not every change on DEXA reflects a real change in muscle mass. Understanding measurement precision is essential for honest interpretation:
 
-- **ALM precision:** Coefficient of variation (CV) ~0.93%
-- **Least Significant Change (LSC):** ~500g for ALM (calculated as 2.77 × precision error at 95% confidence)
-- **What this means:** An ALM change of less than approximately 500g may be within measurement noise and should not be interpreted as true gain or loss
+ALM precision has a coefficient of variation (CV) of approximately 0.93 percent, which translates to a Least Significant Change (LSC) of approximately 500 grams (calculated as 2.77 multiplied by the precision error at 95 percent confidence). In practical terms, an ALM change of less than approximately 500 grams may be within measurement noise and should not be interpreted as a true gain or loss.
 
 LSC increases with higher BMI—obese patients require larger changes to be confident the change is real. For valid serial comparisons, scans should be performed on the **same machine, by the same technologist, at the same time of day**, following the same pre-scan protocol[^8].
 
@@ -145,20 +136,9 @@ Setting realistic expectations is essential for patient engagement and clinical 
 
 ### Functional Improvements
 
-Functional gains are often more meaningful to patients than mass changes:
+Functional gains are often more meaningful to patients than mass changes and typically emerge earlier in the intervention timeline. Grip strength improvements of 2 to 5 kg are typical with 12 to 24 weeks of resistance training. Gait speed improvements of 0.05 to 0.15 m/s are common, with changes of 0.1 m/s or greater considered clinically meaningful. Chair stand time typically decreases by 1 to 3 seconds, and SPPB scores improve by 0.5 to 1.5 points (clinically meaningful at 1 point or more). Lower-body strength, measured by leg press or knee extension, typically improves 20 to 40 percent with progressive resistance training.
 
-- **Grip strength:** 2-5 kg improvement typical with 12-24 weeks of resistance training
-- **Gait speed:** 0.05-0.15 m/s improvement (clinically meaningful if ≥0.1 m/s)
-- **Chair stand time:** 1-3 second reduction
-- **SPPB score:** 0.5-1.5 point improvement (clinically meaningful if ≥1 point)
-- **Strength gains:** Lower-body strength (leg press, knee extension) typically improves 20-40% with progressive resistance training
-
-Interpreting serial DEXA alongside functional data:
-
-- **Improvement:** ALM increase ≥500g (exceeds LSC) plus improved functional tests
-- **Stability (success):** ALM within ±500g and stable or improved function—this counts as a win, because it means the expected 3-8% per decade loss has been arrested
-- **Concern:** ALM decrease >500g despite intervention, or functional decline
-- **Red flag:** ALM decrease >1 kg over 6-12 months despite adherent intervention
+When interpreting serial DEXA alongside functional data, four patterns emerge. **Improvement** is defined as ALM increase of 500g or more (exceeding the LSC) plus improved functional tests. **Stability** counts as a clinical success when ALM remains within plus or minus 500g and function is stable or improving—this means the expected 3 to 8 percent per decade loss has been arrested. **Concern** arises when ALM decreases by more than 500g despite intervention, or when functional decline is documented. A **red flag** is ALM decrease exceeding 1 kg over 6 to 12 months in a patient who is adherent to the intervention program.
 
 ## When to Escalate
 
@@ -181,14 +161,9 @@ Primary (age-related) sarcopenia is gradual, bilateral, and symmetric. It correl
 
 ### Differential Diagnosis
 
-Distinguishing primary sarcopenia from secondary causes is a critical clinical skill:
+Distinguishing primary sarcopenia from secondary causes is a critical clinical skill. **Cachexia** presents with involuntary weight loss, systemic inflammation, and poor appetite—unlike sarcopenia alone, cachexia involves weight loss combined with muscle loss. **Statin myopathy** is the most common drug-induced cause of muscle symptoms, with presentations ranging from mild myalgia to significant weakness in 5 to 10 percent of statin users. **Inflammatory myopathy** (polymyositis, dermatomyositis, inclusion body myositis) presents with proximal weakness and elevated CK and requires rheumatology referral. **Endocrine disorders** including hypothyroidism, hypogonadism, and growth hormone deficiency are treatable once identified and should be screened for with appropriate laboratory testing.
 
-- **Cachexia** presents with involuntary weight loss, systemic inflammation, and poor appetite. Unlike sarcopenia alone, cachexia involves weight loss plus muscle loss.
-- **Statin myopathy** is the most common drug-induced cause. Presentation ranges from mild myalgia to significant weakness. Prevalence is 5-10% of statin users.
-- **Inflammatory myopathy** (polymyositis, dermatomyositis, inclusion body myositis) presents with proximal weakness and elevated CK. Requires rheumatology referral.
-- **Endocrine disorders** (hypothyroidism, hypogonadism, growth hormone deficiency) are treatable once identified. Screen with appropriate labs.
-
-**When to refer beyond primary care:** No improvement in strength or function after 3-6 months of adherent exercise plus nutrition; suspected secondary cause; severe sarcopenia not responding to intervention; or patients on GLP-1 therapy with disproportionate lean mass loss.
+Referral beyond primary care is warranted when there is no improvement in strength or function after 3 to 6 months of adherent exercise plus nutrition intervention, when a secondary cause is suspected, when severe sarcopenia is not responding to treatment, or when patients on GLP-1 therapy are experiencing disproportionate lean mass loss.
 
 ## Summary
 

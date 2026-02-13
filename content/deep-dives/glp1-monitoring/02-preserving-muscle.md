@@ -4,18 +4,13 @@
 
 ![Muscle preservation strategy pyramid](/content/assets/diagrams/muscle-preservation-strategies.png)
 
-When patients on GLP-1 medications show concerning lean mass loss on DEXA, evidence-based interventions can help preserve muscle while maintaining the metabolic benefits of weight loss. The two most impactful strategies—protein optimization and resistance training—work synergistically and should be prescribed together whenever possible. This section provides practical guidance for implementing these strategies in clinical practice.
+Patients on GLP-1 medications who show concerning lean mass loss on DEXA—more than 30 to 40 percent of total weight lost coming from the lean compartment, or ALM trending toward sarcopenia thresholds—benefit from targeted evidence-based interventions that preserve muscle while maintaining the metabolic benefits of weight loss. The two most impactful strategies—protein optimization and resistance training—work synergistically and should be prescribed together whenever possible. This section provides practical guidance for implementing these strategies in clinical practice.
 
 ## Protein Optimization
 
 ### Why Protein Matters More During Pharmacological Weight Loss
 
-During weight loss, the body enters a catabolic state where both fat and muscle tissue can be broken down for energy. Adequate protein intake provides the amino acid stimulus needed to maintain muscle protein synthesis even in a caloric deficit. This is especially important during GLP-1 therapy because:
-
-- Appetite suppression reduces total food intake, often including protein
-- Nausea and food aversions may shift intake toward carbohydrate-heavy, protein-poor foods
-- Rapid weight loss increases protein turnover requirements
-- Older patients have anabolic resistance requiring higher protein doses
+During weight loss, the body enters a catabolic state where both fat and muscle tissue can be broken down for energy. Adequate protein intake provides the amino acid stimulus needed to maintain muscle protein synthesis even in a caloric deficit. This becomes especially critical during GLP-1 therapy because appetite suppression reduces total food intake—often including protein—and nausea and food aversions may shift dietary patterns toward carbohydrate-heavy, protein-poor foods. The rapid rate of weight loss increases protein turnover requirements, and older patients face anabolic resistance that demands higher protein doses to achieve the same muscle-preserving effect.
 
 *The PROT-AGE Study Group recommends at least 1.0-1.2 g/kg/day for healthy older adults, with higher intakes for those with acute or chronic illness (Bauer et al., 2013). The ISSN recommends 1.4-2.0 g/kg/day for exercising individuals (Jager et al., 2017).*[^1][^2]
 
@@ -36,43 +31,19 @@ For patients with significant obesity, protein targets based on adjusted body we
 
 ### Practical Challenges with GLP-1 Therapy
 
-Patients on GLP-1 medications face unique barriers to adequate protein intake:
-
-- **Reduced appetite:** The primary mechanism of weight loss also reduces desire to eat adequate protein
-- **Early satiety:** Delayed gastric emptying means patients feel full quickly
-- **Food aversions:** Many patients develop aversions to meat, eggs, and other protein-rich foods
-- **Nausea:** Particularly during dose titration, nausea discourages eating
-- **Reduced meal frequency:** Some patients shift to 1-2 meals per day
+Patients on GLP-1 medications face unique barriers to adequate protein intake. The primary mechanism of weight loss—appetite suppression—also reduces the desire to eat adequate protein. Delayed gastric emptying causes early satiety, and many patients develop aversions to meat, eggs, and other protein-rich foods. Nausea, particularly during dose titration, discourages eating altogether. Some patients shift to just one or two meals per day, further limiting protein opportunities.
 
 ### Strategies for Meeting Protein Targets
 
-**1. Prioritize protein at every eating occasion**
-- Start each meal with the protein component before other foods
-- When appetite is limited, protein should be the first priority
-- Even snacks should include a protein source
+Overcoming these barriers requires a deliberate, multi-faceted approach. **Prioritizing protein at every eating occasion** is the foundation: patients should start each meal with the protein component before other foods, treat protein as the first priority when appetite is limited, and include a protein source even in snacks.
 
-**2. Optimize protein timing and distribution**
-- Aim for 25-40g of protein per meal (or the maximum tolerable amount)
-- Distribute protein across 3-4 eating occasions rather than concentrating in one meal
-- Include protein at breakfast, which is often skipped or carbohydrate-heavy
+**Timing and distribution** matter as much as total intake. Aiming for 25 to 40 grams of protein per meal (or the maximum tolerable amount), distributed across 3 to 4 eating occasions rather than concentrated in one meal, maximizes muscle protein synthesis. Breakfast deserves particular attention, as it is often skipped or carbohydrate-heavy.
 
-**3. Choose high-quality, leucine-rich sources**
-- Whey protein (easily digestible, high leucine content)
-- Eggs (well-tolerated, versatile)
-- Greek yogurt (protein-dense, often tolerated despite dairy aversions)
-- Lean poultry and fish (lower volume per gram of protein than red meat)
-- Cottage cheese (high protein-to-calorie ratio)
+**High-quality, leucine-rich sources** optimize the anabolic response per gram consumed. Whey protein is easily digestible with high leucine content. Eggs are well-tolerated and versatile. Greek yogurt is protein-dense and often tolerated even by patients with dairy aversions. Lean poultry and fish provide more protein per volume than red meat, and cottage cheese offers an excellent protein-to-calorie ratio.
 
-**4. Supplementation when food intake is inadequate**
-- Whey protein shakes (liquid calories often better tolerated than solid food)
-- Protein powder added to foods (oatmeal, smoothies, soups)
-- Essential amino acid supplements (when total volume tolerance is very low)
-- Collagen peptides (easily mixed into beverages, though lower in leucine)
+When food intake is inadequate, **supplementation** fills the gap. Whey protein shakes are often better tolerated in liquid form than solid food. Protein powder can be added to oatmeal, smoothies, or soups. Essential amino acid supplements provide a concentrated option when volume tolerance is very low, and collagen peptides mix easily into beverages, though they are lower in leucine.
 
-**5. Work around medication timing**
-- Identify windows of better appetite (often mornings or later in the week after injection)
-- Pre-prepare protein-rich foods for when appetite allows
-- Consider timing larger protein meals when nausea is lowest
+Finally, **working around medication timing** can substantially improve protein intake. Patients should identify windows of better appetite—often mornings or later in the week after injection—pre-prepare protein-rich foods for those windows, and time their largest protein meals when nausea is at its lowest.
 
 :::tip
 A practical initial goal: "Can you get at least 25 grams of protein at breakfast, lunch, and dinner?" This simple target often achieves 75-90g daily, which is a meaningful starting point for many patients.
@@ -84,12 +55,7 @@ A practical initial goal: "Can you get at least 25 grams of protein at breakfast
 
 Resistance training is the single most effective intervention for preserving muscle during weight loss. The mechanical stimulus of lifting weights signals the body to maintain muscle tissue even in a caloric deficit. Without this signal, the body preferentially breaks down muscle along with fat.
 
-Research consistently shows that resistance training during weight loss:
-- Reduces lean mass loss by 50% or more compared to diet alone
-- Maintains or improves muscle strength despite caloric deficit
-- Preserves resting metabolic rate
-- Improves body composition independent of scale weight
-- Enhances functional capacity and quality of life
+Research consistently shows that resistance training during weight loss reduces lean mass loss by 50 percent or more compared to diet alone, maintains or improves muscle strength despite a caloric deficit, preserves resting metabolic rate, improves body composition independent of scale weight, and enhances functional capacity and quality of life.
 
 *Resistance training during caloric restriction significantly attenuates lean mass loss compared to diet alone. Combined resistance training with high-protein intake during GLP-1 therapy shows the greatest benefit for preserving lean mass.*[^4]
 
@@ -108,91 +74,43 @@ For patients on GLP-1 therapy, the following protocol balances effectiveness wit
 
 ### Adapting for Different Fitness Levels
 
-**Previously sedentary patients (most GLP-1 patients):**
-- Start with machine-based exercises for safety and ease of learning
-- Begin with bodyweight or very light weights
-- Focus on 1-2 sets initially, progressing to 3 over 4-6 weeks
-- Emphasize consistency over intensity
-- Consider starting with 2 sessions per week and building to 3
+**Previously sedentary patients**—the majority of GLP-1 patients—should start with machine-based exercises for safety and ease of learning, beginning with bodyweight or very light weights. The initial volume should be limited to 1 to 2 sets, progressing to 3 over 4 to 6 weeks. Consistency matters more than intensity at this stage, and starting with 2 sessions per week before building to 3 improves long-term adherence.
 
-**Patients with exercise experience:**
-- Can begin with compound free-weight movements
-- May tolerate higher volume (3-4 sets)
-- Focus on maintaining pre-medication strength levels
-- Adjust expectations: strength maintenance during weight loss is a success
+**Patients with exercise experience** can begin with compound free-weight movements and may tolerate higher volume of 3 to 4 sets. Their focus should be on maintaining pre-medication strength levels, with realistic expectations: strength maintenance during weight loss is itself a success.
 
-**Older adults or those with mobility limitations:**
-- Chair-based exercises and resistance bands as entry point
-- Supervised sessions initially for safety and technique
-- Balance and functional movements integrated with resistance work
-- Physical therapy referral if significant functional limitations exist
+**Older adults or those with mobility limitations** may benefit from chair-based exercises and resistance bands as an entry point. Supervised sessions are advisable initially for safety and technique. Balance and functional movements should be integrated with resistance work, and physical therapy referral is appropriate when significant functional limitations exist.
 
 ### Addressing Common Barriers
 
-**"I'm too tired/nauseous to exercise":**
-- Time sessions to avoid peak nausea (often 24-48 hours post-injection)
-- Start with very short sessions (15-20 minutes) and build
-- Emphasize that even modest resistance training provides muscle-preserving benefit
+Patients frequently cite fatigue and nausea as reasons they cannot exercise. The practical solution is to time sessions to avoid peak nausea (often 24 to 48 hours post-injection), start with very short sessions of 15 to 20 minutes and build gradually, and emphasize that even modest resistance training provides meaningful muscle-preserving benefit.
 
-**"I don't know what to do in a gym":**
-- Provide a specific, written exercise plan
-- Refer to a certified personal trainer familiar with medical populations
-- Consider physical therapy for initial instruction
-- Suggest app-based guided programs
+For patients who feel uncertain about gym settings, providing a specific, written exercise plan removes ambiguity. Referral to a certified personal trainer familiar with medical populations, physical therapy for initial instruction, or app-based guided programs can bridge the knowledge gap.
 
-**"I don't have time":**
-- Two 30-minute sessions per week provides meaningful benefit
-- Home-based options with minimal equipment (dumbbells, resistance bands)
-- Bodyweight exercises require no equipment at all
+Time constraints are best addressed with realistic framing: two 30-minute sessions per week provides meaningful benefit. Home-based options with minimal equipment such as dumbbells and resistance bands are effective, and bodyweight exercises require no equipment at all.
 
 ### Aerobic Exercise
 
-Aerobic exercise complements resistance training but should not replace it:
-
-- **Supports overall cardiovascular health** and VAT reduction
-- **Target:** 150 minutes per week of moderate activity (walking, cycling, swimming) or 75 minutes of vigorous activity
-- **Timing:** Can be performed on different days than resistance training, or as a brief warm-up
-- **Priority hierarchy:** If a patient can only do one type of exercise, resistance training provides greater muscle-preservation benefit
+Aerobic exercise complements resistance training but should not replace it for muscle preservation purposes. Aerobic activity supports overall cardiovascular health and VAT reduction, with a target of 150 minutes per week of moderate activity (walking, cycling, swimming) or 75 minutes of vigorous activity. It can be performed on different days than resistance training or as a brief warm-up. If a patient can only commit to one type of exercise, resistance training provides the greater muscle-preservation benefit and should take priority.
 
 ## Medication Considerations
 
 ### Dose Adjustments
 
-When DEXA shows concerning lean mass loss, medication management options include:
-
-- **Slower titration:** Reducing the rate of dose escalation allows the body more time to adapt and patients more time to establish protein and exercise habits
-- **Dose plateau:** Maintaining a lower dose that produces adequate but not excessive weight loss
-- **Temporary dose reduction:** If lean mass loss is severe, temporarily reducing the dose while intensifying protein and exercise interventions
-- **Always in consultation with the prescribing provider:** Body composition data provides objective evidence to support these discussions
+When DEXA shows concerning lean mass loss, medication management becomes part of the clinical conversation. **Slower titration**—reducing the rate of dose escalation—allows the body more time to adapt and gives patients more time to establish protein and exercise habits. **Dose plateau** involves maintaining a lower dose that produces adequate but not excessive weight loss. **Temporary dose reduction** may be warranted if lean mass loss is severe, allowing time to intensify protein and exercise interventions before resuming titration. All medication adjustments should be made in consultation with the prescribing provider, and body composition data from DEXA provides the objective evidence to support these discussions.
 
 ### Timing Considerations
 
-Practical advice for patients to optimize the interaction between medication and lifestyle interventions:
-
-- **Exercise timing:** Schedule resistance training sessions during periods of lower nausea, which for most patients is 3-5 days after injection
-- **Protein timing:** Consume protein within 2 hours of resistance training to maximize muscle protein synthesis
-- **Meal planning:** Prepare protein-rich meals in advance for days when appetite and tolerance are better
-- **Injection day strategy:** Plan a lighter exercise day or rest day on injection day and the day after
+Practical timing strategies help patients optimize the interaction between medication and lifestyle interventions. Resistance training sessions should be scheduled during periods of lower nausea, which for most patients is 3 to 5 days after injection. Consuming protein within 2 hours of resistance training maximizes muscle protein synthesis. Preparing protein-rich meals in advance for days when appetite and tolerance are better ensures that opportunities are not missed. Planning a lighter exercise day or rest day on injection day and the day after accommodates the typical nausea pattern.
 
 ## Monitoring Success
 
 ### DEXA Follow-up
 
-The monitoring protocol for patients with interventions in place:
-
-- **Recheck at 3-month intervals** during active intervention
-- **Track lean mass trajectory:** Is the rate of loss slowing? Stabilizing? Reversing?
-- **Assess regional changes:** Appendicular lean mass is more specific to skeletal muscle
-- **Compare compartments:** Calculate the percentage of subsequent weight loss from fat vs. lean
+The monitoring protocol for patients with interventions in place involves rechecking at 3-month intervals during active intervention. At each scan, the clinician should track the lean mass trajectory (is the rate of loss slowing, stabilizing, or reversing?), assess regional changes with particular attention to appendicular lean mass (which is more specific to skeletal muscle than total lean mass), and compare compartments by calculating the percentage of subsequent weight loss from fat versus lean tissue.
 
 ### Functional Assessments
 
-Pair DEXA scans with functional testing to assess whether body composition changes translate to functional changes:
-
-- **Grip strength:** Simple, reproducible, strongly predictive of outcomes. Use a hand dynamometer.
-- **Chair stand test:** Time for 5 stands without using arms. Improvement suggests maintained or improved lower body function.
-- **Gait speed:** Timed 4-meter walk. Speeds below 0.8 m/s suggest impairment.
-- **Patient-reported function:** Ask about ability to perform daily activities, energy levels, exercise tolerance.
+Functional testing should accompany DEXA scans to assess whether body composition changes translate to real-world functional changes. **Grip strength** is simple, reproducible, and strongly predictive of outcomes—measured with a hand dynamometer. The **chair stand test** (time for 5 stands without using arms) reflects lower body strength, with improvement suggesting maintained or improved function. **Gait speed** over a timed 4-meter walk provides an objective performance measure, with speeds below 0.8 m/s suggesting impairment. **Patient-reported function**—the ability to perform daily activities, energy levels, and exercise tolerance—adds subjective context that complements the objective measures.
 
 ### Success Metrics
 
@@ -211,24 +129,11 @@ Treatment should aim for these targets:
 
 ### Red Flags Requiring Action
 
-The following findings on DEXA or functional testing require escalation:
-
-- **Lean mass loss exceeds 40% of total weight loss** over two consecutive monitoring periods
-- **Functional decline:** Measurable reduction in grip strength, gait speed, or chair stand performance
-- **Approaching sarcopenia thresholds:** ALM/height² trending toward <7.0 kg/m² (men) or <5.5 kg/m² (women)
-- **Unable to maintain adequate protein intake** despite dietary counseling
-- **Unable or unwilling to perform resistance training** despite barrier reduction strategies
-- **Rapid weight loss** exceeding 1.5% body weight per week sustained over 4+ weeks
+Several findings on DEXA or functional testing require escalation. Lean mass loss exceeding 40 percent of total weight loss over two consecutive monitoring periods indicates that the current approach is inadequate. Measurable functional decline—reductions in grip strength, gait speed, or chair stand performance—signals that body composition changes are affecting real-world capacity. ALM/height² trending toward sarcopenia thresholds (below 7.0 kg/m² for men or 5.5 kg/m² for women) demands urgent attention. Inability to maintain adequate protein intake despite dietary counseling, inability or unwillingness to perform resistance training despite barrier reduction strategies, and rapid weight loss exceeding 1.5 percent of body weight per week sustained over 4 or more weeks all warrant escalation.
 
 ### Escalation Options
 
-When red flags are identified, consider these interventions in order of escalation:
-
-1. **Registered dietitian referral** for intensive nutrition counseling and meal planning, particularly for patients struggling to meet protein targets
-2. **Physical therapist or exercise physiologist referral** for supervised, individualized exercise programming
-3. **Prescriber discussion** regarding medication adjustment: dose reduction, slower titration, or temporary hold
-4. **Comprehensive geriatric assessment** for older adults showing functional decline
-5. **Endocrinology referral** if hormonal factors may be contributing (low testosterone, growth hormone deficiency)
+When red flags are identified, escalation options should be considered in a progressive sequence. A **registered dietitian referral** provides intensive nutrition counseling and meal planning, particularly for patients struggling to meet protein targets. A **physical therapist or exercise physiologist referral** enables supervised, individualized exercise programming. **Prescriber discussion** regarding medication adjustment—dose reduction, slower titration, or temporary hold—should be informed by the objective DEXA data. A **comprehensive geriatric assessment** is appropriate for older adults showing functional decline. An **endocrinology referral** may be warranted if hormonal factors such as low testosterone or growth hormone deficiency may be contributing to the lean mass losses.
 
 :::clinical
 Medication discontinuation should be a last resort. In most cases, the metabolic benefits of fat loss—particularly VAT reduction—outweigh the lean mass concerns when appropriate interventions are in place. The goal is to optimize the weight loss, not to stop it.
@@ -247,12 +152,7 @@ Frame the conversation around optimization and investment protection:
 
 ### Motivational Framing
 
-Help patients see the bigger picture:
-
-- **Long-term weight maintenance requires muscle mass.** Patients who preserve muscle during weight loss have higher resting metabolic rates and are more likely to maintain their results.
-- **Quality of life depends on functional capacity.** Being lighter matters less if you're also weaker. The goal is to feel better, move better, and live better.
-- **Every pound of muscle preserved is an investment.** It is much harder to build muscle than to preserve it. The effort invested now pays dividends for years.
-- **The data guides the plan.** DEXA takes the guesswork out of "is this working?" and lets both provider and patient make informed decisions.
+Helping patients see the bigger picture strengthens adherence to both protein and exercise recommendations. Long-term weight maintenance requires muscle mass—patients who preserve muscle during weight loss have higher resting metabolic rates and are more likely to maintain their results. Quality of life depends on functional capacity: being lighter matters less if you are also weaker, and the goal is to feel better, move better, and live better. Every pound of muscle preserved is an investment, because it is much harder to build muscle than to preserve it—the effort invested now pays dividends for years. And the DEXA data guides the plan, taking the guesswork out of "is this working?" and letting both provider and patient make informed decisions.
 
 ## Summary
 
