@@ -80,4 +80,4 @@ storybook-static
 .worktrees/
 
 # Diagram generator runs
-diagram-specs/run_*/
+diagrams/run_*/
