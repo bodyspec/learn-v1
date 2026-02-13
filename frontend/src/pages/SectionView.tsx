@@ -40,7 +40,6 @@ export default function SectionView() {
     )
   }
 
-  const section = module.sections[sectionIndex]
   const content = getSectionContent(moduleId, sectionSlug)
   const quiz = getQuiz(moduleId)
 
@@ -98,7 +97,6 @@ export default function SectionView() {
             <p className="text-sm text-gray-500 mb-1">
               Section {sectionIndex + 1} of {module.sections.length}
             </p>
-            <h1 className="text-2xl font-bold text-gray-900">{section.title}</h1>
           </div>
           {isComplete && (
             <div className="flex items-center gap-2 px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm">
