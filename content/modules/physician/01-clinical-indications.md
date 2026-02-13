@@ -4,6 +4,8 @@ Body composition assessment via DEXA provides clinically actionable data for a w
 
 ## Primary Clinical Indications
 
+![Clinical indications matrix](/content/assets/diagrams/clinical-indications-matrix.png)
+
 ### Metabolic Assessment
 
 **When to consider:**

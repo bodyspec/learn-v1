@@ -4,6 +4,8 @@ Getting consistent, accurate DEXA results starts before you arrive at the scanne
 
 ## Before Your Scan
 
+![Scan preparation checklist](/content/assets/diagrams/scan-preparation-checklist.png)
+
 ### Hydration
 
 Hydration status is the single largest modifiable factor affecting DEXA accuracy[^1]:

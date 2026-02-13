@@ -43,7 +43,7 @@ A practical multicomponent prescription for sarcopenic older adults:
 
 For patients new to exercise, starting with two sessions per week and building gradually over 4-6 weeks improves adherence and reduces injury risk.
 
-![Sarcopenia monitoring timeline](/content/assets/diagrams/sarcopenia-monitoring-timeline.svg)
+![Sarcopenia monitoring timeline](/content/assets/diagrams/sarcopenia-monitoring-timeline.png)
 
 ## Nutrition for Muscle Health
 

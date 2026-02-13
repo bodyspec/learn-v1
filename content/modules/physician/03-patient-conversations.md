@@ -4,6 +4,8 @@ Communicating DEXA results effectively requires translating complex metrics into
 
 ## Principles of Communication
 
+![Patient conversation framework](/content/assets/diagrams/conversation-framework.png)
+
 ### Lead with Context
 
 Before discussing numbers, establish:

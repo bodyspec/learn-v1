@@ -4,6 +4,8 @@ Integrating DEXA body composition data into chiropractic assessment enhances dia
 
 ## Adding Composition to Your Assessment
 
+![Chiropractic assessment workflow](/content/assets/diagrams/assessment-workflow.png)
+
 ### Initial Evaluation
 
 When reviewing a patient's DEXA results during initial evaluation:

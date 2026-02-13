@@ -4,6 +4,8 @@ Body composition directly impacts musculoskeletal health and function. Understan
 
 ## Body Composition and Structural Load
 
+![Structural load impact on joints](/content/assets/diagrams/structural-load-impact.png)
+
 ### Excess Fat Mass
 
 Increased fat mass affects the musculoskeletal system through:
@@ -29,7 +31,7 @@ Research demonstrates that lean mass is positively associated with joint stabili
 
 ## Regional Analysis Applications
 
-![Body outline showing arm, leg, and trunk divisions](/content/assets/diagrams/regional-divisions.svg)
+![Body outline showing arm, leg, and trunk divisions](/content/assets/diagrams/regional-divisions.png)
 
 ### Trunk Composition
 

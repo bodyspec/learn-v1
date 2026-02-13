@@ -16,7 +16,7 @@ The USPSTF updated its osteoporosis screening recommendation in 2025, reinforcin
 
 The ISCD 2023 Official Positions provide additional indications for BMD testing in adults[^2]: adults with a fragility fracture, diseases or medications associated with bone loss, anyone being considered for or currently on osteoporosis pharmacotherapy, and postmenopausal women under 65 or men under 70 with clinical risk factors for low bone mass.
 
-![Bone health referral pathway](/content/assets/diagrams/bone-health-referral-pathway.svg)
+![Bone health referral pathway](/content/assets/diagrams/bone-health-referral-pathway.png)
 
 :::warning
 Body composition DEXA measures total body bone mineral content (BMC) averaged across the entire skeleton. The WHO diagnostic criteria for osteoporosis (T-score ≤ -2.5) are validated only at specific skeletal sites—femoral neck, total hip, lumbar spine, and 33% radius—using site-specific protocols. Whole-body BMC from body composition DEXA is NOT a valid diagnostic site for osteoporosis.

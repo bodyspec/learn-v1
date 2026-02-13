@@ -4,6 +4,8 @@ DEXA body composition data transforms programming from guesswork into precision.
 
 ## Using DEXA for Needs Assessment
 
+![Client categorization quadrant](/content/assets/diagrams/client-categorization.png)
+
 ### Initial Client Evaluation
 
 When a new client brings DEXA results, assess:

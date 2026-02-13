@@ -4,7 +4,7 @@ DEXA (Dual-Energy X-ray Absorptiometry) is the clinical reference standard for m
 
 ## The Technology
 
-![Dual-energy X-ray beams passing through tissue](/content/assets/diagrams/dexa-dual-energy.svg)
+![Dual-energy X-ray beams passing through tissue](/content/assets/diagrams/dexa-dual-energy.png)
 
 DEXA scanners emit two low-energy X-ray beams at different energy levels (typically around 40 keV and 70 keV). As these beams pass through the body, different tissues attenuate them at different rates based on their atomic composition and density[^1]:
 
@@ -20,7 +20,7 @@ The radiation exposure from a DEXA body composition scan is extremely low—appr
 
 ## Three-Compartment Model
 
-![Three-compartment model: fat, lean, and bone](/content/assets/diagrams/three-compartment-model.svg)
+![Three-compartment model: fat, lean, and bone](/content/assets/diagrams/three-compartment-model.png)
 
 DEXA uses a three-compartment model, which distinguishes between[^1]:
 
@@ -32,7 +32,7 @@ This is more detailed than two-compartment models (like BIA scales) that only di
 
 ## The Scanning Process
 
-![Person lying on DEXA scanning table](/content/assets/diagrams/dexa-scan-position.svg)
+![Person lying on DEXA scanning table](/content/assets/diagrams/dexa-scan-position.png)
 
 During a BodySpec scan:
 
@@ -43,7 +43,7 @@ During a BodySpec scan:
 
 ## Regional Analysis
 
-![Body outline showing arm, leg, and trunk divisions](/content/assets/diagrams/regional-divisions.svg)
+![Body outline showing arm, leg, and trunk divisions](/content/assets/diagrams/regional-divisions.png)
 
 One of DEXA's key advantages is its ability to provide **regional analysis**. The scan divides the body into segments:
 

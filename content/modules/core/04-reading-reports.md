@@ -4,6 +4,8 @@ BodySpec reports are designed to present complex body composition data in an acc
 
 ## Report Overview
 
+![BodySpec report anatomy](/content/assets/diagrams/report-anatomy.png)
+
 A BodySpec report includes:
 
 1. Summary dashboard with key metrics and visual indicators

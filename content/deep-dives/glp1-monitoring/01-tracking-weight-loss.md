@@ -48,6 +48,8 @@ Excessive lean mass loss during GLP-1 therapy has consequences that extend beyon
 
 ## Using DEXA to Monitor
 
+![GLP-1 DEXA monitoring protocol](/content/assets/diagrams/glp1-monitoring-protocol.png)
+
 ### Recommended Protocol
 
 A structured DEXA monitoring protocol maximizes the clinical value of body composition assessment during GLP-1 therapy:

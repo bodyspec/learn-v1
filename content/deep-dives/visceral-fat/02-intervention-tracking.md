@@ -131,6 +131,8 @@ Often overlooked but clinically significant:
 
 ## Realistic Expectations
 
+![VAT intervention response curves](/content/assets/diagrams/vat-intervention-response.png)
+
 ### Typical VAT Changes by Intervention
 
 | Intervention | Timeline | Expected VAT Change | Notes |

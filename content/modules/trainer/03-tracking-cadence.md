@@ -4,6 +4,8 @@ Optimal scan frequency depends on goals, timeline, and stage of training. Strate
 
 ## Recommended Scan Frequency
 
+![Scan frequency timeline](/content/assets/diagrams/scan-timeline.png)
+
 ### General Guidelines
 
 | Phase | Frequency | Rationale |

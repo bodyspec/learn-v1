@@ -4,6 +4,8 @@ DEXA body composition results can reveal findings that warrant further investiga
 
 ## Metabolic Red Flags
 
+![Red flags threshold gauges](/content/assets/diagrams/red-flags-thresholds.png)
+
 ### Severely Elevated VAT
 
 **Finding:** VAT area >200 cm²[^1]

@@ -6,6 +6,8 @@ Visceral adipose tissue (VAT) is metabolically active fat stored deep within the
 
 ## Why VAT Matters More Than Total Body Fat
 
+![VAT disease pathways](/content/assets/diagrams/vat-disease-pathways.png)
+
 ### Metabolic Activity
 
 Visceral fat is not an inert storage depot. It functions as an active endocrine organ that releases compounds directly into the body's metabolic pathways:
@@ -32,7 +34,7 @@ This distinction is why total body fat percentage alone can be misleading. Two p
 
 BMI (Body Mass Index) is a poor proxy for metabolic risk because it cannot distinguish between fat and lean mass, let alone between visceral and subcutaneous fat:
 
-![Same BMI, different body composition](/content/assets/diagrams/dexa-vs-bmi.svg)
+![Same BMI, different body composition](/content/assets/diagrams/dexa-vs-bmi.png)
 
 - Studies show VAT can vary by 3-5 fold among individuals with the same BMI
 - A BMI of 25 can represent a muscular, metabolically healthy individual or a sedentary person with high VAT

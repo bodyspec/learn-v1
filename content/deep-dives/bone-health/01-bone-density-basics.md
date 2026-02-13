@@ -6,6 +6,8 @@ DEXA technology is used for both body composition analysis and bone mineral dens
 
 ## Two Types of DEXA Scans
 
+![Body composition DEXA vs. clinical BMD DEXA](/content/assets/diagrams/bmd-vs-body-comp-dexa.png)
+
 Both scan types use the same underlying technology—dual-energy X-ray absorptiometry—but they serve fundamentally different purposes.
 
 ### Body Composition DEXA (What BodySpec Provides)

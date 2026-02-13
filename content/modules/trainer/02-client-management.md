@@ -4,6 +4,8 @@ DEXA transforms client conversations from subjective assessments to objective da
 
 ## Setting Expectations
 
+![Client goal-setting framework](/content/assets/diagrams/goal-setting-framework.png)
+
 ### First Scan Discussion
 
 When reviewing initial DEXA results:
@@ -25,7 +27,7 @@ When reviewing initial DEXA results:
 
 ## Demonstrating Progress
 
-![Favorable vs concerning weight loss composition](/content/assets/diagrams/weight-loss-quality.svg)
+![Favorable vs concerning weight loss composition](/content/assets/diagrams/weight-loss-quality.png)
 
 ### Beyond the Scale
 

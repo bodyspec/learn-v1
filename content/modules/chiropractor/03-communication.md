@@ -47,6 +47,8 @@ Every finding should connect to something the patient can do:
 
 ## Motivational Communication
 
+![Patient progress visualization](/content/assets/diagrams/progress-visualization.png)
+
 ### Emphasize What's Modifiable
 
 Body composition is highly responsive to intervention. Emphasize:
