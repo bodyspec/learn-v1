@@ -2,7 +2,7 @@
 
 ## Overview
 
-The first section of this module established what body composition DEXA can and cannot tell you about bone health. This section builds on that foundation with deeper clinical context: when and why to refer patients for clinical bone mineral density (BMD) testing, how body composition DEXA serves as an "opportunistic screening" opportunity, the evidence-based lifestyle factors that support bone health, and the increasingly recognized overlap between sarcopenia and osteoporosis. Understanding these connections enables providers to use body composition data as a meaningful clinical tool—not for diagnosis, but for identifying patients who need further evaluation and motivating actionable health behaviors.
+Body composition DEXA provides whole-body bone mineral content (BMC) data alongside fat and lean mass measurements, offering a unique window into skeletal health during routine body composition assessment. While this whole-body BMC cannot diagnose osteoporosis—the WHO diagnostic criteria require site-specific measurements at the hip or spine—it creates valuable clinical opportunities. Understanding when and why to refer patients for clinical bone mineral density (BMD) testing, how body composition DEXA serves as an "opportunistic screening" tool, the evidence-based lifestyle factors that support bone health, and the increasingly recognized overlap between sarcopenia and osteoporosis enables providers to use body composition data as a meaningful clinical tool for identifying patients who need further evaluation and motivating actionable health behaviors.
 
 ## When to Refer for Clinical BMD
 
@@ -35,13 +35,7 @@ FRAX cannot be calculated from whole-body BMC—it specifically requires femoral
 
 Body composition DEXA represents an "opportunistic screening" opportunity for bone health. Patients getting body composition scans for fitness or health optimization may not be in the formal USPSTF screening population, but their bone data can identify individuals who warrant further evaluation.
 
-Specific body composition findings that should prompt consideration of clinical BMD referral:
-
-- **Very low BMC percentile** (below 10th percentile for age and sex)
-- **Declining BMC on serial scans** without clear explanation
-- **Low BMC combined with low lean mass** (suggesting systemic nutritional or hormonal deficiency)
-- **Postmenopausal women or older men** not yet screened for osteoporosis
-- **Patients with known risk factors** (corticosteroid use, family history of hip fracture, low body weight)
+Specific body composition findings that should prompt consideration of clinical BMD referral include very low BMC percentile (below the 10th percentile for age and sex), declining BMC on serial scans without clear explanation, low BMC combined with low lean mass (suggesting systemic nutritional or hormonal deficiency), postmenopausal women or older men not yet screened for osteoporosis, and patients with known risk factors such as corticosteroid use, family history of hip fracture, or low body weight.
 
 :::clinical
 The clinical value of opportunistic screening lies in reaching patients who would not otherwise be evaluated. A 55-year-old woman getting a body composition scan for fitness goals may not have considered bone health—but if her BMC is at the 8th percentile, that scan has created a clinical conversation that might not have happened otherwise. The finding does not diagnose osteoporosis, but it can catalyze appropriate evaluation.
@@ -78,10 +72,7 @@ Exercise also reduces fall risk through improved balance, strength, and coordina
 
 **Protein:** The ESCEO/IOF expert consensus recommends protein intake of ≥1.0-1.2 g/kg/day for older adults with osteoporosis. Contrary to the outdated concern that higher protein damages bone through acid loading, systematic reviews demonstrate that higher protein intake is associated with higher BMD, slower bone loss, and approximately 11% reduced hip fracture risk. Adequate calcium intake should accompany higher protein intake[^7].
 
-**Other lifestyle factors:**
-- **Smoking cessation:** Smoking accelerates bone loss; cessation improves BMD trajectory
-- **Alcohol moderation:** More than 3 drinks per day increases fracture risk
-- **Fall prevention:** Balance training, home safety modifications, and medication review—especially important for individuals with low BMD and low lean mass
+**Other lifestyle factors** that support bone health include smoking cessation (smoking accelerates bone loss, and cessation improves BMD trajectory), alcohol moderation (more than 3 drinks per day increases fracture risk), and fall prevention strategies such as balance training, home safety modifications, and medication review—especially important for individuals with low BMD and low lean mass.
 
 ## The Body Composition-Bone Connection
 
@@ -110,14 +101,7 @@ The practical implication is powerful: patients who are building muscle through 
 | Mortality risk | 1.66 (1.23-2.26) | 66% increased risk |
 | Fall risk | 1.62 (1.28-2.04) | 62% increased risk |
 
-Osteosarcopenia is worse than either condition alone because the mechanisms are shared and mutually reinforcing:
-
-- **Mechanical:** Reduced muscle loading on bone decreases osteogenic stimulus
-- **Biochemical:** Muscle and bone communicate through shared signaling molecules (myokines, osteokines including irisin and osteocalcin)
-- **Hormonal:** Estrogen and testosterone deficiency affects both tissues simultaneously
-- **Nutritional:** Protein, vitamin D, and calcium deficiency impair both muscle and bone
-- **Inflammatory:** Chronic low-grade inflammation degrades both tissues
-- **Inactivity:** Physical inactivity is a shared modifiable risk factor for both conditions
+Osteosarcopenia is worse than either condition alone because the underlying mechanisms are shared and mutually reinforcing. Reduced muscle loading on bone decreases the osteogenic stimulus (mechanical pathway). Muscle and bone communicate through shared signaling molecules including myokines and osteokines such as irisin and osteocalcin (biochemical pathway). Estrogen and testosterone deficiency affects both tissues simultaneously (hormonal pathway). Protein, vitamin D, and calcium deficiency impair both muscle and bone maintenance (nutritional pathway). Chronic low-grade inflammation degrades both tissues (inflammatory pathway). And physical inactivity is a shared modifiable risk factor for both conditions.
 
 :::clinical
 Body composition DEXA is uniquely positioned to identify osteosarcopenia in a single scan. Low ALMI (a sarcopenia indicator) combined with low BMC creates a clinical picture that neither measurement alone would reveal. When both are present, the intervention strategy should address muscle and bone simultaneously—resistance training and protein optimization serve both targets.
@@ -143,11 +127,7 @@ Effective communication adapts to the patient's specific findings. The following
 
 ### Key Communication Principles
 
-1. **Never alarm, always inform:** Low BMC on body composition DEXA is a prompt for investigation, not a diagnosis
-2. **Bridge to primary care:** Always route back to the patient's physician for clinical decision-making
-3. **Connect muscle and bone:** Help patients see that resistance training and protein intake serve both goals simultaneously
-4. **Provide actionable guidance:** Give concrete lifestyle recommendations patients can start immediately
-5. **Differentiate the scans:** Reinforce that body composition DEXA and clinical BMD DEXA serve different purposes, even though both use DEXA technology
+Effective bone health communication follows several guiding principles. First, never alarm—always inform: low BMC on body composition DEXA is a prompt for investigation, not a diagnosis. Second, bridge to primary care by routing clinical decision-making back to the patient's physician. Third, connect muscle and bone so patients understand that resistance training and protein intake serve both goals simultaneously. Fourth, provide actionable guidance—concrete lifestyle recommendations patients can start immediately. Fifth, differentiate the scans by reinforcing that body composition DEXA and clinical BMD DEXA serve different purposes, even though both use DEXA technology.
 
 ## Summary
 
