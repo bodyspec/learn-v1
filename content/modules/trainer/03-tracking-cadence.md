@@ -1,12 +1,14 @@
 # Tracking & Cadence
 
-Optimal scan frequency depends on goals, timeline, and stage of training. Strategic timing maximizes the value of DEXA data.
+Optimal scan frequency depends on goals, timeline, and stage of training. Scanning too often wastes money and can mislead clients when normal biological variation mimics real change. Scanning too rarely means missed opportunities to adjust programming. Strategic timing maximizes the value of DEXA data while keeping costs proportional to the insights gained.
 
 ## Recommended Scan Frequency
 
 ![Scan frequency timeline](/content/assets/diagrams/scan-timeline.png)
 
 ### General Guidelines
+
+The following frequency recommendations balance the need for timely data against the reality that body composition changes require weeks to months to become measurable beyond DEXA's precision limits.
 
 | Phase | Frequency | Rationale |
 |-------|-----------|-----------|
@@ -17,21 +19,11 @@ Optimal scan frequency depends on goals, timeline, and stage of training. Strate
 
 ### By Goal Type
 
-**Fat Loss Programs:**
-- Initial scan before starting
-- Follow-up at 8-12 weeks
-- Continue every 2-3 months until goal
-- Transition to maintenance frequency
+**Fat loss programs** benefit from a structured scanning cadence: an initial baseline scan before starting, a follow-up at 8 to 12 weeks to confirm the program is working, continued scans every 2 to 3 months until the goal is reached, then a transition to maintenance frequency once the target composition is achieved.
 
-**Muscle Building:**
-- Initial scan
-- 12-16 week follow-up (muscle gains are slower)
-- Quarterly thereafter
+**Muscle building** requires patience with scan timing because hypertrophy is a slower process than fat loss. After the initial baseline scan, a 12-to-16-week interval before the follow-up scan provides enough time for measurable lean mass gains. Quarterly scanning thereafter tracks ongoing progress without creating false expectations.
 
-**Body Recomposition:**
-- Initial scan
-- 12-week minimum before rescan (recomp is slow)
-- Avoid frequent scanning—can be discouraging
+**Body recomposition** demands the most patience of all. The initial scan establishes a baseline, but clients should wait a minimum of 12 weeks before rescanning. Simultaneous fat loss and muscle gain produces subtle changes that can be obscured by measurement variability if scans are too frequent. Avoid frequent scanning during recomposition—it can be discouraging when the scale and DEXA both appear static, even though favorable changes are occurring beneath the surface.
 
 :::note
 More frequent scanning rarely provides better data. Changes within 6-8 weeks are often within measurement precision and can mislead rather than inform (Shepherd et al., 2017)[^1].
@@ -41,25 +33,17 @@ More frequent scanning rarely provides better data. Changes within 6-8 weeks are
 
 ### Best Practices for Scan Day
 
-Advise clients to:
-- Scan at consistent time of day
-- Maintain similar hydration status
-- Avoid intense exercise 24 hours prior
-- Wear similar, minimal clothing
-- Use the same scanner location
+Consistency in scan conditions is essential for valid comparisons between measurements. Clients should scan at a consistent time of day, maintain similar hydration status, avoid intense exercise in the 24 hours prior to the scan, wear similar minimal clothing, and use the same scanner location. These practices minimize variability that has nothing to do with actual body composition changes and ensure that the differences between scans reflect genuine progress.
 
-### Avoid Scanning When:
+### When to Avoid Scanning
 
-- Immediately after diet break or vacation (fluid shifts)
-- During illness (dehydration, inflammation)
-- After recent travel (hydration changes)
-- During menstruation (fluid retention)
+Certain conditions temporarily alter body composition measurements in ways that do not reflect true changes. Scanning immediately after a diet break or vacation captures fluid shifts rather than fat gain. Illness causes dehydration and inflammation that skew results. Recent travel produces hydration changes from altitude and travel stress. Menstruation causes fluid retention that affects lean mass measurements. Rescheduling the scan by a few days in these situations produces more accurate and useful data.
 
 ## Using Trends, Not Snapshots
 
 ### Pattern Recognition
 
-Single scans are snapshots; trends tell stories:
+Single scans are snapshots; trends across multiple scans tell meaningful stories. Understanding common patterns helps trainers interpret results and adjust programming appropriately.
 
 | Pattern | Interpretation | Action |
 |---------|----------------|--------|
@@ -71,21 +55,19 @@ Single scans are snapshots; trends tell stories:
 
 ### Minimum Data Points
 
-- 2 scans: Direction only
-- 3 scans: Trend confirmation
-- 4+ scans: Reliable pattern
+The confidence in any trend increases with additional data points. Two scans provide directionality only—the change could be real or could reflect normal variation. Three scans confirm a trend: if two consecutive intervals show the same direction of change, the pattern is likely genuine. Four or more scans establish a reliable pattern that can confidently inform programming decisions.
 
 ## Integrating with Other Metrics
 
-DEXA provides periodic objective data. Complement with:
+DEXA provides periodic objective data, but the intervals between scans require other tracking methods to maintain momentum and catch early signals that programming needs adjustment.
 
 ### Weekly/Daily Tracking
-- Scale weight (daily or weekly average)
-- Measurements (waist, hips, limbs)
-- Progress photos
-- Performance metrics (strength, endurance)
+
+Between DEXA scans, complementary metrics provide ongoing feedback. Scale weight (tracked as a daily or weekly average to smooth out fluctuations), body measurements (waist, hips, limbs), progress photos, and performance metrics (strength, endurance) collectively paint a picture of what is happening between scans. None of these are as precise as DEXA for body composition, but together they provide directional guidance.
 
 ### How Metrics Relate
+
+Understanding how DEXA results correlate with daily metrics helps trainers and clients interpret their ongoing tracking data.
 
 | DEXA Shows | Daily Metrics Might Show |
 |------------|-------------------------|
@@ -115,6 +97,8 @@ When daily metrics and DEXA diverge, trust the DEXA. It's more accurate and less
 
 ### Sample Timeline: 6-Month Fat Loss Client
 
+A structured scanning schedule for a fat loss client illustrates how DEXA integrates with the training cycle. The schedule below spaces scans at intervals that allow meaningful change to accumulate while providing enough data points to confirm trends.
+
 | Week | Action |
 |------|--------|
 | 0 | Baseline DEXA |
@@ -127,6 +111,8 @@ When daily metrics and DEXA diverge, trust the DEXA. It's more accurate and less
 | Ongoing | Maintenance scans every 4-6 months |
 
 ### Sample Timeline: Muscle Building Client
+
+Muscle building requires longer intervals between scans because hypertrophy occurs more slowly than fat loss. The following schedule reflects realistic muscle gain timelines.
 
 | Week | Action |
 |------|--------|
