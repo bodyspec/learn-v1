@@ -28,12 +28,7 @@ let authInitPromise: Promise<{ token: string; user: User | null } | null> | null
 function initAuth(): Promise<{ token: string; user: User | null } | null> {
   if (!authInitPromise) {
     authInitPromise = (async () => {
-      // Disable PKCE on insecure (HTTP) contexts where crypto.subtle is unavailable
-      const initOptions: Parameters<typeof keycloak.init>[0] = {
-        onLoad: 'check-sso',
-        ...(!window.isSecureContext && { pkceMethod: false as const }),
-      }
-      const authenticated = await keycloak.init(initOptions)
+      const authenticated = await keycloak.init({ onLoad: 'check-sso' })
       if (!authenticated || !keycloak.token) return null
       try {
         const user = await apiClient.get<User>('/auth/me', keycloak.token)

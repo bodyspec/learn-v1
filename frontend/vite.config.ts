@@ -56,7 +56,8 @@ export default defineConfig({
   assetsInclude: ['**/*.md'],
   build: {
     outDir: 'dist',
-    emptyOutDir: true
+    emptyOutDir: true,
+    target: 'es2022', // needed for top-level await in polyfills.ts
   },
   server: {
     proxy: {
