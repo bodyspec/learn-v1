@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { Menu, X, User } from 'lucide-react'
 import { useState } from 'react'
 import { useAuth } from '@/auth/AuthProvider'
+import logo from '@/assets/logo.svg'
 
 export default function Navigation() {
   const { isAuthenticated, login } = useAuth()
@@ -13,8 +14,7 @@ export default function Navigation() {
         <div className="flex justify-between h-16">
           <div className="flex items-center">
             <Link to="/" className="flex items-center no-underline">
-              <span className="text-xl font-bold text-bs-dark">BodySpec</span>
-              <span className="ml-2 text-sm text-bs-dark/60">Learn</span>
+              <img src={logo} alt="BodySpec Learn" className="h-7" />
             </Link>
             <div className="hidden sm:ml-10 sm:flex sm:space-x-8">
               <Link
