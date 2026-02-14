@@ -1,9 +1,12 @@
 import logging
+import os
 from collections.abc import AsyncGenerator
 from contextlib import asynccontextmanager
+from pathlib import Path
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import FileResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 
 from app.api.router import api_router
@@ -53,16 +56,27 @@ def create_app() -> FastAPI:
     # API routes
     app.include_router(api_router, prefix='/api/v1')
 
-    # Static files (frontend build) - served in production
-    try:
-        app.mount('/static', StaticFiles(directory='static'), name='static')
-    except RuntimeError:
-        # Static directory doesn't exist in development
-        pass
-
     @app.get('/health')
     async def health_check() -> dict[str, str]:
         return {'status': 'healthy'}
+
+    # Static files (frontend build) - served in production
+    static_dir = Path(os.getenv('STATIC_FILES_DIR', '/app/static'))
+    if static_dir.exists() and static_dir.is_dir():
+        app.mount('/assets', StaticFiles(directory=static_dir / 'assets'), name='assets')
+
+        @app.get('/')
+        async def serve_frontend() -> FileResponse:
+            return FileResponse(static_dir / 'index.html')
+
+        @app.get('/{full_path:path}')
+        async def catch_all(full_path: str) -> FileResponse:
+            if full_path.startswith(('api/', 'docs', 'openapi.json', 'redoc', 'health')):
+                return JSONResponse({'error': 'Not found'}, status_code=404)
+            file_path = static_dir / full_path
+            if file_path.is_file():
+                return FileResponse(file_path)
+            return FileResponse(static_dir / 'index.html')
 
     return app
 

@@ -7,7 +7,7 @@ COPY frontend/ ./
 COPY content/assets ../content/assets
 ARG VITE_APP_NAME=BodySpec\ Learn
 ARG VITE_APP_VERSION=1.0.0
-ARG VITE_KEYCLOAK_URL
+ARG VITE_KEYCLOAK_URL=https://auth.bodyspec.com
 ARG VITE_KEYCLOAK_REALM=bodyspec
 ARG VITE_KEYCLOAK_CLIENT_ID=bodyspec-learn-v1
 ENV VITE_APP_NAME=${VITE_APP_NAME}
@@ -54,12 +54,15 @@ COPY setup/* ./
 # Copy frontend build
 COPY --from=frontend-builder /frontend/dist /app/static
 
+RUN chmod +x prod.sh
+
 # Create non-root user
 RUN adduser -D -u 1000 appuser && chown -R appuser:appuser /app
 USER appuser
 
 ENV PYTHONPATH=/app
 ENV PYTHONUNBUFFERED=1
+ENV STATIC_FILES_DIR=/app/static
 EXPOSE 8000
 
 CMD ["./prod.sh"]

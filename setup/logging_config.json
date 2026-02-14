@@ -3,12 +3,8 @@
   "disable_existing_loggers": false,
   "formatters": {
     "default": {
-      "format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+      "format": "%(levelname)s:     %(message)s",
       "datefmt": "%Y-%m-%d %H:%M:%S"
-    },
-    "json": {
-      "()": "pythonjsonlogger.jsonlogger.JsonFormatter",
-      "format": "%(asctime)s %(name)s %(levelname)s %(message)s"
     }
   },
   "handlers": {
@@ -19,29 +15,10 @@
     }
   },
   "loggers": {
-    "uvicorn": {
-      "level": "INFO",
-      "handlers": ["console"],
-      "propagate": false
-    },
-    "uvicorn.error": {
-      "level": "INFO",
-      "handlers": ["console"],
-      "propagate": false
-    },
-    "uvicorn.access": {
-      "level": "INFO",
-      "handlers": ["console"],
-      "propagate": false
-    },
-    "app": {
-      "level": "INFO",
-      "handlers": ["console"],
-      "propagate": false
-    }
+    "uvicorn": { "handlers": ["console"], "level": "INFO", "propagate": false },
+    "uvicorn.error": { "handlers": ["console"], "level": "INFO", "propagate": false },
+    "uvicorn.access": { "handlers": ["console"], "level": "INFO", "propagate": false },
+    "app": { "handlers": ["console"], "level": "INFO", "propagate": false }
   },
-  "root": {
-    "level": "INFO",
-    "handlers": ["console"]
-  }
+  "root": { "handlers": ["console"], "level": "INFO" }
 }

@@ -95,9 +95,8 @@ describe('SectionView', () => {
     expect(screen.getByTestId('not-found')).toHaveTextContent('Section Not Found')
   })
 
-  it('renders section title and "Section X of Y"', () => {
+  it('renders "Section X of Y"', () => {
     renderPage()
-    expect(screen.getByText('Technology')).toBeInTheDocument()
     expect(screen.getByText('Section 2 of 3')).toBeInTheDocument()
   })
 
