@@ -63,7 +63,7 @@ While DEXA is highly accurate for body composition, it has limitations:
 
 - Cannot distinguish between intramuscular fat and muscle tissue
 - Cannot determine muscle fiber type (slow-twitch vs. fast-twitch)
-- Cannot directly measure hydration status (though hydration affects accuracy)
+- Cannot directly calculate hydration (though hydration affects measured results)
 - Cannot assess muscle quality or function
 
 Understanding these limitations helps set appropriate expectations for what insights a DEXA scan can provide.
