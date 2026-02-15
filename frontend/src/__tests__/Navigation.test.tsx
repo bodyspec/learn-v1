@@ -21,7 +21,7 @@ function renderNav() {
 describe('Navigation', () => {
   it('renders BodySpec branding with "/" link', () => {
     renderNav()
-    expect(screen.getByText('BodySpec')).toBeInTheDocument()
+    expect(screen.getByAltText('BodySpec Learn')).toBeInTheDocument()
     const link = screen.getAllByRole('link').find(l => l.getAttribute('href') === '/')
     expect(link).toBeDefined()
   })

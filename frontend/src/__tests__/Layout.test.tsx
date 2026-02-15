@@ -19,7 +19,7 @@ describe('Layout', () => {
         </Routes>
       </MemoryRouter>
     )
-    expect(screen.getByText('BodySpec')).toBeInTheDocument()
+    expect(screen.getByAltText('BodySpec Learn')).toBeInTheDocument()
   })
 
   it('renders footer with current year', () => {
