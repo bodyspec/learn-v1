@@ -7,10 +7,12 @@ import { useSubmitQuiz } from '@/hooks/queries'
 
 interface QuizProps {
   quiz: QuizType
+  moduleId: string
+  fromTrack?: string
   onComplete?: (result: QuizSubmissionResult) => void
 }
 
-export default function Quiz({ quiz, onComplete }: QuizProps) {
+export default function Quiz({ quiz, moduleId, fromTrack, onComplete }: QuizProps) {
   const { token, isAuthenticated } = useAuth()
   const submitQuizMutation = useSubmitQuiz()
   const [currentQuestion, setCurrentQuestion] = useState(0)
@@ -110,6 +112,8 @@ export default function Quiz({ quiz, onComplete }: QuizProps) {
       <QuizResults
         result={result}
         quiz={quiz}
+        moduleId={moduleId}
+        fromTrack={fromTrack}
         onRetry={handleRetry}
         showSignInPrompt={showLocalResults && !isAuthenticated}
       />

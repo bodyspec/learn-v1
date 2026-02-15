@@ -133,7 +133,7 @@ export default function ModuleView() {
                 </span>
               ) : (
                 <button
-                  onClick={() => navigate(`/quiz/${moduleId}`)}
+                  onClick={() => navigate(`/quiz/${moduleId}`, { state: backTrack ? { fromTrack: backTrack } : undefined })}
                   className="btn-primary"
                 >
                   Take Quiz

@@ -71,6 +71,21 @@ export function getAllQuizzes(): Record<string, Quiz> {
   return quizzes
 }
 
+export function getNextModule(moduleId: string, track?: Track): Module | undefined {
+  const currentModule = getModule(moduleId)
+  if (!currentModule) return undefined
+
+  const effectiveTrack = track || currentModule.track
+  const trackModules = effectiveTrack === 'core'
+    ? getModules().filter(m => m.track === 'core')
+    : getModulesByTrack(effectiveTrack as Track)
+
+  const currentIndex = trackModules.findIndex(m => m.id === moduleId)
+  if (currentIndex === -1 || currentIndex >= trackModules.length - 1) return undefined
+
+  return trackModules[currentIndex + 1]
+}
+
 export function getTrackInfo(track: Track): { title: string; description: string } {
   const trackInfo: Record<Track, { title: string; description: string }> = {
     core: {

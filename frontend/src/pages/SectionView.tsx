@@ -76,7 +76,7 @@ export default function SectionView() {
     if (nextSection) {
       navigate(`/module/${moduleId}/${nextSection.slug}`, { state: stateForSection })
     } else if (allSectionsWillBeComplete && quiz) {
-      navigate(`/quiz/${moduleId}`)
+      navigate(`/quiz/${moduleId}`, { state: fromTrack ? { fromTrack } : undefined })
     } else {
       navigate(`/module/${moduleId}`, { state: stateForModule })
     }

@@ -1,10 +1,12 @@
-import { useParams } from 'react-router-dom'
+import { useParams, useLocation } from 'react-router-dom'
 import { getModule, getQuiz } from '@/content'
 import Quiz from '@/components/Quiz'
 import { NotFound, BackLink } from '@/components/common'
 
 export default function QuizPage() {
   const { moduleId } = useParams<{ moduleId: string }>()
+  const location = useLocation()
+  const fromTrack = (location.state as { fromTrack?: string })?.fromTrack
 
   if (!moduleId) {
     return <NotFound title="Quiz Not Found" />
@@ -40,7 +42,7 @@ export default function QuizPage() {
         </p>
       </div>
 
-      <Quiz quiz={quiz} />
+      <Quiz quiz={quiz} moduleId={moduleId} fromTrack={fromTrack} />
     </div>
   )
 }

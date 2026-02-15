@@ -175,7 +175,7 @@ describe('SectionView', () => {
 
     fireEvent.click(screen.getByText('Take Quiz'))
     await waitFor(() => {
-      expect(mockNavigate).toHaveBeenCalledWith('/quiz/core')
+      expect(mockNavigate).toHaveBeenCalledWith('/quiz/core', { state: undefined })
     })
   })
 

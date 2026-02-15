@@ -1,18 +1,27 @@
-import { CheckCircle, XCircle, Award, RotateCcw, LogIn } from 'lucide-react'
+import { CheckCircle, XCircle, Award, RotateCcw, LogIn, ArrowRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import type { Quiz, QuizSubmissionResult } from '@/types'
+import type { Track } from '@/types'
 import { useAuth } from '@/auth/AuthProvider'
+import { getNextModule, getModule, getTrackInfo } from '@/content'
 
 interface QuizResultsProps {
   result: QuizSubmissionResult
   quiz: Quiz
+  moduleId: string
+  fromTrack?: string
   onRetry: () => void
   showSignInPrompt?: boolean
 }
 
-export default function QuizResults({ result, quiz, onRetry, showSignInPrompt }: QuizResultsProps) {
+export default function QuizResults({ result, quiz, moduleId, fromTrack, onRetry, showSignInPrompt }: QuizResultsProps) {
   const { login } = useAuth()
   const { score, passed, passing_score, results, certificate_eligible } = result
+
+  const currentModule = getModule(moduleId)
+  const nextModule = getNextModule(moduleId, fromTrack as Track | undefined)
+  const trackForNav = fromTrack || currentModule?.track
+  const trackInfo = trackForNav && trackForNav !== 'core' ? getTrackInfo(trackForNav as Track) : null
 
   return (
     <div className="space-y-8">
@@ -61,6 +70,46 @@ export default function QuizResults({ result, quiz, onRetry, showSignInPrompt }:
             </button>
           </div>
         )}
+      </div>
+
+      {/* Navigation */}
+      <div className="card p-6">
+        <div className="flex flex-col gap-3">
+          {passed && nextModule && (
+            <Link
+              to={`/module/${nextModule.id}`}
+              state={fromTrack ? { fromTrack } : undefined}
+              className="btn-primary inline-flex items-center justify-center gap-2"
+            >
+              Next Module: {nextModule.title}
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          )}
+          {passed && trackInfo && (
+            <Link
+              to={`/track/${trackForNav}`}
+              className={nextModule ? 'btn-secondary inline-flex items-center justify-center gap-2' : 'btn-primary inline-flex items-center justify-center gap-2'}
+            >
+              Back to {trackInfo.title}
+            </Link>
+          )}
+          {!passed && (
+            <Link
+              to={`/module/${moduleId}`}
+              state={fromTrack ? { fromTrack } : undefined}
+              className="btn-secondary inline-flex items-center justify-center gap-2"
+            >
+              Review Module
+            </Link>
+          )}
+          <Link
+            to={`/module/${moduleId}`}
+            state={fromTrack ? { fromTrack } : undefined}
+            className="text-sm text-gray-500 hover:text-gray-700 text-center"
+          >
+            Back to Module
+          </Link>
+        </div>
       </div>
 
       {/* Question Results */}
