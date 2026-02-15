@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { BookOpen, Award, CheckCircle } from 'lucide-react'
+import { BookOpen, Award, CheckCircle, ClipboardCheck } from 'lucide-react'
 import { useAuth } from '@/auth/AuthProvider'
 import { useProgress, useCertificates } from '@/hooks/queries'
 import { getModules, getTrackInfo } from '@/content'
@@ -72,8 +72,8 @@ export default function Dashboard() {
 
         <div className="card p-6">
           <div className="flex items-center gap-4">
-            <div className="p-3 bg-yellow-100 rounded-lg">
-              <Award className="w-6 h-6 text-yellow-600" />
+            <div className="p-3 bg-purple-100 rounded-lg">
+              <Award className="w-6 h-6 text-purple-600" />
             </div>
             <div>
               <p className="text-2xl font-bold text-bs-dark">
@@ -164,9 +164,9 @@ export default function Dashboard() {
                   const module = modules.find(m => m.id === item.moduleId)
                   return (
                     <div key={idx} className="flex items-center gap-3 text-sm">
-                      <Award className="w-4 h-4 text-blue-500 flex-shrink-0" />
+                      <ClipboardCheck className="w-4 h-4 text-blue-500 flex-shrink-0" />
                       <span className="text-bs-dark">
-                        Passed {module?.title || item.moduleId} quiz ({Math.round(item.score)}%)
+                        Passed "{module?.title || item.moduleId}" quiz ({Math.round(item.score)}%)
                       </span>
                       <span className="text-bs-dark55">
                         {new Date(item.date).toLocaleDateString()}
