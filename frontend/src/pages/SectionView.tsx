@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import { useParams, Link, useNavigate, useLocation } from 'react-router-dom'
 import { ArrowLeft, ArrowRight, CheckCircle } from 'lucide-react'
 import { getModule, getSectionContent, getQuiz } from '@/content'
@@ -6,6 +6,7 @@ import SectionContent from '@/components/SectionContent'
 import { useProgress, useMarkSectionComplete } from '@/hooks/queries'
 import { useAuth } from '@/auth/AuthProvider'
 import { NotFound, BackLink, SignInPrompt } from '@/components/common'
+import { useSectionReadTracker } from '@/hooks/useSectionReadTracker'
 
 export default function SectionView() {
   const { moduleId, sectionSlug } = useParams<{ moduleId: string; sectionSlug: string }>()
@@ -14,7 +15,14 @@ export default function SectionView() {
   const { token, isAuthenticated } = useAuth()
   const { progress } = useProgress()
   const markComplete = useMarkSectionComplete()
+  const contentRef = useRef<HTMLDivElement>(null)
   const fromTrack = (location.state as { fromTrack?: string })?.fromTrack
+
+  const isComplete = !!progress?.sections_completed.some(
+    s => s.module_id === moduleId && s.section_slug === sectionSlug
+  )
+
+  useSectionReadTracker(moduleId ?? '', sectionSlug ?? '', contentRef, isComplete)
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -45,10 +53,6 @@ export default function SectionView() {
 
   const nextSection = sectionIndex < module.sections.length - 1 ? module.sections[sectionIndex + 1] : null
   const isLastSection = !nextSection
-
-  const isComplete = progress?.sections_completed.some(
-    s => s.module_id === moduleId && s.section_slug === sectionSlug
-  )
 
   const completedSlugs = new Set(
     progress?.sections_completed
@@ -91,7 +95,7 @@ export default function SectionView() {
         className="mb-8"
       />
 
-      <div className="card p-8">
+      <div ref={contentRef} className="card p-8">
         <div className="flex items-center justify-between mb-6">
           <div>
             <p className="text-sm text-gray-500 mb-1">
