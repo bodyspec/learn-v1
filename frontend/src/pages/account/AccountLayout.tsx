@@ -1,8 +1,14 @@
-import { useState } from 'react'
-import { Navigate, Outlet } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import { Outlet } from 'react-router-dom'
 import { useAuth } from '@/auth/AuthProvider'
 import { LoadingSpinner } from '@/components/common'
 import AccountSidebar from './AccountSidebar'
+
+function LoginRedirect() {
+  const { login } = useAuth()
+  useEffect(() => { login() }, [login])
+  return <LoadingSpinner fullHeight />
+}
 
 export default function AccountLayout() {
   const { isAuthenticated, isLoading, sessionExpired } = useAuth()
@@ -13,7 +19,7 @@ export default function AccountLayout() {
   }
 
   if (!isAuthenticated && !sessionExpired) {
-    return <Navigate to="/" replace />
+    return <LoginRedirect />
   }
 
   return (

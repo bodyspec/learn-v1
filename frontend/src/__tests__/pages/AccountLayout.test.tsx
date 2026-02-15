@@ -2,9 +2,13 @@ import { describe, it, expect, vi, beforeEach } from 'vitest'
 import { render, screen } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
 
+const mockLogin = vi.fn()
+
 let mockAuthState = {
   isAuthenticated: true,
   isLoading: false,
+  sessionExpired: false,
+  login: mockLogin,
 }
 
 vi.mock('@/auth/AuthProvider', () => ({
@@ -23,19 +27,20 @@ function renderPage() {
 
 describe('AccountLayout', () => {
   beforeEach(() => {
-    mockAuthState = { isAuthenticated: true, isLoading: false }
+    mockLogin.mockReset()
+    mockAuthState = { isAuthenticated: true, isLoading: false, sessionExpired: false, login: mockLogin }
   })
 
   it('shows loading spinner when auth is loading', () => {
-    mockAuthState = { isAuthenticated: false, isLoading: true }
+    mockAuthState = { ...mockAuthState, isAuthenticated: false, isLoading: true }
     const { container } = renderPage()
     expect(container.querySelector('.animate-spin')).toBeInTheDocument()
   })
 
-  it('redirects when unauthenticated', () => {
-    mockAuthState = { isAuthenticated: false, isLoading: false }
+  it('triggers login redirect when unauthenticated', () => {
+    mockAuthState = { ...mockAuthState, isAuthenticated: false, isLoading: false }
     renderPage()
-    // Navigate component renders nothing visible
+    expect(mockLogin).toHaveBeenCalledOnce()
     expect(screen.queryByTestId('sidebar')).not.toBeInTheDocument()
   })
 

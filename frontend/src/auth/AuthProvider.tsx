@@ -83,7 +83,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, [])
 
   const login = () => {
-    keycloak.login()
+    keycloak.login({ redirectUri: window.location.href })
   }
 
   const logout = () => {
