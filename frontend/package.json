@@ -8,8 +8,9 @@
     "build": "tsc -b tsconfig.app.json && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "test": "vitest run --project unit",
-    "test:watch": "vitest --project unit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:storybook": "vitest run --config vitest.config.storybook.ts",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
