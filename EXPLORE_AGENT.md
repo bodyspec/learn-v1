@@ -52,6 +52,12 @@ You're free to explore however you like, but make sure these flows get covered. 
 
 - **Reset progress** — Sign back in, go to the account/profile area, and reset your learning progress. This leaves the test account clean for the next run. Verify the reset actually worked (dashboard should show no progress, certificates should be gone).
 
+## Known behaviors (NOT bugs)
+
+These are expected behaviors that may look like issues at Playwright speed but are invisible to real users:
+
+- **Auth state flash on navigation** — After signing in, every `page.goto()` briefly shows the unauthenticated UI (nav shows "Sign in", no progress, "Sign in to track your progress" banner). This is because the Keycloak JS adapter checks the SSO session via a hidden iframe, performs a silent token refresh, then calls `/api/v1/auth/me`, and finally React updates the UI. This whole flow takes a few hundred milliseconds — imperceptible to humans, but Playwright captures the intermediate state. **Do not report this as a bug.** If you need to verify authenticated state, wait for the `/api/v1/auth/me` API response to complete before checking the DOM.
+
 ## Safety rules
 
 - **Do NOT** visit any admin or internal routes
