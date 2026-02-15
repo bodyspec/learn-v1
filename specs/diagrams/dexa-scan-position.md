@@ -9,52 +9,55 @@ output_path: content/assets/diagrams/dexa-scan-position.svg
 
 ## Purpose
 
-Show a patient correctly positioned for a DEXA body composition scan. The viewer should understand the physical setup: patient lies supine on a padded table, scanner arm passes overhead from head to toe, arms at sides, feet slightly apart. This helps set expectations for anyone unfamiliar with the scanning process.
+Show a patient correctly positioned for a DEXA body composition scan using the Nana positioning protocol. The viewer should understand the physical setup: patient lies supine on a flat padded table, a narrow scanning arm passes overhead from head to toe, feet are 15 cm apart, and hands are in a blade/mid-prone position with a small gap from the trunk. This helps set expectations for anyone unfamiliar with the scanning process.
 
 ## Visual Layout
 
 **Canvas:** 800 x 500px, landscape orientation. Background: #F8F8F8.
 
-### Main Illustration (center, y: 100-410)
+**IMPORTANT — Scanner Appearance:** The DEXA scanner must look like a real clinical DEXA scanner (e.g., Hologic Horizon or GE Lunar iDXA). It has a long flat padded table and a narrow overhead detector arm on a cantilever that travels along the table. Do NOT draw a large rectangular frame, box, or archway around the patient. The scanner arm is a slim horizontal bar extending from a vertical support on one side of the table.
 
-A simplified **side-view / profile illustration** of the scanning setup:
+**IMPORTANT — Top-Down View:** This diagram should be a bird's-eye / top-down view looking down at the patient on the table. This perspective best shows the Nana positioning protocol details (hand placement, foot spacing, body alignment).
 
-**DEXA Table:**
-- A long horizontal rounded rectangle (width ~600px, height ~30px) positioned at approximately y: 300. Fill: #DFE2E2, stroke: #7C8D90 2px, rx: 6.
-- Two table legs: Vertical rectangles (20px wide, 80px tall) beneath the table at each end. Fill: #7C8D90, rx: 3.
+### Main Illustration (center)
 
-**Patient (supine side-view, simplified line art):**
-- Positioned lying on the table, head to the left.
-- **Head:** Circle (r: 25), positioned at the left end of the table, resting just above the table surface. Stroke: #1C3133 2.5px, no fill.
-- **Torso:** Rounded rectangle (~200px wide, ~40px tall), rx: 8. Stroke: #1C3133 2.5px, no fill.
-- **Legs:** Two slightly separated horizontal rectangles (~180px each, ~18px tall), rx: 6. Stroke: #1C3133 2.5px, no fill.
-- **Arms at sides:** A thin horizontal rectangle (~150px, ~10px tall) positioned slightly below the torso, representing arms resting alongside the body. Stroke: #1C3133 2px, no fill.
+**DEXA Table (top-down view):**
+- A long vertical rounded rectangle representing the padded scanning surface, centered on the canvas. Fill: #DFE2E2 with a slightly lighter interior representing the padding. Stroke: #7C8D90 2px, rx: 8.
+- The table should be approximately 500px tall and 200px wide, oriented vertically (head at top, feet at bottom).
 
-**Scanner Arm (C-arm gantry):**
-- Positioned above the patient, spanning a portion of the table width.
-- **Top bar:** Horizontal rectangle (200px wide, 20px tall) at y: ~100. Fill: #7C8D90, stroke: #1C3133 1.5px, rx: 6.
-- **Vertical supports:** Two vertical rectangles (20px wide, ~200px tall) connecting the top bar down toward the table level. Fill: #7C8D90, stroke: #1C3133 1.5px, rx: 4.
-- **Source/detector indicator:** A small circle (r: 8) centered on the top bar, fill: #69D994, stroke: #1C3133 1.5px. This represents the X-ray emitter.
-- Label above: "Scanner arm" in 11px #7C8D90.
+**Patient (top-down view, simplified outline figure):**
+- Centered on the table, head toward the top.
+- **Head:** Oval/circle at the top of the table. Stroke: #1C3133 2.5px, no fill.
+- **Torso:** Simplified torso shape, slightly wider at shoulders tapering to waist. Stroke: #1C3133 2.5px, no fill.
+- **Arms:** Positioned at the sides of the torso with a visible small gap (~3 cm equivalent) between the hands and the trunk. Hands should be in a "blade" position (mid-prone, fingers together, hand turned sideways like a karate chop — NOT open palms). Stroke: #1C3133 2px, no fill.
+- **Legs:** Two legs slightly apart, extending down the table. Stroke: #1C3133 2.5px, no fill.
+- **Feet:** Separated by a visible gap (15 cm apart).
 
-**Scan direction arrow:**
-- A horizontal arrow from left to right, positioned between the scanner arm and the patient. Stroke: #69D994, 2px, with arrowhead marker.
-- Label: "Scan direction (head to toe)" in 11px #69D994.
+**Scanner Arm (shown as a horizontal line crossing the patient):**
+- A thin horizontal bar crossing the width of the table at roughly mid-torso level, representing the current position of the scanning arm. Stroke: #7C8D90 3px.
+- A small indicator dot on the arm. Fill: #69D994.
+
+**Scan Direction Arrow:**
+- A single vertical arrow alongside the table pointing straight down (head to toe). Stroke: #69D994, 2px, with arrowhead at the bottom.
+- Label: "Scan direction (head to toe)" in 11px #69D994, placed next to the arrow.
+- Do NOT rotate the label text. Keep it horizontal.
 
 ### Annotations (positioned around the main illustration)
 
-- **Supine position note:** Leader line pointing to the patient's torso. Text: "Supine position, minimal clothing" in 12px #1C3133.
-- **Palms note:** Leader line to the arms. Text: "Palms flat at sides" in 12px #1C3133.
-- **Feet note:** Leader line to the end of the legs. Text: "Feet slightly apart" in 12px #1C3133.
+- **Hand position note:** Leader line to one hand. Text: "Blade hand position, 3 cm from trunk" in 12px #1C3133.
+- **Foot spacing note:** Leader line to the feet. Text: "Feet 15 cm apart" in 12px #1C3133.
+- **Body alignment note:** Text near the top: "Centrally aligned on table" in 12px #7C8D90.
 
-### Bottom Info (y: 420-490)
+### Bottom Info (y: 440-490)
 
-- **Scan time badge:** Centered rounded rectangle (240px x 40px), fill: #E5F6EB, stroke: #69D994 1.5px, rx: 8. Text inside: "Scan time: ~6-7 minutes" in 14px medium #1C3133.
+- **Scan time badge:** Centered rounded rectangle (240px x 36px), fill: #E5F6EB, stroke: #69D994 1.5px, rx: 8. Text inside: "Scan time: ~6-7 minutes" in 14px medium #1C3133.
 - **Radiation note:** Centered text below the badge: "Radiation exposure: ~1/10th of a chest X-ray" in 12px #7C8D90.
 
 ## Title
 
-"DEXA Scan Positioning" -- centered at top (y: 40), Poppins 22px bold, #1C3133.
+"DEXA Scan Positioning" -- centered at top (y: 30), Poppins 22px bold, #1C3133.
+
+**Subtitle:** "Nana positioning protocol" in 13px #7C8D90.
 
 ## Color Palette
 
@@ -62,14 +65,15 @@ A simplified **side-view / profile illustration** of the scanning setup:
 |---------|-------|-----|
 | Background | Light gray | #F8F8F8 |
 | Patient outline, primary text | BodySpec dark | #1C3133 |
-| Muted text, table legs, scanner arm | BodySpec dark55 | #7C8D90 |
-| Table surface, borders | BodySpec dark15 | #DFE2E2 |
-| Scan direction, source indicator, badge bg | Salad 100 / Salad 60 | #69D994 / #E5F6EB |
+| Muted text, scanner arm | BodySpec dark55 | #7C8D90 |
+| Table surface | BodySpec dark15 | #DFE2E2 |
+| Positioning aids, scan indicator | Salad 100 / Salad lighter | #69D994 / #E5F6EB |
 
 ## Typography
 
 - **Font family:** Poppins, system-ui, -apple-system, sans-serif.
 - **Title:** 22px, weight 700.
+- **Subtitle:** 13px, weight 400.
 - **Badge text:** 14px, weight 500.
 - **Annotations:** 11-12px, weight 400.
 
@@ -80,13 +84,20 @@ A simplified **side-view / profile illustration** of the scanning setup:
 
 ## Accessibility
 
-- **Alt text:** "Side-view diagram of DEXA scan positioning showing a patient lying supine on a padded table with arms at their sides and feet slightly apart, while a scanner arm passes overhead from head to toe. The scan takes approximately 6 to 7 minutes with radiation exposure about one-tenth of a chest X-ray."
-- **SVG title element:** "DEXA body composition scan patient positioning diagram."
-- **No color-only encoding:** All elements are outlined with distinct shapes and labeled with text. The scanner arm, patient, and table are visually distinct through shape and stroke weight, not just color.
+- **Alt text:** "Top-down diagram of DEXA scan positioning using the Nana protocol. A patient lies supine and centrally aligned on a padded table. Hands are in a blade position with a 3 centimeter gap from the trunk. Feet are 15 centimeters apart. A scanning arm passes overhead from head to toe. The scan takes approximately 6 to 7 minutes with radiation exposure about one-tenth of a chest X-ray."
+- **SVG title element:** "DEXA body composition scan patient positioning diagram using Nana protocol."
+- **No color-only encoding:** All elements are outlined with distinct shapes and labeled with text. Positioning aids are identified by both color and label.
 - **Contrast:** Primary annotations in #1C3133 on #F8F8F8 provide excellent contrast (~12:1). Secondary annotations in #7C8D90 meet AA for large text.
 
 ## Design Notes
 
-- The patient figure should be **gender-neutral** and **simplified** -- a line-art silhouette rather than a detailed illustration. Avoid any identifying features.
-- The scanner arm should look like a medical device, not menacing. Use soft rounded rectangles and the green accent for the source indicator.
-- Ensure there is visual space between the scanner arm and patient to avoid a "claustrophobic" feel.
+- The patient figure should be **gender-neutral** and **simplified** — a clean outline silhouette, not a detailed illustration. Avoid any identifying features.
+- The top-down perspective is chosen specifically to show the spatial relationships that define the Nana protocol: blade hand position with gap from trunk, foot separation distance, and central body alignment.
+- Do NOT draw foam blocks, paddles, or other positioning aids. Just show the body in the correct position.
+- Do NOT draw the scanner as a large frame, box, or archway. The scanning arm is a slim bar that crosses over the table.
+
+## Data Accuracy
+
+- Nana protocol: Feet 15 cm apart, hands in blade/mid-prone position with 3 cm gap from trunk (Nana et al., 2012).
+- Scan time: ~6-7 minutes for whole-body composition scan.
+- Radiation: ~1-10 μSv, approximately 1/10th of a chest X-ray (IAEA RPOP).
