@@ -1,4 +1,4 @@
-import { CheckCircle, XCircle, Award, RotateCcw, LogIn, ArrowRight } from 'lucide-react'
+import { CheckCircle, XCircle, Award, RotateCcw, LogIn, ArrowLeft, ArrowRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import type { Quiz, QuizSubmissionResult } from '@/types'
 import type { Track } from '@/types'
@@ -72,10 +72,34 @@ export default function QuizResults({ result, quiz, moduleId, fromTrack, onRetry
         )}
       </div>
 
-      {/* Navigation */}
-      <div className="card p-6">
-        <div className="flex flex-col gap-3">
-          {passed && nextModule && (
+      {/* Next Steps */}
+      <div>
+        <h3 className="text-xl font-semibold text-gray-900 mb-4">Next Steps</h3>
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
+          {/* Left: secondary back action */}
+          {((passed && nextModule) || !passed) && (
+            trackInfo ? (
+              <Link
+                to={`/track/${trackForNav}`}
+                className="btn-secondary inline-flex items-center justify-center gap-2"
+              >
+                <ArrowLeft className="w-4 h-4" />
+                Back to {trackInfo.title}
+              </Link>
+            ) : (
+              <Link
+                to={`/module/${moduleId}`}
+                state={fromTrack ? { fromTrack } : undefined}
+                className="btn-secondary inline-flex items-center justify-center gap-2"
+              >
+                <ArrowLeft className="w-4 h-4" />
+                Back to Module
+              </Link>
+            )
+          )}
+
+          {/* Right: primary forward action */}
+          {passed && nextModule ? (
             <Link
               to={`/module/${nextModule.id}`}
               state={fromTrack ? { fromTrack } : undefined}
@@ -84,31 +108,30 @@ export default function QuizResults({ result, quiz, moduleId, fromTrack, onRetry
               Next Module: {nextModule.title}
               <ArrowRight className="w-4 h-4" />
             </Link>
-          )}
-          {passed && trackInfo && (
+          ) : passed && !nextModule && trackInfo ? (
             <Link
               to={`/track/${trackForNav}`}
-              className={nextModule ? 'btn-secondary inline-flex items-center justify-center gap-2' : 'btn-primary inline-flex items-center justify-center gap-2'}
+              className="btn-primary inline-flex items-center justify-center gap-2"
             >
               Back to {trackInfo.title}
             </Link>
-          )}
-          {!passed && (
+          ) : passed && !nextModule ? (
             <Link
               to={`/module/${moduleId}`}
               state={fromTrack ? { fromTrack } : undefined}
-              className="btn-secondary inline-flex items-center justify-center gap-2"
+              className="btn-primary inline-flex items-center justify-center gap-2"
+            >
+              Back to Module
+            </Link>
+          ) : (
+            <Link
+              to={`/module/${moduleId}`}
+              state={fromTrack ? { fromTrack } : undefined}
+              className="btn-primary inline-flex items-center justify-center gap-2"
             >
               Review Module
             </Link>
           )}
-          <Link
-            to={`/module/${moduleId}`}
-            state={fromTrack ? { fromTrack } : undefined}
-            className="text-sm text-gray-500 hover:text-gray-700 text-center"
-          >
-            Back to Module
-          </Link>
         </div>
       </div>
 
