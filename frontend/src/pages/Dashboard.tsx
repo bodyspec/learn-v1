@@ -126,26 +126,55 @@ export default function Dashboard() {
       </div>
 
       {/* Recent Activity */}
-      {progress && progress.sections_completed.length > 0 && (
+      {progress && (progress.sections_completed.length > 0 || Object.keys(progress.quizzes_passed).length > 0) && (
         <div className="card p-6">
           <h2 className="text-lg font-semibold text-bs-dark mb-4">Recent Activity</h2>
           <div className="space-y-3">
-            {progress.sections_completed.slice(-5).reverse().map((section, idx) => {
-              const module = modules.find(m => m.id === section.module_id)
-              const sectionInfo = module?.sections.find(s => s.slug === section.section_slug)
-
-              return (
-                <div key={idx} className="flex items-center gap-3 text-sm">
-                  <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                  <span className="text-bs-dark">
-                    Completed "{sectionInfo?.title || section.section_slug}"
-                  </span>
-                  <span className="text-bs-dark55">
-                    {new Date(section.completed_at).toLocaleDateString()}
-                  </span>
-                </div>
-              )
-            })}
+            {[
+              ...progress.sections_completed.map(section => ({
+                type: 'section' as const,
+                date: section.completed_at,
+                section,
+              })),
+              ...Object.entries(progress.quizzes_passed).map(([moduleId, result]) => ({
+                type: 'quiz' as const,
+                date: result.passed_at,
+                moduleId,
+                score: result.score,
+              })),
+            ]
+              .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+              .slice(0, 5)
+              .map((item, idx) => {
+                if (item.type === 'section') {
+                  const module = modules.find(m => m.id === item.section.module_id)
+                  const sectionInfo = module?.sections.find(s => s.slug === item.section.section_slug)
+                  return (
+                    <div key={idx} className="flex items-center gap-3 text-sm">
+                      <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
+                      <span className="text-bs-dark">
+                        Completed "{sectionInfo?.title || item.section.section_slug}"
+                      </span>
+                      <span className="text-bs-dark55">
+                        {new Date(item.date).toLocaleDateString()}
+                      </span>
+                    </div>
+                  )
+                } else {
+                  const module = modules.find(m => m.id === item.moduleId)
+                  return (
+                    <div key={idx} className="flex items-center gap-3 text-sm">
+                      <Award className="w-4 h-4 text-blue-500 flex-shrink-0" />
+                      <span className="text-bs-dark">
+                        Passed {module?.title || item.moduleId} quiz ({Math.round(item.score)}%)
+                      </span>
+                      <span className="text-bs-dark55">
+                        {new Date(item.date).toLocaleDateString()}
+                      </span>
+                    </div>
+                  )
+                }
+              })}
           </div>
         </div>
       )}

@@ -8,7 +8,7 @@ let mockAuthState = {
 let mockProgressState = {
   progress: null as {
     sections_completed: Array<{ module_id: string; section_slug: string; completed_at: string }>
-    quizzes_passed: Record<string, boolean>
+    quizzes_passed: Record<string, { score: number; passed_at: string }>
   } | null,
   isLoading: false,
 }
@@ -88,7 +88,7 @@ describe('Dashboard', () => {
           { module_id: 'core', section_slug: '01', completed_at: '2026-01-01' },
           { module_id: 'core', section_slug: '02', completed_at: '2026-01-02' },
         ],
-        quizzes_passed: { core: true },
+        quizzes_passed: { core: { score: 90, passed_at: '2026-01-03' } },
       },
       isLoading: false,
     }
