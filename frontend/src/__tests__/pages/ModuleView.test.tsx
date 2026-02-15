@@ -122,6 +122,7 @@ describe('ModuleView', () => {
     }
     renderPage()
     expect(screen.getByText('Complete')).toBeInTheDocument()
+    expect(screen.queryByTestId('progress-indicator')).not.toBeInTheDocument()
   })
 
   it('shows "Take Quiz" button when quiz not passed', () => {

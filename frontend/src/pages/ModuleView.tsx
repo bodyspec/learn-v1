@@ -68,7 +68,7 @@ export default function ModuleView() {
           )}
         </div>
 
-        {isAuthenticated && (
+        {isAuthenticated && !hasPassed && (
           <div className="mt-6">
             <ProgressIndicator progress={progressPercent} />
           </div>
