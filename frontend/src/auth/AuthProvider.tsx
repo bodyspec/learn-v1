@@ -2,12 +2,14 @@ import { createContext, useContext, useEffect, useState, ReactNode } from 'react
 import Keycloak from 'keycloak-js'
 import type { User } from '@/types'
 import { apiClient } from '@/api/client'
+import SessionExpiredModal from './SessionExpiredModal'
 
 interface AuthContextType {
   user: User | null
   isAuthenticated: boolean
   isLoading: boolean
   token: string | null
+  sessionExpired: boolean
   login: () => void
   logout: () => void
 }
@@ -46,6 +48,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(null)
   const [token, setToken] = useState<string | null>(null)
   const [isLoading, setIsLoading] = useState(true)
+  const [sessionExpired, setSessionExpired] = useState(false)
 
   useEffect(() => {
     let cancelled = false
@@ -69,8 +72,10 @@ export function AuthProvider({ children }: { children: ReactNode }) {
           setToken(keycloak.token)
         }
       }).catch(() => {
-        console.error('Token refresh failed')
-        logout()
+        console.error('Token refresh failed — session expired')
+        setUser(null)
+        setToken(null)
+        setSessionExpired(true)
       })
     }
 
@@ -94,11 +99,13 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         isAuthenticated: !!user,
         isLoading,
         token,
+        sessionExpired,
         login,
         logout,
       }}
     >
       {children}
+      {sessionExpired && <SessionExpiredModal onSignIn={() => keycloak.login({ redirectUri: window.location.href })} />}
     </AuthContext.Provider>
   )
 }

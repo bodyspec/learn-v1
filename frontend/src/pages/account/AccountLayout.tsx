@@ -5,14 +5,14 @@ import { LoadingSpinner } from '@/components/common'
 import AccountSidebar from './AccountSidebar'
 
 export default function AccountLayout() {
-  const { isAuthenticated, isLoading } = useAuth()
+  const { isAuthenticated, isLoading, sessionExpired } = useAuth()
   const [sidebarOpen, setSidebarOpen] = useState(false)
 
   if (isLoading) {
     return <LoadingSpinner fullHeight />
   }
 
-  if (!isAuthenticated) {
+  if (!isAuthenticated && !sessionExpired) {
     return <Navigate to="/" replace />
   }
 

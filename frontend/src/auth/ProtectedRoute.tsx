@@ -6,7 +6,7 @@ interface ProtectedRouteProps {
 }
 
 export default function ProtectedRoute({ children }: ProtectedRouteProps) {
-  const { isAuthenticated, isLoading, login } = useAuth()
+  const { isAuthenticated, isLoading, sessionExpired, login } = useAuth()
 
   if (isLoading) {
     return (
@@ -16,7 +16,7 @@ export default function ProtectedRoute({ children }: ProtectedRouteProps) {
     )
   }
 
-  if (!isAuthenticated) {
+  if (!isAuthenticated && !sessionExpired) {
     return (
       <div className="flex flex-col items-center justify-center min-h-[50vh] space-y-4">
         <p className="text-gray-600">Please sign in to access this page.</p>
