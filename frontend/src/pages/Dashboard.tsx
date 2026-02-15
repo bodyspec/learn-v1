@@ -58,8 +58,8 @@ export default function Dashboard() {
 
         <div className="card p-6">
           <div className="flex items-center gap-4">
-            <div className="p-3 bg-green-100 rounded-lg">
-              <CheckCircle className="w-6 h-6 text-green-600" />
+            <div className="p-3 bg-blue-100 rounded-lg">
+              <ClipboardCheck className="w-6 h-6 text-blue-600" />
             </div>
             <div>
               <p className="text-2xl font-bold text-bs-dark">
