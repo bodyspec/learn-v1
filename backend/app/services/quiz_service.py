@@ -1,4 +1,3 @@
-from pathlib import Path
 from typing import Any
 from uuid import UUID
 
@@ -6,6 +5,7 @@ import yaml
 from sqlalchemy import and_, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
+from app.core.config import get_settings
 from app.models.quiz import QuizAttempt
 from app.schemas.quiz import (
     QuestionResult,
@@ -14,8 +14,6 @@ from app.schemas.quiz import (
     QuizSubmission,
     QuizSubmissionResult,
 )
-
-CONTENT_DIR = Path(__file__).parent.parent.parent.parent / 'content'
 
 # Track requirements: which modules must be passed for each track certificate
 TRACK_REQUIREMENTS = {
@@ -27,7 +25,7 @@ TRACK_REQUIREMENTS = {
 
 def load_quiz(module_id: str) -> dict[str, Any] | None:
     """Load quiz definition from YAML file."""
-    quiz_path = CONTENT_DIR / 'quizzes' / f'{module_id}.yaml'
+    quiz_path = get_settings().content_dir / 'quizzes' / f'{module_id}.yaml'
     if not quiz_path.exists():
         return None
     with open(quiz_path) as f:

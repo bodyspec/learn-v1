@@ -1,4 +1,3 @@
-from pathlib import Path
 from unittest.mock import patch
 
 import pytest
@@ -198,9 +197,6 @@ class TestGradeQuiz:
 class TestLoadQuiz:
     """Tests for loading quiz YAML files."""
 
-    CORRECT_CONTENT_DIR = Path(__file__).parent.parent.parent / 'content'
-
-    @patch('app.services.quiz_service.CONTENT_DIR', CORRECT_CONTENT_DIR)
     def test_load_core_quiz(self) -> None:
         """The core quiz file can be loaded."""
         quiz = load_quiz('core')
@@ -209,7 +205,6 @@ class TestLoadQuiz:
         assert quiz['passing_score'] == 80
         assert len(quiz['questions']) > 0
 
-    @patch('app.services.quiz_service.CONTENT_DIR', CORRECT_CONTENT_DIR)
     def test_load_nonexistent_quiz(self) -> None:
         """Loading a nonexistent quiz returns None."""
         quiz = load_quiz('nonexistent-module')

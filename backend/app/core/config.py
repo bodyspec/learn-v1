@@ -1,4 +1,5 @@
 from functools import lru_cache
+from pathlib import Path
 from typing import Literal
 
 from pydantic import SecretStr
@@ -42,6 +43,9 @@ class Settings(BaseSettings):
 
     # App Secret
     secret_key: SecretStr = SecretStr('dev-secret-key-change-in-production')
+
+    # Content directory (overridden via CONTENT_DIR env var in Docker)
+    content_dir: Path = Path(__file__).resolve().parent.parent.parent.parent / 'content'
 
     # Environment
     environment: Literal['development', 'production'] = 'development'

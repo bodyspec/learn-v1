@@ -54,7 +54,8 @@ USER appuser
 
 ENV PYTHONPATH=/app \
     PYTHONUNBUFFERED=1 \
-    STATIC_FILES_DIR=/app/static
+    STATIC_FILES_DIR=/app/static \
+    CONTENT_DIR=/app/content
 EXPOSE 8000
 
 CMD ["./prod.sh"]

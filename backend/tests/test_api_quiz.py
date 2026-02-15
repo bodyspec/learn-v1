@@ -1,17 +1,9 @@
-from pathlib import Path
-from unittest.mock import patch
-
 import pytest
 from httpx import AsyncClient
 
-CORRECT_CONTENT_DIR = Path(__file__).parent.parent.parent / 'content'
-
 pytestmark = pytest.mark.asyncio
 
-_patch_content = patch('app.services.quiz_service.CONTENT_DIR', CORRECT_CONTENT_DIR)
 
-
-@_patch_content
 async def test_submit_quiz_success(client: AsyncClient) -> None:
     """POST /api/v1/quiz/submit grades a quiz submission."""
     response = await client.post(
@@ -42,7 +34,6 @@ async def test_submit_quiz_success(client: AsyncClient) -> None:
     assert data['passed'] is True
 
 
-@_patch_content
 async def test_submit_quiz_failing(client: AsyncClient) -> None:
     """POST /api/v1/quiz/submit with wrong answers fails."""
     response = await client.post(
@@ -67,7 +58,6 @@ async def test_submit_quiz_failing(client: AsyncClient) -> None:
     assert data['score'] == 0
 
 
-@_patch_content
 async def test_submit_quiz_nonexistent_module(client: AsyncClient) -> None:
     """POST /api/v1/quiz/submit for unknown module returns 404."""
     response = await client.post(
@@ -90,7 +80,6 @@ async def test_get_attempts_empty(client: AsyncClient) -> None:
     assert data['passed'] is False
 
 
-@_patch_content
 async def test_get_attempts_after_submission(client: AsyncClient) -> None:
     """After submitting a quiz, attempts endpoint reflects it."""
     await client.post(
@@ -118,7 +107,6 @@ async def test_get_attempts_after_submission(client: AsyncClient) -> None:
     assert data['passed'] is True
 
 
-@_patch_content
 async def test_multiple_quiz_attempts(client: AsyncClient) -> None:
     """Multiple submissions are all tracked."""
     await client.post(
