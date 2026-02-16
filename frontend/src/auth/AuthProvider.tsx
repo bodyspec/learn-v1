@@ -87,9 +87,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }
 
   const logout = () => {
-    keycloak.logout()
-    setUser(null)
-    setToken(null)
+    authInitPromise = null
+    keycloak.logout({ redirectUri: window.location.origin })
   }
 
   return (
