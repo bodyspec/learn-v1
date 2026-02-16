@@ -8,21 +8,22 @@ A DEXA scan produces numerous metrics that together paint a comprehensive pictur
 
 Body fat percentage represents the proportion of total body weight that consists of fat tissue. It is the single most recognized body composition metric and provides context that total weight alone cannot: two people at the same weight can have vastly different body compositions, with very different implications for health and performance.
 
-The reference ranges below reflect population-level data and vary between men and women due to fundamental biological differences in essential fat requirements.
+The reference ranges below are derived from **616,000 DEXA scans** in the BodySpec database (347,000 male, 269,000 female) as of February 2026. Unlike traditional body fat categories—which were based on skinfold measurements and other indirect methods—these ranges reflect actual DEXA-measured body fat percentages. Each category corresponds to a percentile band: for example, "Athletic" means leaner than 85% of the scanned population, while "Average" spans the middle 35% of the distribution.
 
-![Body fat percentage ranges for men](/content/assets/diagrams/body-fat-ranges-male.png)
+![Body fat percentage ranges for men based on BodySpec DEXA data](/content/assets/diagrams/body-fat-ranges-male.png)
 
-![Body fat percentage ranges for women](/content/assets/diagrams/body-fat-ranges-female.png)
+![Body fat percentage ranges for women based on BodySpec DEXA data](/content/assets/diagrams/body-fat-ranges-female.png)
 
-| Category | Men | Women |
-|----------|-----|-------|
-| Essential fat | 2-5% | 10-13% |
-| Athletes | 6-13% | 14-20% |
-| Fitness | 14-17% | 21-24% |
-| Average | 18-24% | 25-31% |
-| Obese | 25%+ | 32%+ |
+| Category | Percentile Band | Men (DEXA) | Women (DEXA) |
+|----------|----------------|------------|--------------|
+| Essential fat | <1st percentile | Below 9% | Below 14% |
+| Athletic | 1st–15th | 9–16% | 14–24% |
+| Fitness | 15th–40th | 16–21% | 24–30% |
+| Average | 40th–75th | 21–29% | 30–38% |
+| Above Average | 75th–90th | 29–34% | 38–43% |
+| Obese | >90th | 34%+ | 43%+ |
 
-These ranges serve as general guidelines rather than rigid cutoffs. Individual context—including age, activity level, and health goals—should inform how a given body fat percentage is interpreted (ACSM, 2022)[^1].
+These ranges serve as general guidelines rather than rigid cutoffs. Because they are based on percentile distributions, they describe where an individual falls relative to the broader DEXA-scanned population. Individual context—including age, activity level, and health goals—should inform how a given body fat percentage is interpreted[^1].
 
 :::note
 Women naturally carry more essential fat due to reproductive functions. This is biological, not a sign of poor health.
@@ -114,7 +115,7 @@ Perhaps most importantly, changes over time are often more valuable than any sin
 
 ## References
 
-[^1]: American College of Sports Medicine. *ACSM's Guidelines for Exercise Testing and Prescription*. 11th ed. Wolters Kluwer; 2022.
+[^1]: Body fat percentage ranges derived from BodySpec's DEXA scan database of ~616,000 total body composition scans (~347,000 male, ~269,000 female) as of February 2026, ages 20–75. Percentile distributions computed from GE Lunar iDXA and GE Lunar Prodigy scanner results. Categories map descriptive labels to percentile bands for clinical and practical interpretation.
 [^2]: Neeland IJ, Ross R, Despres JP, et al. "Visceral and ectopic fat, atherosclerosis, and cardiometabolic disease: a position statement." *Lancet Diabetes Endocrinol*. 2019;7(9):715-725. doi:10.1016/S2213-8587(19)30084-1
 [^3]: Kaul S, Rothney MP, Peters DM, et al. "Dual-energy X-ray absorptiometry for quantification of visceral fat." *Obesity*. 2012;20(6):1313-1318. doi:10.1038/oby.2011.393
 [^4]: Bennett KA, et al. "Evaluation of visceral adipose tissue thresholds for elevated metabolic syndrome risk across diverse populations: A systematic review." *Obes Rev*. 2024;25(8):e13767. doi:10.1111/obr.13767

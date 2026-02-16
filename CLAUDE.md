@@ -43,9 +43,9 @@ learn-v1/
 │   ├── deep-dives/    # Optional deep-dive content
 │   ├── quizzes/       # Quiz definitions
 │   └── assets/        # Images, diagrams
-├── scripts/           # Helper scripts (diagram generation)
+├── scripts/           # Helper scripts (diagram generation, body-fat chart generator)
 ├── specs/             # Feature specs and diagram specs
-│   └── diagrams/      # PaperBanana diagram specs
+│   └── diagrams/      # Diagram specs (PaperBanana + HTML-generated)
 ├── e2e/               # Playwright E2E tests (standalone package)
 │   ├── tests/         # Test spec files + helpers
 │   └── playwright.config.ts

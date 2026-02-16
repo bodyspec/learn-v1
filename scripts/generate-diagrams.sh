@@ -18,8 +18,19 @@ SKIP=0
 
 mkdir -p "$OUTPUT_DIR"
 
+# Specs that are generated via dedicated scripts (not PaperBanana)
+SKIP_SPECS="body-fat-ranges-male body-fat-ranges-female"
+
 for spec in "$SPEC_DIR"/*.md; do
     name=$(basename "$spec" .md)
+
+    # Skip README and specs with dedicated generators
+    if [[ "$name" == "README" ]] || echo "$SKIP_SPECS" | grep -qw "$name"; then
+        echo "Skipping: $name (use dedicated generator)"
+        ((SKIP++))
+        continue
+    fi
+
     title=$(grep -m1 '^# ' "$spec" | sed 's/^# //')
     output="$OUTPUT_DIR/$name.png"
 

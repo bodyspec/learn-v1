@@ -59,6 +59,17 @@ output_path: content/assets/diagrams/sarcopenia-diagnostic-algorithm.svg
 
 Followed by sections describing purpose, visual layout, content/data, and style guidelines. The `output_path` in frontmatter is informational — the actual output path is set via the `--output` CLI flag.
 
+## HTML-generated diagrams
+
+Some diagrams are generated from HTML templates via Playwright instead of PaperBanana. This produces pixel-perfect, deterministic output that is consistent across regenerations.
+
+| Diagram | Generator |
+|---------|-----------|
+| `body-fat-ranges-male.png` | `node scripts/generate-body-fat-charts.mjs` |
+| `body-fat-ranges-female.png` | `node scripts/generate-body-fat-charts.mjs` |
+
+The corresponding spec files (`body-fat-ranges-male.md`, `body-fat-ranges-female.md`) are kept as reference documentation but are **not used for generation**. The batch script `generate-diagrams.sh` automatically skips these specs.
+
 ## Notes
 
 - The critic may approve on the first iteration, so `--iterations 2` is a reasonable default
