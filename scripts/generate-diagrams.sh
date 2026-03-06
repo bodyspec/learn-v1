@@ -34,7 +34,13 @@ for spec in "$SPEC_DIR"/*.md; do
     title=$(grep -m1 '^# ' "$spec" | sed 's/^# //')
     output="$OUTPUT_DIR/$name.png"
 
-    cmd="paperbanana generate --input \"$spec\" --caption \"$title\" --output \"$output\" --vlm-model gemini-3-flash-preview --iterations 2"
+    cmd="paperbanana generate \
+      --input \"$spec\" \
+      --caption \"$title\" \
+      --output \"$output\" \
+      --vlm-model gemini-3-pro-image-preview \
+      --image-model gemini-3.1-flash-image-preview \
+      --iterations 2"
 
     if $DRY_RUN; then
         echo "[DRY RUN] $cmd"

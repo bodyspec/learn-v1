@@ -13,17 +13,17 @@ Show how a DEXA scan divides the body into distinct anatomical regions for separ
 
 ## Visual Layout
 
-**Canvas:** 600 x 800px, portrait orientation. Background: #F8F8F8.
+**Canvas:** 600 x 800px, portrait orientation. Background: #F8F8F8. IMPORTANT: The content must fill the entire canvas edge-to-edge with minimal padding. Do not leave large empty margins or center a small diagram inside a large blank area.
 
 ### Main Illustration (center-left, x: 80-380, y: 80-700)
 
-A front-facing, full-body **gender-neutral human outline** drawn with clean line art:
+A front-facing, full-body **gender-neutral human silhouette** drawn with clean, minimal line art. The figure should be an abstract, simplified outline — no facial features, no hair, no chest definition, no gendered body shape. Think of a universal restroom sign or medical diagram mannequin. Straight shoulders, no curves suggesting male or female anatomy:
 
 **Head:**
-- Circle (r: ~35), positioned at top-center of the figure.
+- Small circle (r: ~20), positioned at top-center of the figure. The head should be proportionally small relative to the body — roughly 1/8 of the total figure height, matching realistic human proportions.
 - Fill: #DFE2E2 at 50% opacity (indicating it is measured but typically not a primary region of interest).
 - Stroke: #1C3133, 2px.
-- Label: "Head" in 11px #7C8D90, centered inside.
+- Label: "Head" in 11px #7C8D90, centered inside or just above.
 
 **Trunk:**
 - A path covering the torso from shoulders to hips.
@@ -133,6 +133,6 @@ A rounded rectangle with white fill and #DFE2E2 border containing:
 
 ## Design Notes
 
-- The body outline should be **anatomically neutral** -- avoid gendered features. Use a simplified, clean line-art style consistent with medical diagrams.
+- The body outline MUST be **completely gender-neutral** -- no facial features, no hair, no chest definition, no gendered curves. Use an abstract, simplified silhouette like a universal restroom sign or medical diagram mannequin. Use realistic human proportions: the head should be roughly 1/8 of total body height. Do NOT draw an oversized head.
 - Use slight opacity differences between left and right sides (e.g., left arm at 40%, right arm at 40% but different hue) to visually distinguish them while keeping the overall aesthetic cohesive.
 - The android/gynoid overlays within the trunk are secondary -- they should be visible but not dominant, since there is a separate dedicated diagram for those regions.
