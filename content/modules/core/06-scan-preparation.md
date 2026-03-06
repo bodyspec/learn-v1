@@ -2,6 +2,12 @@
 
 Getting consistent, accurate DEXA results starts before you arrive at the scanner. Following a few simple preparation guidelines ensures your scan captures a true snapshot of your body composition and that results are comparable across visits.
 
+:::case
+A 45-year-old man: Baseline VAT 155 cm², body fat 38%. Follow-up (post-flight, post-workout, dehydrated): Body fat 37.2%, VAT 151 cm². Physician prepares to call progress "minimal."
+
+**Clinical Question:** Could preparation factors fully account for this apparent plateau?
+:::
+
 ## Before Your Scan
 
 ![Scan preparation checklist](/content/assets/diagrams/scan-preparation-checklist.png)
@@ -66,6 +72,15 @@ The following checklist summarizes the key factors that ensure comparable result
 
 :::tip
 Perfect conditions aren't required for useful data — consistent conditions are. The goal is comparing apples to apples across visits so that real changes in body composition are distinguishable from preparation-related variability.
+:::
+
+:::takeaways
+1. **Preparation inconsistency can mask real progress.** Combined confounding factors may introduce 1–5% total error — exceeding real physiological changes at 3 months.
+2. **Hydration is the largest modifiable confounder.** Maintain normal intake. Avoid scanning post-illness, post-sauna, post-travel, or post-intense exercise.
+3. **Medications affecting fluid balance require consistency, not cessation.** Document diuretic, SGLT2i, and corticosteroid status at each scan visit.
+4. **Menstrual cycle phase introduces 1–2 lb lean mass variability.** Standardize to follicular phase when possible for longitudinal tracking in premenopausal women.
+5. **Post-travel scans should be deferred 24–48 hours.** Transcontinental travel produces hydration shifts that directly affect lean mass readings.
+6. **Morning, fasted, pre-exercise is the most reproducible protocol.** Document deviations explicitly. A non-standard scan is interpretable only when conditions are recorded.
 :::
 
 ## References

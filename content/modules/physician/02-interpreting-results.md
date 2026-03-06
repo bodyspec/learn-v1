@@ -2,6 +2,12 @@
 
 Clinical interpretation of DEXA body composition requires integrating multiple metrics with the patient's overall clinical picture. No single number drives a clinical decision—rather, the combination of body composition data, patient history, and clinical context together inform actionable recommendations.
 
+:::case
+A 54-year-old man, 6 months of caloric restriction, lost 18 lbs. DEXA: body fat 31% → 29.5%, lean mass down 5.2 kg (29% of weight lost), VAT unchanged at 134 cm², A/G ratio 1.2. Fasting insulin elevated, TG 182 mg/dL.
+
+**Clinical Question:** What does each metric reveal — and what do the lab correlations confirm?
+:::
+
 ## Framework for Interpretation
 
 ### Step 1: Review Key Metrics
@@ -94,7 +100,16 @@ Hormonal transitions produce predictable shifts in body composition that clinici
 
 ### Meaningful Changes
 
-Interpreting serial DEXA scans requires distinguishing genuine physiological changes from measurement variability. Changes are generally considered clinically significant when body fat percentage shifts by more than 2 percentage points, lean mass changes by more than 1 kilogram, or VAT changes by more than 20 square centimeters. Smaller changes may fall within the precision limits of the measurement and should be interpreted cautiously.
+Interpreting serial DEXA scans requires distinguishing genuine physiological changes from measurement variability. Not all scan-to-scan changes are clinically meaningful:
+
+:::thresholds
+| Metric | Threshold | Interpretation |
+|--------|-----------|----------------|
+| Body fat | > 2 percentage points | Clinically meaningful shift — adjust intervention |
+| Lean mass | > 1 kg | Warrants investigation; adjust protein/exercise Rx |
+| VAT | > 20 cm² | True physiological change; reassess risk category |
+| ALM change | < 500g | Within LSC — not interpretable as change |
+:::
 
 ### Trend Analysis
 
@@ -111,6 +126,15 @@ DEXA body composition findings gain additional clinical power when integrated wi
 | Rapid muscle loss | ↑ CRP, ↓ IGF-1 |
 
 When DEXA findings and lab values align, the clinical picture is strengthened. When they diverge—for example, low lean mass with normal albumin—the discrepancy itself provides useful clinical information and may warrant further investigation.
+
+:::takeaways
+1. **Weight loss quality — not quantity — determines metabolic and functional outcome.** Lean mass loss exceeding 25% of total weight lost is concerning. At 29%, this patient's loss composition requires intervention adjustment.
+2. **VAT area is the first metric to review on any DEXA report.** Unchanged VAT despite 18 lbs lost signals poor-quality weight loss. Redirect intervention toward VAT-targeted strategies.
+3. **The DEXA-lab correlation matrix strengthens interpretation.** Persistent elevated fasting insulin + TG despite weight loss confirms metabolic dysfunction tracking with unchanged VAT.
+4. **Clinically significant change thresholds prevent over-interpretation.** Body fat > 2 pp, lean mass > 1 kg, VAT > 20 cm². Changes below these thresholds are likely noise.
+5. **TOFI requires active identification.** Normal-weight patients with high VAT do not appear in aggregate reports. Clinician must actively review VAT on every scan.
+6. **Trend analysis across ≥ 3 scans is more reliable than single comparisons.** A plateau in VAT across 3 scans while other metrics improve changes the clinical picture and intervention priorities.
+:::
 
 ## References
 

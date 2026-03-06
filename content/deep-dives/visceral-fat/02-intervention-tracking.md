@@ -4,6 +4,12 @@
 
 Serial DEXA scans provide objective tracking of visceral fat changes during interventions. Because VAT is one of the most responsive fat depots to lifestyle and pharmacological interventions, tracking changes over time provides both clinical insight and patient motivation. This section covers what interventions reduce VAT, what to expect, and how to interpret trends.
 
+:::case
+A 61-year-old man, metabolic syndrome, baseline VAT 178 cm². After 3 months: 180 min/week walking, Mediterranean diet, alcohol reduced from 14 to 3 drinks/week. Scale weight down only 4 lbs. He is frustrated. DEXA: VAT now 143 cm² (20% reduction). Lean mass unchanged.
+
+**Clinical Question:** How do you counsel him — and what does this pattern reveal about intervention quality?
+:::
+
 ## What Reduces VAT?
 
 VAT is preferentially mobilized during weight loss—it is generally the first fat depot to shrink and responds to intervention more dramatically than subcutaneous fat. This is good news for metabolic health, as it means that even modest lifestyle changes can produce meaningful reductions in metabolic risk.
@@ -152,6 +158,16 @@ Effective patient communication around VAT tracking:
 ## Summary
 
 Visceral fat is uniquely responsive to intervention, making it one of the most rewarding metrics to track with serial DEXA scans. Exercise—particularly aerobic exercise—produces the most reliable non-pharmacological VAT reduction, while dietary modifications and medications provide additional tools. Clinical monitoring every 3-6 months provides the data needed to assess intervention effectiveness, maintain patient motivation, and guide treatment adjustments. The preferential mobilization of visceral fat during weight loss means that even modest lifestyle changes can produce clinically meaningful reductions in metabolic risk.
+
+:::takeaways
+1. **VAT reduction exceeding proportional weight loss is a favorable intervention signature.** When visceral fat drops more than the percentage of total weight lost, it confirms preferential visceral mobilization.
+2. **Aerobic exercise is the most effective non-pharmacological VAT intervention.** 150 min/week of moderate intensity produces 10–20% VAT reduction in 12–16 weeks, even without meaningful weight change.
+3. **GLP-1 receptor agonists produce the largest pharmacological VAT reductions: 20–35% at 6 months.** Body composition monitoring during GLP-1 therapy is mandatory to detect disproportionate lean mass loss.
+4. **VAT changes below 10% on DEXA are within measurement variability.** Only changes exceeding ~10% of VAT area should be interpreted as true physiological response.
+5. **Alcohol is an underemphasized modifiable VAT driver.** Even 1–2 drinks/day in susceptible individuals contributes to visceral accumulation.
+6. **VAT increasing while weight is stable or falling is a red flag for secondary causes.** Evaluate for Cushing's syndrome, corticosteroids, certain antipsychotics, severe sleep deprivation.
+7. **Sleep deprivation and chronic stress are independent, modifiable VAT drivers.** Fewer than 6 hours/night and sustained cortisol elevation promote preferential visceral fat deposition.
+:::
 
 ## References
 

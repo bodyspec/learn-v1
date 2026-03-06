@@ -94,6 +94,137 @@
   @apply bg-salad-60 border-bs-dark text-bs-dark;
 }
 
+/* Clinical block styles */
+.callout-block {
+  @apply my-6 rounded-lg overflow-hidden;
+}
+
+.callout-block-header {
+  @apply flex items-center gap-2 px-4 py-2.5 text-xs font-semibold uppercase tracking-wider;
+}
+
+.callout-block-body {
+  @apply px-4 py-3;
+}
+
+/* Clinical Case */
+.callout-case {
+  @apply bg-bs-dark3 border border-bs-dark15;
+}
+
+.callout-case .callout-block-header {
+  @apply text-bs-dark border-b border-bs-dark15;
+}
+
+.callout-case .callout-block-body p {
+  @apply text-bs-dark;
+}
+
+.clinical-question {
+  @apply mt-3 px-4 py-3 bg-salad-60 border-l-4 border-salad-100 rounded-r-md;
+}
+
+.clinical-question p {
+  @apply my-0 text-bs-dark;
+}
+
+/* Clinical Takeaways */
+.callout-takeaways {
+  @apply bg-white border border-salad-100;
+}
+
+.callout-takeaways .callout-block-header {
+  @apply bg-salad-60 text-bs-dark border-b border-salad-100;
+}
+
+.callout-takeaways .callout-block-body ol {
+  @apply list-none pl-0 my-0;
+  counter-reset: takeaway;
+}
+
+.callout-takeaways .callout-block-body ol li {
+  @apply text-sm leading-relaxed py-3 my-0 border-b border-bs-dark15 relative;
+  counter-increment: takeaway;
+  padding-left: 2.5rem;
+}
+
+.callout-takeaways .callout-block-body ol li:last-child {
+  @apply border-b-0;
+}
+
+.callout-takeaways .callout-block-body ol li::before {
+  content: counter(takeaway);
+  @apply absolute left-0 flex items-center justify-center w-6 h-6 rounded-full bg-salad-100 text-white text-xs font-bold;
+  top: 0.85rem;
+}
+
+.takeaways-collapsed .callout-block-body ol li:nth-child(n+4) {
+  @apply hidden;
+}
+
+.takeaways-toggle {
+  @apply block w-full px-4 py-2 text-sm font-medium text-salad-100 bg-salad-60 hover:bg-salad-70 border-t border-salad-100 cursor-pointer transition-colors;
+}
+
+/* Red Flags */
+.callout-redflag {
+  @apply bg-red-50 border border-red-300;
+}
+
+.callout-redflag .callout-block-header {
+  @apply bg-red-100 text-red-700 border-b border-red-300;
+}
+
+.callout-redflag .callout-block-body {
+  @apply text-red-900;
+}
+
+.callout-redflag .callout-block-body ul {
+  @apply my-0;
+}
+
+.callout-redflag .callout-block-body li {
+  @apply text-red-900;
+}
+
+/* Clinical Thresholds */
+.callout-thresholds {
+  @apply bg-stone-50 border border-stone-200;
+}
+
+.callout-thresholds .callout-block-header {
+  @apply bg-stone-100 text-stone-700 border-b border-stone-200;
+}
+
+.callout-thresholds .callout-block-body {
+  @apply p-0;
+}
+
+.callout-thresholds .callout-block-body > div {
+  @apply my-0;
+}
+
+.callout-thresholds .callout-block-body table {
+  @apply my-0 border-0 rounded-none;
+}
+
+.callout-thresholds .callout-block-body th {
+  @apply bg-stone-50 text-stone-600 border-b border-stone-200;
+}
+
+.callout-thresholds .callout-block-body td {
+  @apply text-stone-900 border-t border-stone-100;
+}
+
+/* Prose overrides inside clinical blocks */
+.callout-block .callout-block-body p:first-child {
+  @apply mt-0;
+}
+
+.callout-block .callout-block-body p:last-child {
+  @apply mb-0;
+}
+
 /* Footnote styles for markdown content */
 .footnotes {
   @apply mt-8 pt-4 border-t border-bs-dark15 text-sm text-bs-dark55;

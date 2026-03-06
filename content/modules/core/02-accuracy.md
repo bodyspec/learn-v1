@@ -2,6 +2,12 @@
 
 Understanding DEXA's accuracy is essential for properly interpreting results and counseling patients or clients. DEXA is considered the clinical gold standard for body composition assessment, but like all measurement methods, it has precision bounds.
 
+:::case
+A 38-year-old male athlete's follow-up DEXA reads 18.2% body fat — up from 17.8%. He is frustrated. However, the baseline was fasted/rested; this scan was post-workout.
+
+**Clinical Question:** What scan conditions must be verified before interpreting a change?
+:::
+
 ## Precision vs. Accuracy
 
 Two distinct concepts define measurement quality. Precision, also called reproducibility, refers to how consistently the same result is obtained when measuring the same person multiple times—a highly precise method produces nearly identical numbers on repeat measurements. Accuracy refers to how close the measurement is to the true value—an accurate method captures what is actually there. DEXA excels in both areas when proper protocols are followed.
@@ -62,12 +68,31 @@ BIA (bioelectrical impedance) measurements from home scales can vary by 5% or mo
 
 DEXA has been validated against the most rigorous research-grade methods available. Four-compartment models, considered the most accurate approach for measuring body composition, confirm DEXA's accuracy for total body fat and lean mass. MRI validation studies demonstrate strong agreement for regional fat distribution measurements. CT scanning comparisons validate DEXA's visceral fat estimates, with DXA-derived visceral fat measurements correlating with CT at r² > 0.95 (Shepherd et al., 2017; Kaul et al., 2012)[^1][^5]. These studies consistently show that DEXA provides clinically accurate measurements suitable for both individual assessment and longitudinal tracking.
 
+These precision characteristics translate to practical thresholds for interpreting serial scans. Based on the CV ranges above, changes below certain magnitudes likely reflect measurement variability rather than true physiological change:
+
+:::thresholds
+| Metric | Change | Interpretation |
+|--------|--------|----------------|
+| Body fat | > 2 percentage points | Clinically meaningful shift — adjust intervention |
+| Lean mass | > 1 kg | Warrants investigation into cause; adjust protein/exercise Rx |
+| VAT | > 20 cm² | Represents true physiological change; reassess risk category |
+| ALM change | < 500g | Within measurement noise at 95% confidence — do not change Rx based on this alone |
+:::
+
 ## Best Practices for Accurate Scans
 
 Maximizing measurement consistency requires attention to a few straightforward practices. Scanning at the same time of day controls for diurnal variations in hydration and body weight. Maintaining similar hydration and meal status across visits eliminates the largest controllable sources of variability. Wearing minimal, consistent clothing ensures that external mass does not confound the measurement. Avoiding intense exercise for 24 hours prior prevents exercise-induced fluid shifts from affecting results. Using the same scanner when possible eliminates inter-machine variability from the comparison.
 
 :::tip
 For tracking changes over time, consistency in scan conditions is more important than achieving "perfect" conditions. The key is comparing apples to apples.
+:::
+
+:::takeaways
+1. **Scan conditions determine validity.** Hydration, recent exercise, meal timing, and positioning are the four controllable confounders. Inconsistency can exceed real physiological change.
+2. **DEXA precision is superior to alternatives.** ±1–2% error vs. ±4–8% for BIA — making DEXA the only method sensitive enough for meaningful individual tracking.
+3. **A 0.4 percentage-point body fat change is likely within measurement variability (CV 1–2%).** For appendicular lean mass, changes below ~500g may not reflect true change.
+4. **Consistency > perfection.** Same time of day, same fed/fasted state, same scanner, same technician protocol for valid serial comparison.
+5. **Visceral fat estimates are CT-validated.** Correlates with CT at r² > 0.95, allowing cardiometabolic risk assessment without high-radiation imaging.
 :::
 
 ## References

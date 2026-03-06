@@ -6,6 +6,12 @@
 
 Patients on GLP-1 medications who show concerning lean mass loss on DEXA—more than 30 to 40 percent of total weight lost coming from the lean compartment, or ALM trending toward sarcopenia thresholds—benefit from targeted evidence-based interventions that preserve muscle while maintaining the metabolic benefits of weight loss. The two most impactful strategies—protein optimization and resistance training—work synergistically and should be prescribed together whenever possible. This section provides practical guidance for implementing these strategies in clinical practice.
 
+:::case
+A 58-year-old man on semaglutide 2.4mg for 4 months: lost 22 lbs, 41% lean mass. ALMI declined 7.4 → 6.8 kg/m². Grip strength down 3 kg. Skipping breakfast due to nausea. Eating primarily crackers on injection days. No exercise program. He asks: "Should I stop the medication?"
+
+**Clinical Question:** Discontinuation is wrong. What are the three modifiable drivers — and how do you frame this conversation?
+:::
+
 ## Protein Optimization
 
 ### Why Protein Matters More During Pharmacological Weight Loss
@@ -157,6 +163,16 @@ Helping patients see the bigger picture strengthens adherence to both protein an
 ## Summary
 
 Preserving muscle during GLP-1 therapy requires a proactive, multi-pronged approach centered on protein optimization and resistance training. These interventions should be initiated early—ideally before or concurrent with medication start—rather than reactively after concerning DEXA findings. Serial DEXA monitoring provides objective feedback on the effectiveness of these strategies and guides clinical decision-making. When protein and exercise alone are insufficient, dose adjustments and specialist referrals provide additional tools to optimize weight loss composition. The goal is not to limit weight loss but to ensure that lost weight comes primarily from fat, preserving the muscle mass that supports long-term metabolic health and functional independence.
+
+:::takeaways
+1. **Protein optimization and resistance training must begin concurrently with GLP-1 therapy — not after lean mass loss is identified.** Reactive prescription is less effective than preventive co-prescription from day one.
+2. **Protein targets during GLP-1-assisted weight loss: 1.6–2.2 g/kg/day (adjusted body weight in obesity).** 25–40g leucine-rich protein per meal across 3–4 meals.
+3. **Resistance training reduces lean mass loss by ≥ 50% vs diet alone.** This is the most impactful single modifiable factor. Frame it as mandatory, not optional.
+4. **GLP-1 nausea timing creates predictable scheduling opportunities.** Nausea peaks 1–3 days post-injection. Schedule high-protein meals and training on non-injection days.
+5. **Medication discontinuation is last resort; dose pacing preferred if weight loss > 1–1.5%/week.** Stopping can be reframed as dose adjustment, buying time to optimize protein and exercise.
+6. **30% lean mass loss threshold → intensify. 40% over two periods → escalate.** These are clinical decision triggers, not passive observations.
+7. **Functional testing (grip, chair stand, gait speed) must accompany every DEXA review.** DEXA without functional context is incomplete.
+:::
 
 ## References
 

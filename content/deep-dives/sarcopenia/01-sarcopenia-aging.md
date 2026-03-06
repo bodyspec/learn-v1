@@ -2,6 +2,12 @@
 
 Sarcopenia—age-related loss of muscle mass and function—is a major factor in physical decline and loss of independence. The condition affects a substantial proportion of older adults and carries significant consequences for health outcomes, yet it remains underdiagnosed in clinical practice. Understanding how sarcopenia develops, how to identify it, and how to intervene is essential for healthcare providers working with aging populations.
 
+:::case
+A 72-year-old woman, second fall in 6 months. BMI 26. Grip strength 18 kg. Gait speed 0.75 m/s. DEXA: ALM/height² 5.2 kg/m², ALM/BMI 0.498. Protein intake ~0.7 g/kg/day. No structured exercise.
+
+**Clinical Question:** Diagnostic classification, confirmatory tests, intervention priority, and serial DEXA monitoring plan?
+:::
+
 ## Definition and Diagnosis
 
 ### What is Sarcopenia?
@@ -22,10 +28,14 @@ This stepwise approach prioritizes muscle strength as the entry criterion becaus
 
 DEXA-based cut-points provide objective thresholds for identifying low muscle mass. The two most widely used indices are appendicular lean mass normalized to height squared (ALM/height²) and appendicular lean mass normalized to BMI (ALM/BMI), each with sex-specific thresholds established by the EWGSOP2 consensus (Cruz-Jentoft et al., 2019)[^1].
 
-| Measure | Men | Women |
-|---------|-----|-------|
-| ALM/height² | <7.0 kg/m² | <5.5 kg/m² |
-| ALM/BMI | <0.789 | <0.512 |
+:::thresholds
+| Measure | Threshold | Interpretation |
+|---------|-----------|----------------|
+| Grip strength | < 27 kg (M) / < 16 kg (F) | Probable sarcopenia — initiate intervention immediately |
+| ALM/height² | < 7.0 (M) / < 5.5 (F) kg/m² | Confirmed sarcopenia by DEXA criterion |
+| ALM/BMI | < 0.789 (M) / < 0.512 (F) | Use in obesity where height normalization underestimates deficit |
+| Gait speed | < 0.8 m/s | Severe sarcopenia — highest fall/adverse outcome risk |
+:::
 
 The ALM/height² index is more commonly used in clinical practice, while the ALM/BMI index may provide better discrimination in individuals with obesity, where height-based normalization can underestimate the degree of muscle deficit.
 
@@ -104,6 +114,17 @@ Monitoring frequency should be tailored to clinical context and risk level. High
 ## Summary
 
 Sarcopenia is a prevalent, consequential condition that can be diagnosed with DEXA and functional testing. Early identification enables intervention with resistance training and nutrition optimization to preserve muscle mass, function, and independence.
+
+:::takeaways
+1. **Sarcopenia is a diagnosable disease — ICD-10 M62.84.** Document formally, not as "muscle weakness" or "deconditioning." Coding enables treatment authorization and outcome tracking.
+2. **Muscle strength, not mass, is the primary screening criterion.** Per EWGSOP2, low grip strength alone establishes probable sarcopenia. Do not wait for DEXA before initiating intervention.
+3. **DEXA cut-points are sex-specific and index-dependent.** ALM/height²: <7.0 kg/m² men, <5.5 kg/m² women. In obesity, use ALM/BMI (<0.789 men, <0.512 women).
+4. **Resistance training is the primary evidence-based treatment.** Effective even in adults >80 and those with frailty. Prescribe 2–3 sessions/week with progressive overload.
+5. **Protein targets for older adults exceed standard guidelines.** Minimum 1.0–1.2 g/kg/day; optimal 1.2–1.6 g/kg/day. 25–30g leucine-rich doses per meal to overcome anabolic resistance.
+6. **Gait speed < 0.8 m/s and failed chair stand are independent adverse outcome predictors.** Perform and document in clinic alongside DEXA.
+7. **Serial DEXA at 6–12 month intervals enables evidence-based management.** Early lean mass decline detected pre-symptomatically is the window for most effective intervention.
+8. **Anabolic resistance and inflammaging are the central pathophysiological mechanisms.** Assess modifiable amplifiers: physical inactivity, inadequate protein, vitamin D deficiency, chronic disease burden.
+:::
 
 ## References
 

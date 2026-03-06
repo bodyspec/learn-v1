@@ -2,6 +2,12 @@
 
 Body composition is surrounded by myths and misunderstandings. This section addresses the most common misconceptions.
 
+:::case
+A 41-year-old woman, 4 months into resistance training: Scale weight unchanged. Gym BIA: 22% body fat. DEXA: 28% body fat. Lean mass +1.8 kg. Fat mass −2.1 kg. She is considering stopping strength training.
+
+**Clinical Question:** What misconceptions are active — and how do you correct them?
+:::
+
 ## Common Misconceptions
 
 ### "Muscle weighs more than fat"
@@ -88,6 +94,15 @@ Individuals who have had significant recent radiation exposure, those undergoing
 ## Summary
 
 Understanding body composition requires moving beyond simplistic measures like weight and BMI. DEXA provides the detailed, accurate data needed for meaningful health assessment and tracking—but only when properly interpreted with an understanding of its capabilities and limitations.
+
+:::takeaways
+1. **BMI is an unreliable individual triage tool.** Fails to detect sarcopenic obesity, TOFI phenotype, and body recomposition. Do not use as a proxy for body composition.
+2. **BIA underestimates body fat by 5–8%.** A first DEXA often requires counseling recalibration, especially in patients previously relying on gym BIA devices.
+3. **Body recomposition is real: stable weight ≠ treatment failure.** Simultaneous fat loss and lean mass gain is a positive metabolic outcome. The scale obscures this entirely.
+4. **Very low body fat carries independent risk.** Screen for RED-S, hormonal disruption, and immune suppression. Low body fat is not inherently a goal.
+5. **Early "muscle loss" may reflect glycogen/water shifts.** Confirm with serial scans over 3+ months before adjusting resistance training prescription.
+6. **Pregnancy is an absolute contraindication.** Radiation is negligible in non-pregnant patients and should not be a barrier to scanning.
+:::
 
 ## References
 

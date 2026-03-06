@@ -4,6 +4,12 @@
 
 Visceral adipose tissue (VAT) is metabolically active fat stored deep within the abdominal cavity, surrounding the liver, intestines, pancreas, and other organs. Unlike subcutaneous fat—the fat you can pinch under your skin—visceral fat has direct and significant implications for metabolic health. This deep dive explores why VAT deserves special attention, how DEXA measures it, and what elevated VAT means for disease risk.
 
+:::case
+A 58-year-old South Asian woman, BMI 23.4, waist 33 inches — both "normal." Fasting glucose 101, TG 168, HDL 44. Post-menopausal, sedentary. DEXA: VAT 147 cm², body fat 34%, A/G ratio 1.1. Standard screening cleared her. DEXA did not.
+
+**Clinical Question:** Why does her VAT drive metabolic risk disproportionate to BMI — and what does 147 cm² mandate?
+:::
+
 ## Why VAT Matters More Than Total Body Fat
 
 ![VAT disease pathways](/content/assets/diagrams/vat-disease-pathways.png)
@@ -73,12 +79,14 @@ The VAT area measurement is the most commonly used for clinical risk stratificat
 
 ### VAT Thresholds
 
-| Level | VAT Area (cm²) | Interpretation |
-|-------|-----------------|----------------|
-| Normal | <100 | Low metabolic risk; maintain current habits |
-| Elevated | 100-160 | Moderate risk; lifestyle intervention recommended |
-| High | >160 | High risk; structured intervention indicated |
-| Severely elevated | >200 | Very high risk; comprehensive medical evaluation warranted |
+:::thresholds
+| Level | VAT Area (cm²) | Action |
+|-------|-----------------|--------|
+| Normal | <100 | Low metabolic risk — maintain current habits |
+| Elevated | 100–160 | Counsel, lifestyle optimization, intensify monitoring |
+| High | >160 | Structured intervention — formal lifestyle/pharmacological plan required |
+| Severely elevated | >200 | Comprehensive medical evaluation — rule out secondary causes, consider pharmacotherapy |
+:::
 
 *The 100 cm² threshold is widely established in metabolic research. A systematic review found thresholds of approximately 100 cm² for metabolic syndrome risk, though optimal cutoffs vary by sex, ethnicity, and age (Bennett et al., 2024).*[^3]
 
@@ -178,6 +186,16 @@ VAT assessment adds less value for:
 ## Summary
 
 Visceral adipose tissue is a metabolically active fat depot with disproportionate impact on disease risk. Unlike subcutaneous fat, VAT drives inflammation, insulin resistance, and liver dysfunction through its unique anatomical position draining directly into the portal circulation. DEXA provides a validated, non-invasive method for quantifying VAT that surpasses BMI and waist circumference in clinical utility. Identifying elevated VAT enables targeted intervention in patients whose metabolic risk would otherwise be underestimated, particularly those with normal weight but unfavorable fat distribution.
+
+:::takeaways
+1. **VAT drives metabolic risk through portal circulation.** Free fatty acids drain directly into the portal vein → impaired hepatic insulin clearance → VLDL overproduction → NAFLD.
+2. **VAT is the strongest single adipose tissue predictor of insulin resistance.** Stronger than BMI, waist circumference, or total fat.
+3. **The TOFI phenotype is a high-priority clinical blind spot.** Normal-weight patients with metabolic abnormalities should be referred for VAT quantification. BMI-based screening will miss them.
+4. **Standard BMI cutoffs underestimate VAT risk in South Asian and East Asian patients.** Visceral fat accumulates at lower BMI thresholds.
+5. **Post-menopausal women experience accelerated VAT accumulation without weight gain.** Stable scale weight during menopausal transition does not exclude visceral fat accumulation.
+6. **VAT independently predicts CVD, T2DM, NAFLD, and several cancers.** Each disease association strengthens the case for VAT quantification.
+7. **VAT decreases before subcutaneous fat during lifestyle intervention.** Use early VAT reduction as a motivational tool even when scale weight has not yet changed.
+:::
 
 ## References
 

@@ -2,6 +2,12 @@
 
 Body composition assessment via DEXA provides clinically actionable data for a wide range of conditions. Understanding when and why to recommend DEXA scanning helps optimize patient care.
 
+:::case
+A 58-year-old woman with PCOS, HbA1c 6.1%, started on semaglutide. Baseline: weight 172 lbs, VAT 138 cm², ALMI 5.4 kg/m² (borderline low). 6 months later: lost 19 lbs. DEXA shows fat mass −11 lbs, lean mass −8 lbs, ALMI now 4.9 kg/m² (below sarcopenia cut-point). VAT 109 cm².
+
+**Clinical Question:** What does this pattern mandate — and what would have been invisible without serial DEXA?
+:::
+
 ## Primary Clinical Indications
 
 ![Clinical indications matrix](/content/assets/diagrams/clinical-indications-matrix.png)
@@ -71,6 +77,17 @@ Most DEXA tables accommodate patients up to approximately 350-400 pounds (varyin
 ## Ordering Considerations
 
 Effective use of DEXA body composition starts with how the recommendation is framed. Helping patients understand why composition matters beyond weight increases engagement and follow-through. Setting clear expectations—that the first scan establishes a baseline and the value increases with serial tracking—prepares patients for a longitudinal relationship with their data. Scan frequency should match clinical intensity: every 3 to 6 months during active interventions and annually for maintenance monitoring. Connecting results to specific health goals and interventions ensures that DEXA data drives clinical action rather than serving as an isolated data point.
+
+:::takeaways
+1. **GLP-1 therapy patients require serial DEXA monitoring — the ratio of fat to lean mass lost is the critical outcome.** Disproportionate lean mass loss during GLP-1-induced weight reduction is an emerging harm. DEXA at baseline and every 6 months is the minimum standard.
+2. **VAT quantification is the primary metabolic indication for DEXA.** Identifies "metabolically obese normal weight" patients missed by BMI, stratifies cardiometabolic risk independently, and provides an objective intervention response metric.
+3. **Sarcopenia screening via DEXA is indicated in adults ≥ 65, unexplained weight loss, functional decline, fall history, and chronic wasting diseases.** DEXA provides the ALMI measurements required for formal EWGSOP2 diagnostic criteria.
+4. **Endocrine disorders alter body composition before they alter body weight.** Baseline DEXA at diagnosis enables objective measurement of hormonal optimization effects.
+5. **Corticosteroid therapy increases VAT while decreasing lean mass simultaneously.** Requires DEXA monitoring — not just weight tracking. This dual adverse effect is invisible on the scale.
+6. **Bariatric surgery candidates and post-surgical patients require baseline and serial DEXA.** Lean mass preservation is the key quality metric during bariatric weight loss.
+7. **RED-S and Female Athlete Triad are DEXA indications in sports medicine contexts.** Low BMC + low lean mass + functional data constitute the diagnostic picture.
+8. **DEXA is contraindicated in pregnancy; defer after recent barium or nuclear medicine studies.** Communicate size limitations at referral time to prevent failed scan attempts.
+:::
 
 ## References
 

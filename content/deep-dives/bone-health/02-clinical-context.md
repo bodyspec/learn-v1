@@ -4,6 +4,12 @@
 
 Body composition DEXA provides whole-body bone mineral content (BMC) data alongside fat and lean mass measurements, offering a unique window into skeletal health during routine body composition assessment. While this whole-body BMC cannot diagnose osteoporosis—the WHO diagnostic criteria require site-specific measurements at the hip or spine—it creates valuable clinical opportunities. Understanding when and why to refer patients for clinical bone mineral density (BMD) testing, how body composition DEXA serves as an "opportunistic screening" tool, the evidence-based lifestyle factors that support bone health, and the increasingly recognized overlap between sarcopenia and osteoporosis enables providers to use body composition data as a meaningful clinical tool for identifying patients who need further evaluation and motivating actionable health behaviors.
 
+:::case
+A 63-year-old post-menopausal woman: BMC at 7th percentile (down from 11th, 14 months ago). ALMI 5.3 kg/m² (below 5.5 cut-point). No corticosteroids, no prior fractures, no prior clinical BMD scan. Physician is unsure whether body composition bone data is "actionable."
+
+**Clinical Question:** What are the referral indications — and what does FRAX calculation require that she doesn't have?
+:::
+
 ## When to Refer for Clinical BMD
 
 ### Screening Guidelines
@@ -42,6 +48,16 @@ The clinical value of opportunistic screening lies in reaching patients who woul
 :::
 
 **Provider responsibilities:** Never use body composition bone data to diagnose or rule out osteoporosis. A normal-appearing whole-body BMC does not exclude site-specific osteoporosis—the spine or hip could be low while the whole-body average appears acceptable. Use low BMC percentile as a prompt for conversation and potential referral, not as a clinical endpoint.
+
+:::thresholds
+| Indicator | Threshold | Action |
+|-----------|-----------|--------|
+| BMC percentile | < 10th for age/sex | Prompt clinical BMD referral conversation |
+| BMC trend | Declining across ≥2 serial scans | Refer for clinical BMD regardless of absolute percentile |
+| Corticosteroid use | ≥ 5mg/day for > 3 months | Independent referral indication — regardless of age or BMC |
+| Women without prior BMD | ≥ 65 years | Verify screening status at every DEXA encounter |
+| Low BMC + low ALMI | Osteosarcopenia | Compounded risk — expedite both bone and muscle intervention |
+:::
 
 ## Lifestyle Factors for Bone Health
 
@@ -132,6 +148,15 @@ Effective bone health communication follows several guiding principles. First, n
 ## Summary
 
 Body composition DEXA bone data serves a valuable clinical role as opportunistic screening—identifying patients who may benefit from clinical BMD evaluation but would not otherwise be assessed. The USPSTF 2025 guidelines recommend universal BMD screening for women 65 and older and risk-based screening for younger postmenopausal women, while the ISCD 2023 positions define the valid diagnostic sites that body composition DEXA cannot replace. Lifestyle interventions—weight-bearing exercise, resistance training, adequate calcium, vitamin D, and protein—support bone health through both direct metabolic effects and mechanical loading. The concept of osteosarcopenia highlights why body composition DEXA is uniquely valuable: it captures both muscle and bone status in a single scan, enabling providers to identify and address the compounding risk that neither measurement alone would reveal.
+
+:::takeaways
+1. **Whole-body BMC is NOT a valid diagnostic site for osteoporosis.** WHO T-score criteria require site-specific femoral neck, total hip, lumbar spine, or 33% radius.
+2. **FRAX calculation requires femoral neck BMD from a clinical scan.** Body composition bone data cannot enable fracture risk quantification or treatment thresholds.
+3. **Osteosarcopenia carries compounded risk beyond either condition alone.** Co-occurring low lean mass + low BMC confers 2.5x fracture risk, 1.66x mortality risk, and 1.62x fall risk.
+4. **USPSTF 2025 recommends universal BMD screening for women ≥ 65.** Body composition DEXA encounters should include standing verification: has this patient had a clinical BMD scan?
+5. **Declining BMC trend across serial scans is a referral trigger independent of percentile.** A patient moving 25th → 11th → 7th percentile over 18 months warrants clinical BMD referral.
+6. **A normal whole-body BMC does NOT exclude osteoporosis.** Site-specific deficits at spine or hip can be masked by adequate bone elsewhere.
+:::
 
 ## References
 

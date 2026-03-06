@@ -2,6 +2,12 @@
 
 DEXA body composition results can reveal findings that warrant further investigation or specialist referral. Recognizing these patterns ensures appropriate follow-up.
 
+:::case
+A 67-year-old man, statin use + treated hypothyroidism. Over 5 months: lean mass down 4.8 kg (8.2%), FFMI now 16.2, new 17% lean mass asymmetry between thighs (not present at baseline). Weight unchanged. TSH normal 8 months ago. Denies pain, illness, or dietary changes.
+
+**Clinical Question:** Three independent red flags are present. Rank by urgency, construct the differential, and specify the workup sequence.
+:::
+
 ## Metabolic Red Flags
 
 ![Red flags threshold gauges](/content/assets/diagrams/red-flags-thresholds.png)
@@ -18,9 +24,9 @@ VAT >200 cm² warrants aggressive intervention, particularly in younger patients
 
 ### Rapid Fat Accumulation
 
-**Finding:** >10% increase in fat mass over 3-6 months without intentional weight gain
+**Finding:** >10% increase in fat mass over 3-6 months without intentional weight gain, or VAT increasing while total weight is stable or falling
 
-Rapid unintentional fat accumulation raises concern for several underlying conditions. Endocrine dysfunction—particularly Cushing's syndrome and hypothyroidism—should be considered, along with medication effects, significant unrecognized lifestyle changes, and depression or other psychiatric conditions that affect eating behavior and activity levels. The clinical workup should include a detailed medication review, thyroid panel, morning cortisol if the clinical picture suggests hypercortisolism, and mental health screening.
+Rapid unintentional fat accumulation raises concern for several underlying conditions. Endocrine dysfunction—particularly Cushing's syndrome and hypothyroidism—should be considered, along with medication effects, significant unrecognized lifestyle changes, sleep disorders, and depression or other psychiatric conditions that affect eating behavior and activity levels. A particularly concerning pattern is rising VAT despite stable or declining total weight, which suggests catabolic redistribution—lean tissue is being lost while visceral fat accumulates. The clinical workup should include a detailed medication review, thyroid panel, morning cortisol if the clinical picture suggests hypercortisolism, and mental health screening.
 
 ## Sarcopenia Red Flags
 
@@ -105,6 +111,16 @@ Effective referral documentation should include the key DEXA metrics that prompt
 ## Summary
 
 Red flags on DEXA body composition warrant appropriate follow-up but should not cause alarm without clinical correlation. The goal is early identification of treatable conditions and appropriate specialist involvement when needed.
+
+:::takeaways
+1. **Rapid lean mass loss > 5% in 3–6 months without intentional caloric restriction is a red flag for occult malignancy or systemic illness.** Do not attribute to primary sarcopenia without ruling out malignancy, cachexia, and systemic disease first.
+2. **New limb asymmetry > 15% is more concerning than longstanding asymmetry.** New asymmetry at follow-up suggests a focal process — radiculopathy, peripheral nerve injury, or rapidly progressing myopathy.
+3. **The cachexia pattern signals serious underlying disease.** Weight-stable + lean mass loss = catabolism with compensatory fat gain. This is a distinct high-urgency clinical phenotype.
+4. **FFMI < 16 (men) / < 13 (women) indicates advanced sarcopenia.** Advanced sarcopenia at this level warrants aggressive multidisciplinary management, not incremental lifestyle adjustment.
+5. **VAT > 200 cm² warrants aggressive follow-up.** Evaluate for secondary causes: Cushing's syndrome, medication effects, sleep disorder.
+6. **Rapid fat accumulation > 10% requires endocrine workup.** Even in the absence of weight change, redistribution toward fat suggests endocrine pathology.
+7. **Referral documentation quality determines specialist efficiency.** Include specific DEXA metrics (ALM change, asymmetry %, FFMI, VAT) in the referral.
+:::
 
 ## References
 

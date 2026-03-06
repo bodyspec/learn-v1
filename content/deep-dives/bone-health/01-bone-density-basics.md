@@ -4,6 +4,12 @@
 
 DEXA technology is used for both body composition analysis and bone mineral density (BMD) measurement, but these are different scans with different clinical applications. Understanding this distinction is essential for healthcare providers and educators who work with DEXA data—knowing what body composition DEXA can and cannot tell you about bone health, when to recommend clinical BMD testing, and how to communicate these differences to patients.
 
+:::case
+A 67-year-old post-menopausal woman on long-term low-dose prednisone (RA). BMC percentile at 8th for age/sex. Serial scans over 18 months show consistent downward trend. 1.5 inches of height loss over a decade. Never had a clinical BMD scan.
+
+**Clinical Question:** What are the three referral indications — and what must you tell her about the scan type distinction?
+:::
+
 ## Two Types of DEXA Scans
 
 ![Body composition DEXA vs. clinical BMD DEXA](/content/assets/diagrams/bmd-vs-body-comp-dexa.png)
@@ -108,6 +114,16 @@ Interventions that build muscle (resistance training, adequate protein) also sup
 ## Summary
 
 Body composition DEXA provides valuable general information about bone mineral content, but it serves a fundamentally different purpose than clinical BMD testing for osteoporosis. Providers should understand this distinction to counsel patients appropriately: body composition bone data can identify individuals who may benefit from formal BMD screening, track longitudinal trends, and motivate bone-healthy lifestyle choices, but it cannot diagnose osteoporosis or guide osteoporosis treatment. When body composition DEXA reveals unexpectedly low or declining bone mineral, appropriate referral for site-specific clinical BMD testing ensures patients receive proper evaluation and care.
+
+:::takeaways
+1. **Body composition DEXA CANNOT diagnose osteoporosis — communicate this clearly.** T-scores require site-specific hip and spine protocols validated by WHO/ISCD criteria. Whole-body BMC cannot substitute for a diagnostic T-score.
+2. **BMC percentile below the 10th is a referral trigger, not a diagnosis.** Use it to prompt clinical BMD referral. Low percentile + risk factors substantially raises urgency.
+3. **Corticosteroid use > 3 months at prednisone ≥ 5mg/day is an independent indication for clinical BMD referral regardless of age.** Among the most commonly missed referral triggers in primary care.
+4. **Declining BMC trend across serial scans carries more clinical weight than any single reading.** Consistent downward movement over 2+ scans warrants investigation for accelerating bone loss.
+5. **Sarcopenia and osteoporosis co-occur as dysmobility syndrome.** Low lean mass + low BMC identifies patients at compounded fall and fracture risk. Address both simultaneously.
+6. **USPSTF recommends universal BMD screening for women ≥ 65.** Body composition DEXA encounters in this population should include a prompt to verify whether clinical BMD screening is current.
+7. **Resistance training and protein optimization prescribed for lean mass also stimulate bone formation.** Muscle-bone mechanotransduction means the sarcopenia prescription directly supports bone health.
+:::
 
 ## References
 

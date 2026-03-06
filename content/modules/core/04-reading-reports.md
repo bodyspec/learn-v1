@@ -2,6 +2,12 @@
 
 BodySpec reports are designed to present complex body composition data in an accessible, interactive format. Unlike traditional DEXA reports—which are typically static PDF printouts with tables of numbers—BodySpec delivers results through an [interactive web dashboard](https://www.bodyspec.com/sample-report) that makes it easier for both providers and clients to understand the data and track progress over time. This section walks through each component of the report.
 
+:::case
+A 52-year-old woman: Body fat 36%, VAT 142 cm², A/G ratio 1.2, right leg lean mass 14% lower than left. She says: "My overall numbers look okay, right?"
+
+**Clinical Question:** How do you redirect focus from the summary dashboard to clinically meaningful metrics?
+:::
+
 ## Report Overview
 
 ![BodySpec report anatomy](/content/assets/diagrams/report-anatomy.png)
@@ -39,8 +45,8 @@ BodySpec reports include a dedicated symmetry view that compares left versus rig
 
 This symmetry data is particularly useful for rehabilitation tracking, identifying compensation patterns, and monitoring unilateral training effects. Traditional DEXA reports often bury this data in tables, making it easy to overlook.
 
-:::clinical
-Significant asymmetries may indicate previous injury or surgical recovery, compensation patterns, unilateral training effects, or in extreme cases, neurological conditions.
+:::redflag
+Significant limb asymmetry (>10%) may indicate previous injury, surgical recovery, compensation patterns, or neurological conditions — warrants clinical evaluation.
 :::
 
 ## Visceral Fat Section
@@ -80,6 +86,15 @@ Percentiles provide context that absolute numbers cannot. Being at the 90th perc
 ## AI Assistant
 
 BodySpec reports include access to a 24/7 AI assistant that can help interpret results, explain metrics, and answer questions about the report. This is particularly useful for clients reviewing results on their own after a scan, for understanding what specific metrics mean in the context of their health, for getting context on how their results compare to population norms, and for identifying which areas to focus on for improvement. The AI assistant complements—but does not replace—professional guidance from healthcare providers and fitness professionals.
+
+:::takeaways
+1. **The summary dashboard is orientation, not interpretation.** VAT, A/G ratio, and asymmetry data require active clinician review — they are not prominent in most dashboard summaries.
+2. **Limb asymmetry > 10% is clinically significant.** May indicate injury, surgical compensation, or neurologic pathology. Warrants targeted history and examination.
+3. **VAT percentile adds precision beyond risk category.** Percentile context changes risk interpretation substantially, especially near threshold values.
+4. **Trend direction, magnitude, and consistency guide serial interpretation.** Three or more scans over 6+ months provide actionable insight. Do not over-interpret early changes.
+5. **1–2% short-term fluctuations are within precision bounds.** Counsel patients proactively to prevent discouragement from normal measurement variability.
+6. **Percentile rankings contextualize absolute numbers.** Lean mass at the 30th percentile is more actionable than raw kilograms without context.
+:::
 
 ## Common Questions
 

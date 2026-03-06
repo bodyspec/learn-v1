@@ -4,6 +4,12 @@
 
 Sarcopenia is treatable. Once identified through DEXA-based lean mass assessment and functional testing, the condition responds to targeted intervention—and the evidence is clear: structured resistance training combined with protein optimization can meaningfully improve muscle mass, strength, and function in older adults with sarcopenia. DEXA provides the objective monitoring data to evaluate progress, but interpreting serial scans requires an understanding of measurement precision and realistic timelines. This section equips providers with evidence-based protocols for exercise, nutrition, DEXA monitoring, and clinical decision-making during sarcopenia management.
 
+:::case
+A 76-year-old man with confirmed sarcopenia completes 12 weeks of supervised resistance training + protein 1.3 g/kg/day. DEXA ALM change: +310g (below LSC ~500g). Grip strength improved 4 kg. Gait speed improved to 0.86 m/s. Physician is uncertain whether to continue.
+
+**Clinical Question:** How do you reconcile sub-LSC DEXA findings with meaningful functional improvement?
+:::
+
 ## Evidence-Based Exercise
 
 ### Resistance Training Protocols
@@ -146,14 +152,14 @@ When interpreting serial DEXA alongside functional data, four patterns emerge. *
 
 The following findings during monitoring warrant further investigation and potential referral beyond primary care[^2][^10]:
 
-| Red Flag | Possible Cause | Action |
-|----------|---------------|--------|
-| ALM loss >1 kg in 6-12 months despite adherent intervention | Occult malignancy, cachexia, endocrine disorder | Full workup: labs (CK, TSH, testosterone, CMP), imaging |
-| Unexplained weight loss >5% in 6-12 months | Cancer, hyperthyroidism, depression, GI malabsorption | Comprehensive medical evaluation |
-| New-onset proximal weakness (difficulty rising from chair, lifting arms) | Inflammatory myopathy, statin myopathy, endocrine myopathy | CK, ESR/CRP, thyroid panel, medication review |
-| Asymmetric muscle loss | Neurological cause (stroke, neuropathy, radiculopathy) | Neurological referral |
-| Declining function despite gaining lean mass | Myopathy, neurological disease | Specialist referral |
-| Frequent falls (new or worsening) | Multifactorial—sarcopenia + other contributors | Fall risk assessment, PT referral |
+:::redflag
+- **ALM loss >1 kg in 6–12 months despite adherent intervention** — rule out occult malignancy, cachexia, endocrine disorder; full workup (CK, TSH, testosterone, CMP, imaging)
+- **Unexplained weight loss >5% in 6–12 months** — evaluate for cancer, hyperthyroidism, depression, GI malabsorption; comprehensive medical evaluation
+- **New-onset proximal weakness** (difficulty rising from chair, lifting arms) — consider inflammatory myopathy, statin myopathy, endocrine myopathy; check CK, ESR/CRP, thyroid panel, review medications
+- **Asymmetric muscle loss** — neurological cause likely (stroke, neuropathy, radiculopathy); neurological referral
+- **Declining function despite gaining lean mass** — suggests myopathy or neurological disease; specialist referral
+- **Frequent falls (new or worsening)** — multifactorial assessment; fall risk evaluation + PT referral
+:::
 
 :::warning
 Primary (age-related) sarcopenia is gradual, bilateral, and symmetric. It correlates with age, inactivity, and poor nutrition, and it responds to exercise and nutrition intervention. If a patient's muscle loss is rapid, asymmetric, or unresponsive to adherent intervention, consider secondary causes: cachexia (disease-associated wasting), endocrine disorders (hypothyroidism, hypogonadism, Cushing syndrome), inflammatory myopathy, drug-induced myopathy (statins affect 5-10% of users), or neuromuscular disease.
@@ -168,6 +174,19 @@ Referral beyond primary care is warranted when there is no improvement in streng
 ## Summary
 
 Sarcopenia management rests on two evidence-based pillars: structured resistance training (2-3 sessions per week, 60-80% 1RM, progressive overload) and protein optimization (1.2-1.5 g/kg/day, distributed as 25-30g per meal with adequate leucine). Creatine supplementation and vitamin D repletion provide additional benefit. Serial DEXA monitoring every 6-12 months quantifies lean mass changes, but providers must account for measurement precision—changes below approximately 500g may not reflect true change. Functional assessments (grip strength, gait speed, SPPB) complement DEXA by capturing the strength and performance improvements that typically precede measurable hypertrophy. When patients show red flags—rapid muscle loss, asymmetric loss, or failure to respond despite adherence—investigation for secondary causes and specialist referral are warranted.
+
+:::takeaways
+1. **Functional improvement precedes and is more reliable than DEXA lean mass change at 12 weeks.** Grip strength and gait speed gains are clinically meaningful even when ALM change is below the LSC. Sub-LSC ≠ treatment failure.
+2. **The Least Significant Change (LSC) threshold for ALM is ~500g.** Changes below this are within measurement noise at 95% confidence. Do not base intervention decisions on sub-LSC changes.
+3. **Resistance training at 60–80% 1RM with progressive overload is the only Level 1 evidence intervention.** 2–3x/week, 2–3 sets of 8–12 reps, minimum 12 weeks.
+4. **Protein dosing requires both daily total AND per-meal distribution.** 1.2–1.5 g/kg/day total; 25–30g per meal with 3–4g leucine.
+5. **ALM loss > 1 kg over 6–12 months despite adherent intervention is a red flag.** Occult malignancy, cachexia, inflammatory myopathy, endocrine disorder must be ruled out.
+6. **Asymmetric lean mass loss is a neurological red flag.** Bilateral symmetric loss is expected in primary sarcopenia. New asymmetry warrants neurological evaluation.
+7. **DEXA monitoring frequency should match the LSC timeline, not patient anxiety.** Serial DEXA before 6 months will not produce interpretable lean mass data.
+8. **GLP-1 therapy patients require accelerated DEXA surveillance.** Disproportionate lean mass loss during GLP-1-induced weight loss is an emerging concern. Use 6-month scan intervals.
+9. **Creatine 3–5g/day + resistance training produces additive lean mass gains of 0.9–1.3 kg.** Strong safety profile, negligible cost. Reasonable addition for motivated patients.
+10. **Refer after 3–6 months of non-response to adherent exercise and nutrition.** Do not continue indefinitely without escalating.
+:::
 
 ## References
 

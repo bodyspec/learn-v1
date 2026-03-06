@@ -2,6 +2,12 @@
 
 A DEXA scan produces numerous metrics that together paint a comprehensive picture of body composition. Understanding what each measurement represents—and its clinical significance—is essential for meaningful interpretation. This section walks through each key metric, explains why it matters, and provides reference ranges to contextualize individual results.
 
+:::case
+A 48-year-old male, BMI 24.8 (normal). Fasting glucose 108, TG 190. DEXA: Body fat 31%, VAT 148 cm², A/G ratio 1.3, FFMI 17.2.
+
+**Clinical Question:** Which metrics drive concern — in what order — and what is the next step?
+:::
+
 ## Primary Composition Metrics
 
 ### Body Fat Percentage
@@ -90,6 +96,7 @@ Clinical risk thresholds for VAT area help categorize metabolic risk based on th
 | Low | <100 cm² |
 | Moderate | 100-160 cm² |
 | High | >160 cm² |
+| Very High | >200 cm² |
 
 The 100 cm² threshold is widely established in clinical research as the point above which metabolic risk increases meaningfully (Kaul et al., 2012; Bennett et al., 2024)[^3][^4]. Individual risk depends on the full clinical picture, including age, sex, ethnicity, and comorbidities.
 
@@ -112,6 +119,16 @@ BodySpec full-body scans provide general BMD information but are not diagnostic 
 No single metric tells the complete story of body composition. The most meaningful interpretation emerges from considering multiple metrics in context: body fat percentage for overall composition, lean mass for metabolic and functional health, VAT for metabolic risk, the A/G ratio for fat distribution pattern, and regional data for symmetry and specific concerns. Each metric illuminates a different dimension of health, and together they provide a far more nuanced picture than any one measurement alone.
 
 Perhaps most importantly, changes over time are often more valuable than any single snapshot measurement. A trending decline in lean mass, a rising A/G ratio, or a dropping VAT level tells a story about health trajectory that a single scan cannot.
+
+:::takeaways
+1. **VAT is the highest-priority cardiometabolic metric.** 100 cm² marks a meaningful risk inflection. 160 cm² = structured intervention. 200 cm² = comprehensive medical evaluation.
+2. **A/G ratio reveals fat distribution risk beyond total fat.** Ratio ≥ 1.0 signals android predominance. Trend over time is more informative than any single value.
+3. **FFMI detects sarcopenia and "overfat" phenotypes BMI misses.** Declining FFMI during weight loss signals muscle catabolism requiring immediate intervention.
+4. **TOFI phenotype is a clinical blind spot.** Normal-weight patients with elevated VAT carry high metabolic risk. Do not be reassured by BMI alone.
+5. **Body fat categories are relative, not diagnostic.** Interpret in context of age, sex, and clinical goals. Absolute numbers need percentile context.
+6. **Lean body mass predicts metabolic resilience.** Preserving LBM is a primary goal during weight loss, not just a secondary concern.
+7. **Whole-body bone data is screening-level only.** Do not substitute for dedicated hip/spine DXA when osteoporosis diagnosis is the question.
+:::
 
 ## References
 

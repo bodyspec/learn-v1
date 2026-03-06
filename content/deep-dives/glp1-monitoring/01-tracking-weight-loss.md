@@ -6,6 +6,12 @@ GLP-1 receptor agonists (semaglutide, tirzepatide, liraglutide) have transformed
 
 DEXA body composition monitoring provides the objective data needed to evaluate weight loss quality during GLP-1 therapy and guide clinical decision-making.
 
+:::case
+A 61-year-old sedentary woman with T2DM, BMI 38, starts tirzepatide 15mg. No baseline DEXA. At 6 months: lost 28 lbs. Follow-up DEXA: fat mass −16 lbs, lean mass −12 lbs (43% of weight lost), ALMI 5.3 kg/m² (below 5.5 cut-point). Grip strength 19 → 15 kg. Reports fatigue and difficulty climbing stairs.
+
+**Clinical Question:** Three concurrent red flags are present. What are they, and what monitoring protocol would have prevented this?
+:::
+
 ## Why Body Composition Monitoring Matters
 
 ### The Muscle Loss Concern
@@ -72,6 +78,15 @@ A concerning pattern warrants clinical intervention. Red flags include more than
 Patients losing significant lean mass may need intervention adjustments, not medication discontinuation. The metabolic benefits of fat loss often outweigh lean mass concerns, but the trajectory must be managed.
 :::
 
+:::thresholds
+| Metric | Threshold | Action |
+|--------|-----------|--------|
+| Lean mass % of total weight lost | < 25% | Favorable — continue current protocol |
+| Lean mass % of total weight lost | 25–35% | Acceptable — optimize protein and exercise adherence |
+| Lean mass % of total weight lost | > 35–40% | Concerning — intensify protein, resistance training, consider dose pacing |
+| Lean mass % over two periods | > 40% | Escalate — consider dose reduction or specialist referral |
+:::
+
 ### Contextualizing the Numbers
 
 Not all lean mass loss during GLP-1 therapy represents actual muscle loss, and understanding this distinction prevents overreaction to early DEXA results. Reduced food intake leads to smaller gastrointestinal organ mass, which DEXA measures as lean tissue. Reduced carbohydrate intake depletes muscle glycogen stores and the associated intracellular water, both of which register as lean mass on DEXA. Additionally, very overweight individuals carry extra lean mass to support their body weight, and some reduction in this "structural" lean tissue is expected and appropriate as body weight decreases.
@@ -119,6 +134,17 @@ Setting appropriate expectations from the beginning of treatment helps patients 
 ## Summary
 
 GLP-1 medications produce transformative weight loss, but the composition of that loss determines long-term outcomes. DEXA monitoring provides objective data to assess whether patients are losing primarily fat while preserving muscle. A structured monitoring protocol with baseline and periodic follow-up scans enables early identification of concerning lean mass loss and timely intervention. The goal is not to limit weight loss but to optimize its quality through concurrent nutrition and exercise strategies.
+
+:::takeaways
+1. **Baseline DEXA before or within 2 weeks of GLP-1 initiation is mandatory.** Without a baseline, the trajectory cannot be confirmed.
+2. **Lean mass percentage of total weight lost is the key GLP-1 monitoring metric.** Favorable: < 25%. Acceptable: 25–35%. Concerning: > 35–40%.
+3. **Resistance training + protein 1.2–1.6 g/kg/day must begin concurrently with GLP-1 initiation.** These are not optional adjuncts — they are the primary countermeasures against disproportionate lean mass loss.
+4. **Older adults require 3-month DEXA + functional testing during GLP-1 therapy.** Standard 6-month intervals are insufficient for older adults with borderline-low ALMI at baseline.
+5. **Early lean mass loss may overestimate true muscle loss.** Initial decline may reflect glycogen and water rather than contractile tissue. Confirm with ≥2 serial scans.
+6. **Weight regain post-GLP-1 discontinuation is predominantly fat.** Patients who lost significant lean mass will have a worse body composition at regain than at baseline.
+7. **Slower titration is appropriate if weight loss > 1%/week.** Rapid weight loss accelerates lean mass loss. Titration pace should be adjusted to protect body composition.
+8. **Post-bariatric patients on GLP-1 require intensified monitoring.** Pre-existing lean mass deficits compound the risk of GLP-1-induced muscle loss.
+:::
 
 ## References
 

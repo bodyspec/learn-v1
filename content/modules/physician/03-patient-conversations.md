@@ -2,6 +2,12 @@
 
 Communicating DEXA results effectively requires translating complex metrics into actionable insights that motivate behavior change without causing undue anxiety.
 
+:::case
+A 48-year-old woman, 3 months into caloric restriction + walking. "I've only lost one pound. This isn't working." DEXA: Fat mass −3.2 lbs, lean mass +1.8 lbs, VAT 128 → 109 cm², A/G ratio 1.18 → 1.05. HbA1c 5.9% → 5.6%.
+
+**Clinical Question:** Every meaningful clinical marker improved. The scale did not. How do you structure this conversation?
+:::
+
 ## Principles of Communication
 
 ![Patient conversation framework](/content/assets/diagrams/conversation-framework.png)
@@ -113,6 +119,16 @@ Follow-up DEXA results guide clinical decision-making about whether to continue 
 | Fat loss + muscle loss | Increase protein, add resistance training |
 | No fat loss despite adherence | Review diet accuracy, consider metabolic factors |
 | Muscle gain, no fat loss | Good progress, continue |
+
+:::takeaways
+1. **Lead with context before numbers — always.** Before showing any metric, explain what the patient was measuring vs. what their body was actually doing. Frame the narrative first.
+2. **The scale-vs-DEXA discordance conversation is the highest-stakes communication moment.** Losing this patient to non-adherence at the moment the intervention is working is the primary failure mode.
+3. **Emotional reactions to DEXA results are predictable and should be pre-empted.** Patients with stable weight will feel like they've failed. Have the recomposition conversation before they see numbers.
+4. **Lean mass preservation during weight loss is the primary quality metric.** Communicate this as a goal explicitly at baseline — before the first follow-up scan.
+5. **VAT reduction is the most motivating early win.** A 15% VAT reduction in 3 months is a compelling, concrete result. Use it as the anchor for motivation to continue.
+6. **Follow-up planning is a clinical responsibility.** The next scan date, functional test schedule, and what metrics will signal success must be explicitly communicated and documented.
+7. **Documentation must explicitly connect DEXA data to clinical decision-making.** Link specific scan findings to specific intervention adjustments.
+:::
 
 ## Documentation
 

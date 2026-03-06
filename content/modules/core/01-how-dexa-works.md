@@ -2,6 +2,12 @@
 
 DEXA (Dual-Energy X-ray Absorptiometry) is the clinical reference standard for measuring body composition[^1]. Originally developed for bone density assessment, DEXA technology has evolved to provide highly accurate measurements of fat mass, lean mass, and bone mineral content.
 
+:::case
+A 54-year-old postmenopausal woman with T2DM and BMI 27 presents with suspected sarcopenic obesity. Her weight alone is unrevealing. She is referred for DEXA.
+
+**Clinical Question:** What can DEXA tell us that a scale, BMI, or BIA cannot — and what are its limits?
+:::
+
 ## The Technology
 
 ![Dual-energy X-ray beams passing through tissue](/content/assets/diagrams/dexa-dual-energy.png)
@@ -67,6 +73,14 @@ While DEXA is highly accurate for body composition, it has limitations:
 - Cannot assess muscle quality or function
 
 Understanding these limitations helps set appropriate expectations for what insights a DEXA scan can provide.
+
+:::takeaways
+1. **DEXA is the reference standard for body composition.** Three-compartment model (bone, fat, lean mass) outperforms BIA and skinfold methods for clinical decision-making.
+2. **Regional analysis is clinically unique to DEXA.** Only DEXA identifies trunk adiposity (android fat), limb asymmetries, and site-specific lean mass loss without full imaging.
+3. **Radiation exposure is negligible — 1–10 μSv.** Far below a chest X-ray. Should not be a barrier to referral or repeat scanning in non-pregnant patients.
+4. **DEXA cannot assess muscle quality.** Does not distinguish intramuscular fat infiltration, fiber type, or functional capacity. Pair with grip strength, gait speed, or performance testing when indicated.
+5. **Hydration status affects lean mass readings.** Flag scans in acutely ill, edematous, or post-dialysis patients. Do not over-interpret lean mass in these contexts.
+:::
 
 ## References
 
