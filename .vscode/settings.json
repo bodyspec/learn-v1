@@ -1,0 +1,25 @@
+{
+    "terminal.integrated.profiles.osx": {
+        "learn": {
+            "path": "/bin/bash",
+            "args": ["--login", "-c", "cd ${workspaceFolder} && source shell-init.sh && exec bash"]
+        }
+    },
+    "terminal.integrated.defaultProfile.osx": "learn",
+    "terminal.integrated.automationProfile.osx": {
+        "path": "/bin/bash"
+    },
+    "python.terminal.activateEnvironment": false,
+    "python.defaultInterpreterPath": "${workspaceFolder}/backend/.venv/bin/python",
+    "python.linting.flake8Args": ["--config=${workspaceFolder}/.flake8"],
+    "python.analysis.extraPaths": ["${workspaceFolder}/backend"],
+    "mypy.configFile": "${workspaceFolder}/mypy.ini",
+    "files.exclude": {
+        "**/.git": true,
+        "**/.DS_Store": true,
+        "backend/.venv": true,
+        "**/.mypy_cache": true,
+        "**/__pycache__": true,
+        "**/node_modules": true
+    }
+}
