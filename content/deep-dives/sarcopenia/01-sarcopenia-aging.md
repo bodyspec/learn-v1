@@ -26,21 +26,23 @@ This stepwise approach prioritizes muscle strength as the entry criterion becaus
 
 ### DEXA Cut-Points for Low Muscle Mass
 
-DEXA-based cut-points provide objective thresholds for identifying low muscle mass. The two most widely used indices are appendicular lean mass normalized to height squared (ALM/height²) and appendicular lean mass normalized to BMI (ALM/BMI), each with sex-specific thresholds established by the EWGSOP2 consensus (Cruz-Jentoft et al., 2019)[^1].
+DEXA-based cut-points provide objective thresholds for identifying low muscle mass. The two most widely used indices are the Appendicular Lean Mass Index (ALMI, calculated as ALM/height²) and appendicular lean mass normalized to BMI (ALM/BMI), each with sex-specific thresholds established by the EWGSOP2 consensus (Cruz-Jentoft et al., 2019)[^1].
 
 :::thresholds
 | Measure | Threshold | Interpretation |
 |---------|-----------|----------------|
 | Grip strength | < 27 kg (M) / < 16 kg (F) | Probable sarcopenia — initiate intervention immediately |
-| ALM/height² | < 7.0 (M) / < 5.5 (F) kg/m² | Confirmed sarcopenia by DEXA criterion |
+| ALMI (ALM/height²) | < 7.0 (M) / < 5.5 (F) kg/m² | Confirmed sarcopenia by DEXA criterion |
 | ALM/BMI | < 0.789 (M) / < 0.512 (F) | Use in obesity where height normalization underestimates deficit |
 | Gait speed | < 0.8 m/s | Severe sarcopenia — highest fall/adverse outcome risk |
 :::
 
-The ALM/height² index is more commonly used in clinical practice, while the ALM/BMI index may provide better discrimination in individuals with obesity, where height-based normalization can underestimate the degree of muscle deficit.
+ALMI (ALM/height²) is more commonly used in clinical practice, while the ALM/BMI index may provide better discrimination in individuals with obesity, where height-based normalization can underestimate the degree of muscle deficit.
 
 :::note
-ALM = Appendicular Lean Mass (arms + legs)
+ALM = Appendicular Lean Mass (arms + legs).
+
+ALMI = ALM/height² (the normalized index reported on BodySpec scans).
 :::
 
 ## Prevalence and Impact
@@ -81,7 +83,7 @@ The average rate of muscle loss is approximately 3 to 8 percent per decade after
 
 DEXA is the preferred method for quantifying muscle mass in sarcopenia assessment because it provides precise, reproducible measurements of lean tissue across the entire body. A single DEXA scan yields total body lean mass, appendicular lean mass (the combined lean mass of the arms and legs, which serves as a proxy for skeletal muscle), and a regional breakdown that can identify asymmetries or localized deficits.
 
-From these measurements, clinicians calculate the key diagnostic indices. ALM/height² is the most widely used index and is straightforward to compute from standard DEXA output. ALM/BMI may be preferred in patients with obesity, where the height-based index can mask clinically significant muscle deficits behind the higher absolute lean mass that accompanies greater body weight.
+From these measurements, clinicians calculate the key diagnostic indices. ALMI (ALM/height²) is the most widely used index and is straightforward to compute from standard DEXA output. ALM/BMI may be preferred in patients with obesity, where the height-based index can mask clinically significant muscle deficits behind the higher absolute lean mass that accompanies greater body weight.
 
 ### Functional Tests
 
@@ -118,7 +120,7 @@ Sarcopenia is a prevalent, consequential condition that can be diagnosed with DE
 :::takeaways
 1. **Sarcopenia is a diagnosable disease — ICD-10 M62.84.** Document formally, not as "muscle weakness" or "deconditioning." Coding enables treatment authorization and outcome tracking.
 2. **Muscle strength, not mass, is the primary screening criterion.** Per EWGSOP2, low grip strength alone establishes probable sarcopenia. Do not wait for DEXA before initiating intervention.
-3. **DEXA cut-points are sex-specific and index-dependent.** ALM/height²: <7.0 kg/m² men, <5.5 kg/m² women. In obesity, use ALM/BMI (<0.789 men, <0.512 women).
+3. **DEXA cut-points are sex-specific and index-dependent.** ALMI: <7.0 kg/m² men, <5.5 kg/m² women. In obesity, use ALM/BMI (<0.789 men, <0.512 women).
 4. **Resistance training is the primary evidence-based treatment.** Effective even in adults >80 and those with frailty. Prescribe 2–3 sessions/week with progressive overload.
 5. **Protein targets for older adults exceed standard guidelines.** Minimum 1.0–1.2 g/kg/day; optimal 1.2–1.6 g/kg/day. 25–30g leucine-rich doses per meal to overcome anabolic resistance.
 6. **Gait speed < 0.8 m/s and failed chair stand are independent adverse outcome predictors.** Perform and document in clinic alongside DEXA.

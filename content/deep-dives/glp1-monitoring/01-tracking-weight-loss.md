@@ -46,7 +46,7 @@ Excessive lean mass loss during GLP-1 therapy has consequences that extend well 
 
 ### Recommended Protocol
 
-A structured DEXA monitoring protocol maximizes the clinical value of body composition assessment during GLP-1 therapy. The protocol begins with a **baseline scan** before starting medication or within the first two weeks of treatment. This scan establishes starting body composition, identifies pre-existing sarcopenia risk, quantifies baseline VAT for tracking metabolic improvement, and measures appendicular lean mass for sarcopenia screening.
+A structured DEXA monitoring protocol maximizes the clinical value of body composition assessment during GLP-1 therapy. The protocol begins with a **baseline scan** before starting medication or within the first two weeks of treatment. This scan establishes starting body composition, identifies pre-existing sarcopenia risk, quantifies baseline VAT for tracking metabolic improvement, and measures appendicular lean mass index (ALMI) for sarcopenia screening.
 
 The **first follow-up at 3 to 4 months** after reaching therapeutic dose assesses the initial composition of weight loss. This is a critical checkpoint: it allows early intervention if lean mass loss is disproportionate and provides the first data point on VAT response, which is often the most dramatic early change.
 

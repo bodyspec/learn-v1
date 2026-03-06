@@ -81,7 +81,7 @@ These precision characteristics translate to practical thresholds for interpreti
 
 ## Best Practices for Accurate Scans
 
-Maximizing measurement consistency requires attention to a few straightforward practices. Scanning at the same time of day controls for diurnal variations in hydration and body weight. Maintaining similar hydration and meal status across visits eliminates the largest controllable sources of variability. Wearing minimal, consistent clothing ensures that external mass does not confound the measurement. Avoiding intense exercise for 24 hours prior prevents exercise-induced fluid shifts from affecting results. Using the same scanner when possible eliminates inter-machine variability from the comparison.
+Maximizing measurement consistency requires attention to a few straightforward practices. Scanning at the same time of day controls for diurnal variations in hydration and body weight. Maintaining similar hydration and meal status across visits eliminates the largest controllable sources of variability. Wearing minimal, consistent clothing ensures that external mass does not confound the measurement. Avoiding intense exercise for 24 hours prior prevents exercise-induced fluid shifts from affecting results. Using a cross-calibrated scanner network—as BodySpec does across all its locations—eliminates inter-machine variability from the comparison. When scanning at clinics or providers that don't perform cross-calibration, using the same scanner for each visit remains important.
 
 :::tip
 For tracking changes over time, consistency in scan conditions is more important than achieving "perfect" conditions. The key is comparing apples to apples.
@@ -91,7 +91,7 @@ For tracking changes over time, consistency in scan conditions is more important
 1. **Scan conditions determine validity.** Hydration, recent exercise, meal timing, and positioning are the four controllable confounders. Inconsistency can exceed real physiological change.
 2. **DEXA precision is superior to alternatives.** ±1–2% error vs. ±4–8% for BIA — making DEXA the only method sensitive enough for meaningful individual tracking.
 3. **A 0.4 percentage-point body fat change is likely within measurement variability (CV 1–2%).** For appendicular lean mass, changes below ~500g may not reflect true change.
-4. **Consistency > perfection.** Same time of day, same fed/fasted state, same scanner, same technician protocol for valid serial comparison.
+4. **Consistency > perfection.** Same time of day, same fed/fasted state, same scanner or cross-calibrated network, same technician protocol for valid serial comparison.
 5. **Visceral fat estimates are CT-validated.** Correlates with CT at r² > 0.95, allowing cardiometabolic risk assessment without high-radiation imaging.
 :::
 

@@ -40,7 +40,7 @@ Lightweight, form-fitting clothing without metal is ideal—athletic wear works 
 
 ### Positioning
 
-Consistent positioning is critical for accurate comparisons between scans. You will lie still on the padded table in the position the technician directs, with arms at your sides and palms facing down, feet together and slightly turned inward. BodySpec technicians follow standardized positioning protocols to ensure that regional measurements are comparable from scan to scan.
+Consistent positioning is critical for accurate comparisons between scans. You will lie still on the padded table in the position the technician directs, with arms at your sides and hands in a mid-prone position (resting on their edges, thumbs facing up), feet together with a standardized gap. This protocol reduces soft tissue overlap and improves measurement reproducibility. BodySpec technicians follow standardized positioning protocols to ensure that regional measurements are comparable from scan to scan.
 
 ### During the Scan
 
@@ -68,7 +68,7 @@ The following checklist summarizes the key factors that ensure comparable result
 - [ ] Similar hydration and meal status
 - [ ] No intense exercise in the past 12-24 hours
 - [ ] Lightweight clothing without metal
-- [ ] Same scanner location (when possible)
+- [ ] Same scanner or cross-calibrated network (BodySpec cross-calibrates across locations; important when comparing with non-cross-calibrated providers)
 
 :::tip
 Perfect conditions aren't required for useful data — consistent conditions are. The goal is comparing apples to apples across visits so that real changes in body composition are distinguishable from preparation-related variability.

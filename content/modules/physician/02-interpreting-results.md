@@ -49,7 +49,7 @@ Don't dismiss metabolic risk based on "normal weight" appearance. VAT can be ele
 
 ### Diagnostic Criteria
 
-Sarcopenia assessment using DEXA follows the EWGSOP2 criteria (Cruz-Jentoft et al., 2019)[^1], with appendicular lean mass (ALM) serving as the primary body composition measurement. The diagnostic cut-points for low muscle mass are ALM/height² below 7.0 kg/m² for men and below 5.5 kg/m² for women. These thresholds identify the muscle mass component of sarcopenia, which should be combined with functional testing (grip strength, gait speed) for a complete diagnosis.
+Sarcopenia assessment using DEXA follows the EWGSOP2 criteria (Cruz-Jentoft et al., 2019)[^1], with appendicular lean mass (ALM) serving as the primary body composition measurement. The diagnostic cut-points use the height-normalized index — ALMI (ALM/height²) — with thresholds below 7.0 kg/m² for men and below 5.5 kg/m² for women. These thresholds identify the muscle mass component of sarcopenia, which should be combined with functional testing (grip strength, gait speed) for a complete diagnosis.
 
 ### Risk Factors for Sarcopenia
 
