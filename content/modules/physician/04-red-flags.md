@@ -10,7 +10,7 @@ A 67-year-old man, statin use + treated hypothyroidism. Over 5 months: lean mass
 
 ## Metabolic Red Flags
 
-![Red flags threshold gauges](/content/assets/diagrams/red-flags-thresholds.png)
+![Red flags threshold gauges](/content/assets/diagrams/red-flags-thresholds.jpg)
 
 ### Severely Elevated VAT
 

@@ -10,7 +10,7 @@ A 48-year-old woman, 3 months into caloric restriction + walking. "I've only los
 
 ## Principles of Communication
 
-![Patient conversation framework](/content/assets/diagrams/conversation-framework.png)
+![Patient conversation framework](/content/assets/diagrams/conversation-framework.jpg)
 
 ### Lead with Context
 

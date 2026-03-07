@@ -77,7 +77,7 @@ The average rate of muscle loss is approximately 3 to 8 percent per decade after
 
 ## Assessment
 
-![EWGSOP2 sarcopenia diagnostic algorithm](/content/assets/diagrams/sarcopenia-diagnostic-algorithm.png)
+![EWGSOP2 sarcopenia diagnostic algorithm](/content/assets/diagrams/sarcopenia-diagnostic-algorithm.jpg)
 
 ### Using DEXA for Sarcopenia Assessment
 

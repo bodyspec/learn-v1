@@ -2,7 +2,7 @@
 
 ## Overview
 
-![Muscle preservation strategy pyramid](/content/assets/diagrams/muscle-preservation-strategies.png)
+![Muscle preservation strategy pyramid](/content/assets/diagrams/muscle-preservation-strategies.jpg)
 
 Patients on GLP-1 medications who show concerning lean mass loss on DEXA—more than 30 to 40 percent of total weight lost coming from the lean compartment, or ALM trending toward sarcopenia thresholds—benefit from targeted evidence-based interventions that preserve muscle while maintaining the metabolic benefits of weight loss. The two most impactful strategies—protein optimization and resistance training—work synergistically and should be prescribed together whenever possible. This section provides practical guidance for implementing these strategies in clinical practice.
 

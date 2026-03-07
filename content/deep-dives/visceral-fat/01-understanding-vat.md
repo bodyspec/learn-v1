@@ -12,7 +12,7 @@ A 58-year-old South Asian woman, BMI 23.4, waist 33 inches — both "normal." Fa
 
 ## Why VAT Matters More Than Total Body Fat
 
-![VAT disease pathways](/content/assets/diagrams/vat-disease-pathways.png)
+![VAT disease pathways](/content/assets/diagrams/vat-disease-pathways.jpg)
 
 ### Metabolic Activity
 
@@ -40,7 +40,7 @@ This distinction is why total body fat percentage alone can be misleading. Two p
 
 BMI (Body Mass Index) is a poor proxy for metabolic risk because it cannot distinguish between fat and lean mass, let alone between visceral and subcutaneous fat:
 
-![Same BMI, different body composition](/content/assets/diagrams/dexa-vs-bmi.png)
+![Same BMI, different body composition](/content/assets/diagrams/dexa-vs-bmi.jpg)
 
 - Studies show VAT can vary by 3-5 fold among individuals with the same BMI
 - A BMI of 25 can represent a muscular, metabolically healthy individual or a sedentary person with high VAT

@@ -10,7 +10,7 @@ A 58-year-old woman with PCOS, HbA1c 6.1%, started on semaglutide. Baseline: wei
 
 ## Primary Clinical Indications
 
-![Clinical indications matrix](/content/assets/diagrams/clinical-indications-matrix.png)
+![Clinical indications matrix](/content/assets/diagrams/clinical-indications-matrix.jpg)
 
 ### Metabolic Assessment
 

@@ -61,7 +61,7 @@ The clinical consequences of sarcopenia extend across multiple domains. Patients
 
 ## Weight Loss Quality Assessment
 
-![Favorable vs concerning weight loss composition](/content/assets/diagrams/weight-loss-quality.png)
+![Favorable vs concerning weight loss composition](/content/assets/diagrams/weight-loss-quality.jpg)
 
 Not all weight loss is clinically equivalent, and DEXA provides the data needed to evaluate weight loss quality. The composition of weight lost—the proportion coming from fat versus lean tissue—determines the metabolic and functional consequences of weight reduction.
 

@@ -86,7 +86,7 @@ Sleep and stress are often overlooked but clinically significant contributors to
 
 ## Realistic Expectations
 
-![VAT intervention response curves](/content/assets/diagrams/vat-intervention-response.png)
+![VAT intervention response curves](/content/assets/diagrams/vat-intervention-response.jpg)
 
 ### Typical VAT Changes by Intervention
 

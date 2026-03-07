@@ -26,7 +26,7 @@ Body recomposition—losing fat while gaining muscle—is most achievable for be
 
 ### "BMI tells you if you're healthy"
 
-![Same BMI, different body composition](/content/assets/diagrams/dexa-vs-bmi.png)
+![Same BMI, different body composition](/content/assets/diagrams/dexa-vs-bmi.jpg)
 
 **Reality:** BMI cannot distinguish between fat and muscle. Someone with significant muscle mass may have a "overweight" BMI while being metabolically healthy. Conversely, someone with normal BMI can have elevated body fat and visceral fat.
 

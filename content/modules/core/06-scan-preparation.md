@@ -10,7 +10,7 @@ A 45-year-old man: Baseline VAT 155 cm², body fat 38%. Follow-up (post-flight, 
 
 ## Before Your Scan
 
-![Scan preparation checklist](/content/assets/diagrams/scan-preparation-checklist.png)
+![Scan preparation checklist](/content/assets/diagrams/scan-preparation-checklist.jpg)
 
 ### Hydration
 

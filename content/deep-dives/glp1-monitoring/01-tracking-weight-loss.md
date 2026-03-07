@@ -42,7 +42,7 @@ Excessive lean mass loss during GLP-1 therapy has consequences that extend well 
 
 ## Using DEXA to Monitor
 
-![GLP-1 DEXA monitoring protocol](/content/assets/diagrams/glp1-monitoring-protocol.png)
+![GLP-1 DEXA monitoring protocol](/content/assets/diagrams/glp1-monitoring-protocol.jpg)
 
 ### Recommended Protocol
 

@@ -42,7 +42,7 @@ Every finding should connect to something the patient can do:
 
 ## Motivational Communication
 
-![Patient progress visualization](/content/assets/diagrams/progress-visualization.png)
+![Patient progress visualization](/content/assets/diagrams/progress-visualization.jpg)
 
 ### Emphasize What's Modifiable
 

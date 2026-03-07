@@ -4,7 +4,7 @@ Optimal scan frequency depends on goals, timeline, and stage of training. Scanni
 
 ## Recommended Scan Frequency
 
-![Scan frequency timeline](/content/assets/diagrams/scan-timeline.png)
+![Scan frequency timeline](/content/assets/diagrams/scan-timeline.jpg)
 
 ### General Guidelines
 

@@ -42,7 +42,7 @@ Resistance training should not happen in isolation. The EWGSOP2 consensus recomm
 
 A practical multicomponent prescription for sarcopenic older adults combines resistance training (2 to 3 sessions per week as prescribed above) with aerobic exercise (150 minutes per week of moderate-intensity activity such as walking, cycling, or swimming), balance training (incorporated into resistance sessions or as separate brief sessions), and flexibility work (gentle stretching after exercise sessions). For patients new to exercise, starting with two sessions per week and building gradually over 4 to 6 weeks improves adherence and reduces injury risk.
 
-![Sarcopenia monitoring timeline](/content/assets/diagrams/sarcopenia-monitoring-timeline.png)
+![Sarcopenia monitoring timeline](/content/assets/diagrams/sarcopenia-monitoring-timeline.jpg)
 
 ## Nutrition for Muscle Health
 

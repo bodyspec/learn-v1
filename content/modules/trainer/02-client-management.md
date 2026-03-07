@@ -4,7 +4,7 @@ DEXA transforms client conversations from subjective assessments to objective da
 
 ## Setting Expectations
 
-![Client goal-setting framework](/content/assets/diagrams/goal-setting-framework.png)
+![Client goal-setting framework](/content/assets/diagrams/goal-setting-framework.jpg)
 
 ### First Scan Discussion
 
@@ -23,7 +23,7 @@ Evidence-based goal setting depends on the client's starting point. The followin
 
 ## Demonstrating Progress
 
-![Favorable vs concerning weight loss composition](/content/assets/diagrams/weight-loss-quality.png)
+![Favorable vs concerning weight loss composition](/content/assets/diagrams/weight-loss-quality.jpg)
 
 ### Beyond the Scale
 

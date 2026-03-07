@@ -10,7 +10,7 @@ A 54-year-old postmenopausal woman with T2DM and BMI 27 presents with suspected 
 
 ## The Technology
 
-![Dual-energy X-ray beams passing through tissue](/content/assets/diagrams/dexa-dual-energy.png)
+![Dual-energy X-ray beams passing through tissue](/content/assets/diagrams/dexa-dual-energy.jpg)
 
 DEXA scanners emit two low-energy X-ray beams at different energy levels (typically around 40 keV and 70 keV). As these beams pass through the body, different tissues attenuate them at different rates based on their atomic composition and density[^1]:
 
@@ -26,7 +26,7 @@ The radiation exposure from a DEXA body composition scan is extremely low—appr
 
 ## Three-Compartment Model
 
-![Three-compartment model: fat, lean, and bone](/content/assets/diagrams/three-compartment-model.png)
+![Three-compartment model: fat, lean, and bone](/content/assets/diagrams/three-compartment-model.jpg)
 
 DEXA uses a three-compartment model, which distinguishes between[^1]:
 
@@ -38,7 +38,7 @@ This is more detailed than two-compartment models (like BIA scales) that only di
 
 ## The Scanning Process
 
-![Person lying on DEXA scanning table](/content/assets/diagrams/dexa-scan-position.png)
+![Person lying on DEXA scanning table](/content/assets/diagrams/dexa-scan-position.jpg)
 
 During a BodySpec scan:
 

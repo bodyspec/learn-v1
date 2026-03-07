@@ -53,7 +53,7 @@ FFMI can help identify sarcopenia risk and assess whether someone is "overfat" d
 
 DEXA's ability to measure body composition in specific body regions is one of its most valuable capabilities. Regional analysis reveals how fat and lean mass are distributed across the body, which has significant implications for metabolic risk and functional assessment.
 
-![Android and gynoid measurement regions](/content/assets/diagrams/android-gynoid-regions.png)
+![Android and gynoid measurement regions](/content/assets/diagrams/android-gynoid-regions.jpg)
 
 ### Android Fat (Belly Region)
 
@@ -71,7 +71,7 @@ The A/G ratio compares android to gynoid fat percentages and serves as a concise
 
 Visceral adipose tissue is fat stored deep within the abdominal cavity, surrounding the internal organs. Often called visceral fat or organ fat, VAT occupies a distinct anatomical position that gives it unique metabolic significance compared to subcutaneous fat (the fat beneath the skin).
 
-![Visceral vs subcutaneous fat locations](/content/assets/diagrams/vat-sat-location.png)
+![Visceral vs subcutaneous fat locations](/content/assets/diagrams/vat-sat-location.jpg)
 
 ### Why VAT Matters
 
@@ -89,7 +89,7 @@ VAT can be elevated even in individuals with normal BMI or body fat percentageâ€
 
 Clinical risk thresholds for VAT area help categorize metabolic risk based on the amount of visceral fat present. These thresholds are derived from research correlating CT-measured VAT with metabolic outcomes.
 
-![VAT risk threshold zones](/content/assets/diagrams/vat-risk-zones.png)
+![VAT risk threshold zones](/content/assets/diagrams/vat-risk-zones.jpg)
 
 | Risk Level | VAT Area |
 |------------|----------|

@@ -12,7 +12,7 @@ A 67-year-old post-menopausal woman on long-term low-dose prednisone (RA). BMC p
 
 ## Two Types of DEXA Scans
 
-![Body composition DEXA vs. clinical BMD DEXA](/content/assets/diagrams/bmd-vs-body-comp-dexa.png)
+![Body composition DEXA vs. clinical BMD DEXA](/content/assets/diagrams/bmd-vs-body-comp-dexa.jpg)
 
 Both scan types use the same underlying technology—dual-energy X-ray absorptiometry—but they serve fundamentally different purposes.
 

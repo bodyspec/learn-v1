@@ -49,7 +49,7 @@ Consistent positioning is critical for accurate comparisons between scans, as ev
 
 ## Comparing Methods
 
-![Comparison of DEXA, BIA, and skinfold caliper accuracy](/content/assets/diagrams/method-comparison.png)
+![Comparison of DEXA, BIA, and skinfold caliper accuracy](/content/assets/diagrams/method-comparison.jpg)
 
 DEXA significantly outperforms consumer-grade body composition methods in both accuracy and reliability. The following comparison illustrates the typical error range for each method (Malavolti et al., 2003; Achamrah et al., 2018)[^3][^4].
 

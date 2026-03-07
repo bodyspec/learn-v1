@@ -4,7 +4,7 @@ Body composition directly impacts musculoskeletal health and function. Understan
 
 ## Body Composition and Structural Load
 
-![Structural load impact on joints](/content/assets/diagrams/structural-load-impact.png)
+![Structural load impact on joints](/content/assets/diagrams/structural-load-impact.jpg)
 
 ### Excess Fat Mass
 
