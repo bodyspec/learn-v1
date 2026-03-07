@@ -82,3 +82,6 @@ storybook-static
 
 # Diagram generator runs
 **/diagrams/run_*/
+
+# Responsive image variants (generated)
+content/assets/diagrams/_responsive/

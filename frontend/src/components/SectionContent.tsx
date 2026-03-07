@@ -4,6 +4,7 @@ import rehypeRaw from 'rehype-raw'
 import type { Components } from 'react-markdown'
 import { Stethoscope, ListOrdered, AlertTriangle, Target } from 'lucide-react'
 import ClinicalTakeaways from './ClinicalTakeaways'
+import { getResponsiveProps } from '@/lib/responsiveImages'
 
 interface SectionContentProps {
   content: string
@@ -51,16 +52,44 @@ const components: Components = {
     }
     return <div className={className} {...props}>{children}</div>
   },
-  // Add classes to images for styling
-  img: ({ src, alt, ...props }) => (
-    <img
-      src={src}
-      alt={alt}
-      className="rounded-lg shadow-md max-w-full my-4"
-      loading="lazy"
-      {...props}
-    />
-  ),
+  // Add classes to images for styling, with responsive variants when available
+  img: ({ src, alt, ...props }) => {
+    const responsive = getResponsiveProps(src)
+    const imgClass = "rounded-lg shadow-md max-w-full my-4"
+
+    if (responsive) {
+      return (
+        <picture>
+          <source
+            type="image/webp"
+            srcSet={responsive.srcset}
+            sizes={responsive.sizes}
+          />
+          <img
+            src={src}
+            alt={alt}
+            srcSet={responsive.srcsetFallback}
+            sizes={responsive.sizes}
+            width={responsive.originalWidth}
+            height={responsive.originalHeight}
+            className={imgClass}
+            loading="lazy"
+            {...props}
+          />
+        </picture>
+      )
+    }
+
+    return (
+      <img
+        src={src}
+        alt={alt}
+        className={imgClass}
+        loading="lazy"
+        {...props}
+      />
+    )
+  },
   // Style tables
   table: ({ children }) => (
     <div className="overflow-x-auto my-4">

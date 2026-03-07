@@ -6,6 +6,7 @@ COPY frontend/package*.json ./
 RUN npm ci
 COPY frontend/ ./
 COPY content/ ../content/
+COPY scripts/generate-responsive-images.mjs ../scripts/
 
 # CI/CD build args
 ARG APP_NAME=learn-v1
@@ -23,6 +24,7 @@ ENV VITE_APP_NAME=${APP_NAME} \
     VITE_KEYCLOAK_REALM=${VITE_KEYCLOAK_REALM} \
     VITE_KEYCLOAK_CLIENT_ID=${VITE_KEYCLOAK_CLIENT_ID}
 
+RUN node ../scripts/generate-responsive-images.mjs
 RUN npm run build
 
 # ---- Production image ----
