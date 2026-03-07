@@ -15,7 +15,7 @@ Show how a DEXA scan divides the body into distinct anatomical regions for separ
 
 **Canvas:** 600 x 800px, portrait orientation. Background: #F8F8F8. IMPORTANT: The content must fill the entire canvas edge-to-edge with minimal padding. Do not leave large empty margins or center a small diagram inside a large blank area.
 
-### Main Illustration (center-left, x: 80-380, y: 80-700)
+### Main Illustration (center-left, stretching full height of canvas)
 
 A front-facing, full-body **gender-neutral human silhouette** drawn with clean, minimal line art. The figure should be an abstract, simplified outline — no facial features, no hair, no chest definition, no gendered body shape. Think of a universal restroom sign or medical diagram mannequin. Straight shoulders, no curves suggesting male or female anatomy:
 
@@ -31,39 +31,41 @@ A front-facing, full-body **gender-neutral human silhouette** drawn with clean, 
 - Stroke: #1C3133, 2px.
 - Label: "Trunk" in 14px medium #1C3133, centered inside the torso area.
 
-**Left Arm:**
-- Path from left shoulder to hand.
+**Left Arm (viewer's right side):**
+- Path from left shoulder to hand. Appears on the RIGHT side of the image (radiological convention: the patient's left is the viewer's right, matching DEXA machine orientation).
 - Fill: #69D994 at 40% opacity.
 - Stroke: #1C3133, 2px.
 - Label: "L. Arm" in 11px medium #1C3133, rotated to follow the arm angle.
 
-**Right Arm:**
-- Path from right shoulder to hand.
+**Right Arm (viewer's left side):**
+- Path from right shoulder to hand. Appears on the LEFT side of the image.
 - Fill: #9DDEAD at 40% opacity.
 - Stroke: #1C3133, 2px.
 - Label: "R. Arm" in 11px medium #1C3133, rotated to follow the arm angle.
 
-**Left Leg:**
-- Path from left hip to foot.
+**Left Leg (viewer's right side):**
+- Path from left hip to foot. Appears on the RIGHT side of the image.
 - Fill: #46C9F7 at 35% opacity.
 - Stroke: #1C3133, 2px.
 - Label: "L. Leg" in 12px medium #1C3133.
 
-**Right Leg:**
-- Path from right hip to foot.
+**Right Leg (viewer's left side):**
+- Path from right hip to foot. Appears on the LEFT side of the image.
 - Fill: #46C9F7 at 25% opacity.
 - Stroke: #1C3133, 2px.
 - Label: "R. Leg" in 12px medium #1C3133.
 
-**Android Zone (optional overlay):**
-- A semi-transparent rectangle or zone overlaying the trunk between the rib line and the iliac crest line.
+**Android Zone (overlay — does NOT overlap with Gynoid):**
+- A semi-transparent horizontal band overlaying the trunk between the rib line and the iliac crest (waist area).
 - Fill: #E87D7D at 15% opacity, stroke: #E87D7D 1px dashed.
 - Small label or leader line: "Android" in 10px #E87D7D.
+- IMPORTANT: The android zone is ABOVE the gynoid zone. They must NOT overlap.
 
-**Gynoid Zone (optional overlay):**
-- A semi-transparent rectangle overlaying the hips and upper thighs.
+**Gynoid Zone (overlay — does NOT overlap with Android):**
+- A semi-transparent horizontal band overlaying the hips and upper thighs, BELOW the android zone.
 - Fill: #46C9F7 at 15% opacity, stroke: #46C9F7 1px dashed.
 - Small label or leader line: "Gynoid" in 10px #46C9F7.
+- IMPORTANT: The gynoid zone is BELOW the android zone. They must NOT overlap.
 
 ### Legend Panel (right side, x: 390-590, y: 120-400)
 
@@ -86,11 +88,18 @@ A rounded rectangle with white fill and #DFE2E2 border containing:
   - "5-10% monitor" in 11px #F5C842 (amber/yellow).
   - ">10% investigate" in 11px #E87D7D.
 
-### Bottom Info Box (y: 710-765)
+### Orientation Note (top-left corner)
 
-- Rounded rectangle, fill: #E5F6EB, stroke: #69D994 1.5px, rx: 8.
-- "DEXA uniquely provides left/right and regional breakdown" in 13px medium #1C3133.
-- "Valuable for injury recovery, training assessment, and clinical screening" in 12px #7C8D90.
+- Small subtle text in the top-left corner of the canvas, in 9-10px #7C8D90 italic.
+- Text: "L/R mirrored — scan taken with patient supine (facing up)"
+- This should be unobtrusive but visible, explaining why left and right appear swapped.
+
+### Green Info Banner (right side, below legend panel — NOT full width)
+
+- Small rounded rectangle on the RIGHT side of the canvas, aligned with the legend panel above it. Same width as the legend panel.
+- Fill: #E5F6EB, stroke: #69D994 1.5px, rx: 8.
+- "DEXA uniquely provides left/right and regional breakdown" in 11px medium #1C3133.
+- This banner should NOT span the full width of the image. It sits on the right side only, below the legend.
 
 ## Title
 
@@ -135,4 +144,5 @@ A rounded rectangle with white fill and #DFE2E2 border containing:
 
 - The body outline MUST be **completely gender-neutral** -- no facial features, no hair, no chest definition, no gendered curves. Use an abstract, simplified silhouette like a universal restroom sign or medical diagram mannequin. Use realistic human proportions: the head should be roughly 1/8 of total body height. Do NOT draw an oversized head.
 - Use slight opacity differences between left and right sides (e.g., left arm at 40%, right arm at 40% but different hue) to visually distinguish them while keeping the overall aesthetic cohesive.
-- The android/gynoid overlays within the trunk are secondary -- they should be visible but not dominant, since there is a separate dedicated diagram for those regions.
+- **Left/right convention:** Use radiological/DEXA convention where the patient's left appears on the viewer's right, and vice versa. This matches how DEXA scanners display results (the machine images the patient from below, so left and right are mirrored). "L. Arm" and "L. Leg" labels should appear on the viewer's right side of the figure.
+- The android/gynoid overlays within the trunk are secondary -- they should be visible but not dominant, since there is a separate dedicated diagram for those regions. The android and gynoid zones must NOT overlap — android is above (waist/belly area), gynoid is below (hips/upper thighs).
