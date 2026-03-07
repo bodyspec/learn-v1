@@ -67,7 +67,7 @@ export default function AdminUserDetail() {
                     disabled={promote.isPending}
                     className="btn-primary inline-flex items-center gap-2 text-sm"
                   >
-                    <Shield className="h-4 w-4" /> Promote to Admin
+                    <Shield className="h-4 w-4" /> Promote to admin
                   </button>
                 )}
                 <button

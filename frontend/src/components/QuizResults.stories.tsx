@@ -97,7 +97,7 @@ function QuizResultsPreview({ result, quiz, onRetry, showSignInPrompt }: QuizRes
         {!passed && (
           <button onClick={onRetry} className="mt-6 btn-primary inline-flex items-center gap-2">
             <RotateCcw className="w-4 h-4" />
-            Try Again
+            Try again
           </button>
         )}
         {showSignInPrompt && (
@@ -107,7 +107,7 @@ function QuizResultsPreview({ result, quiz, onRetry, showSignInPrompt }: QuizRes
               Sign in to save your progress and earn certificates.
             </p>
             <button className="btn-outline text-sm">
-              Sign In
+              Sign in
             </button>
           </div>
         )}

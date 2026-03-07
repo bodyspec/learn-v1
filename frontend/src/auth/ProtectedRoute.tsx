@@ -21,7 +21,7 @@ export default function ProtectedRoute({ children }: ProtectedRouteProps) {
       <div className="flex flex-col items-center justify-center min-h-[50vh] space-y-4">
         <p className="text-gray-600">Please sign in to access this page.</p>
         <button onClick={login} className="btn-primary">
-          Sign In
+          Sign in
         </button>
       </div>
     )

@@ -93,7 +93,7 @@ export default function Certificate({ certificate }: CertificateProps) {
             ) : (
               <>
                 <Copy className="w-4 h-4" />
-                Copy Verify Link
+                Copy verify link
               </>
             )}
           </button>

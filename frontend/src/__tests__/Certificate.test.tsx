@@ -56,12 +56,12 @@ describe('Certificate', () => {
     // No "Expires:" text for the second render
   })
 
-  it('Copy Verify Link copies URL and shows "Copied!"', async () => {
+  it('Copy verify link copies URL and shows "Copied!"', async () => {
     const mockWriteText = vi.fn().mockResolvedValue(undefined)
     Object.assign(navigator, { clipboard: { writeText: mockWriteText } })
 
     renderCert()
-    fireEvent.click(screen.getByText('Copy Verify Link'))
+    fireEvent.click(screen.getByText('Copy verify link'))
 
     await waitFor(() => {
       expect(screen.getByText('Copied!')).toBeInTheDocument()

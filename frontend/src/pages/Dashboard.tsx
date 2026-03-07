@@ -192,7 +192,7 @@ export default function Dashboard() {
               </p>
             </div>
             <Link to="/account/certificates" className="btn-primary">
-              View Certificates
+              View certificates
             </Link>
           </div>
         </div>

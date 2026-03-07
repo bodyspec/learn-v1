@@ -117,7 +117,7 @@ export default function ProfilePage() {
             disabled={updateProfile.isPending}
             className="w-full btn-primary disabled:opacity-50"
           >
-            {updateProfile.isPending ? 'Saving...' : 'Save Changes'}
+            {updateProfile.isPending ? 'Saving...' : 'Save changes'}
           </button>
         </form>
       </div>
@@ -131,7 +131,7 @@ export default function ProfilePage() {
           onClick={() => setShowReset(true)}
           className="bg-red-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-red-700"
         >
-          Reset Progress...
+          Reset progress...
         </button>
       </div>
 

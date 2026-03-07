@@ -28,7 +28,7 @@ export default function SignInPrompt({
     <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 flex items-center justify-between">
       <p className="text-sm text-blue-700">{message}</p>
       <button onClick={login} className="btn-primary text-sm py-1.5 px-3">
-        Sign In
+        Sign in
       </button>
     </div>
   )

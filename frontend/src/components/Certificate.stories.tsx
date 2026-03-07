@@ -66,7 +66,7 @@ function CertificatePreview({ certificate }: { certificate: CertificateType }) {
             ) : (
               <>
                 <Copy className="w-4 h-4" />
-                Copy Verify Link
+                Copy verify link
               </>
             )}
           </button>

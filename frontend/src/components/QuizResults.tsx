@@ -56,7 +56,7 @@ export default function QuizResults({ result, quiz, moduleId, fromTrack, onRetry
         {!passed && (
           <button onClick={onRetry} className="mt-6 btn-primary inline-flex items-center gap-2">
             <RotateCcw className="w-4 h-4" />
-            Try Again
+            Try again
           </button>
         )}
         {showSignInPrompt && (
@@ -66,7 +66,7 @@ export default function QuizResults({ result, quiz, moduleId, fromTrack, onRetry
               Sign in to save your progress and earn certificates.
             </p>
             <button onClick={() => login()} className="btn-secondary text-sm">
-              Sign In
+              Sign in
             </button>
           </div>
         )}
@@ -93,7 +93,7 @@ export default function QuizResults({ result, quiz, moduleId, fromTrack, onRetry
                 className="btn-secondary inline-flex items-center justify-center gap-2"
               >
                 <ArrowLeft className="w-4 h-4" />
-                Back to Module
+                Back to module
               </Link>
             )
           )}
@@ -105,7 +105,7 @@ export default function QuizResults({ result, quiz, moduleId, fromTrack, onRetry
               state={fromTrack ? { fromTrack } : undefined}
               className="btn-primary inline-flex items-center justify-center gap-2"
             >
-              Next Module: {nextModule.title}
+              Next module: {nextModule.title}
               <ArrowRight className="w-4 h-4" />
             </Link>
           ) : passed && !nextModule && trackInfo ? (
@@ -121,7 +121,7 @@ export default function QuizResults({ result, quiz, moduleId, fromTrack, onRetry
               state={fromTrack ? { fromTrack } : undefined}
               className="btn-primary inline-flex items-center justify-center gap-2"
             >
-              Back to Module
+              Back to module
             </Link>
           ) : (
             <Link
@@ -129,7 +129,7 @@ export default function QuizResults({ result, quiz, moduleId, fromTrack, onRetry
               state={fromTrack ? { fromTrack } : undefined}
               className="btn-primary inline-flex items-center justify-center gap-2"
             >
-              Review Module
+              Review module
             </Link>
           )}
         </div>

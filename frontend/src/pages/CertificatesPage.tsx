@@ -99,7 +99,7 @@ export default function CertificatesPage() {
                       ) : (
                         <>
                           <Plus className="w-4 h-4" />
-                          Claim Certificate
+                          Claim certificate
                         </>
                       )}
                     </button>

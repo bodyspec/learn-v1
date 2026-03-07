@@ -109,7 +109,7 @@ export default function ModuleView() {
                 state={backTrack ? { fromTrack: backTrack } : undefined}
                 className="mt-6 btn-primary inline-block text-center"
               >
-                {hasStarted ? 'Continue' : 'Get Started'}
+                {hasStarted ? 'Continue' : 'Get started'}
               </Link>
             )
           })()}
@@ -136,7 +136,7 @@ export default function ModuleView() {
                   onClick={() => navigate(`/quiz/${moduleId}`, { state: backTrack ? { fromTrack: backTrack } : undefined })}
                   className="btn-primary"
                 >
-                  Take Quiz
+                  Take quiz
                 </button>
               )}
             </div>

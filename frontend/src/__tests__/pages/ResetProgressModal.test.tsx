@@ -52,7 +52,7 @@ describe('ResetProgressModal', () => {
 
   it('submit disabled until checkbox selected and RESET typed', () => {
     renderModal()
-    const submitBtn = screen.getByRole('button', { name: 'Reset Progress' })
+    const submitBtn = screen.getByRole('button', { name: 'Reset progress' })
     expect(submitBtn).toBeDisabled()
 
     // Check a checkbox
@@ -73,7 +73,7 @@ describe('ResetProgressModal', () => {
     // Type RESET
     fireEvent.change(screen.getByPlaceholderText('RESET'), { target: { value: 'RESET' } })
     // Submit
-    fireEvent.click(screen.getByRole('button', { name: 'Reset Progress' }))
+    fireEvent.click(screen.getByRole('button', { name: 'Reset progress' }))
 
     await waitFor(() => {
       expect(mockMutateAsync).toHaveBeenCalledWith({
@@ -92,7 +92,7 @@ describe('ResetProgressModal', () => {
     renderModal()
     fireEvent.click(screen.getAllByRole('checkbox')[0])
     fireEvent.change(screen.getByPlaceholderText('RESET'), { target: { value: 'RESET' } })
-    fireEvent.click(screen.getByRole('button', { name: 'Reset Progress' }))
+    fireEvent.click(screen.getByRole('button', { name: 'Reset progress' }))
 
     await waitFor(() => {
       expect(screen.getByText('Failed to reset progress. Please try again.')).toBeInTheDocument()

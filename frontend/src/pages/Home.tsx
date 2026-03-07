@@ -123,7 +123,7 @@ export default function Home() {
           All content is free and publicly accessible. Sign in to track your progress and earn certificates.
         </p>
         <Link to="/track/physician" className="btn-primary">
-          Get Started
+          Get started
         </Link>
       </div>
     </div>

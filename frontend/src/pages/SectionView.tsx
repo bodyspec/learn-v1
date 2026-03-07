@@ -43,7 +43,7 @@ export default function SectionView() {
       <NotFound
         title="Section Not Found"
         backTo={`/module/${moduleId}`}
-        backLabel="Back to Module"
+        backLabel="Back to module"
       />
     )
   }
@@ -133,20 +133,20 @@ export default function SectionView() {
               className="btn-secondary inline-flex items-center gap-2"
             >
               <ArrowLeft className="w-4 h-4" />
-              Back to Module
+              Back to module
             </Link>
 
             <button onClick={handleContinue} className="btn-primary inline-flex items-center gap-2">
               {isLastSection && allSectionsWillBeComplete && quiz ? (
                 <>
-                  Take Quiz
+                  Take quiz
                   <ArrowRight className="w-4 h-4" />
                 </>
               ) : isLastSection ? (
                 'Finish'
               ) : (
                 <>
-                  Next Section
+                  Next section
                   <ArrowRight className="w-4 h-4" />
                 </>
               )}

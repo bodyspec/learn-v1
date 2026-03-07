@@ -33,7 +33,7 @@ describe('Home', () => {
   it('shows "Get started" CTA link', () => {
     renderPage()
     const links = screen.getAllByRole('link')
-    const getStarted = links.filter(l => l.textContent?.includes('Get started') || l.textContent?.includes('Get Started'))
+    const getStarted = links.filter(l => l.textContent?.includes('Get started') || l.textContent?.includes('Get started'))
     expect(getStarted.length).toBeGreaterThan(0)
   })
 

@@ -126,7 +126,7 @@ function QuizPreview({ quiz }: { quiz: QuizType }) {
               disabled={!allAnswered}
               className="btn-primary disabled:opacity-50"
             >
-              Submit Quiz
+              Submit quiz
             </button>
           )}
         </div>

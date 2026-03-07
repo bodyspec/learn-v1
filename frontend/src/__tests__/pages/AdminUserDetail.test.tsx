@@ -119,9 +119,9 @@ describe('AdminUserDetail', () => {
     expect(screen.getByText('BS-001')).toBeInTheDocument()
   })
 
-  it('shows "Promote to Admin" for @bodyspec.com non-admin user', () => {
+  it('shows "Promote to admin" for @bodyspec.com non-admin user', () => {
     renderPage()
-    expect(screen.getByText('Promote to Admin')).toBeInTheDocument()
+    expect(screen.getByText('Promote to admin')).toBeInTheDocument()
   })
 
   it('shows back link to admin list', () => {

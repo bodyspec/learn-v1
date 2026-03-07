@@ -93,15 +93,15 @@ describe('Quiz', () => {
 
   it('Submit button appears only on last question', () => {
     renderQuiz()
-    expect(screen.queryByText('Submit Quiz')).not.toBeInTheDocument()
+    expect(screen.queryByText('Submit quiz')).not.toBeInTheDocument()
     fireEvent.click(screen.getByText('Next'))
-    expect(screen.getByText('Submit Quiz')).toBeInTheDocument()
+    expect(screen.getByText('Submit quiz')).toBeInTheDocument()
   })
 
   it('Submit button disabled until all questions answered', () => {
     renderQuiz()
     fireEvent.click(screen.getByText('Next'))
-    expect(screen.getByText('Submit Quiz')).toBeDisabled()
+    expect(screen.getByText('Submit quiz')).toBeDisabled()
   })
 
   it('authenticated: calls submitQuizMutation.mutateAsync', async () => {
@@ -116,7 +116,7 @@ describe('Quiz', () => {
     fireEvent.click(screen.getByText('Correct A'))
     fireEvent.click(screen.getByText('Next'))
     fireEvent.click(screen.getByText('Correct B'))
-    fireEvent.click(screen.getByText('Submit Quiz'))
+    fireEvent.click(screen.getByText('Submit quiz'))
 
     await waitFor(() => {
       expect(mockMutateAsync).toHaveBeenCalledWith(
@@ -136,7 +136,7 @@ describe('Quiz', () => {
     fireEvent.click(screen.getByText('Correct A'))
     fireEvent.click(screen.getByText('Next'))
     fireEvent.click(screen.getByText('Correct B'))
-    fireEvent.click(screen.getByText('Submit Quiz'))
+    fireEvent.click(screen.getByText('Submit quiz'))
 
     await waitFor(() => {
       expect(onComplete).toHaveBeenCalledWith(
@@ -164,7 +164,7 @@ describe('Quiz', () => {
     fireEvent.click(screen.getByText('Correct A'))
     fireEvent.click(screen.getByText('Next'))
     fireEvent.click(screen.getByText('Correct B'))
-    fireEvent.click(screen.getByText('Submit Quiz'))
+    fireEvent.click(screen.getByText('Submit quiz'))
 
     await waitFor(() => {
       expect(screen.getByText(/Congratulations/)).toBeInTheDocument()
@@ -183,7 +183,7 @@ describe('Quiz', () => {
     fireEvent.click(screen.getByText('Correct A'))
     fireEvent.click(screen.getByText('Next'))
     fireEvent.click(screen.getByText('Correct B'))
-    fireEvent.click(screen.getByText('Submit Quiz'))
+    fireEvent.click(screen.getByText('Submit quiz'))
 
     await waitFor(() => {
       expect(onComplete).toHaveBeenCalledWith(mockResult)

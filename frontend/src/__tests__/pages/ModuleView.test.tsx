@@ -125,9 +125,9 @@ describe('ModuleView', () => {
     expect(screen.queryByTestId('progress-indicator')).not.toBeInTheDocument()
   })
 
-  it('shows "Take Quiz" button when quiz not passed', () => {
+  it('shows "Take quiz" button when quiz not passed', () => {
     renderPage()
-    expect(screen.getByText('Take Quiz')).toBeInTheDocument()
+    expect(screen.getByText('Take quiz')).toBeInTheDocument()
   })
 
   it('shows "Passed" when quiz passed', () => {
@@ -139,9 +139,9 @@ describe('ModuleView', () => {
     expect(screen.getByText('Passed')).toBeInTheDocument()
   })
 
-  it('shows "Get Started" when no sections completed', () => {
+  it('shows "Get started" when no sections completed', () => {
     renderPage()
-    expect(screen.getByText('Get Started')).toBeInTheDocument()
+    expect(screen.getByText('Get started')).toBeInTheDocument()
   })
 
   it('shows SignInPrompt for unauthenticated users', () => {

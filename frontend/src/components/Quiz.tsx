@@ -167,7 +167,7 @@ export default function Quiz({ quiz, moduleId, fromTrack, onComplete }: QuizProp
               disabled={!allAnswered || submitQuizMutation.isPending}
               className="btn-primary disabled:opacity-50"
             >
-              {submitQuizMutation.isPending ? 'Submitting...' : 'Submit Quiz'}
+              {submitQuizMutation.isPending ? 'Submitting...' : 'Submit quiz'}
             </button>
           )}
         </div>

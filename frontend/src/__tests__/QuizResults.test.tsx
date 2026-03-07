@@ -87,7 +87,7 @@ describe('QuizResults', () => {
     expect(screen.getByText(/50%/)).toBeInTheDocument()
   })
 
-  it('calls onRetry when Try Again button is clicked', () => {
+  it('calls onRetry when Try again button is clicked', () => {
     const onRetry = vi.fn()
     const result: QuizSubmissionResult = {
       score: 40,
@@ -103,9 +103,9 @@ describe('QuizResults', () => {
       <QuizResults result={result} quiz={sampleQuiz} onRetry={onRetry} />
     )
 
-    // Find the button containing "Try Again" text
+    // Find the button containing "Try again" text
     const buttons = screen.getAllByRole('button')
-    const retryBtn = buttons.find(btn => btn.textContent?.includes('Try Again'))
+    const retryBtn = buttons.find(btn => btn.textContent?.includes('Try again'))
     expect(retryBtn).toBeTruthy()
     fireEvent.click(retryBtn!)
     expect(onRetry).toHaveBeenCalledOnce()

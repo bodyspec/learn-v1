@@ -117,6 +117,6 @@ describe('Dashboard', () => {
   it('shows certificates CTA when certificates exist', () => {
     mockCertsState = { certificates: [{ id: 'c1', track: 'physician' }], isLoading: false }
     renderPage()
-    expect(screen.getByText('View Certificates')).toBeInTheDocument()
+    expect(screen.getByText('View certificates')).toBeInTheDocument()
   })
 })

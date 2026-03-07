@@ -72,21 +72,21 @@ describe('CertificatesPage', () => {
     expect(screen.getByText(/Complete core and physician modules to earn/)).toBeInTheDocument()
   })
 
-  it('shows "Claim Certificate" for eligible tracks', () => {
+  it('shows "Claim certificate" for eligible tracks', () => {
     mockProgressState = {
       progress: { quizzes_passed: { core: true, physician: true } },
     }
     renderPage()
-    const claimButtons = screen.getAllByText('Claim Certificate')
+    const claimButtons = screen.getAllByText('Claim certificate')
     expect(claimButtons.length).toBeGreaterThan(0)
   })
 
-  it('calls mutate when "Claim Certificate" clicked', () => {
+  it('calls mutate when "Claim certificate" clicked', () => {
     mockProgressState = {
       progress: { quizzes_passed: { core: true, physician: true } },
     }
     renderPage()
-    fireEvent.click(screen.getAllByText('Claim Certificate')[0])
+    fireEvent.click(screen.getAllByText('Claim certificate')[0])
     expect(mockMutate).toHaveBeenCalledWith('physician')
   })
 

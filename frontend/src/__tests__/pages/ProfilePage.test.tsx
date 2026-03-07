@@ -58,7 +58,7 @@ describe('ProfilePage', () => {
 
   it('form submission calls mutateAsync with data', async () => {
     renderPage()
-    fireEvent.click(screen.getByText('Save Changes'))
+    fireEvent.click(screen.getByText('Save changes'))
     await waitFor(() => {
       expect(mockMutateAsync).toHaveBeenCalledWith({
         name: 'Test User',
@@ -70,7 +70,7 @@ describe('ProfilePage', () => {
 
   it('shows success message on save', async () => {
     renderPage()
-    fireEvent.click(screen.getByText('Save Changes'))
+    fireEvent.click(screen.getByText('Save changes'))
     await waitFor(() => {
       expect(screen.getByText('Profile updated successfully!')).toBeInTheDocument()
     })
@@ -79,7 +79,7 @@ describe('ProfilePage', () => {
   it('shows error message on failure', async () => {
     mockMutateAsync.mockRejectedValue(new Error('fail'))
     renderPage()
-    fireEvent.click(screen.getByText('Save Changes'))
+    fireEvent.click(screen.getByText('Save changes'))
     await waitFor(() => {
       expect(screen.getByText('Failed to update profile')).toBeInTheDocument()
     })
@@ -93,7 +93,7 @@ describe('ProfilePage', () => {
 
   it('Reset Progress button opens modal', () => {
     renderPage()
-    fireEvent.click(screen.getByText('Reset Progress...'))
+    fireEvent.click(screen.getByText('Reset progress...'))
     expect(screen.getByTestId('reset-modal')).toBeInTheDocument()
   })
 
@@ -102,7 +102,7 @@ describe('ProfilePage', () => {
       user: { id: 'u1', email: 'test@bodyspec.com', name: '', role_type: '', organization: '' },
     }
     renderPage()
-    fireEvent.click(screen.getByText('Save Changes'))
+    fireEvent.click(screen.getByText('Save changes'))
     await waitFor(() => {
       expect(mockMutateAsync).toHaveBeenCalledWith({
         name: null,

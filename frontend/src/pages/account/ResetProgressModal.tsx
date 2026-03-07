@@ -89,7 +89,7 @@ export default function ResetProgressModal({ onClose }: ResetProgressModalProps)
             disabled={!canSubmit}
             className="bg-red-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-red-700 disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            {resetProgress.isPending ? 'Resetting...' : 'Reset Progress'}
+            {resetProgress.isPending ? 'Resetting...' : 'Reset progress'}
           </button>
         </div>
       </div>

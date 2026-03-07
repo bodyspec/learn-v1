@@ -66,7 +66,7 @@ describe('ProtectedRoute', () => {
         <div>Protected Content</div>
       </ProtectedRoute>
     )
-    fireEvent.click(screen.getByText('Sign In'))
+    fireEvent.click(screen.getByText('Sign in'))
     expect(mockLogin).toHaveBeenCalledOnce()
   })
 
