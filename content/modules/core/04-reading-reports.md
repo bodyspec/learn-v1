@@ -12,7 +12,7 @@ A 52-year-old woman: Body fat 36%, VAT 142 cm², A/G ratio 1.2, right leg lean m
 
 ![BodySpec report anatomy](/content/assets/diagrams/report-anatomy.png)
 
-A BodySpec report is organized into several interconnected components that together provide a complete picture of body composition. The report opens with a summary dashboard displaying key metrics and visual indicators at a glance. Below that, a detailed body composition breakdown quantifies the precise amounts of fat, lean, and bone tissue. Regional analysis with symmetry data reveals how composition varies across different body segments. A dedicated visceral fat assessment includes percentile ranking for metabolic risk context. For clients with multiple scans, trend charts and historical comparisons track progress over time. Throughout the report, percentile rankings drawn from a dataset of over 450,000 scans provide population-level context for individual results.
+A BodySpec report is organized into several interconnected components that together provide a complete picture of body composition. The report opens with a summary dashboard displaying key metrics and visual indicators at a glance. Below that, a detailed body composition breakdown quantifies the precise amounts of fat, lean, and bone tissue. Regional analysis with symmetry data reveals how composition varies across different body segments. A dedicated visceral fat assessment includes percentile ranking for metabolic risk context. For clients with multiple scans, trend charts and historical comparisons track progress over time. Throughout the report, percentile rankings drawn from a dataset of over 600,000 scans provide population-level context for individual results.
 
 ## Summary Dashboard
 
@@ -53,7 +53,7 @@ Significant limb asymmetry (>10%) may indicate previous injury, surgical recover
 
 The VAT section provides one of the report's most clinically valuable metrics. The report displays VAT mass in grams, VAT area in square centimeters (comparable to CT measurements), a risk category based on established clinical thresholds, and a percentile ranking showing where the client falls relative to others of the same age and sex.
 
-BodySpec's VAT percentile ranking draws on a reference dataset of over 450,000 scans, providing context beyond simple threshold categories. For example, a patient may fall in the "moderate" risk range but be at the 85th percentile for their age group—a more actionable insight for clinical conversations than the risk category alone.
+BodySpec's VAT percentile ranking draws on a reference dataset of over 600,000 scans, providing context beyond simple threshold categories. For example, a patient may fall in the "moderate" risk range but be at the 85th percentile for their age group—a more actionable insight for clinical conversations than the risk category alone.
 
 ### Interpreting VAT Results
 
@@ -79,7 +79,7 @@ Short-term fluctuations (1-2%) may be within measurement precision. Focus on tre
 
 ## Percentile Rankings
 
-BodySpec reports include percentile rankings compared to population norms stratified by age and sex. These rankings draw on BodySpec's dataset of over 450,000 scans, providing robust comparison data. For example, "your lean mass is at the 75th percentile" means the client has more lean mass than 75 percent of people their age and sex in the reference population.
+BodySpec reports include percentile rankings compared to population norms stratified by age and sex. These rankings draw on BodySpec's dataset of over 600,000 scans, providing robust comparison data. For example, "your lean mass is at the 75th percentile" means the client has more lean mass than 75 percent of people their age and sex in the reference population.
 
 Percentiles provide context that absolute numbers cannot. Being at the 90th percentile for lean mass is meaningful regardless of the actual weight—and percentiles help clients understand where they stand relative to peers, not just abstract thresholds.
 

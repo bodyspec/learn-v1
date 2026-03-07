@@ -97,7 +97,7 @@ Or should we research what's generally available from other DEXA providers (e.g.
 
 **A9:** Use standard knowledge of classical DEXA provider reports — they're generally very basic. BodySpec's key differentiators:
 - **Interactive report** (vs static PDFs)
-- **Much larger comparison dataset** — up to 500,000 scans, allowing comparison by specific gender and age breakdowns
+- **Much larger comparison dataset** — over 600,000 scans, allowing comparison by specific gender and age breakdowns
 - **More data access** — shows results across dozens of scans (vs only a few)
 - **Better visuals/charts** — modern, well-designed
 - **Unique features** like symmetry analysis
