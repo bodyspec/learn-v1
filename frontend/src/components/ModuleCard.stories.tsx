@@ -10,7 +10,7 @@ const baseModule: Module = {
   track: 'core',
   is_deep_dive: false,
   estimated_minutes: 45,
-  required_for_certificate: true,
+  required_for_certificate: ['*'],
   sort_order: 1,
   sections: [
     { slug: '01-how-dexa-works', file: '01-how-dexa-works.md', title: 'How DEXA Works' },
@@ -71,7 +71,7 @@ export const DeepDive: Story = {
       description: 'Advanced analysis of bone mineral density patterns and their clinical significance.',
       is_deep_dive: true,
       estimated_minutes: 30,
-      required_for_certificate: false,
+      required_for_certificate: [],
     },
   },
 }

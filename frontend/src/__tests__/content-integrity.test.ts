@@ -27,7 +27,7 @@ describe('Content Integrity', () => {
         expect(mod.sections.length).toBeGreaterThan(0)
         expect(mod.estimated_minutes).toBeGreaterThan(0)
         expect(typeof mod.is_deep_dive).toBe('boolean')
-        expect(typeof mod.required_for_certificate).toBe('boolean')
+        expect(Array.isArray(mod.required_for_certificate)).toBe(true)
       })
     }
   })
@@ -54,7 +54,7 @@ describe('Content Integrity', () => {
   })
 
   describe('every certificate-required module has a quiz', () => {
-    for (const mod of modules.filter(m => m.required_for_certificate)) {
+    for (const mod of modules.filter(m => m.required_for_certificate.length > 0)) {
       it(`"${mod.id}" has a quiz`, () => {
         const quiz = getQuiz(mod.id)
         expect(quiz, `No quiz found for certificate-required module "${mod.id}"`).toBeDefined()

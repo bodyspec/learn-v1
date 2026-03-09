@@ -1,3 +1,4 @@
+from functools import lru_cache
 from typing import Any
 from uuid import UUID
 
@@ -15,12 +16,37 @@ from app.schemas.quiz import (
     QuizSubmissionResult,
 )
 
-# Track requirements: which modules must be passed for each track certificate
-TRACK_REQUIREMENTS = {
-    'physician': ['core', 'physician'],
-    'chiropractor': ['core', 'chiropractor'],
-    'trainer': ['core', 'trainer'],
-}
+CERTIFICATE_TRACKS = ['physician', 'chiropractor', 'trainer']
+
+
+@lru_cache
+def build_track_requirements() -> dict[str, list[str]]:
+    """Build track requirements dynamically from _module.yaml files."""
+    content_dir = get_settings().content_dir
+    reqs: dict[str, list[str]] = {t: [] for t in CERTIFICATE_TRACKS}
+
+    for search_dir in [content_dir / 'modules', content_dir / 'deep-dives']:
+        if not search_dir.exists():
+            continue
+        for module_yaml in search_dir.glob('*/_module.yaml'):
+            with open(module_yaml) as f:
+                meta = yaml.safe_load(f)
+            rfc = meta.get('required_for_certificate', [])
+            if not rfc:
+                continue
+            module_id = meta['id']
+            if '*' in rfc:
+                for track in CERTIFICATE_TRACKS:
+                    reqs[track].append(module_id)
+            else:
+                for track in rfc:
+                    if track in reqs:
+                        reqs[track].append(module_id)
+
+    return reqs
+
+
+TRACK_REQUIREMENTS = build_track_requirements()
 
 
 def load_quiz(module_id: str) -> dict[str, Any] | None:

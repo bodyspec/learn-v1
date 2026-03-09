@@ -51,8 +51,9 @@ async def test_request_certificate_success(
     sample_user: User,
 ) -> None:
     """POST /api/v1/certificates creates cert when quizzes are passed."""
-    # Create passing quiz attempts for both required modules
-    for module_id in ['core', 'physician']:
+    # Create passing quiz attempts for all required modules (including deep-dives)
+    from app.services.quiz_service import TRACK_REQUIREMENTS
+    for module_id in TRACK_REQUIREMENTS['physician']:
         attempt = QuizAttempt(
             user_id=sample_user.id,
             module_id=module_id,
@@ -206,7 +207,8 @@ async def test_request_certificate_duplicate_409(
     """POST /api/v1/certificates returns 409 when active cert already exists."""
     # sample_certificate is an active physician cert for sample_user
     # Create passing quiz attempts so the requirements check passes first
-    for module_id in ['core', 'physician']:
+    from app.services.quiz_service import TRACK_REQUIREMENTS
+    for module_id in TRACK_REQUIREMENTS['physician']:
         attempt = QuizAttempt(
             user_id=sample_user.id,
             module_id=module_id,

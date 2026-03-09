@@ -23,6 +23,19 @@ vi.mock('@/hooks/queries', () => ({
   useRequestCertificate: () => mockRequestCertState,
 }))
 
+vi.mock('@/content', () => ({
+  getModules: () => [
+    { id: 'core', required_for_certificate: ['*'] },
+    { id: 'physician', required_for_certificate: ['physician'] },
+    { id: 'chiropractor', required_for_certificate: ['chiropractor'] },
+    { id: 'trainer', required_for_certificate: ['trainer'] },
+    { id: 'sarcopenia', required_for_certificate: ['*'] },
+    { id: 'bone-health', required_for_certificate: ['*'] },
+    { id: 'visceral-fat', required_for_certificate: ['*'] },
+    { id: 'glp1-monitoring', required_for_certificate: ['physician'] },
+  ],
+}))
+
 vi.mock('@/components/Certificate', () => ({
   default: ({ certificate }: { certificate: { track: string; certificate_uid: string } }) => (
     <div data-testid="certificate">{certificate.track} - {certificate.certificate_uid}</div>
@@ -69,12 +82,16 @@ describe('CertificatesPage', () => {
 
   it('shows eligibility message for ineligible tracks', () => {
     renderPage()
-    expect(screen.getByText(/Complete core and physician modules to earn/)).toBeInTheDocument()
+    const messages = screen.getAllByText(/Pass all required quizzes to earn this certificate/)
+    expect(messages.length).toBe(3)
   })
 
   it('shows "Claim certificate" for eligible tracks', () => {
     mockProgressState = {
-      progress: { quizzes_passed: { core: true, physician: true } },
+      progress: { quizzes_passed: {
+        core: true, physician: true, sarcopenia: true,
+        'bone-health': true, 'visceral-fat': true, 'glp1-monitoring': true,
+      } },
     }
     renderPage()
     const claimButtons = screen.getAllByText('Claim certificate')
@@ -83,7 +100,10 @@ describe('CertificatesPage', () => {
 
   it('calls mutate when "Claim certificate" clicked', () => {
     mockProgressState = {
-      progress: { quizzes_passed: { core: true, physician: true } },
+      progress: { quizzes_passed: {
+        core: true, physician: true, sarcopenia: true,
+        'bone-health': true, 'visceral-fat': true, 'glp1-monitoring': true,
+      } },
     }
     renderPage()
     fireEvent.click(screen.getAllByText('Claim certificate')[0])
@@ -92,7 +112,10 @@ describe('CertificatesPage', () => {
 
   it('shows "Processing..." while pending', () => {
     mockProgressState = {
-      progress: { quizzes_passed: { core: true, physician: true } },
+      progress: { quizzes_passed: {
+        core: true, physician: true, sarcopenia: true,
+        'bone-health': true, 'visceral-fat': true, 'glp1-monitoring': true,
+      } },
     }
     mockRequestCertState = { mutate: mockMutate, isPending: true, error: null, variables: 'physician' }
     renderPage()

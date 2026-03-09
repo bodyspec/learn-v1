@@ -5,7 +5,7 @@ track: trainer
 is_deep_dive: false
 parent_module: null
 estimated_minutes: 20
-required_for_certificate: true
+required_for_certificate: ['trainer']
 sort_order: 2
 
 sections:

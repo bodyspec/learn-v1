@@ -2,12 +2,18 @@ import { Award, Plus } from 'lucide-react'
 import { useCertificates, useRequestCertificate, useProgress } from '@/hooks/queries'
 import Certificate from '@/components/Certificate'
 import { LoadingSpinner } from '@/components/common'
+import { getModules } from '@/content'
 
 const TRACKS = [
-  { id: 'physician', title: 'Clinical Applications', requiredModules: ['core', 'physician'] },
-  { id: 'chiropractor', title: 'Body Composition in Practice', requiredModules: ['core', 'chiropractor'] },
-  { id: 'trainer', title: 'Programming with DEXA Data', requiredModules: ['core', 'trainer'] },
+  { id: 'physician', title: 'Clinical Applications' },
+  { id: 'chiropractor', title: 'Body Composition in Practice' },
+  { id: 'trainer', title: 'Programming with DEXA Data' },
 ]
+
+const getRequiredModules = (trackId: string) =>
+  getModules().filter(m =>
+    m.required_for_certificate.includes('*') || m.required_for_certificate.includes(trackId)
+  )
 
 export default function CertificatesPage() {
   const { certificates, isLoading } = useCertificates()
@@ -15,9 +21,9 @@ export default function CertificatesPage() {
   const requestCert = useRequestCertificate()
 
   const isEligible = (trackId: string) => {
-    const track = TRACKS.find(t => t.id === trackId)
-    if (!track || !progress) return false
-    return track.requiredModules.every(m => progress.quizzes_passed[m])
+    if (!progress) return false
+    const required = getRequiredModules(trackId)
+    return required.every(m => progress.quizzes_passed[m.id])
   }
 
   const hasCertificate = (trackId: string) => {
@@ -83,7 +89,7 @@ export default function CertificatesPage() {
                       <p className="text-sm text-bs-dark55">
                         {eligible
                           ? 'You are eligible for this certificate!'
-                          : `Complete ${track.requiredModules.join(' and ')} modules to earn`}
+                          : `Pass all required quizzes to earn this certificate`}
                       </p>
                     </div>
                   </div>

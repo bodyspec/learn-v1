@@ -5,7 +5,7 @@ track: chiropractor
 is_deep_dive: false
 parent_module: null
 estimated_minutes: 20
-required_for_certificate: true
+required_for_certificate: ['chiropractor']
 sort_order: 2
 
 sections:

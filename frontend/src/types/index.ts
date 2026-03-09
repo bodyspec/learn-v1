@@ -9,7 +9,7 @@ export interface Module {
   is_deep_dive: boolean
   parent_module?: string
   estimated_minutes: number
-  required_for_certificate: boolean
+  required_for_certificate: string[]
   sort_order: number
   sections: Section[]
 }

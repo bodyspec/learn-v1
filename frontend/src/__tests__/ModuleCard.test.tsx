@@ -11,7 +11,7 @@ const sampleModule: Module = {
   track: 'core',
   is_deep_dive: false,
   estimated_minutes: 30,
-  required_for_certificate: true,
+  required_for_certificate: ['*'],
   sort_order: 1,
   sections: [
     { slug: '01-how-dexa-works', file: '01-how-dexa-works.md', title: 'How DEXA Works' },
